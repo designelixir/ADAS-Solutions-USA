@@ -1,117 +1,34 @@
-
-/* CSS pre-processing by {less}. http://lesscss.org/
-***************************************************/
-
-
-
-/* General syles
-***************************************************/
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  font-size: 100%;
-  font-weight: normal;
-}
-
-.site-container {
-  line-height: 1.6em;
-  color: #777;
-  max-width: 1020px;
-  padding: 6vw;
-
-  h1, h2, h3 {
-    font-weight: normal;
-    line-height: 1.2em;
-  }
-
-  a {
-    color: cornflowerblue;
-
-    &.disabled {
-      color: #ccc;
-    }
-  }
-}
-
-.site-header {
-  margin-bottom: 4vw;
-}
-
-.site-navigation { }
-
-.site-navigation-list {
-  padding: 0;
-}
-
-.site-navigation-item {
-  display: inline-block;
-  font-size: 87.5%;
-
-  & + .site-navigation-item {
-    margin-left: 1em;
-  }
-
-  a {
-    color: #111;
-    text-decoration: none;
-
-    &:hover {
-      color: #999;
-    }
-  }
-
-  &.active-link > a {
-    color: #999;
-  }
-
-}
-
-.site-title-heading {
-
-  .site-title-link {
-    color: #111;
-    font-weight: 400;
-    text-decoration: none;
-  }
-}
-
-.content-container { }
-
-.site-footer {
-  font-size: 75%;
-  margin-top: 4vw;
-  margin-bottom: 4vw;
-}
+* {box-sizing: border-box; font-family: "Roboto Condensed", sans-serif;}
+html {max-width: 100vw; margin: 0; padding: 0; overflow-x: hidden; border: 2px solid red; background-image: url('../assets/carbonfiber.png'); background-size: contain; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center;}
+body {width: 95vw; min-height: 100vh; margin: 2.5vw; border-radius: 10px;}
 
 
+:root {
+    --red: #A50827;
+    --darkred: #AD1E29;
+    --darkgray:#404040;
+    --lightgray: #CCCCCC;
+    
+} 
 
-/* Homepage
-***************************************************/
+.flex-center-center {display: flex; align-items: center; justify-content: center; flex:1}
+.flex-center-end {display: flex; align-items: center; justify-content: flex-end; flex:1}
+.flex-center-start {display: flex; align-items: center; justify-content: flex-start; flex:1}
+.flex-center-spacebetween {display: flex; align-items: center; justify-content: space-between; flex:1}
+.flex-center-spaceevenly {display: flex; align-items: center; justify-content: space-evenly; flex:1}
 
-body.homepage { }
+.flex-start-center {display: flex; align-items: flex-start; justify-content: center; flex:1}
+.flex-start-start {display: flex; align-items: flex-start; justify-content: flex-start; flex:1;}
+.flex-start-end {display: flex; align-items: flex-start; justify-content: flex-end; flex:1;}
+.flex-start-spacebetween {display: flex; align-items: start; justify-content: space-between; flex:1;}
+.flex-start-spaceevenly {display: flex; align-items: start; justify-content: space-evenly; flex:1;}
 
-
-
-/* Blog list
-***************************************************/
-
-body.collection-type-blog.view-list {
-
-  .blog-list-item + .blog-list-item {
-    margin-top: 3vw;
-  }
-}
-
-
-
-/* Break grid and stack blocks on small screens
-***************************************************/
-
-@media screen and (max-width: 640px) {
-  @import 'sqs-grid-breaker';
-}
+.flex-end-center {display: flex; align-items: flex-end; justify-content: center; flex:1;}
+.flex-end-start {display: flex; align-items: flex-end; justify-content: flex-start; flex:1;}
+.flex-end-end {display: flex; align-items: flex-end; justify-content: flex-end; flex:1;}
+.flex-end-spacebetween {display: flex; align-items: center; justify-content: space-between; flex:1;}
+.flex-end-spaceevenly {display: flex; align-items: center; justify-content: space-evenly; flex:1;}
 
 
+.flex-column {flex-direction: column;}
+.flex-wrap {flex-wrap: wrap}

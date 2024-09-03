@@ -1,8 +1,24 @@
-<nav class="site-navigation">
-  <ul class="site-navigation-list">
+<style>
+nav {max-width: 100vw; width: 100vw; margin: 25px -2.5vw 0 -2.5vw; border: 1px solid orange; }
+.site-navigation-wrapper { background: var(--darkgray); width: 100%; padding: 10px 30px;}
+.logo {height: 100px;}
+
+@media screen and (max-width: 600px) {
+  .logo {height: 75px;}
+}
+
+</style>
+
+
+<nav class="site-navigation flex-center-center flex-column">
+  <div class="site-navigation-wrapper flex-center-spacebetween">
+    <div class="logo-container">
+      <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
+    </div>
+    <div class="site-navigation-list flex-center-end">
     {.repeated section items}
 
-      <li class="site-navigation-item {.section active} active-link{.end}">
+      <div class="site-navigation-item {.section active} active-link{.end}">
 
         <!-- collection link -->
         {.section collection}
@@ -16,8 +32,15 @@
           </a>
         {.end}
 
-      </li>
+      </div>
 
     {.end}
-  </ul>
+    <img src="../assets/menu.svg" id="hamburger" alt="mobile menu icon"/>
+  </div>
+    </div>
+    <div class="flex-start-spacebetween" style="width: 100%; border: 1px solid red;">
+      <img src="../assets/triangle.svg" style="width: 2.5vw"/>
+      <img src="../assets/triangle-right.svg" style="width: 2.5vw"/>
+  </div>
 </nav>
+
