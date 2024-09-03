@@ -1,24 +1,40 @@
 <style>
-nav {max-width: 100vw; width: 100vw; margin: 25px -2.5vw 0 -2.5vw; border: 1px solid orange; }
+header {width: 95vw; margin: 2.5vw; position: fixed; top: 25px; left: 0; z-index: 9999; transition: top 0.3s ease;}
+nav {width: 100%;}
 .site-navigation-wrapper { background: var(--darkgray); width: 100%; padding: 10px 30px;}
 .logo {height: 100px;}
+.site-navigation-list { width: 100%;}
+.site-navigation-item {padding: 10px; text-align: center; }
+.site-navigation-item a:hover {color: var(--red)}
+#mobileMenu .site-navigation-item a {color: black!important; padding: 10px;}
+.site-navigation-item a {text-transform: uppercase; text-decoration: none; color: white;}
+.active-link a {text-decoration: underline; color: var(--lightgray); font-weight: 800;}
 
-@media screen and (max-width: 600px) {
-  .logo {height: 75px;}
+#mobileMenu {display: none; width: 100%; background: var(--lightgray); padding: 15px;}
+
+@media screen and (max-width: 750px) {
+  #mobileMenu {display: none;}
+  #desktopNav {display: none; }
+  #hamburger {display: block; cursor: pointer;}
+}
+
+@media screen and (min-width: 751px) {
+  #hamburger {display: none; }
+  #desktopNav {display: block; }
 }
 
 </style>
 
-
+<header class="site-header">
 <nav class="site-navigation flex-center-center flex-column">
-  <div class="site-navigation-wrapper flex-center-spacebetween">
+  <div class="site-navigation-wrapper flex-center-spacebetween box-shadow">
     <div class="logo-container">
       <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
     </div>
-    <div class="site-navigation-list flex-center-end">
+    <div  class="site-navigation-list flex-center-end">
     {.repeated section items}
 
-      <div class="site-navigation-item {.section active} active-link{.end}">
+      <div id="desktopNav" class="site-navigation-item {.section active} active-link{.end}">
 
         <!-- collection link -->
         {.section collection}
@@ -35,12 +51,61 @@ nav {max-width: 100vw; width: 100vw; margin: 25px -2.5vw 0 -2.5vw; border: 1px s
       </div>
 
     {.end}
-    <img src="../assets/menu.svg" id="hamburger" alt="mobile menu icon"/>
+    <img src="../assets/menu.svg" id="hamburger" style="height: 25px" alt="mobile menu icon"/>
   </div>
     </div>
-    <div class="flex-start-spacebetween" style="width: 100%; border: 1px solid red;">
-      <img src="../assets/triangle.svg" style="width: 2.5vw"/>
-      <img src="../assets/triangle-right.svg" style="width: 2.5vw"/>
+    <div class="flex-start-spacebetween" style="width: 100%;">
+      <img src="../assets/triangle.svg" style="  width: 2.5vw"/>
+      <div id="mobileMenu">
+        <div class="site-navigation-list flex-center-center">
+          {.repeated section items}
+
+            <div class="site-navigation-item {.section active} active-link{.end}">
+
+              <!-- collection link -->
+              {.section collection}
+                <a href="{fullUrl}">{navigationTitle}</a>
+              {.end}
+
+              <!-- external link -->
+              {.section externalLink}
+                <a href="{url}"{.section newWindow} target="_blank"{.end}>
+                  {title}
+                </a>
+              {.end}
+
+            </div>
+
+          {.end}
+        </div>
+      </div>
+      <img src="../assets/triangle-right.svg" style="  width: 2.5vw"/>
   </div>
 </nav>
+</header>
+<script>
+  $(document).ready(function() {
+    
+    $('#hamburger').click(function() {
+      $('#mobileMenu').slideToggle(300); 
+      if ($(this).attr('src') === '../assets/menu.svg') {
+        $(this).attr('src', '../assets/close.svg'); // Change to 'close' icon
+      } else {
+        $(this).attr('src', '../assets/menu.svg'); // Change back to 'hamburger' icon
+      }
+    });
+
+    // Sticky header on scroll with smooth snapping
+    var header = $('.site-header');
+    var headerHeight = header.outerHeight();
+
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > headerHeight) {
+        header.css('top', '-2.5vw'); // Snap smoothly to the top
+      } else {
+        header.css('top', '25px'); // Transition smoothly back to its original position
+      }
+    });
+  });
+</script>
 
