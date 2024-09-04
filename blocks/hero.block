@@ -20,7 +20,7 @@
 .hero-text-wrapper {height: 100%; width: 100%; height: 500px; border: 2px solid lime;  padding: 25px; margin-top: -500px; position: relative; z-index: 2;}
 .hero-wrapper {max-height: 700px!important; margin-bottom: 100px;}
 #heroVideo {overflow: hidden; max-height: 650px;}
-
+#heroText {border: 2px solid red; min-width: 200px;}
 @media screen and (max-width: 1200px) {
     .hero-text-wrapper {height: 500px; border: 2px solid pink; margin-top: -490px; }
     .embed-block-wrapper { margin-left: -37vw; width: 220%;}
