@@ -37,11 +37,14 @@
   </squarespace:query>
 </div>
 
-<div class="banner-bg-reverse" style="z-index: 2; position: relative;">
-    <squarespace:block-field id="Business-Statistics" columns="1" />
+<div class="banner-bg-reverse" style="z-index: 2; position: relative; padding: 80px 25px;">
+    <squarespace:block-field id="Business-Statistics-Title" columns="1" />
 </div>
     
     {@|apply statistics.block}
+    <div class="basic-padding">
+    <squarespace:block-field id="Business-Statistics-Description" columns="1" />
+    </div>
     
     <main class="content-container" role="main" data-content-field="main-content">
         {squarespace.main-content}
