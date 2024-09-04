@@ -1,2 +1,16 @@
-<section id="tab2-content-wrapper" class="tab-content" style="width: 100%; height: 300px; background: blue;">
+<section id="tab2-content-wrapper" class="tab-content" >
+
+<div style="padding: 50px 25px;">
+        <squarespace:block-field id="Consumer-Intro" columns="1" />
+        <div class="flex-center-center flex-break" style="margin: 25px 0;">
+            <squarespace:block-field id="Consumer-Button-1" columns="1" />
+            <squarespace:block-field id="Consumer-Button-2" columns="1" />
+            <squarespace:block-field id="Consumer-Button-3" columns="1" />
+        </div>
+    </div>
+
+    <div class="banner-bg" style="z-index: 2; position: relative;">
+        <squarespace:block-field id="Consumer-Educate" columns="1" />
+    </div>
+
 </section>

@@ -23,8 +23,6 @@
           {.end}
         </div>
       </div>
-      <div id="Business-Statistics" style="height: 100vh; border: 2px solid purple;"></div>
-      {@|apply statistics.block}
        {squarespace.main-content}
       </main>
       {@|apply footer.block}

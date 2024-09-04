@@ -12,27 +12,29 @@
         <squarespace:block-field id="Business-Educate" columns="1" />
     </div>
 
-    <div class="flex-start-center flex-wrap flip-card-wrapper">
+    <div class="">
   <squarespace:query collection="full-adas-solution" limit="10">
     {.repeated section items}
-      <div class="flip-card hover flex-center-start flex-column" id="{title}-card" {.if body} onclick="expand('{title}-card')"{.end}>
-            <div style="background-image: url({assetUrl});" class="card-icon"></div>
-            <h2 class="no-text-spacing red-text">{title}</h2>
-          <div class="flip-card-front flex-center-start flex-column">
+    <div class="bullet-point-wrapper" id={title} {.if body} onclick="expand('{title}-body')"{.end}>
+        <div class="bullet-point flex-center-start">
             
-            <h4 class="centered-text" style="margin: 25px 0; padding: 0;">{excerpt|safe}</h4>
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url({assetUrl});" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <h2 class="no-text-spacing red-text" style="margin-top: 35px;">{title}</h2>
+                <h4>{excerpt|safe}</h4>
+                {.if body}
+                <a class="red-text no-text-spacing" style="text-decoration: underline; font-family: 'Roboto Condensed', sans-serif; font-weight: 300;">Read more +</a>
+                {.end}
+            </div>
+        </div>
+        <div class="bullet-point-body" id="{title}-body">
             {.if body}
-            <button>Read more</button>
-            {.end}
-          </div>
-          <div class="flip-card-back flex-center-center flex-column" style="display: none; opacity: 0; padding: 25px 15px;">
-            {.if body}
-              {body}
-              <button>Read Less</button>
-            {.end}
-          </div>
-        
-      </div>
+                    {body}
+                {.end}
+        </div>
+    </div>
     {.end}
   </squarespace:query>
 </div>
@@ -65,29 +67,24 @@
 </section>
 
 <script>
-function expand(cardId) {
-  const card = document.getElementById(cardId);
-  const front = card.querySelector('.flip-card-front');
-  const back = card.querySelector('.flip-card-back');
-
-  if (front.style.display !== 'none') {
-    gsap.to(front, {
-      opacity: 0,
+function expand(bodyId) {
+  const bodyElement = document.getElementById(bodyId);
+  
+  if (bodyElement.style.display === 'none' || bodyElement.style.display === '') {
+    gsap.to(bodyElement, {
+      opacity: 1,
       duration: 0.5,
-      onComplete: () => {
-        front.style.display = 'none';
-        back.style.display = 'flex';
-        gsap.to(back, { opacity: 1, duration: 0.25 });
+      display: 'block', 
+      onStart: () => {
+        bodyElement.style.display = 'block'; 
       }
     });
   } else {
-    gsap.to(back, {
+    gsap.to(bodyElement, {
       opacity: 0,
       duration: 0.5,
       onComplete: () => {
-        back.style.display = 'none';
-        front.style.display = 'flex';
-        gsap.to(front, { opacity: 1, duration: 0.25 });
+        bodyElement.style.display = 'none'; 
       }
     });
   }
