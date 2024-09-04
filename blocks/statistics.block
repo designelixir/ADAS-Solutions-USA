@@ -4,24 +4,32 @@
   background-color: #f3f3f3;
   border-radius: 5px;
   overflow: hidden;
-  height: 20px;
+  padding: 5px;
+  height: 100px;
   margin: 50px 0; /* Add some margin for demo purposes */
 }
 
 .progress-bar {
-  width: 0; /* Initial width is 0% */
+  width: 0; 
   height: 100%;
-  background-color: #4caf50; /* Color of the filled part */
+  border-radius: 5px;
+  background-color: red; /* Color of the filled part */
   transition: width 1s ease-in-out;
 }
 
 </style>
 
-<squarespace:block-field id="Stat1" columns="1" />
-<div class="progress-container">
-    
-    <div class="progress-bar" id="progress-bar-1"></div>
+<div class="flex-center-start">
+    <div class="box-shadow" style="width: 100%; padding: 25px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+        <squarespace:block-field id="Stat1" columns="1" />
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar-1"></div>
+        </div>
+    </div>
 </div>
+
+
+
 <squarespace:block-field id="Stat2" columns="1" />
 <div class="progress-container">
     <div class="progress-bar" id="progress-bar-2"></div>
@@ -46,7 +54,7 @@
         // Animate bar 1 to 80%
         gsap.to("#progress-bar-1", {
           width: "80%", // Fill the progress bar to 80%
-          duration: 3, // Animation duration in seconds
+          duration: 2, // Animation duration in seconds
           ease: "power2.inOut", // Easing function for smooth transition
         });
 

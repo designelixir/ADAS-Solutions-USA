@@ -42,9 +42,10 @@
     </div>
     <div class="flex-center-center flex-column" style="padding: 50px 25px;">
         <squarespace:block-field id="Business-Statistics" columns="1" />
-        {@|apply statistics.block}
+        
 
     </div>
+    {@|apply statistics.block}
     
     <main class="content-container" role="main" data-content-field="main-content">
         {squarespace.main-content}
