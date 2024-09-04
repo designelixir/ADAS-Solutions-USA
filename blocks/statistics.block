@@ -79,7 +79,7 @@
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.create({
-      trigger: "#Business-Statistics",
+      trigger: "#Business-Statistics-Title",
       start: "bottom 10%",
       onEnter: () => {
         const tl = gsap.timeline();
