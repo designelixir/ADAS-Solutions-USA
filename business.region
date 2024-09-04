@@ -1,14 +1,16 @@
-<section id="tab1-content-wrapper" class="tab-content fade-in" style="padding: 50px 25px;">
-    <squarespace:block-field id="Business-Intro" columns="1" />
-    <div class="flex-center-center" style="margin: 25px 0;">
-        <squarespace:block-field id="Business-Button-1" columns="1" />
-        <squarespace:block-field id="Business-Button-2" columns="1" />
-        <squarespace:block-field id="Business-Button-3" columns="1" />
+<section id="tab1-content-wrapper" class="tab-content fade-in">
+    <div style="padding: 50px 25px;">
+        <squarespace:block-field id="Business-Intro" columns="1" />
+        <div class="flex-center-center" style="margin: 25px 0;">
+            <squarespace:block-field id="Business-Button-1" columns="1" />
+            <squarespace:block-field id="Business-Button-2" columns="1" />
+            <squarespace:block-field id="Business-Button-3" columns="1" />
+        </div>
     </div>
 
     <div class="banner-bg">
-            <squarespace:block-field id="Business-Educate" columns="1" />
-        </div>
+        <squarespace:block-field id="Business-Educate" columns="1" />
+    </div>
     
     <main class="content-container" role="main" data-content-field="main-content">
 
