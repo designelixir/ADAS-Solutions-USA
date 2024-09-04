@@ -1,5 +1,5 @@
 <style>
-.tab-container {z-index: 999; width: 100%; padding-bottom: 50px;}
+.tab-container {z-index: 999; width: 100%; padding-bottom: 50px; margin-top: -25px;}
 .tab {z-index: 3; width: 100%; position: relative; border: 1px solid white; flex: 1!important; background: var(--darkgray); color: white; padding: 10px; height: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px;}
 .tab h3 {color: white; padding: 10px 5px; font-size: 22px;}
 .tab.active {background: var(--red); background-size: 100% 100%;}
