@@ -1,3 +1,7 @@
 <section id="tab1-content-wrapper" class="tab-content fade-in basic-padding" style="border: 2px solid red;">
-<squarespace:block-field id="Business-Intro" columns="1" />
+    <squarespace:block-field id="Business-Intro" columns="1" />
+    <main class="content-container" role="main" data-content-field="main-content">
+
+        {squarespace.main-content}
+        </main>
 </section>
