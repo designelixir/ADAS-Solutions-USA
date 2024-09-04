@@ -6,6 +6,7 @@
             <squarespace:block-field id="Consumer-Button-1" columns="1" />
             <squarespace:block-field id="Consumer-Button-2" columns="1" />
             <squarespace:block-field id="Consumer-Button-3" columns="1" />
+            <squarespace:block-field id="Consumer-Button-4" columns="1" />
         </div>
     </div>
 
