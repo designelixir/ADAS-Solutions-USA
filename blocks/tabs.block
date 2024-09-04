@@ -1,0 +1,39 @@
+<style>
+.tab-container {z-index: 999; width: 100%; padding-bottom: 50px;}
+.tab {z-index: 3; width: 100%; position: relative; border: 1px solid white; flex: 1!important; background: var(--darkgray); color: white; padding: 10px; height: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px;}
+.tab h3 {color: white; padding: 10px 5px; font-size: 22px;}
+.tab.active {background: var(--red); background-size: 100% 100%;}
+.tab.active h3 {font-weight: 700;}
+.tab-left {max-width: 65%; }
+.tab-right {max-width: 45%;}
+.tab-left.active {margin-right: -50px; z-index: 300; border-top-right-radius: 25px;}
+.tab-right.active {margin-left: -50px; z-index: 300; border-top-left-radius: 25px; }
+.tab-content {display: none;}
+.tab-content.active {display: block;}
+</style>
+
+<div class="tab-container flex-start-start">
+    <div class="tab tab-left" id="tab1">
+        <squarespace:block-field id="tab1-Title" columns="1"/>    
+    </div>
+    <div class="tab tab-right" id="tab2">
+        <squarespace:block-field id="tab2-Title" columns="1"/>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#tab1').addClass('active');
+        $('#tab1-content-wrapper').addClass('active');
+
+        
+        $('.tab').click(function() {
+            $('.tab').removeClass('active');
+            $('.tab-content').removeClass('active');
+            
+            $(this).addClass('active');
+            var tabId = $(this).attr('id');
+            $('#' + tabId + '-content-wrapper').addClass('active');
+        });
+    });
+</script>
