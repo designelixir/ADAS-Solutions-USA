@@ -13,11 +13,13 @@
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
-      <div class="page-hero" style="background-image: url('{collection.assetUrl}')">
-        <h1>{collection.title}</h1>
-        {.if collection.description}
-          <p>{collection.description}</p>
-        {.end}
+      <div class="page-hero flex-center-center" style="background-image: url('{collection.mainImage.assetUrl}')">
+        <div class="page-hero-content">
+          <h1>{collection.title}</h1>
+          {.if collection.description}
+            <p>{collection.description}</p>
+          {.end}
+        </div>
       </div>
        {squarespace.main-content}
       </main>

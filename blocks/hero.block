@@ -1,5 +1,5 @@
 <style>
-.tab-container {z-index: 999; position: relative; width: 100%; max-width: 90vw; padding-bottom: 50px; transform: translateY(-25px);}
+.tab-container {z-index: 999; position: relative; width: 100%; max-width: 90vw; margin-top: -25px;}
 .tab {z-index: 3; width: 100%; position: relative; border: 3px solid white; min-width: 200px; flex: 1!important; background: var(--darkgray); color: white; padding: 10px; height: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px;}
 .tab h3 {color: white; padding: 10px 5px; font-size: 22px;}
 .tab.active {background: var(--red); background-size: 100% 100%;}
@@ -11,21 +11,32 @@
 .tab-content.active {display: block;}
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 860px) {
+
+    .hero-text-wrapper h1 {font-size: 24px; line-height: 30px;}
 .tab-container .full-width {flex-direction: column}
+
+.tab {padding: 20px 10px 40px;}
+.tab-left {min-width: unset!important;}
+.tab-right {margin-top: -20px; z-index: 300; padding: 30px 10px 30px!important;}
 .tab-right h3 {text-align: left!important;}
 .tab-left.active {margin-right: unset; z-index: 300; }
-.tab-right.active {margin-left: unset; z-index: 300; border-top-left-radius: unset; border-bottom-right-radius: 25px; }    
+.tab-right.active {margin-left: unset; z-index: 300; border-top-right-radius: 25px; border-top-left-radius: unset; }    
 }
 
-.hero-text-wrapper {height: 100%; width: 100%; height: 500px; padding: 25px; margin-top: -500px; position: relative; z-index: 2;}
-.hero-text-wrapper * {color: white!important; text-shadow: 0 0 2px rgba(0,0,0,0.5);}
-.hero-wrapper {max-height: 700px!important; width: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px; margin-bottom: -5px;}
+.hero-wrapper { width: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px; margin-bottom: -5px;} 
+.hero-text-wrapper {width: 100%; height: 600px; padding: 150px 50px 50px 50px; margin-top: -600px; position: relative; z-index: 2; background: rgba(0,0,0,0.25)}
+.hero-text-wrapper * {color: white!important; text-shadow: 0 0 2px rgba(0,0,0,0.5); }
+
 .hero-video-wrapper {border-radius: 5px; overflow: hidden; padding-top: -10px;}
 #heroVideo {overflow: hidden; max-height: 650px;}
+
+
+
+
 @media screen and (max-width: 1200px) {
-    .hero-wrapper {max-height: 650px!important;}
-    .hero-text-wrapper {height: 500px; margin-top: -490px; }
+    
+    .tab-left {min-width: 550px;}
     .embed-block-wrapper { margin-left: -37vw; width: 220%;}
     }
 
