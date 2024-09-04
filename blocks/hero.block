@@ -31,7 +31,7 @@
 .hero-text-wrapper * {color: white!important; text-shadow: 0 0 2px rgba(0,0,0,0.5); }
 
 .hero-video-wrapper {border-radius: 5px; overflow: hidden; padding-top: -10px;}
-#heroVideo {overflow: hidden; max-height: 650px;}
+#heroVideo {overflow: hidden;}
 
 
 

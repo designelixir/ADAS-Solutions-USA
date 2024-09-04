@@ -1,19 +1,60 @@
 <section id="tab1-content-wrapper" class="tab-content fade-in">
     <div style="padding: 50px 25px;">
         <squarespace:block-field id="Business-Intro" columns="1" />
-        <div class="flex-center-center" style="margin: 25px 0;">
+        <div class="flex-center-center flex-break" style="margin: 25px 0;">
             <squarespace:block-field id="Business-Button-1" columns="1" />
             <squarespace:block-field id="Business-Button-2" columns="1" />
             <squarespace:block-field id="Business-Button-3" columns="1" />
         </div>
     </div>
 
-    <div class="banner-bg">
+    <div class="banner-bg" style="z-index: 2; position: relative;">
         <squarespace:block-field id="Business-Educate" columns="1" />
     </div>
+
+    <div class="flex-center-center flip-card-wrapper">
+        <squarespace:query collection="full-adas-solution" limit="10">
+            {.repeated section items}
+               <div class="flip-card flex-center-start flex-column " id="{title}-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex-center-start flex-column box-shadow">
+                            <div style="background-image: url({assetUrl});" class="card-icon"></div>
+                            <h2 class="no-text-spacing red-text">{title}</h2>
+                            <h4 class="centered-text" style="margin: 25px 0; padding: 0;">{excerpt|safe}</h4>
+                            {.if body}
+                            <button onclick="expand('{title}-card')">Read more</button>
+                            {.end}
+                        </div>
+                        <div class="flip-card-back box-shadow">
+                            {.if body}
+                                {body}
+                                <button onclick="expand('{title}-card')">Read Less</button>
+                            {.end}
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+            {.end}
+        </squarespace:query>
+    </div>
+
+    <squarespace:block-field id="Business-Statistics" columns="1" />
     
     <main class="content-container" role="main" data-content-field="main-content">
-
         {squarespace.main-content}
-        </main>
+    </main>
 </section>
+
+<script>
+function expand(cardId) {
+  // Select the flip card by its ID
+  const card = document.getElementById(cardId);
+  
+  // Toggle the 'flipped' class to create the flipping effect
+  card.classList.toggle('flipped');
+}
+
+</script>
