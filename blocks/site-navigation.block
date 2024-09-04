@@ -15,6 +15,7 @@ nav {width: 100%;}
 @media screen and (max-width: 750px) {
   #mobileMenu {display: none;}
   #desktopNav {display: none; }
+  #desktopHomeNav {display: none;}
   #hamburger {display: block; cursor: pointer;}
 }
 
@@ -32,7 +33,7 @@ nav {width: 100%;}
       <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
     </div>
     <div  class="site-navigation-list flex-center-end">
-    <a href="/"><img id="home-nav" src="../assets/home-white.svg" style="height: 25px; margin-right: 10px;" alt="Home"/></a>
+    <a href="/"><img class="home-nav" id="desktopHomeNav" src="../assets/home-white.svg" style="height: 25px; margin-right: 10px;" alt="Home"/></a>
     {.repeated section items}
 
       <div id="desktopNav" class="site-navigation-item {.section active} active-link{.end}">
@@ -59,7 +60,7 @@ nav {width: 100%;}
       <img src="../assets/triangle.svg" style="width: 2.5vw; max-width: 50px; z-index: -1;"/>
       <div id="mobileMenu">
         <div class="site-navigation-list flex-center-center flex-wrap">
-        <a href="/"><img id="home-nav" src="../assets/home-white.svg" style="height: 25px; margin-right: 10px;" alt="Home"/></a>
+        <a href="/"><img class="home-nav" src="../assets/home-white.svg" style="height: 25px; margin-right: 10px;" alt="Home"/></a>
           {.repeated section items}
 
             <div class="site-navigation-item {.section active} active-link{.end}">
@@ -90,7 +91,7 @@ nav {width: 100%;}
     
     // Check if the body has a data-nav-attr of 'home'
     if ($('body').data('nav-attr') === 'home') {
-      $('#home-nav').attr('src', '../assets/home-active.svg');
+      $('.home-nav').attr('src', '../assets/home-active.svg');
     }
 
     $('#hamburger').click(function() {

@@ -15,7 +15,7 @@
     <div class="flex-start-center flex-wrap flip-card-wrapper">
   <squarespace:query collection="full-adas-solution" limit="10">
     {.repeated section items}
-      <div class="flip-card box-shadow hover flex-center-start flex-column" id="{title}-card" onclick="expand('{title}-card')">
+      <div class="flip-card hover flex-center-start flex-column" id="{title}-card" {.if body} onclick="expand('{title}-card')"{.end}>
             <div style="background-image: url({assetUrl});" class="card-icon"></div>
             <h2 class="no-text-spacing red-text">{title}</h2>
           <div class="flip-card-front flex-center-start flex-column">
@@ -44,6 +44,19 @@
     {@|apply statistics.block}
     <div class="basic-padding">
     <squarespace:block-field id="Business-Statistics-Description" columns="1" />
+    </div>
+
+    <div class="flex-center-center flex-column" style="margin-top: 50px;">
+        <div class="image-card">
+            <div class="linear-gradient flex-end-center" style="width: 100%; height: 100%; padding: 25px;">
+                <squarespace:block-field id="Business-Connect-Title" columns="1" />
+            </div>
+        </div>
+        <div class="image-card-text">
+        <squarespace:block-field id="Business-Connect-Description" columns="1" />
+        </div>
+        
+        
     </div>
     
     <main class="content-container" role="main" data-content-field="main-content">
