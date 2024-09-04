@@ -1,5 +1,5 @@
 <style>
-header {width: 95vw; max-width: 1400px; position: fixed; top: 35px;   z-index: 9999; transition: top 0.3s ease;}
+header {width: 95vw; max-width: 1400px; position: fixed; top: 45px;   z-index: 9999; transition: top 0.3s ease;}
 nav {width: 100%;}
 .site-navigation-wrapper { background: var(--darkgray); width: 100%; padding: 10px 30px;}
 .logo {height: 100px;}
@@ -103,7 +103,7 @@ nav {width: 100%;}
       if ($(window).scrollTop() > headerHeight) {
         header.css('top', '0px'); // Snap smoothly to the top
       } else {
-        header.css('top', '35px'); // Transition smoothly back to its original position
+        header.css('top', '45px'); // Transition smoothly back to its original position
       }
     });
   });

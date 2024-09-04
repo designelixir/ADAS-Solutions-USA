@@ -15,10 +15,8 @@
         {@|apply hero.block}
         
 
-      <main class="content-container" role="main" data-content-field="main-content">
-       {squarespace.main-content}
-      </main>
-      {@|apply footer.block}
+      
+      
 
     </div>
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

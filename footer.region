@@ -1,0 +1,33 @@
+<style>
+.footer-wrapper { background: white; display: flex; align-items: center; justify-content: center; flex-direction: column; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; width: 90vw; margin: 0 25px 25px; background-image: url('../assets/carbonfiber.png'); background-size: contain; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; max-width: 1300px;}
+footer {width: 95vw; max-width: 1400px;  }
+nav {width: 100%;   }
+.site-navigation-wrapper { background: var(--darkgray); width: 100%; padding: 10px 30px;}
+.logo {height: 100px;}
+
+@media screen and (max-width: 600px) {
+  .logo {height: 75px;}
+}
+
+</style>
+<div class="footer-wrapper">
+<footer class="site-footer">
+<nav class="site-navigation flex-center-center flex-column">
+<div class="flex-start-spacebetween" style="width: 100%;">
+      <img src="../assets/triangle-right.svg" style="  width: 2.5vw; transform: rotate(180deg); max-width: 50px;"/>
+      <img src="../assets/triangle.svg" style="  width: 2.5vw; transform: rotate(180deg); max-width: 50px;"/>
+      
+  </div>
+  <div class="site-navigation-wrapper flex-center-spacebetween">
+    <div class="logo-container">
+      <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
+    </div>
+    </div>
+    
+</nav>
+<div class="flex-center-center flex-column basic-padding" style="padding-top: 0;">
+    <p>Copyright &copy; ADAS Solutions USA</p>
+    <a class="no-text-spacing xs-text" style="color: gray; text-decoration: none" target="_blank" href="https://designelixir.studio">Made with &hearts; by Design Elixir Studio </a>
+</div>
+</footer>
+</div>

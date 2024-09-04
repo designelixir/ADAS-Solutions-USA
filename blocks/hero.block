@@ -10,6 +10,7 @@
 .tab-content {display: none;}
 .tab-content.active {display: block;}
 
+
 @media screen and (max-width: 750px) {
 .tab-container .full-width {flex-direction: column}
 .tab-right h3 {text-align: left!important;}
@@ -17,21 +18,24 @@
 .tab-right.active {margin-left: unset; z-index: 300; border-top-left-radius: unset; border-bottom-right-radius: 25px; }    
 }
 
-.hero-text-wrapper {height: 100%; width: 100%; height: 500px; border: 2px solid lime;  padding: 25px; margin-top: -500px; position: relative; z-index: 2;}
-.hero-wrapper {max-height: 700px!important; margin-bottom: 100px;}
+.hero-text-wrapper {height: 100%; width: 100%; height: 500px; padding: 25px; margin-top: -500px; position: relative; z-index: 2;}
+.hero-text-wrapper * {color: white!important; text-shadow: 0 0 2px rgba(0,0,0,0.5);}
+.hero-wrapper {max-height: 700px!important; width: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px; margin-bottom: -5px;}
+.hero-video-wrapper {border-radius: 5px; overflow: hidden; padding-top: -10px;}
 #heroVideo {overflow: hidden; max-height: 650px;}
-#heroText {border: 2px solid red; min-width: 200px;}
 @media screen and (max-width: 1200px) {
-    .hero-text-wrapper {height: 500px; border: 2px solid pink; margin-top: -490px; }
+    .hero-wrapper {max-height: 650px!important;}
+    .hero-text-wrapper {height: 500px; margin-top: -490px; }
     .embed-block-wrapper { margin-left: -37vw; width: 220%;}
-    .hero-wrapper {margin-bottom: 75px;}
     }
 
 </style>
 
 <div class="hero-wrapper">
-    <squarespace:block-field id="heroVideo" columns="1"/>
-    <div class="hero-text-wrapper flex-end-center flex-column">
+    <div class="hero-video-wrapper">
+        <squarespace:block-field id="heroVideo" columns="1"/>
+    </div>
+    <div class="hero-text-wrapper flex-center-end flex-column">
         <squarespace:block-field id="heroText" columns="1"/>
     </div>
     <div class="tab-container flex-center-center flex-column">
@@ -60,6 +64,7 @@
             $(this).addClass('active');
             var tabId = $(this).attr('id');
             $('#' + tabId + '-content-wrapper').addClass('active');
+            console.log('#' + tabId + '-content-wrapper is active')
         });
     });
 </script>
