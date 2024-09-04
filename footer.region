@@ -1,5 +1,5 @@
 <style>
-.footer-wrapper { background: white; display: flex; align-items: center; justify-content: center; flex-direction: column; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; width: 90vw; margin: 0 25px 25px; background-image: url('../assets/carbonfiber.png'); background-size: contain; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; max-width: 1300px;}
+.footer-wrapper { background: white; display: flex; align-items: center; justify-content: center; flex-direction: column; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; width: 90vw; margin: 0 25px 25px; display: flex; align-items: center; justify-content: center; max-width: 1300px;}
 footer {width: 95vw; max-width: 1400px;  }
 nav {width: 100%;   }
 .site-navigation-wrapper { background: var(--darkgray); width: 100%; padding: 10px 30px;}
