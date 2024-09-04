@@ -1,0 +1,65 @@
+<style>
+.tab-container {z-index: 999; position: relative; width: 100%; max-width: 90vw; padding-bottom: 50px; transform: translateY(-25px);}
+.tab {z-index: 3; width: 100%; position: relative; border: 3px solid white; min-width: 200px; flex: 1!important; background: var(--darkgray); color: white; padding: 10px; height: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px;}
+.tab h3 {color: white; padding: 10px 5px; font-size: 22px;}
+.tab.active {background: var(--red); background-size: 100% 100%;}
+.tab.active h3 {font-weight: 700;}
+
+.tab-left.active {margin-right: -50px; z-index: 300; border-top-right-radius: 25px;}
+.tab-right.active {margin-left: -50px; z-index: 300; border-top-left-radius: 25px; }
+.tab-content {display: none;}
+.tab-content.active {display: block;}
+
+@media screen and (max-width: 750px) {
+.tab-container .full-width {flex-direction: column}
+.tab-right h3 {text-align: left!important;}
+.tab-left.active {margin-right: unset; z-index: 300; }
+.tab-right.active {margin-left: unset; z-index: 300; border-top-left-radius: unset; border-bottom-right-radius: 25px; }    
+}
+
+.hero-text-wrapper {height: 100%; width: 100%; height: 500px; border: 2px solid lime;  padding: 25px; margin-top: -500px; position: relative; z-index: 2;}
+.hero-wrapper {max-height: 700px!important; margin-bottom: 100px;}
+#heroVideo {overflow: hidden; max-height: 650px;}
+
+@media screen and (max-width: 1200px) {
+    .hero-text-wrapper {height: 500px; border: 2px solid pink; margin-top: -490px; }
+    .embed-block-wrapper { margin-left: -37vw; width: 220%;}
+    .hero-wrapper {margin-bottom: 75px;}
+    }
+
+</style>
+
+<div class="hero-wrapper">
+    <squarespace:block-field id="heroVideo" columns="1"/>
+    <div class="hero-text-wrapper flex-end-center flex-column">
+        <squarespace:block-field id="heroText" columns="1"/>
+    </div>
+    <div class="tab-container flex-center-center flex-column">
+        <div class="flex-start-start full-width">
+            <div class="tab tab-left" id="tab1">
+                <squarespace:block-field id="tab1-Title" columns="1"/>    
+            </div>
+            <div class="tab tab-right" id="tab2">
+                <squarespace:block-field id="tab2-Title" columns="1"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $('#tab1').addClass('active');
+        $('#tab1-content-wrapper').addClass('active');
+
+        
+        $('.tab').click(function() {
+            $('.tab').removeClass('active');
+            $('.tab-content').removeClass('active');
+            
+            $(this).addClass('active');
+            var tabId = $(this).attr('id');
+            $('#' + tabId + '-content-wrapper').addClass('active');
+        });
+    });
+</script>

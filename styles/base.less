@@ -1,7 +1,8 @@
 * {box-sizing: border-box; font-family: "Roboto Condensed", sans-serif;}
-html {max-width: 100vw; width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden; background: black; background-image: url('../assets/carbonfiber.png'); background-size: contain; }
-body { display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 5px; width: 90vw; margin: 2.5vw 5vw; background-image: url('../assets/carbonfiber.png'); background-size: contain; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center;}
-.site-container {background: white; width: 90vw; border-radius: 5px; }
+html {max-width: 100vw; display: flex;
+  justify-content: center; width: 100%;  margin: 0; padding: 0; overflow-x: hidden; background: black; background-image: url('../assets/carbonfiber.png'); background-size: contain; }
+body { display: flex; align-items: center; justify-content: center; flex-direction: column;  border-radius: 5px; width: 90vw; margin: 25px; background-image: url('../assets/carbonfiber.png'); background-size: contain; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; max-width: 1400px;}
+.site-container {background: white; width: 90vw; border-radius: 5px; max-width: 1300px; }
 
 :root {
     --red: #A50827;
@@ -36,6 +37,13 @@ body { display: flex; align-items: center; justify-content: center; flex-directi
 .no-text-spacing {padding: 0; margin: 0; line-height: 0}
 .basic-padding {padding: 25px;}
 .xs-text {font-size: 12px;}
+.white-text {color: white!important}
+.centered-text {text-align: center;}
 .hover:hover {cursor: pointer; transform: scale(1.05);}
 .hover {cursor: pointer;}
 .box-shadow {box-shadow: 2px 2px 5px rgba(0,0,0,0.25);}
+.text-shadow {text-shadow: 0 0 2px rgba(0,0,0,0.5);}
+
+.full-width {width: 100%;}
+
+
