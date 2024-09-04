@@ -13,7 +13,7 @@
     </div>
 
     <div class="">
-  <squarespace:query collection="full-adas-solution" limit="10">
+  <squarespace:query collection="full-adas-solution" tag="Business" limit="10">
     {.repeated section items}
     <div class="bullet-point-wrapper" id={title} {.if body} onclick="expand('{title}-body')"{.end}>
         <div class="bullet-point flex-center-start">
