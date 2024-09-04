@@ -75,8 +75,8 @@
 <script>
   $(document).ready(function() {
     // Initialize tabs
-    $('#tab1').addClass('active');
-    $('#tab1-content-wrapper').addClass('active');
+    $('#tab2').addClass('active');
+    $('#tab2-content-wrapper').addClass('active');
 
     $('.tab').click(function() {
       $('.tab').removeClass('active');

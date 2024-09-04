@@ -11,7 +11,8 @@
     </div>
 
     <div class="banner-bg" style="z-index: 2; position: relative;">
-        <squarespace:block-field id="Consumer-Educate" columns="1" />
+        <squarespace:block-field id="Consumer-Educate-Title" columns="1" />
     </div>
+    {@|apply whatIsAdas.block}
 
 </section>
