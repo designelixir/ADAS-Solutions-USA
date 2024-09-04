@@ -14,5 +14,11 @@
         <squarespace:block-field id="Consumer-Educate-Title" columns="1" />
     </div>
     {@|apply whatIsAdas.block}
+    <div class="flex-center-center">
+        <div class="image-card-wide" style="background-image: url('../assets/carlot.png')">
+            <squarespace:block-field id="Consumer-What-Vehicles" columns="1" />
+
+        </div>
+    </div>
 
 </section>
