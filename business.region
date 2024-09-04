@@ -12,39 +12,35 @@
         <squarespace:block-field id="Business-Educate" columns="1" />
     </div>
 
-    <div class="flex-center-center flip-card-wrapper">
-        <squarespace:query collection="full-adas-solution" limit="10">
-            {.repeated section items}
-               <div class="flip-card flex-center-start flex-column " id="{title}-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flex-center-start flex-column box-shadow">
-                            <div style="background-image: url({assetUrl});" class="card-icon"></div>
-                            <h2 class="no-text-spacing red-text">{title}</h2>
-                            <h4 class="centered-text" style="margin: 25px 0; padding: 0;">{excerpt|safe}</h4>
-                            {.if body}
-                            <button onclick="expand('{title}-card')">Read more</button>
-                            {.end}
-                        </div>
-                        <div class="flip-card-back box-shadow">
-                            {.if body}
-                                {body}
-                                <button onclick="expand('{title}-card')">Read Less</button>
-                            {.end}
-                            
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-
+    <div class="flex-start-center flex-wrap flip-card-wrapper">
+  <squarespace:query collection="full-adas-solution" limit="10">
+    {.repeated section items}
+      <div class="flip-card box-shadow hover flex-center-start flex-column" id="{title}-card" onclick="expand('{title}-card')">
+            <div style="background-image: url({assetUrl});" class="card-icon"></div>
+            <h2 class="no-text-spacing red-text">{title}</h2>
+          <div class="flip-card-front flex-center-start flex-column">
+            
+            <h4 class="centered-text" style="margin: 25px 0; padding: 0;">{excerpt|safe}</h4>
+            {.if body}
+            <button>Read more</button>
             {.end}
-        </squarespace:query>
-    </div>
-    <div class="flex-center-center flex-column" style="padding: 50px 25px;">
-        <squarespace:block-field id="Business-Statistics" columns="1" />
+          </div>
+          <div class="flip-card-back flex-center-center flex-column" style="display: none; opacity: 0; padding: 25px 15px;">
+            {.if body}
+              {body}
+              <button>Read Less</button>
+            {.end}
+          </div>
         
+      </div>
+    {.end}
+  </squarespace:query>
+</div>
 
-    </div>
+<div class="banner-bg-reverse" style="z-index: 2; position: relative;">
+    <squarespace:block-field id="Business-Statistics" columns="1" />
+</div>
+    
     {@|apply statistics.block}
     
     <main class="content-container" role="main" data-content-field="main-content">
@@ -54,11 +50,30 @@
 
 <script>
 function expand(cardId) {
-  // Select the flip card by its ID
   const card = document.getElementById(cardId);
-  
-  // Toggle the 'flipped' class to create the flipping effect
-  card.classList.toggle('flipped');
-}
+  const front = card.querySelector('.flip-card-front');
+  const back = card.querySelector('.flip-card-back');
 
+  if (front.style.display !== 'none') {
+    gsap.to(front, {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        front.style.display = 'none';
+        back.style.display = 'flex';
+        gsap.to(back, { opacity: 1, duration: 0.25 });
+      }
+    });
+  } else {
+    gsap.to(back, {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        back.style.display = 'none';
+        front.style.display = 'flex';
+        gsap.to(front, { opacity: 1, duration: 0.25 });
+      }
+    });
+  }
+}
 </script>

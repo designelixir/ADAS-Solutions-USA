@@ -8,7 +8,7 @@ nav {width: 100%;}
 .site-navigation-item a:hover {color: var(--red); }
 #mobileMenu .site-navigation-item a {color: black!important; padding: 10px;}
 .site-navigation-item a { text-decoration: none; color: white; font-size: 18px;}
-.active-link a {text-decoration: underline; color: var(--lightgray); font-weight: 800;}
+.active-link a {color: var(--logored); font-weight: 800;}
 
 #mobileMenu {display: none; width: 100%; background: var(--lightgray); padding: 15px;}
 
@@ -32,6 +32,7 @@ nav {width: 100%;}
       <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
     </div>
     <div  class="site-navigation-list flex-center-end">
+    <a href="/"><img id="home-nav" src="../assets/home-white.svg" style="height: 25px; margin-right: 10px;" alt="Home"/></a>
     {.repeated section items}
 
       <div id="desktopNav" class="site-navigation-item {.section active} active-link{.end}">
@@ -58,6 +59,7 @@ nav {width: 100%;}
       <img src="../assets/triangle.svg" style="width: 2.5vw; max-width: 50px; z-index: -1;"/>
       <div id="mobileMenu">
         <div class="site-navigation-list flex-center-center flex-wrap">
+        <a href="/"><img id="home-nav" src="../assets/home-white.svg" style="height: 25px; margin-right: 10px;" alt="Home"/></a>
           {.repeated section items}
 
             <div class="site-navigation-item {.section active} active-link{.end}">
@@ -86,24 +88,29 @@ nav {width: 100%;}
 <script>
   $(document).ready(function() {
     
+    // Check if the body has a data-nav-attr of 'home'
+    if ($('body').data('nav-attr') === 'home') {
+      $('#home-nav').attr('src', '../assets/home-active.svg');
+    }
+
     $('#hamburger').click(function() {
       $('#mobileMenu').slideToggle(300); 
       if ($(this).attr('src') === '../assets/menu.svg') {
-        $(this).attr('src', '../assets/close.svg'); // Change to 'close' icon
+        $(this).attr('src', '../assets/close.svg'); 
       } else {
-        $(this).attr('src', '../assets/menu.svg'); // Change back to 'hamburger' icon
+        $(this).attr('src', '../assets/menu.svg'); 
       }
     });
 
-    // Sticky header on scroll with smooth snapping
+    
     var header = $('.site-header');
     var headerHeight = header.outerHeight();
 
     $(window).scroll(function() {
       if ($(window).scrollTop() > headerHeight) {
-        header.css('top', '0px'); // Snap smoothly to the top
+        header.css('top', '0px'); 
       } else {
-        header.css('top', '45px'); // Transition smoothly back to its original position
+        header.css('top', '45px');
       }
     });
   });
