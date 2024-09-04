@@ -43,10 +43,17 @@
     </div>
     <div class="banner-bg-reverse flex-center-center" style="margin-top: -100px; padding-top: 100px">
         <squarespace:block-field id="Consumer-HowItWorks-Title" columns="1" />
-        <div>   
+        
+    </div>
+    <div class="flex-center-center">
+        <div style="max-width: 800px">   
             <squarespace:block-field id="Consumer-HowItWorks-Content" columns="1" />
-
         </div>
+        <div class="flex-center-center">
+                <squarespace:block-field id="Consumer-Button-3" columns="1" />
+                <squarespace:block-field id="Consumer-Button-4" columns="1" />
+        </div>
+
     </div>
 
     
