@@ -17,16 +17,19 @@
 
 </style>
 
+<squarespace:block-field id="Stat1" columns="1" />
 <div class="progress-container">
-    <squarespace:block-field id="Stat1" columns="1" />
+    
     <div class="progress-bar" id="progress-bar-1"></div>
 </div>
+<squarespace:block-field id="Stat2" columns="1" />
 <div class="progress-container">
     <div class="progress-bar" id="progress-bar-2"></div>
-    <squarespace:block-field id="Stat2" columns="1" />
+    
 </div>
+<squarespace:block-field id="Stat3" columns="1" />
 <div class="progress-container">
-    <squarespace:block-field id="Stat3" columns="1" />
+    
     <div class="progress-bar" id="progress-bar-3"></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
