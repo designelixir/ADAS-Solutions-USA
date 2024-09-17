@@ -34,10 +34,11 @@
         </div>
       <section>
         
-            <div class="banner-bg" style="margin-bottom: -50px;">
+            <div class="banner-bg" style="margin-bottom: -25px;">
                 <squarespace:block-field id="WhatIsADAS-Description" columns="1" />        
             </div>
-            <squarespace:query collection="glossary" limit="20">
+            <squarespace:query collection="glossary" tag="diagram" limit="20">
+            
                 {.repeated section items}
                 <script>
                 var description = `

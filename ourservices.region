@@ -37,8 +37,8 @@
         <squarespace:block-field id="WhatIsADAS-Description" columns="1" />
       </section>
 
-        <section id="WhatIsADAS" style=" width: 100%;">
-            <squarespace:query collection="glossary" limit="20">
+        <section id="WhatIsADAS" style=" width: 100%; margin-top: 25px;">
+            <squarespace:query collection="glossary" tag="diagram" limit="20">
             
                 {.repeated section items}
                 <script>
