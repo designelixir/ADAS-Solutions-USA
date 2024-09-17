@@ -1,0 +1,324 @@
+<style>
+.adas-diagram-container { background-image: url('../assets/car-diagram.png');  }
+.adas-diagram-overlay {}
+.fill-bg {width: 100%; height: 70vw; max-height: 1290px;  background-size: cover; background-position: center center; background-repeat: no-repeat; background-origin: center center;}
+.diagram-text {width: calc(90vw / 13) * 6.5; border: 2px solid blue; }
+.grid { width: 100%; height: 100%;}
+.grid-1 {width: calc(100% / 12); height: calc(100% / 12); }
+.grid-2 {width: calc((100% / 12)*2); height: calc(100% / 12); }
+.grid-3 {width: calc((100% / 12)*3); height: calc(100% / 12); }
+.grid-6 {width: calc((100% / 12) * 6); height: calc((100% / 12) * 3); }
+.grid-12 {width: 100%; height: calc((100% / 12) * 3);}
+.grid-6-spacer {width: calc((100% / 12) * 6); height: calc((100% / 12) * 3); transform: translateY(calc(-(100% / 12) * 3)) ; }
+.grid-with-item:hover .label { font-weight: 500!important; cursor: pointer;}
+.label {background: rgba(255,255,200,0.75); font-weight: 200; margin: 0!important; line-height: 15px; font-size: 14px; font-family: 'Archivo', sans-serif; border-radius: 3px; padding: 5px; text-align: center;}
+
+.show-me { display: none;}
+.hide-me {display: block; }
+@media screen and (max-width: 860px) {
+  .label {font-size: 12px; line-height: 14px;}
+  .fill-bg {height: 95vh;}
+  .hide-me {display: none}
+  .show-me {display: block;}
+}
+
+#title-content {max-width: 500px;}
+
+.circle {position: absolute; width: 20px; height: 20px; position: relative; }
+.circle:after {content: ""; display: block; width: 100%; height: 100%; background-color: #75daad; border-radius: 50px; animation: circle 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;}
+
+.legend-item {height: 25px; width: 50px; margin-right: 10px; }
+.legend-item p {opacity: 0.5!important; font-weight: 500;}
+.legend-item-wrapper.active .legend-item {border: 2px solid black;}
+.legend-item-wrapper.active p{opacity: 1!important; font-weight: 500; }
+
+#longRangeRadar .legend-item {background: #232323}
+#cameras .legend-item {background: #DADADA}
+#lidar .legend-item {background: #878687}
+
+@keyframes pulse {
+  0% {transform: scale(0.33);}80%,100% {opacity: 0;}}
+
+@keyframes circle {0% {transform: scale(0.8);}50% {transform: scale(1);}100% {transform: scale(0.8);}}
+
+</style>
+
+
+
+<div class="adas-diagram-container fill-bg">
+    <div class="adas-diagram-overlay fill-bg">
+        <div class="grid flex-end-end flex-wrap">
+            <div class="grid-12" style="padding: 0 25px;">
+                        <h1 className="no-text-spacing"><strong className="no-text-spacing">What is ADAS?</strong></h1>
+                        <p className="no-text-spacing" id="diagram-instruction">Click one of the features to learn more.</p>
+                        <div id="title-content"></div>
+                    </div>
+
+            {#  Row 2  }
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1 show-me"></div>
+            <div class="grid-1 show-me"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>    
+            <div class="grid-2 grid-with-item" id="lka" onclick="handleADASChange('lka')" style="display: flex; align-items: flex-end; justify-content: flex-end">
+                <h6 class="label">Lane Keep Assist</h6>
+            </div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+
+            {#  Row 3  }
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1 show-me"></div>
+            <div class="grid-1 show-me"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1 centered-text flex-center-start flex-column no-flex-grow">
+                <div class="circle" style="margin-left: -40%"></div>
+                <div style="height: calc(100% - 35px)"></div>
+                <div class="circle" style="margin-left: 40%;"></div>
+            </div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+
+            {#  Row 4  }
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1"></div>
+            <div class="grid-3 grid-with-item flex-center-center flex-column no-flex-grow" id="tsr" onclick="handleADASChange('tsr')">
+                <div class="circle"></div>
+                <h6 class="label">Traffic Sign Recognition</h6>
+            </div>
+            <div class="grid-1 show-me"></div>
+            <div class="grid-1 show-me"></div>
+            <div class="grid-1 show-me"></div>
+            <div class="grid-1 show-me"></div>
+            
+            
+            <div class="grid-2 grid-with-item flex-end-start no-flex-grow flex-column" id="ACC" onclick="handleADASChange('ACC')">
+                <h6 class="label">Adaptive Cruise Control</h6>
+            </div>
+            <div class="grid-2 grid-with-item flex-start-end no-flex-grow flex-column" id="bsm" onclick="handleADASChange('bsm')">
+                <div class="circle" style="margin-left: 15%"></div>
+                <h6 class="label">Blind Spot Monitoring</h6>
+            </div>
+            <div class="grid-2 hide-me grid-with-item flex-start-end no-flex-grow flex-column" id="abs" onclick="handleADASChange('abs')">
+                <div class="circle"></div>
+                <h6 class="label">Anti-Lock Braking System</h6>
+            </div>
+                
+            {#  Row 5  }
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            
+            {#  Row 6  }
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            
+            <div class="grid-2 grid-with-item flex-center-center flex-column no-flex-grow" id="aeb" onclick="handleADASChange('aeb')">
+                <div class="circle" style="margin-left: 25%"></div>
+                <h6 class="label">Autonomous Emergency Braking</h6>
+            </div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            
+            <div class="grid-3 grid-with-item flex-center-center flex-column no-flex-grow" id="360" onclick="handleADASChange('360')">
+                <div class="circle"></div>
+                <h6 class="label">360&deg; Viewing System</h6>
+            </div>
+            <div class="grid-1"></div>
+
+            {#  Row 7  }
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            
+
+            {#  Row 8  }
+            <div class="grid-3 grid-with-item flex-center-center flex-column no-flex-grow" id="fcw" onclick="handleADASChange('fcw')">
+                <div class="circle"></div>
+                <h6 class="label">Forward Collision Warning</h6>
+            </div>
+            <div class="grid-1"></div>
+            <div class="grid-2 grid-with-item flex-center-center flex-column no-flex-grow" id="ldw" onclick="handleADASChange('ldw')">
+                <div class="circle" style="margin-left: 25%"></div>
+                <h6 class="label">Lane Departure Warning</h6>
+            </div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+
+            {#  Row 9  }
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            <div class="grid-1 hide-me"></div>
+            
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            
+                
+            {#  Row 10  }
+            <div class="grid-3 grid-with-item flex-center-center flex-column no-flex-grow" id="pcam" onclick="handleADASChange('pcam')">
+                <div class="circle"></div>
+                <h6 class="label">Pedestrian Crash Avoidance Mitigation</h6>
+            </div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+            <div class="grid-1"></div>
+                
+                
+        
+        </div>
+    </div>
+</div>
+
+<script>
+
+  function handleADASChange(inputString) {
+    $('.legend-item-wrapper').removeClass('active')
+    switch (inputString) {
+      case "ACC":
+        $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/lane-assist.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+        $('#ACC .label').css({"font-weight": "600", "border": "2px solid black"})
+        $("#diagram-instruction").css('display', 'none')
+        $("#title-content").html(descriptionArray[12])
+        $('#longRangeRadar').addClass('active')
+        $("#diagram-instruction").css('display', 'none')
+        break;
+
+    case "360":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/360degree.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#360 .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[11])
+    $('#cameras').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    case "lka":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/lane-keep.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#lka .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[10])
+    $('#cameras').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    case "bsm":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/blind-spot.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#bsm .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[9])
+    $('#cameras').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    case "aeb":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/auto-braking.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#aeb .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[8])
+    $('#lidar').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    
+
+    case "fcw":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/auto-braking.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#fcw .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[6])
+    $('#lidar').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    case "tsr":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/traffic-sign.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#tsr .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[5])
+    $('#cameras').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    case "abs":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/auto-braking.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#abs .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[4])
+    $('#lidar').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    case "pcam":
+    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/pcam.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+    $('#pcam .label').css({"font-weight": "600", "border": "2px solid black"})
+    $("#title-content").html(descriptionArray[3])
+    $('#lidar').addClass('active')
+    $("#diagram-instruction").css('display', 'none')
+    break;
+
+    case "ldw":
+        $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/lane-departure-warning2.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
+        $('#ldw .label').css({"font-weight": "600", "border": "2px solid black"})
+        $("#diagram-instruction").css('display', 'none')
+        $("#title-content").html(descriptionArray[2])
+        $('#longRangeRadar').addClass('active')
+        $("#diagram-instruction").css('display', 'none')
+        break;
+
+      default:
+        $(".adas-diagram-overlay").css("background-image", "unset");
+        $("#diagram-instruction").css('display', 'block')
+        $('.label *').css({"font-weight": "200", "border": "unset"})
+        $("#diagram-instruction").css('display', 'none')
+    }
+  }
+  $(".adas-selector").on("click", function() {
+    
+    var adasFeature = $(this).data("feature"); 
+    handleADASChange(adasFeature);
+  });
+
+
+</script>
+

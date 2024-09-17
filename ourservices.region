@@ -9,25 +9,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script>
+        var descriptionArray = []
+    </script>
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
-      <div class="page-hero flex-center-center" style="background-image: url('{collection.mainImage.assetUrl}')">
+      <div class="page-hero flex-center-center" style="background-image: url('{collection.mainImage.assetUrl}'); margin-bottom: unset;">
         <div class="page-hero-content">
           <h1>{collection.title}</h1>
           {.if collection.description}
-            <p>{collection.description}</p>
+            <h4>{collection.description|safe}</h4>
           {.end}
         </div>
       </div>
+
+      <section class="basic-padding">
+        <squarespace:block-field id="Our-Services-Description" columns="1" />
+      </section>
+
+        <section id="WhatIsADAS" style=" width: 100%; margin-top: 50px;">
+            <squarespace:query collection="glossary" limit="20">
+            
+                {.repeated section items}
+                <script>
+                var description = `
+                <div id='{urlId}-text' className="diagram-feature-description fade-in">
+                    <h3>{title}</h3>
+                    <p>{excerpt|safe}</p>
+                </div>`
+                descriptionArray.push(description)
+                </script>
+                {.end}                        
+            </squarespace:query>
+            
+            {@|apply adasDiagram.block}
+        </section>
+        <div  id="legend" style="padding: 10px; display: none;">
+                            <h4>Legend</h4>
+                            <div class="flex-start-start flex-wrap">
+                                <div class="flex-center-start legend-item-wrapper" id="longRangeRadar">
+                                    <div class="legend-item"></div><p>Long Range Radar</p>
+                                </div>
+                                <div class="flex-center-start legend-item-wrapper" id="lidar">
+                                    <div class="legend-item"></div><p>Lidar</p>
+                                </div>
+                                <div class="flex-center-start legend-item-wrapper" id="cameras">
+                                    <div class="legend-item"></div><p>Cameras</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
        {squarespace.main-content}
       </main>
       {@|apply footer.block}
 
     </div>
+    
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     {squarespace-footers}
 
