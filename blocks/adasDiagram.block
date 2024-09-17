@@ -49,8 +49,8 @@
     <div class="adas-diagram-overlay fill-bg">
         <div class="grid flex-end-end flex-wrap">
             {#  Row 1  }
-            <div class="grid-12" style="padding: 0 25px;">            
-                <div id="title-content"></div>
+            <div class="grid-12 flex-end-start no-flex-grow" style="padding: 0 25px;">            
+                <div id="title-content" class="full-width"></div>
             </div>
 
             {#  Row 2  }

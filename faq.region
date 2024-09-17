@@ -26,10 +26,18 @@
           {.end}
         </div>
       </div>
+      <div class="flex-center-center flex-wrap">
+        <squarespace:block-field id="FAQ-Button1" columns="1" />
+        <squarespace:block-field id="FAQ-Button2" columns="1" />
+        <squarespace:block-field id="FAQ-Button3" columns="1" />
+        <squarespace:block-field id="FAQ-Button4" columns="1" />        
+        </div>
       <section>
-        <squarespace:block-field id="WhatIsADAS-Description" columns="1" />
+        
+            <div class="banner-bg" style="margin-bottom: -50px;">
+                <squarespace:block-field id="WhatIsADAS-Description" columns="1" />        
+            </div>
             <squarespace:query collection="glossary" limit="20">
-            
                 {.repeated section items}
                 <script>
                 var description = `
@@ -45,7 +53,29 @@
             {@|apply adasDiagram.block}
         
       </section>
-      <section class="standard-padding">
+      <section >
+        <div class="banner-bg">
+            <squarespace:block-field id="FrequentlyAskedQuestions" columns="1" />        
+        </div>
+        <div class="basic-padding flex-start-start flex-wrap">
+            <squarespace:query collection="faq-resources" category="resources" limit="20">
+                {.repeated section items}
+                
+                <div id='{urlId}' className="summary-card" onclick="window.open('{fullUrl}', '_self')">
+                    <div class="summary-card-image" style="background-image: url({assetUrl})"></div>
+                    <h3 class="summary-card-title">{title}</h3>
+                    <p>{excerpt|safe|truncate 250}</p>
+                </div>
+                {.end}                        
+            </squarespace:query>
+        </div>
+        </section>
+        <section class="basic-padding">
+        <div class="banner-bg">
+            <squarespace:block-field id="Resources" columns="1" />        
+        </div>
+        </section>
+        <section class="basic-padding">
        {squarespace.main-content}
        </section>
       </main>
