@@ -10,9 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     {squarespace-headers}
-    <script>
-        var descriptionArray = []
-    </script>
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
@@ -27,21 +24,14 @@
         </div>
       </div>
         
-        <section class="basic-padding">
-            <squarespace:query collection="glossary" limit="100">
-                {.repeated section items}
-                
-                <div id='{urlId}' class="summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
-                    <h3 class="summary-title-card">{title}</h3>
-                    <p class="summary-excerpt-card">{body}</p>
-                </div>
-                {.end}                        
-            </squarespace:query>
+        <section class="basic-padding flex-start-start flex-wrap">
+            {squarespace.main-content}
        </section>
       </main>
       {@|apply footer.block}
 
     </div>
+    
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     {squarespace-footers}
 

@@ -1,0 +1,26 @@
+
+<section class="basic-padding flex-start-start flex-wrap">
+{.repeated section items}
+  <div id='{urlId}' class=" glossary-card box-shadow">
+      <h3 class="summary-title-card">{title}</h3>
+      <p class="summary-excerpt-card">{body}</p>
+  </div>
+{.end}
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const itemsContainer = document.querySelector(".basic-padding");
+  const items = Array.from(itemsContainer.querySelectorAll(".glossary-card"));
+  const sortedItems = items.sort((a, b) => {
+    const titleA = a.querySelector(".summary-title-card").textContent.trim().toLowerCase();
+    const titleB = b.querySelector(".summary-title-card").textContent.trim().toLowerCase();
+    
+    if (titleA < titleB) return -1;
+    if (titleA > titleB) return 1;
+    return 0;
+  });
+  itemsContainer.innerHTML = "";
+  sortedItems.forEach(item => itemsContainer.appendChild(item));
+});
+</script>
