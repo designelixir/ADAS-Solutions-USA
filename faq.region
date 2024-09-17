@@ -10,6 +10,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     {squarespace-headers}
+    <script>
+        var descriptionArray = []
+    </script>
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
@@ -23,7 +26,28 @@
           {.end}
         </div>
       </div>
+      <section>
+        <h2><strong>What are Advanced Driver Assistance Systems (ADAS)?</strong></h2>
+            <squarespace:query collection="glossary" limit="20">
+            
+                {.repeated section items}
+                <script>
+                var description = `
+                <div id='{urlId}-text' className="diagram-feature-description fade-in">
+                    <h3>{title}</h3>
+                    <p>{excerpt|safe}</p>
+                </div>`
+                descriptionArray.push(description)
+                </script>
+                {.end}                        
+            </squarespace:query>
+            
+            {@|apply adasDiagram.block}
+        
+      </section>
+      <section class="standard-padding">
        {squarespace.main-content}
+       </section>
       </main>
       {@|apply footer.block}
 

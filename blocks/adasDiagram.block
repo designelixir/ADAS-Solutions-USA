@@ -48,11 +48,10 @@
 <div class="adas-diagram-container fill-bg">
     <div class="adas-diagram-overlay fill-bg">
         <div class="grid flex-end-end flex-wrap">
-            <div class="grid-12" style="padding: 0 25px;">
-                        <h1 className="no-text-spacing"><strong className="no-text-spacing">What is ADAS?</strong></h1>
-                        <p className="no-text-spacing" id="diagram-instruction">Click one of the features to learn more.</p>
-                        <div id="title-content"></div>
-                    </div>
+            {#  Row 1  }
+            <div class="grid-12" style="padding: 0 25px;">            
+                <div id="title-content"></div>
+            </div>
 
             {#  Row 2  }
             <div class="grid-1"></div>

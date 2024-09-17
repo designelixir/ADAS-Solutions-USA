@@ -1,0 +1,53 @@
+<style>
+.item {background: #e2e2e2; padding: 15px; border-radius: 5px; margin: 5px; min-width: 20%; max-width: 20%; text-align: center;}
+.item-bg {height: 80px; width: 100px; background-size: cover; background-position: center center; background-repeat: no-repeat;}
+
+@media screen and (max-width: 860px) {
+  .item {padding: 10px; min-width: 165px; max-width: 20%; padding: 15px 5px 5px}
+  .item h4 {font-size: 16px; line-height: 18px;}
+}
+
+</style>
+
+<div class="flex-start-center flex-wrap full-width item-container">
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/crash-repair.png')"></div>
+        <h4>Collision Repair</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/crash.png')"></div>
+        <h4>Minor Collision</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/alignment.png')"></div>
+        <h4>Wheel Alignment</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/shock.png')"></div>
+        <h4>Suspension Repairs</h4>
+    </div>
+     <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/side-mirror.png')"></div>
+        <h4>Windshield/Side Mirror Replacement</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/airbag.png')"></div>
+        <h4>Front Airbag Windshield Impact</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/sensor.png')"></div>
+        <h4>Sensor/Mounting Bracket Replacement</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/tires.png')"></div>
+        <h4>Ride Height or Tire Size Change</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/diagnose_1.png')"></div>
+        <h4>Diagnostic Trouble Codes (DTCs) Are Present</h4>
+    </div>
+    <div class="item box-shadow flex-center-center flex-column">
+        <div class="item-bg" style="background-image: url('../assets/icons/tsb.png')"></div>
+        <h4>ADAS Related Technical Service Bulletins (TSBs)</h4>
+    </div>
+</div>

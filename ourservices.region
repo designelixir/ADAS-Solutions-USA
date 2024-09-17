@@ -18,7 +18,7 @@
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
-      <div class="page-hero flex-center-center" style="background-image: url('{collection.mainImage.assetUrl}'); margin-bottom: unset;">
+      <div class="page-hero flex-center-center" style="background-image: url('{collection.mainImage.assetUrl}');">
         <div class="page-hero-content">
           <h1>{collection.title}</h1>
           {.if collection.description}
@@ -29,13 +29,15 @@
 
       <section class="basic-padding">
         <squarespace:block-field id="Our-Services-Description" columns="1" />
+        {@|apply whenToCalibrate.block}
       </section>
+
 
       <section class="basic-padding banner-bg">
         <squarespace:block-field id="WhatIsADAS-Description" columns="1" />
       </section>
 
-        <section id="WhatIsADAS" style=" width: 100%; margin-top: 50px;">
+        <section id="WhatIsADAS" style=" width: 100%;">
             <squarespace:query collection="glossary" limit="20">
             
                 {.repeated section items}
