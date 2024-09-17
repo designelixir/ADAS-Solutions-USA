@@ -51,30 +51,47 @@
             </squarespace:query>
             
             {@|apply adasDiagram.block}
-        
+            <squarespace:block-field id="ViewGlossaryButton" columns="1" />
       </section>
       <section >
         <div class="banner-bg">
             <squarespace:block-field id="FrequentlyAskedQuestions" columns="1" />        
         </div>
         <div class="basic-padding flex-start-start flex-wrap">
-            <squarespace:query collection="faq-resources" category="resources" limit="20">
+            <squarespace:query collection="faq-resources" category="FAQ" limit="20">
                 {.repeated section items}
                 
-                <div id='{urlId}' className="summary-card" onclick="window.open('{fullUrl}', '_self')">
-                    <div class="summary-card-image" style="background-image: url({assetUrl})"></div>
-                    <h3 class="summary-card-title">{title}</h3>
-                    <p>{excerpt|safe|truncate 250}</p>
+                <div id='{urlId}' class="summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
+                    <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+                    <h3 class="summary-title-card">{title}</h3>
+                    <p class="summary-excerpt-card">{excerpt|safe|truncate 250}</p>
+                    <a style="font-size: 12px;">Read more &rarr;</a>
                 </div>
                 {.end}                        
             </squarespace:query>
         </div>
         </section>
-        <section class="basic-padding">
+
+        {#  Resources  }
+        <section >
         <div class="banner-bg">
             <squarespace:block-field id="Resources" columns="1" />        
         </div>
+        <div class="basic-padding flex-start-start flex-wrap">
+            <squarespace:query collection="faq-resources" category="Resources" limit="20">
+                {.repeated section items}
+                
+                <div id='{urlId}' class="summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
+                    <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+                    <h3 class="summary-title-card">{title}</h3>
+                    <p class="summary-excerpt-card">{excerpt|safe|truncate 250}</p>
+                    <a style="font-size: 12px;">Read more &rarr;</a>
+                </div>
+                {.end}                        
+            </squarespace:query>
+        </div>
         </section>
+        
         <section class="basic-padding">
        {squarespace.main-content}
        </section>

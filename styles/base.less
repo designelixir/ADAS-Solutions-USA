@@ -123,11 +123,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .small-card {border-radius: 5px; background: var(--lightgray); padding: 25px;}
 .small-service-card {border-radius: 5px; background: var(--lightgray); padding: 25px; max-width: 22%; margin: 1.5%;}
 
-.summary-card {background: #e2e2e2; padding: 15px; border-radius: 5px; min-width: 25%; max-width: 25%; border: 1px solid black;}
-.summary-card-image {height: 150px; width: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center;}
-.summary-card:hover {cursor: pointer; transform: scale(1.1)}
-.summary-card-title {color: var(--darkred); font-family: "Roboto Condensed", sans-serif; font-weight: 500; text-decoration: none;}
-.summary-card-title {color: var(--logored); text-decoration: underline;}
+.summary-card {background: #e2e2e2; padding: 15px; border-radius: 5px; min-width: 25%; max-width: 25%; margin: 1%;}
+.summary-image-card {height: 250px; filter: grayscale(100%); width: 100%; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
+.summary-card:hover .summary-image-card {filter: grayscale(0%);}
+.summary-card:hover {cursor: pointer; transform: scale(1.01)}
+
+.summary-title-card  {text-decoration: unset; color: var(--darkred); line-height: 26px; font-size: 22px; font-family: "Roboto Condensed", sans-serif; font-weight: 500; text-decoration: none;}
+.summary-title-card:hover  {text-decoration: underline;}
+.summary-excerpt-card {font-size: 14px; font-weight: 100; line-height: 18px;}
+
 .summary-metadata-item {text-transform: uppercase; color: black; background: var(--lightgray); padding: 2px 5px; font-size: 8px; border-radius: 2px;}
 .summary-metadata-item a {color: black;}
 .summary-excerpt {max-height: 75px; overflow-y: hidden;}
