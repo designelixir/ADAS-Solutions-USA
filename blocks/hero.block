@@ -34,7 +34,7 @@
 #heroVideo {overflow: hidden;}
 .hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; margin-bottom: -5px; height: 70vh; overflow: hidden;} 
 .hero-video-wrapper {max-width: 1300px; border-radius: 5px; width: 100%; overflow: hidden; min-height: 70vh; max-height: 70vh; position: relative; }
-.vimeo-wrapper {width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden; pointer-events: none;}
+.vimeo-wrapper {width: 120%; height: 100%; position: absolute; top: 0; left: -20%; overflow: hidden; pointer-events: none;}
 .vimeo-wrapper iframe {width: 100%; height: 100%; position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%;  object-fit: cover; }
 
 </style>
@@ -74,9 +74,36 @@
 
 <script>
   $(document).ready(function() {
+
+$(document).ready(function() {
+    function resizeVimeoWrapper() {
+        
+        var heroVideoWrapperWidth = $('.hero-video-wrapper').width();
+        var heroVideoWrapperHeight = $('.hero-video-wrapper').height();
+        var heroVideoWrapperPosition = $('.hero-video-wrapper').top();
+        
+        
+        $('.vimeo-wrapper').css({
+            width: heroVideoWrapperWidth * 1.5,
+            height: heroVideoWrapperHeight * 1.5,
+            top: heroVideoWrapperPosition = heroVideoWrapperPosition
+        });
+    }
+
+    
+    resizeVimeoWrapper();
+
+    
+    $(window).resize(function() {
+        resizeVimeoWrapper();
+    });
+});
+
+
+
     // Initialize tabs
-    $('#tab2').addClass('active');
-    $('#tab2-content-wrapper').addClass('active');
+    $('#tab1').addClass('active');
+    $('#tab1-content-wrapper').addClass('active');
 
     $('.tab').click(function() {
       $('.tab').removeClass('active');

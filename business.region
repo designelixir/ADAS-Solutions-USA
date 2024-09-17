@@ -42,7 +42,6 @@
 <div class="banner-bg-reverse" style="z-index: 2; position: relative; padding: 80px 25px;">
     <squarespace:block-field id="Business-Statistics-Title" columns="1" />
 </div>
-    
     {@|apply statistics.block}
     <div class="basic-padding">
     <squarespace:block-field id="Business-Statistics-Description" columns="1" />
