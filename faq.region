@@ -27,7 +27,7 @@
         </div>
       </div>
       <section>
-        <h2><strong>What are Advanced Driver Assistance Systems (ADAS)?</strong></h2>
+        <squarespace:block-field id="WhatIsADAS-Description" columns="1" />
             <squarespace:query collection="glossary" limit="20">
             
                 {.repeated section items}
