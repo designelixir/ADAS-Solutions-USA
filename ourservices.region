@@ -31,6 +31,10 @@
         <squarespace:block-field id="Our-Services-Description" columns="1" />
       </section>
 
+      <section class="basic-padding banner-bg">
+        <squarespace:block-field id="WhatIsADAS-Description" columns="1" />
+      </section>
+
         <section id="WhatIsADAS" style=" width: 100%; margin-top: 50px;">
             <squarespace:query collection="glossary" limit="20">
             
