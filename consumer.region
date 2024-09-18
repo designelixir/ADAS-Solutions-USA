@@ -31,7 +31,7 @@
     <div class="flex-end-center">
         <squarespace:query collection="full-adas-solution" tag="Consumer" limit="10">
         {.repeated section items}
-            <div class="small-service-card box-shadow flex-center-center flex-column flex-wrap">
+            <div class="summary-card box-shadow flex-center-center flex-column">
                 <div class="card-icon" style="background-image: url('{assetUrl}')"></div>
                 <h3>{title}</h3>
                 <p class="centered-text">{excerpt|safe}</p>
@@ -49,10 +49,5 @@
         <div style="max-width: 800px">   
             <squarespace:block-field id="Consumer-HowItWorks-Content" columns="1" />
         </div>
-        <div class="flex-center-center">
-                <squarespace:block-field id="Consumer-Button-3" columns="1" />
-                <squarespace:block-field id="Consumer-Button-4" columns="1" />
-        </div>
-
     </div>
 </section>

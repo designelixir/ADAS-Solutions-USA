@@ -54,24 +54,7 @@
             {@|apply adasDiagram.block}
             <squarespace:block-field id="ViewGlossaryButton" columns="1" />
       </section>
-      <section >
-        <div class="banner-bg">
-            <squarespace:block-field id="FrequentlyAskedQuestions" columns="1" />        
-        </div>
-        <div class="basic-padding flex-start-start flex-wrap">
-            <squarespace:query collection="faq-resources" category="FAQ" limit="20">
-                {.repeated section items}
-                
-                <div id='{urlId}' class="summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
-                    <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                    <h3 class="summary-title-card">{title}</h3>
-                    <p class="summary-excerpt-card">{excerpt|safe|truncate 250}</p>
-                    <a style="font-size: 12px;">Read more &rarr;</a>
-                </div>
-                {.end}                        
-            </squarespace:query>
-        </div>
-        </section>
+     
 
         {#  Resources  }
         <section >
@@ -93,7 +76,7 @@
         </div>
         </section>
         
-        <section class="basic-padding">
+        <section>
        {squarespace.main-content}
        </section>
       </main>
