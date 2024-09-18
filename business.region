@@ -13,30 +13,16 @@
     </div>
     {@|apply completeAdasSolution.block}
 
-      
- 
-</div>
 
-<div class="banner-bg-reverse" style="z-index: 2; position: relative; padding: 80px 25px;">
-    <squarespace:block-field id="Business-Statistics-Title" columns="1" />
-</div>
+    <div class="banner-bg-reverse" style="z-index: 2; position: relative; padding: 80px 25px;">
+        <squarespace:block-field id="Business-Statistics-Title" columns="1" />
+    </div>
     {@|apply statistics.block}
+
     <div class="basic-padding">
     <squarespace:block-field id="Business-Statistics-Description" columns="1" />
     </div>
 
-    <div class="flex-center-center flex-column" style="margin-top: 50px;">
-        <div class="image-card">
-            <div class="linear-gradient flex-end-center" style="width: 100%; height: 100%; padding: 25px;">
-                <squarespace:block-field id="Business-Connect-Title" columns="1" />
-            </div>
-        </div>
-        <div class="image-card-text">
-        <squarespace:block-field id="Business-Connect-Description" columns="1" />
-        </div>
-        
-        
-    </div>
     {@|apply callToAction.block}
     
     <main class="content-container" role="main" data-content-field="main-content">
