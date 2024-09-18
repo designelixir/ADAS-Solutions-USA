@@ -31,8 +31,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endCo
 }
 
 </style>
-<div class="flex-start-start" style="overflow-hidden; transform: translateY(-50px);">
-  <div class="other-linear" style="width: 100%; height: 600px; z-index: 3; padding: 50px">
+<div class="flex-start-start" style="overflow-hidden; margin-top: -50px;">
+  <div class="other-linear" style="width: 100%; z-index: 3; padding: 50px">
     <div style="max-width: 600px">
         <squarespace:block-field id="Consumer-Educate-Content" columns="1" />
     </div>

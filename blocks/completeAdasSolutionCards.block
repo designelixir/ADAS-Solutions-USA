@@ -1,0 +1,25 @@
+<div class="flex-end-center">
+    <div class="summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/certified.png')"></div>
+        <h3>Certified</h3>
+        <squarespace:block-field id="Certified-Card-Description" columns="1" />
+    </div>
+
+    <div class="summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/documents.png')"></div>
+        <h3>Insurance Claims</h3>
+        <squarespace:block-field id="Insurance-Card-Description" columns="1" />
+    </div>
+
+    <div class="summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/scheduling.png')"></div>
+        <h3>Easy Scheduling</h3>
+        <squarespace:block-field id="Scheduling-Card-Description" columns="1" />
+    </div>
+
+    <div class="summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/broken-windshield.png')"></div>
+        <h3>Windshields</h3>
+        <squarespace:block-field id="Windshields-Card-Description" columns="1" />
+    </div>
+</div>

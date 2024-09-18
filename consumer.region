@@ -28,19 +28,9 @@
     <div style="padding: 25px; margin: 25px 0 0" class="flex-center-center">
     <squarespace:block-field id="Consumer-Offerings-Title" columns="1" />
     </div>
-    <div class="flex-end-center">
-        <squarespace:query collection="full-adas-solution" tag="Consumer" limit="10">
-        {.repeated section items}
-            <div class="summary-card box-shadow flex-center-center flex-column">
-                <div class="card-icon" style="background-image: url('{assetUrl}')"></div>
-                <h3>{title}</h3>
-                <p class="centered-text">{excerpt|safe}</p>
+    {@|apply completeAdasSolutionCards.block}
 
-            </div>
-        {.end}
-
-        </squarespace:query>
-    </div>
+    
     <div class="banner-bg-reverse flex-center-center" style="margin-top: -100px; padding-top: 100px">
         <squarespace:block-field id="Consumer-HowItWorks-Title" columns="1" />
         
