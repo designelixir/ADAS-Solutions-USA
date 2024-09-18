@@ -34,7 +34,7 @@
 #heroVideo {overflow: hidden;}
 .hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; margin-bottom: -5px; height: 70vh; overflow: hidden;} 
 .hero-video-wrapper {max-width: 1300px; border-radius: 5px; width: 100%; overflow: hidden; min-height: 70vh; max-height: 70vh; position: relative; }
-.vimeo-wrapper {width: 120%; height: 100%; position: absolute; top: 0; left: -20%; overflow: hidden; pointer-events: none;}
+.vimeo-wrapper {width: 120%; height: 120%; position: absolute; top: -10%; left: 0; overflow: hidden; pointer-events: none;}
 .vimeo-wrapper iframe {width: 100%; height: 100%; position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%;  object-fit: cover; }
 
 </style>
@@ -61,8 +61,8 @@
     
     
 </div>
-<div class="tab-container flex-center-center flex-column">
-        <div class="flex-start-start full-width">
+<div class="tab-container flex-center-center">
+        <div class="flex-end-spacebetween">
             <div class="tab tab-left" id="tab1">
                 <squarespace:block-field id="tab1-Title" columns="1"/>    
             </div>
@@ -73,35 +73,21 @@
     </div>
 
 <script>
-  $(document).ready(function() {
 
-$(document).ready(function() {
-    function resizeVimeoWrapper() {
-        
-        var heroVideoWrapperWidth = $('.hero-video-wrapper').width();
-        var heroVideoWrapperHeight = $('.hero-video-wrapper').height();
-        var heroVideoWrapperPosition = $('.hero-video-wrapper').top();
-        
-        
-        $('.vimeo-wrapper').css({
-            width: heroVideoWrapperWidth * 1.5,
-            height: heroVideoWrapperHeight * 1.5,
-            top: heroVideoWrapperPosition = heroVideoWrapperPosition
-        });
+function resizeIframe() {
+    console.log("called")
+      var heroWrapperHeight = $('.hero-video-wrapper').height();
+      var aspectRatio = 16 / 9;
+      var newWidth = heroWrapperHeight * aspectRatio;
+
+      $('.vimeo-wrapper iframe').css({
+        'height': heroWrapperHeight + 'px',
+        'width': newWidth + 'px'
+      });
     }
 
-    
-    resizeVimeoWrapper();
+  $(document).ready(function() {
 
-    
-    $(window).resize(function() {
-        resizeVimeoWrapper();
-    });
-});
-
-
-
-    // Initialize tabs
     $('#tab1').addClass('active');
     $('#tab1-content-wrapper').addClass('active');
 
@@ -114,22 +100,12 @@ $(document).ready(function() {
       $('#' + tabId + '-content-wrapper').addClass('active');
     });
 
-    // Resize iframe function
-    function resizeIframe() {
-      var heroWrapperHeight = $('.hero-video-wrapper').height();
-      var aspectRatio = 16 / 9; // Standard aspect ratio for videos
-      var newWidth = heroWrapperHeight * aspectRatio;
+    
 
-      $('.vimeo-wrapper iframe').css({
-        'height': heroWrapperHeight + 'px',
-        'width': newWidth + 'px'
-      });
-    }
-
-    // Call resizeIframe on page load
+    
     resizeIframe();
 
-    // Call resizeIframe on window resize
+    
     $(window).resize(function() {
       resizeIframe();
     });

@@ -13,7 +13,7 @@
 </style>
 
 {#  Complete ADAS Solution Bullet Points  }
-<div class="flex-start-start flex-column" style="margin: 50px 0;">
+<div class="flex-start-start flex-column" style="padding: 50px 25px 50px 0;">
     <div class="bullet-point-wrapper" id="calibrate">
         <div class="bullet-point flex-start-start">
             
