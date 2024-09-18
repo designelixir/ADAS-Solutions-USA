@@ -3,6 +3,11 @@
 .bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 100px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 100px 100px; padding: 10px; margin-right: 25px;}
 .card-icon {min-width: 75px; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
 .bullet-point-body {margin-left: 125px; display: none;}
+.accordion-item__click-target span {
+  color: var(--darkred);
+  font-weight: 600;
+  font-family: var(--roboto);
+}
 
 </style>
 
