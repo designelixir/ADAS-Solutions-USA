@@ -1,0 +1,97 @@
+{#  Complete ADAS Solution Bullet Points  }
+<div class="flex-start-start flex-column">
+    <div class="bullet-point-wrapper" id="calibrate" onclick="expand('calibrate-body')">
+        <div class="bullet-point flex-center-start">
+            
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/calibrate_2.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <h2 class="no-text-spacing red-text" style="margin-top: 35px;">Calibrate</h2>
+                <squarespace:block-field id="Calibrate-Description" columns="1" />
+                
+                <a class="red-text no-text-spacing" style="text-decoration: underline; font-family: 'Roboto Condensed', sans-serif; font-weight: 300;">Read more +</a>
+                
+            </div>
+        </div>
+        <div class="bullet-point-body" id="calibrate-body">
+            <squarespace:block-field id="Calibrate-Details" columns="1" />
+        </div>
+    </div>
+
+    <div class="bullet-point-wrapper" id="diagnose" onclick="expand('diagnose-body')">
+        <div class="bullet-point flex-center-start">
+            
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/diagnose_1.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <h2 class="no-text-spacing red-text" style="margin-top: 35px;">Diagnose</h2>
+                <squarespace:block-field id="Diagnose-Description" columns="1" />
+                
+                <a class="red-text no-text-spacing" style="text-decoration: underline; font-family: 'Roboto Condensed', sans-serif; font-weight: 300;">Read more +</a>
+                
+            </div>
+        </div>
+        <div class="bullet-point-body" id="diagnose-body">
+            <squarespace:block-field id="Diagnose-Details" columns="1" />
+        </div>
+    </div>
+
+    <div class="bullet-point-wrapper" id="Program" onclick="expand('Program-body')">
+        <div class="bullet-point flex-center-start">
+            
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/program_2.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <h2 class="no-text-spacing red-text" style="margin-top: 35px;">Program</h2>
+                <squarespace:block-field id="Program-Description" columns="1" />
+                
+                <a class="red-text no-text-spacing" style="text-decoration: underline; font-family: 'Roboto Condensed', sans-serif; font-weight: 300;">Read more +</a>
+                
+            </div>
+        </div>
+        <div class="bullet-point-body" id="Program-body">
+            <squarespace:block-field id="Program-Details" columns="1" />
+        </div>
+    </div>
+
+    <div class="bullet-point-wrapper" id="Alignment">
+        <div class="bullet-point flex-center-start">
+            
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/alignment.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <h2 class="no-text-spacing red-text" style="margin-top: 35px;">Alignment</h2>
+                <squarespace:block-field id="Alignment-Description" columns="1" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function expand(bodyId) {
+  const bodyElement = document.getElementById(bodyId);
+  
+  if (bodyElement.style.display === 'none' || bodyElement.style.display === '') {
+    gsap.to(bodyElement, {
+      opacity: 1,
+      duration: 0.5,
+      display: 'block', 
+      onStart: () => {
+        bodyElement.style.display = 'block'; 
+      }
+    });
+  } else {
+    gsap.to(bodyElement, {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        bodyElement.style.display = 'none'; 
+      }
+    });
+  }
+}
+</script>

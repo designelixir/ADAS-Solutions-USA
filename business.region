@@ -11,32 +11,10 @@
     <div class="banner-bg" style="z-index: 2; position: relative;">
         <squarespace:block-field id="Business-Educate" columns="1" />
     </div>
+    {@|apply completeAdasSolution.block}
 
-    <div class="">
-  <squarespace:query collection="full-adas-solution" tag="Business" limit="10">
-    {.repeated section items}
-    <div class="bullet-point-wrapper" id={title} {.if body} onclick="expand('{title}-body')"{.end}>
-        <div class="bullet-point flex-center-start">
-            
-            <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url({assetUrl});" class="card-icon"></div>
-            </div>
-            <div class="bullet-point-content">
-                <h2 class="no-text-spacing red-text" style="margin-top: 35px;">{title}</h2>
-                <h4>{excerpt|safe}</h4>
-                {.if body}
-                <a class="red-text no-text-spacing" style="text-decoration: underline; font-family: 'Roboto Condensed', sans-serif; font-weight: 300;">Read more +</a>
-                {.end}
-            </div>
-        </div>
-        <div class="bullet-point-body" id="{title}-body">
-            {.if body}
-                    {body}
-                {.end}
-        </div>
-    </div>
-    {.end}
-  </squarespace:query>
+      
+ 
 </div>
 
 <div class="banner-bg-reverse" style="z-index: 2; position: relative; padding: 80px 25px;">
@@ -66,27 +44,4 @@
     </main>
 </section>
 
-<script>
-function expand(bodyId) {
-  const bodyElement = document.getElementById(bodyId);
-  
-  if (bodyElement.style.display === 'none' || bodyElement.style.display === '') {
-    gsap.to(bodyElement, {
-      opacity: 1,
-      duration: 0.5,
-      display: 'block', 
-      onStart: () => {
-        bodyElement.style.display = 'block'; 
-      }
-    });
-  } else {
-    gsap.to(bodyElement, {
-      opacity: 0,
-      duration: 0.5,
-      onComplete: () => {
-        bodyElement.style.display = 'none'; 
-      }
-    });
-  }
-}
-</script>
+
