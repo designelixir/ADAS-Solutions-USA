@@ -4,7 +4,7 @@ footer {width: 95vw; max-width: 1400px;  }
 nav {width: 100%;   }
 .site-navigation-wrapper { background: var(--darkgray); width: 100%; padding: 10px 30px;}
 .logo {height: 100px;}
-
+#Footer-Blocks {min-width: 100px;}
 @media screen and (max-width: 600px) {
   .logo {height: 75px;}
 }
@@ -26,6 +26,7 @@ nav {width: 100%;   }
     
 </nav>
 <div class="flex-center-center flex-column basic-padding" style="padding-top: 0;">
+    <squarespace:navigation navigationId="footerNav" template="footer-navigation" />
     <squarespace:block-field id="Footer-Blocks" columns="1" />
     <p>Copyright &copy; ADAS Solutions USA</p>
     <a class="no-text-spacing xs-text" style="color: gray; text-decoration: none" target="_blank" href="https://designelixir.studio">Made with &hearts; by Design Elixir Studio </a>
