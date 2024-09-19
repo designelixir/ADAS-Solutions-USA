@@ -20,12 +20,15 @@
 }
 
 #MeetOurTeam-Description {margin-right: 25px;}
+#MeetOurTeam-Video {min-width: 40vw;}
 
 @media screen and (max-width: 1000px) {
     .about-intro-wrapper {flex-direction: column;}
     .about-intro-image-wrapper {order: 2; width: 100%; padding-right: unset!important;}
     .about-intro-text {order: 1; width: 100%; margin-bottom: 25px;}
     .about-intro-content {flex-direction: column!important;}
+    #MeetOurTeam-Video {min-width: unset; width: 100%; margin-top:25px;}
+    #MeetOurTeam-Description {margin-right: unset;}
 }
 </style>
 

@@ -40,7 +40,7 @@
       </div>
       {@|apply ourFocus.block}
 
-      <div class="flex-start-start flex-break basic-padding">
+      <div class="flex-start-start flex-break" style="padding: 50px 25px;">
         <squarespace:block-field id="MeetOurTeam-Description" columns="1" />
         <squarespace:block-field id="MeetOurTeam-Video" columns="1" />
 
