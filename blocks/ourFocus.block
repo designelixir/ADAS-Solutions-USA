@@ -14,16 +14,16 @@
     </div>
 
     <div class="complete-summary-card box-shadow flex-center-center flex-column">
-        <div class="card-icon" style="background-image: url('../assets/icons/staff.png')"></div>
+        <div class="card-icon" style="background-image: url('../assets/icons/technician.png')"></div>
         <squarespace:block-field id="ExpertTechnicians-Description" columns="1" />
     </div>
 
     <div class="complete-summary-card box-shadow flex-center-center flex-column">
-        <div class="card-icon" style="background-image: url('../assets/icons/tsb.png')"></div>
+        <div class="card-icon" style="background-image: url('../assets/icons/tsb-no-padding.png')"></div>
         <squarespace:block-field id="Evaluation-Description" columns="1" />
     </div>
     <div class="complete-summary-card box-shadow flex-center-center flex-column">
-        <div class="card-icon" style="background-image: url('../assets/icons/calibate_2.png')"></div>
+        <div class="card-icon" style="background-image: url('../assets/icons/calibrate_2.png')"></div>
         <squarespace:block-field id="CommonSense-Description" columns="1" />
     </div>
 </div>

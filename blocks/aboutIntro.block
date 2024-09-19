@@ -1,8 +1,6 @@
 <style>
 .about-intro-wrapper {padding: 25px;}
-.about-intro-image-wrapper {min-width: 40vw;}
-.about-intro-text {padding: 25px;}
-.about-intro-image img {height: 110%!important;}
+.about-intro-image-wrapper {min-width: 40vw; padding-right: 25px;}
 #AboutIntro {margin-bottom: 25px;}
 
 .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor img {
@@ -21,9 +19,11 @@
   flex-wrap: wrap;
 }
 
+#MeetOurTeam-Description {margin-right: 25px;}
+
 @media screen and (max-width: 1000px) {
     .about-intro-wrapper {flex-direction: column;}
-    .about-intro-image-wrapper {order: 2; width: 100%;}
+    .about-intro-image-wrapper {order: 2; width: 100%; padding-right: unset!important;}
     .about-intro-text {order: 1; width: 100%; margin-bottom: 25px;}
     .about-intro-content {flex-direction: column!important;}
 }
