@@ -80,49 +80,22 @@
     </div>
 </div>
       {@|apply services.block}
-      <section class="basic-padding banner-bg-reverse" style="margin-top: -50px; z-index: 3; position: relative; background-color: unset;">
+      
+          
+      
+      <section class="basic-padding" id="whatToExpectCards">
         <squarespace:block-field id="WhatToExpect-Description" columns="1" />
+        {@|apply completeAdasSolutionCards.block}
       </section>
+      
 
 
       <section class="basic-padding banner-bg">
-        <squarespace:block-field id="WhatIsADAS-Description" columns="1" />
+        <squarespace:block-field id="GetStarted-Description" columns="1" />
       </section>
-
-        <section id="WhatIsADAS" style=" width: 100%; margin-top: 25px;">
-            <squarespace:query collection="glossary" tag="diagram" limit="20">
-            
-                {.repeated section items}
-                <script>
-                var description = `
-                <div id='{urlId}-text' className="diagram-feature-description fade-in">
-                    <h3>{title}</h3>
-                    <p>{excerpt|safe}</p>
-                </div>`
-                descriptionArray.push(description)
-                </script>
-                {.end}                        
-            </squarespace:query>
-            
-            {@|apply adasDiagram.block}
-        </section>
-        <div  id="legend" style="padding: 10px; display: none;">
-                            <h4>Legend</h4>
-                            <div class="flex-start-start flex-wrap">
-                                <div class="flex-center-start legend-item-wrapper" id="longRangeRadar">
-                                    <div class="legend-item"></div><p>Long Range Radar</p>
-                                </div>
-                                <div class="flex-center-start legend-item-wrapper" id="lidar">
-                                    <div class="legend-item"></div><p>Lidar</p>
-                                </div>
-                                <div class="flex-center-start legend-item-wrapper" id="cameras">
-                                    <div class="legend-item"></div><p>Cameras</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-       {squarespace.main-content}
+      <section>
+        {squarespace.main-content}
+      </section>
       </main>
       {@|apply footer.block}
 

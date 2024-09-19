@@ -17,9 +17,4 @@
         <div class="card-icon" style="background-image: url('../assets/icons/scheduling.png')"></div>
         <squarespace:block-field id="Scheduling-Card-Description" columns="1" />
     </div>
-
-    <div class="summary-card box-shadow flex-center-center flex-column">
-        <div class="card-icon" style="background-image: url('../assets/icons/broken-windshield.png')"></div>
-        <squarespace:block-field id="Windshields-Card-Description" columns="1" />
-    </div>
 </div>
