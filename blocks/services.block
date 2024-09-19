@@ -25,7 +25,12 @@
 
 .calibration-block-img {width: 75px; height: 75px; margin-bottom: 10px; background-size: contain; background-position: center; background-repeat: no-repeat;}
 
-#Calibration-Description {margin-top: 25px; color: white!important; min-width: 100px;}
+#Calibration-Description * {margin-top: 25px; color: white!important; min-width: 100px;}
+
+.empty {
+  min-width: 100px;
+  border: 1px solid lime;
+}
 
 @media screen and (max-width: 650px) {
     .services-header-title-item {padding: 10px; margin: 1px; text-align: center;}

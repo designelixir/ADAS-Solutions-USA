@@ -35,26 +35,27 @@
         </div>
         <div class="services-header-details">
         {#  Calibration  }
-            <div class="service-type flex-center-center flex-column" id="calibration">
-                <squarespace:query collection="services-list" limit="20" category="Calibration">
+            <div class="service-type flex-center-center flex-column fade-in" id="calibration">
                 <squarespace:block-field id="Calibration-Description" columns="1" />
+                <squarespace:query collection="services-list" limit="20" category="Calibration">
                 <div class="service-toggler flex-center-center flex-wrap" >
                 {.repeated section items}
                     <div class="calibration-block flex-center-center" id="{title}">
-                        <div class="front flex-center-center flex-column">
+                        <div class="front flex-center-center flex-column fade-in">
                             <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
                             <h5 class="centered-text">{title}</h5>
                         </div>
-                        <div class="back flex-center-center">
-                          <p>{body|safe}</p>
+                        <div class="back flex-center-center fade-in">
+                          <p class="white-text centered-text">{body|safe}</p>
                         </div>
                     </div>
                 {.end}
                 </div>
                 </squarespace:query>
+                <squarespace:block-field id="Calibration-CallToAction" columns="1" />
             </div>
           {#  Windshield Replacement  }
-          <div class="service-type flex-center-center flex-column" id="windshieldReplacement">
+          <div class="service-type flex-center-center flex-column fade-in" id="windshieldReplacement">
                 <squarespace:block-field id="Windshield-Description" columns="1" />
                 {#  Rivian  }
                 <squarespace:query collection="services-list" limit="20" category="Windshields">
