@@ -27,10 +27,55 @@
       <section class="basic-padding">
         <squarespace:block-field id="Our-Services-Description" columns="1" />
       </section>
-
+      <div class="services-header">
+    <div class="services-header-wrapper flex-center-center flex-column">
+        <div class="services-header-title flex-center-center">
+            <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggle('calibration')"><h3>Calibration</h3></div>
+            <div id="windshields-Toggle" class="services-header-title-item flex-center-center"  onclick="toggle('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
+        </div>
+        <div class="services-header-details">
+        {#  Calibration  }
+            <div class="service-type flex-center-center flex-column" id="calibration">
+                <squarespace:query collection="services-list" limit="20" category="Calibration">
+                <squarespace:block-field id="Calibration-Description" columns="1" />
+                <div class="service-toggler flex-center-center flex-wrap" >
+                {.repeated section items}
+                    <div class="calibration-block flex-center-center" id="{title}">
+                        <div class="front flex-center-center flex-column">
+                            <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
+                            <h5 class="centered-text">{title}</h5>
+                        </div>
+                        <div class="back flex-center-center">
+                          <p>{body|safe}</p>
+                        </div>
+                    </div>
+                {.end}
+                </div>
+                </squarespace:query>
+            </div>
+          {#  Windshield Replacement  }
+          <div class="service-type flex-center-center flex-column" id="windshieldReplacement">
+                <squarespace:block-field id="Windshield-Description" columns="1" />
+                {#  Rivian  }
+                <squarespace:query collection="services-list" limit="20" category="Windshields">
+                <div class="service-toggler flex-start-center flex-wrap" >
+                {.repeated section items}
+                    <div class="windshield-block flex-center-center" id="{title}">
+                        <div class="front flex-center-center flex-column">
+                            <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
+                            <h5 class="centered-text">{title}</h5>
+                            <p class="white-text">{body}</p>
+                            <squarespace:block-field id="{title|slugify}-Description" columns="1" />
+                        </div>
+                    </div>
+                {.end}
+                </div>
+                </squarespace:query>
+            </div>
+        </div>
+    </div>
+</div>
       {@|apply services.block}
-
-      {@|apply whenToCalibrate.block}
 
 
       <section class="basic-padding banner-bg">
