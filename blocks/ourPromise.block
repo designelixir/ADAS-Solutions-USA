@@ -11,6 +11,8 @@
   margin: 5px 0;
 }
 
+#Partnership-Description, #Staff-Description, #Repair-Description {min-width: 100px;}
+
 </style>
 
 {#  Complete ADAS Solution Bullet Points  }
