@@ -1,0 +1,176 @@
+<style>
+.services-header { width: 100%; background-image: url('../assets/interior(1).png'); background-size: cover;}
+.services-header-wrapper {background: rgba(173,30,41, 0.75); backdrop-filter: blur(3px); width: 100%; height: 100%; padding: 25px; margin-top: -50px;}
+.services-header-title { margin-top: -65px; background: var(--darkgray); }
+.services-header-title-item { padding: 15px 25px;  min-height: 75px;  margin: 1px;}
+.services-header-title-item.active {background: var(--ssgray); font-weight: 900!important;}
+.services-header-title-item.active h3 { font-weight: 700!important; }
+.services-header-title-item h3 {color: white!important; line-height: 22px; text-align: center;}
+
+.services-header-title-item:hover {background: var(--ssgray); cursor: pointer;}
+
+
+.service-toggler {padding: 35px 15px;}
+.calibration-block { min-width: 200px; padding: 10px; width: 200px; max-width: 200px; height: 200px;}
+.calibration-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white;}
+.border-right {border-right: 1px solid white;}
+.border-bottom {border-bottom: 1px solid white;}
+.border-left {border-left: 1px solid white;}
+.border-top {border-top: 1px solid white;}
+
+.calibration-block-img {width: 75px; height: 75px; margin-bottom: 10px; background-size: contain; background-position: center; background-repeat: no-repeat;}
+
+@media screen and (max-width: 650px) {
+    .services-header-title-item {padding: 10px; margin: 1px; text-align: center;}
+  .services-header-title-item h3 {font-size: 18px; line-height: 20px;}
+  .calibration-block {min-width: 150px;}
+}
+</style>
+
+<div class="services-header">
+    <div class="services-header-wrapper flex-center-center flex-column">
+        <div class="services-header-title flex-center-center">
+            <div class="services-header-title-item border-right flex-center-center active" onclick="toggle('calibration')"><h3>Calibration</h3></div>
+            <div class="services-header-title-item border-right flex-center-center"><h3>Windshield Replacement</h3></div>
+            <div class="services-header-title-item border-right flex-center-center"><h3>Tesla</h3></div>
+            <div class="services-header-title-item flex-center-center"><h3>Rivian</h3></div>
+        </div>
+        <div class="services-header-details">
+            <div class="flex-center-center flex-column">
+                <h3 class="white-text" style="margin-top: 25px;">A calibration is REQUIRED after an ADAS sensor’s position is disrupted in any way, including the following: </h3>
+                <div class="service-toggler flex-center-center flex-wrap" id="calibration">
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/repair-white.png')"></div>
+                        <h5 class="centered-text">Collision Repair</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/crash-white.png')"></div>
+                        <h5 class="centered-text">Minor Collision</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/align-white.png')"></div>
+                        <h5 class="centered-text">Wheel Alignment</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/shock-white.png')"></div>
+                        <h5 class="centered-text">Suspension Repair</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/side-mirror-white.png')"></div>
+                        <h5 class="centered-text">Windshield / Side Mirror Replacement</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/airbags-white.png')"></div>
+                        <h5 class="centered-text">Front Airbag Windshield Impact</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/sensor-white.png')"></div>
+                        <h5 class="centered-text">Sensor / Mounting Bracket Replacement</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/tires-white.png')"></div>
+                        <h5 class="centered-text">Ride Height or Tire Size Change</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/diagnose-white.png')"></div>
+                        <h5 class="centered-text">Diagnostic Trouble Codes (DTCs) Are Present</h5>
+                    </div>
+                    <div class="calibration-block flex-center-center flex-column">
+                        <div class="calibration-block-img" style="background-image: url('../assets/icons/dtc-white.png')"></div>
+                        <h5 class="centered-text">ADAS Related Technical Service Bulletins (TSBs) </h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    function applyBorders() {
+        // Remove previous borders
+        $('.calibration-block').removeClass('border-left border-right border-top border-bottom');
+        
+        // Get all the blocks
+        let blocks = $('.calibration-block');
+        let rows = [];
+        let currentRowTop = $(blocks[0]).position().top;
+        let currentRow = [];
+
+        // Group blocks by their row
+        blocks.each(function() {
+            let blockTop = $(this).position().top;
+
+            if (blockTop !== currentRowTop) {
+                rows.push(currentRow);
+                currentRow = [];
+                currentRowTop = blockTop;
+            }
+            currentRow.push($(this));
+        });
+        // Push the last row
+        if (currentRow.length) {
+            rows.push(currentRow);
+        }
+
+        // Apply borders based on the position
+        rows.forEach(function(row, index) {
+            let firstBlock = row[0];
+            let lastBlock = row[row.length - 1];
+
+            // Apply left border to all but the first, and right border to all but the last for non-last rows
+            if (index !== rows.length - 1) {
+                row.forEach(function(block, i) {
+                    if (i > 0) {
+                        block.addClass('border-left'); // Apply left border to all except the first
+                    }
+                    if (i < row.length - 1) {
+                        block.addClass('border-right'); // Apply right border to all except the last
+                    }
+                });
+            }
+
+            if (index === 0) {
+                // Top row: apply bottom border to all blocks
+                row.forEach(function(block) {
+                    block.addClass('border-bottom');
+                });
+            } else if (index === rows.length - 1) {
+                // Last row: apply different rules based on the number of rows
+                if (rows.length > 2) {
+                    // More than 2 rows: apply left and right borders to all blocks
+                    row.forEach(function(block) {
+                        block.addClass('border-left border-right');
+                    });
+                } else {
+                    // Exactly 2 rows: apply left and right borders only to the middle elements
+                    row.forEach(function(block, i) {
+                        if (i > 0 && i < row.length - 1) {
+                            block.addClass('border-left border-right'); // Apply to middle elements only
+                        }
+                    });
+                }
+                // Apply top border to all blocks in the last row
+                row.forEach(function(block) {
+                    block.addClass('border-top');
+                });
+            } else {
+                // Middle rows: apply both top and bottom borders to all blocks
+                row.forEach(function(block) {
+                    block.addClass('border-top border-bottom');
+                });
+            }
+        });
+    }
+
+    // Run the function when the page is loaded
+    applyBorders();
+
+    // Re-run the function when the window is resized
+    $(window).resize(function() {
+        applyBorders();
+    });
+});
+
+</script>
