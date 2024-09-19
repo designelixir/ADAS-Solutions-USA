@@ -1,0 +1,93 @@
+<style>
+.bullet-point-content h2 {margin-bottom: 10px;}
+.bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 100px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 100px 100px; padding: 10px; margin-right: 25px;}
+.card-icon {min-width: 75px; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
+.bullet-point-body {margin-left: 125px; display: none;}
+.accordion-item__click-target span {
+  color: var(--darkred);
+  font-weight: 600;
+  font-family: var(--roboto);
+  margin: 5px 0;
+}
+
+</style>
+
+{#  Complete ADAS Solution Bullet Points  }
+<div class="flex-start-start flex-column" style="padding: 25px 25px 25px 0;">
+    <div class="bullet-point-wrapper" id="calibrate">
+        <div class="bullet-point flex-start-start">
+            
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/partner.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-1" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/certified.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-2" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/keys.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-3" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/calibrate_2.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-4" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/staff.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-5" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/documents.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-6" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/communicate.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-7" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/ev.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-8" columns="1" />
+            </div>
+        </div>
+    </div>
+
+   
+</div>
