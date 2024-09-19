@@ -7,8 +7,10 @@
 
 <div class="call-to-action-wrapper flex-center-center">
     <div class="call-to-action flex-center-center">
+    {.section collection}
         <div class="call-to-action-overlay">
-            <squarespace:block-field id="{id}-Call-To-Action" columns="1" />
+            <squarespace:block-field id="{urlId}-Call-To-Action" columns="1" />
         </div>
+    {.end}
     </div>
 </div>

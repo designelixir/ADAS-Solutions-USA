@@ -90,7 +90,7 @@
       
 
 
-      <section class="basic-padding banner-bg">
+      <section class="basic-padding banner-bg-reverse" style="margin-top: -175px;">
         <squarespace:block-field id="GetStarted-Description" columns="1" />
       </section>
 
@@ -103,6 +103,7 @@
       <section>
         {squarespace.main-content}
       </section>
+      {@|apply callToAction.block}
       </main>
       {@|apply footer.block}
 

@@ -1,19 +1,25 @@
 <style>
 #Certified-Card-Description, #Insurance-Card-Description, #Scheduling-Card-Description, #Windshields-Card-Description {min-width: 100px}
+.complete-summary-card {background: #e2e2e2; padding: 15px; border-radius: 5px; min-width: 30%; max-width: 30%; margin: 1%;}
+@media screen and (max-width: 600px) {
+    .complete-summary-card {width: 100%; max-width: unset; min-width: unset; padding: 0 15px 15px 15px; margin: 10px 0;}
+    .complete-summary-card-wrapper {flex-direction: column; margin-bottom: 50px;}
+}
+
 </style>
 
-<div class="flex-end-center">
-    <div class="summary-card box-shadow flex-center-center flex-column">
+<div class="flex-end-center complete-summary-card-wrapper">
+    <div class="complete-summary-card box-shadow flex-center-center flex-column">
         <div class="card-icon" style="background-image: url('../assets/icons/certified.png')"></div>
         <squarespace:block-field id="Certified-Card-Description" columns="1" style="border: 1px solid red"/>
     </div>
 
-    <div class="summary-card box-shadow flex-center-center flex-column">
+    <div class="complete-summary-card box-shadow flex-center-center flex-column">
         <div class="card-icon" style="background-image: url('../assets/icons/documents.png')"></div>
         <squarespace:block-field id="Insurance-Card-Description" columns="1" />
     </div>
 
-    <div class="summary-card box-shadow flex-center-center flex-column">
+    <div class="complete-summary-card box-shadow flex-center-center flex-column">
         <div class="card-icon" style="background-image: url('../assets/icons/scheduling.png')"></div>
         <squarespace:block-field id="Scheduling-Card-Description" columns="1" />
     </div>
