@@ -18,7 +18,7 @@
     <div class="flex-start-start">
         
         <div class="about-intro-image-wrapper flex-start-start">
-                <squarespace:block-field id="AboutIntroImg-3" columns="1" />
+                <squarespace:block-field id="AboutGallery" columns="1" />
         </div>
         <div class="about-intro-text">
             <squarespace:block-field id="AboutIntro-Text" columns="1" />
