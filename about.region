@@ -23,11 +23,12 @@
           {.end}
         </div>
       </div>
+      
       <div class="basic-padding flex-center-center flex-column">
         <squarespace:block-field id="About-Intro" columns="1" />
       </div>
       {@|apply ourPromise.block}
-      
+
       <div class="basic-padding">
         {squarespace.main-content}
       </div>
