@@ -25,6 +25,8 @@
         </div>
       </div>
 
+      {@|apply aboutIntro.block}
+
       <div class="flex-center-center flex-column" style="padding: 25px 25px 0 25px">
         <squarespace:block-field id="About-Intro" columns="1" />
       </div>
