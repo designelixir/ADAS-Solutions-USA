@@ -25,7 +25,7 @@
       </div>
 
       <section class="basic-padding adas-icon-bg">
-        <div style="max-width: 60%">
+        <div style="max-width: 70%">
           <squarespace:block-field id="Our-Services-Description" columns="1" />
         </div>
         <squarespace:block-field id="Service-Labels-Description" columns="1" />
@@ -80,6 +80,9 @@
     </div>
 </div>
       {@|apply services.block}
+      <section class="basic-padding banner-bg-reverse" style="margin-top: -50px; z-index: 3; position: relative; background-color: unset;">
+        <squarespace:block-field id="WhatToExpect-Description" columns="1" />
+      </section>
 
 
       <section class="basic-padding banner-bg">

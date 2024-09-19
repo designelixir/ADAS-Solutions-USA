@@ -1,6 +1,6 @@
 <style>
 .services-header { width: 100%; background-image: url('../assets/interior(1).png'); background-size: cover;}
-.services-header-wrapper {background: rgba(173,30,41, 0.75); backdrop-filter: blur(3px); width: 100%; height: 100%; padding: 25px; margin-top: -50px;}
+.services-header-wrapper {background: rgba(173,30,41, 0.75); backdrop-filter: blur(3px); width: 100%; height: 100%; padding: 25px 25px 150px 25px; margin-top: -50px;}
 .services-header-title { margin-top: -65px; background: var(--darkgray); }
 .services-header-title-item { padding: 15px 25px; min-width: 30vw; min-height: 75px;  margin: 1px;}
 .services-header-title-item.active {background: var(--ssgray); font-weight: 900!important;}
