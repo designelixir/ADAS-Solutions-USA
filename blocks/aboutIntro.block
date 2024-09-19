@@ -1,8 +1,9 @@
 <style>
 .about-intro-wrapper {padding: 25px;}
-.about-intro-image-wrapper {width: 40vw;}
-.about-intro-image {width: 20vw; height: 20vw; margin: 0 10px 10px 0; border-radius: 8px; border: 1px solid red; overflow: clip;}
-.about-intro-text {padding: 25px; width: 45vw; border: 1px solid red;}
+.about-intro-image-wrapper {min-width: 40vw;}
+.about-intro-image { margin: 0 10px 10px 0; border-radius: 8px; border: 1px solid red; overflow: clip;}
+.about-intro-text {padding: 25px; border: 1px solid red;}
+.about-intro-image img {height: 110%!important;}
 
 @media screen and (max-width: 700px) {
     .about-intro-wrapper {flex-direction: column;}
@@ -12,19 +13,17 @@
 }
 </style>
 
-<div class="flex-start-start about-intro-wrapper">
-    <div class="about-intro-image-wrapper flex-start-start flex-wrap">
-        <div class="about-intro-image">
-            <squarespace:block-field id="AboutIntroImg-1" columns="1" />
+<div class="flex-start-start flex-column about-intro-wrapper">
+    <squarespace:block-field id="AboutIntro" columns="1" />
+    <div class="flex-start-start">
+        
+        <div class="about-intro-image-wrapper flex-start-start">
+            <div class="about-intro-image">
+                <squarespace:block-field id="AboutIntroImg-3" columns="1" />
+            </div>
         </div>
-        <div class="about-intro-image">
-            <squarespace:block-field id="AboutIntroImg-2" columns="1" />
+        <div class="about-intro-text">
+            <squarespace:block-field id="AboutIntro-Text" columns="1" />
         </div>
-        <div class="about-intro-image">
-            <squarespace:block-field id="AboutIntroImg-3" columns="1" />
-        </div>
-    </div>
-    <div class="about-intro-text">
-        <squarespace:block-field id="AboutIntro-Text" columns="1" />
     </div>
 </div>
