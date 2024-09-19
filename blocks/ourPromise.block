@@ -1,0 +1,53 @@
+<style>
+.bullet-point-content h2 {margin-bottom: 10px;}
+.bullet-point-wrapper {margin: 15px 0;}
+.bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 100px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 100px 100px; padding: 10px; margin-right: 25px;}
+.card-icon {min-width: 75px;  background-size: 90%; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
+.bullet-point-body {margin-left: 125px; display: none;}
+.accordion-item__click-target span {
+  color: var(--darkred);
+  font-weight: 600;
+  font-family: var(--roboto);
+  margin: 5px 0;
+}
+
+</style>
+
+{#  Complete ADAS Solution Bullet Points  }
+<div class="flex-start-start flex-column" style="padding: 50px 25px 50px 0;">
+    <div class="bullet-point-wrapper">
+        <div class="bullet-point flex-start-start">
+            
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/partner.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Partnership-Description" columns="1" />
+            </div>
+        </div>
+    </div>
+
+    <div class="bullet-point-wrapper">
+        <div class="bullet-point flex-start-start">
+            
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/staff.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Staff-Description" columns="1" />
+            </div>
+        </div>
+    </div>
+
+    <div class="bullet-point-wrapper">
+        <div class="bullet-point flex-start-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/repair.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Repair-Description" columns="1" />
+            </div>
+        </div>
+    </div>
+
+</div>
