@@ -1,21 +1,37 @@
 <style>
 .about-intro-wrapper {padding: 25px;}
 .about-intro-image-wrapper {min-width: 40vw;}
-.about-intro-image { margin: 0 10px 10px 0; border-radius: 8px; border: 1px solid red; overflow: clip;}
-.about-intro-text {padding: 25px; border: 1px solid red;}
+.about-intro-text {padding: 25px;}
 .about-intro-image img {height: 110%!important;}
+#AboutIntro {margin-bottom: 25px;}
 
-@media screen and (max-width: 700px) {
+.sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor img {
+  object-fit: cover !important;
+  height: auto !important;
+  width: 100% !important;
+  border-radius: 5px;
+  left: unset!important;
+}
+
+.sqs-gallery-block-grid .sqs-gallery-design-grid {
+  margin-right: unset;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1000px) {
     .about-intro-wrapper {flex-direction: column;}
-    .about-intro-image-wrapper {order: 2; width: 90%; border: 1px solid blue;}
-    .about-intro-image {width: 33vw!important; height: 33vw;}
+    .about-intro-image-wrapper {order: 2; width: 100%;}
     .about-intro-text {order: 1; width: 100%; margin-bottom: 25px;}
+    .about-intro-content {flex-direction: column!important;}
 }
 </style>
 
-<div class="flex-start-start flex-column about-intro-wrapper">
+<div class="flex-start-start flex-column about-intro-wrapper fade-in-delay">
     <squarespace:block-field id="AboutIntro" columns="1" />
-    <div class="flex-start-start">
+    <div class="flex-start-start about-intro-content">
         
         <div class="about-intro-image-wrapper flex-start-start">
                 <squarespace:block-field id="AboutGallery" columns="1" />

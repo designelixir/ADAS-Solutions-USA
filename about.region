@@ -30,6 +30,9 @@
       <div class="flex-center-center flex-column" style="padding: 25px 25px 0 25px">
         <squarespace:block-field id="About-Intro" columns="1" />
       </div>
+      <div class="basic-padding banner-bg">
+        <squarespace:block-field id="OurPromise-Description" columns="1" />
+      </div>
       {@|apply ourPromise.block}
 
       <div class="basic-padding banner-bg-reverse">
@@ -41,7 +44,7 @@
         {squarespace.main-content}
       </div>
 
-      
+      {@|apply callToAction.block}
 
       </main>
       {@|apply footer.block}
