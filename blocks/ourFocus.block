@@ -1,0 +1,47 @@
+<style>
+.complete-summary-card {background: #e2e2e2; padding: 15px; border-radius: 5px; min-width: 23%; max-width: 23%; margin: 1%;}
+@media screen and (max-width: 600px) {
+    .complete-summary-card {width: 100%; max-width: unset; min-width: unset; padding: 0 15px 15px 15px; margin: 10px 0;}
+    .complete-summary-card-wrapper {flex-direction: column; margin-bottom: 50px;}
+}
+
+</style>
+
+<div class="flex-end-center complete-summary-card-wrapper">
+    <div class="complete-summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/repair.png')"></div>
+        <squarespace:block-field id="RepairPlan-Description" columns="1" style="border: 1px solid red"/>
+    </div>
+
+    <div class="complete-summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/staff.png')"></div>
+        <squarespace:block-field id="ExpertTechnicians-Description" columns="1" />
+    </div>
+
+    <div class="complete-summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/tsb.png')"></div>
+        <squarespace:block-field id="Evaluation-Description" columns="1" />
+    </div>
+    <div class="complete-summary-card box-shadow flex-center-center flex-column">
+        <div class="card-icon" style="background-image: url('../assets/icons/calibate_2.png')"></div>
+        <squarespace:block-field id="CommonSense-Description" columns="1" />
+    </div>
+</div>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.complete-summary-card').forEach(function(card) {
+    gsap.from(card, {
+      opacity: 0,       
+      y: 50,            
+      duration: 1,      
+      ease: 'power2.out', 
+      scrollTrigger: {
+        trigger: card,    
+        start: 'top 80%', 
+        toggleActions: 'play none none none', 
+      }
+    });
+  });
+</script>

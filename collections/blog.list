@@ -7,7 +7,7 @@
 
   {.repeated section items}
     
-        {.equal? categoryFilter "Resources"}
+        {.equal? category "Resources"}
           
           <article id="post-{id}" data-item-id="{id}" class="summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
                 <div class="summary-image-card" style="background-image: url({assetUrl})"></div>

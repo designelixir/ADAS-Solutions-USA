@@ -10,7 +10,7 @@
   margin: 5px 0;
 }
 
-.bullet-point {margin: 10px 0;}
+.bullet-point {margin: 15px 0;}
 
 </style>
 
@@ -31,7 +31,7 @@
                 <div style="background-image: url('../assets/icons/diagnose-no-padding.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <squarespace:block-field id="Description-9" columns="1" />
+                <squarespace:block-field id="Description-2" columns="1" />
             </div>
         </div>
 
@@ -40,7 +40,7 @@
                 <div style="background-image: url('../assets/icons/certified-red.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <squarespace:block-field id="Description-2" columns="1" />
+                <squarespace:block-field id="Description-3" columns="1" />
             </div>
         </div>
 
@@ -49,7 +49,7 @@
                 <div style="background-image: url('../assets/icons/keys.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <squarespace:block-field id="Description-3" columns="1" />
+                <squarespace:block-field id="Description-4" columns="1" />
             </div>
         </div>
 
@@ -58,7 +58,7 @@
                 <div style="background-image: url('../assets/icons/calibrate_2.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <squarespace:block-field id="Description-4" columns="1" />
+                <squarespace:block-field id="Description-5" columns="1" />
             </div>
         </div>
 
@@ -67,22 +67,13 @@
                 <div style="background-image: url('../assets/icons/staff.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <squarespace:block-field id="Description-5" columns="1" />
-            </div>
-        </div>
-
-        <div class="bullet-point flex-center-start">
-            <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/documents.png');" class="card-icon"></div>
-            </div>
-            <div class="bullet-point-content">
                 <squarespace:block-field id="Description-6" columns="1" />
             </div>
         </div>
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/communicate.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/documents-red.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-7" columns="1" />
@@ -91,13 +82,41 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/ev.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/communicate.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-8" columns="1" />
+            </div>
+        </div>
+
+        <div class="bullet-point flex-center-start">
+            <div class="bullet-point-bg flex-center-end">
+                <div style="background-image: url('../assets/icons/ev.png');" class="card-icon"></div>
+            </div>
+            <div class="bullet-point-content">
+                <squarespace:block-field id="Description-9" columns="1" />
             </div>
         </div>
     </div>
 
    
 </div>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    
+    gsap.utils.toArray('.bullet-point').forEach(function(bulletPoint) {
+        gsap.from(bulletPoint, {
+            opacity: 0,
+            y: 50, 
+            duration: 1, 
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: bulletPoint, 
+                start: 'top bottom', 
+                toggleActions: 'play none none none', 
+            }
+        });
+    });
+</script>

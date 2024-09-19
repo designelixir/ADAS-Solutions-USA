@@ -1,7 +1,7 @@
 <style>
 .bullet-point-content h2 {margin-bottom: 10px;}
 .bullet-point-wrapper {margin: 15px 0;}
-.bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 100px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 100px 100px; padding: 10px; margin-right: 25px;}
+.bullet-point-bg {background-image: url('../assets/bullet-bg-gray.png'); height: 100px; min-width: 120px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 120px 100px; padding: 10px 20px; margin-right: 25px;}
 .card-icon {min-width: 75px;  background-size: 90%; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
 .bullet-point-body {margin-left: 125px; display: none;}
 .accordion-item__click-target span {
@@ -44,7 +44,7 @@
     <div class="bullet-point-wrapper">
         <div class="bullet-point flex-start-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/repair.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/repair.png'); background-size: 90%;" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Repair-Description" columns="1" />
@@ -53,3 +53,21 @@
     </div>
 
 </div>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.bullet-point').forEach(function(bulletPoint) {
+    gsap.from(bulletPoint, {
+      opacity: 0,       // Start hidden
+      y: 50,            // Slightly below its original position
+      duration: 1,      // Animation duration for each bullet point
+      ease: 'power2.out', // Smooth easing
+      scrollTrigger: {
+        trigger: bulletPoint,    // Each bullet point triggers the animation
+        start: 'top 80%', // Start animation when the bullet point is 80% into the viewport
+        toggleActions: 'play none none none', // Only play animation once
+      }
+    });
+  });
+</script>

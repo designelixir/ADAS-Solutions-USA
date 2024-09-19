@@ -15,7 +15,8 @@
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
-      <div class="page-hero flex-center-center" style="background-image: url('{collection.mainImage.assetUrl}')">
+      
+      <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content">
           <h1>{collection.title}</h1>
           {.if collection.description}
@@ -23,6 +24,7 @@
           {.end}
         </div>
       </div>
+
       <section class="basic-padding">
         {squarespace.main-content}
        </section>

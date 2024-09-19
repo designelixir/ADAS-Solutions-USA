@@ -42,6 +42,8 @@ main {background: white; border-top-right-radius: 5px; border-top-left-radius: 5
 
 @media screen and (max-width: 860px) {
   .flex-break {flex-direction: column;}
+  .adas-icon-bg-container {width: 100%!important;}
+  .adas-icon-bg {background-position: 110% 80%!important;}
 }
 
 .no-text-spacing {padding: 0; margin: 0; line-height: 0}
@@ -67,7 +69,7 @@ main {background: white; border-top-right-radius: 5px; border-top-left-radius: 5
 .sqs-block-button .sqs-block-button-element--large {background-color: var(--logored); padding: 15px 20px!important; border: 2px solid var(--darkred);}
 
 // Text Styles
-h1 {font-size: clamp(36px, 2vw + 1.2rem, 48px); font-weight: 400; line-height: clamp(40px, 2vw + 1.3rem, 52px); font-family: "Roboto Condensed", sans-serif;}
+h1 {font-size: clamp(48px, 2vw + 1.2rem, 56px); font-weight: 400; line-height: clamp(52px, 2vw + 1.3rem, 60px); font-family: "Roboto Condensed", sans-serif;}
 h1 strong {font-weight: 600;}
 h1 strong span {color: var(--logored)!important}
 h1 span {text-decoration: none!important; color: var(--red)!important; }
@@ -95,8 +97,8 @@ p {font-size: 16px; color: black; font-family: "Archivo", sans-serif;}
 #Business-Educate {min-width: 100px;}
 
 // Page Hero 
-.page-hero {min-height: 350px; width: 100%;  border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: center center; background-repeat: no-repeat;}
-.page-hero-content {width: 100%; min-height: 350px; height: 100%; padding: 200px 25px 25px; background: rgba(0,0,0,0.25); color: white; text-shadow: 0 0 2px rgba(0,0,0,0.5);}
+.page-hero {min-height: 350px; width: 100%;  border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('../assets/car.jpg'); }
+.page-hero-content {width: 100%; min-height: 350px; height: 100%; padding: 200px 25px 25px; background: rgba(0,0,0,0.35); color: white; text-shadow: 0 0 2px rgba(0,0,0,0.5); backdrop-filter: blur(3px)}
 .page-hero-content h4 {color: white!important; font-size: 18px; line-height: 24px; max-width: 500px;}
 
 // Animations
@@ -142,4 +144,24 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .glossary-card:hover {cursor: pointer; transform: scale(1.01)}
 
 .sqs-block {padding: 0}
-.adas-icon-bg { background-image: url('../assets/adas-icon-transparent.svg'); background-size: 40%; background-repeat: no-repeat; background-position: 100% center;}
+.adas-icon-bg { background-image: url('../assets/adas-icon-transparent.svg'); background-size: 40%; background-repeat: no-repeat; background-position: 110% 10%;}
+.adas-icon-bg-container {width: 60%;}
+
+@keyframes fadeInWithDelay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-delay {
+  opacity: 0; /* Start invisible */
+  animation: fadeInWithDelay 0.25s ease-in forwards;
+  animation-delay: 0.25s; /* 0.5s delay before animation starts */
+}
+
+#Windshield-Description * {color: white!important;}
+
+.empty {min-width: 100px;}

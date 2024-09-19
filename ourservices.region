@@ -14,8 +14,8 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
-      <main class="content-container" role="main" data-content-field="main-content">
-      <div class="page-hero flex-center-center" style="background-image: url('{collection.mainImage.assetUrl}');">
+      <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
+      <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content">
           <h1>{collection.title}</h1>
           {.if collection.description}
@@ -25,7 +25,7 @@
       </div>
 
       <section class="basic-padding adas-icon-bg">
-        <div style="max-width: 70%">
+        <div class="adas-icon-bg-container">
           <squarespace:block-field id="Our-Services-Description" columns="1" />
         </div>
         <squarespace:block-field id="Service-Labels-Description" columns="1" />
@@ -62,7 +62,7 @@
                 <squarespace:block-field id="Windshield-Description" columns="1" />
                 {#  Rivian  }
                 <squarespace:query collection="services-list" limit="20" category="Windshields">
-                <div class="service-toggler flex-start-center flex-wrap" >
+                <div class="service-toggler flex-start-center flex-wrap flex-break" >
                 {.repeated section items}
                     <div class="windshield-block flex-center-center" id="{title}">
                         <div class="front flex-center-center flex-column">
@@ -90,9 +90,9 @@
       
 
 
-      <section class="basic-padding banner-bg-reverse" style="margin-top: -175px;">
+      <div class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px;">
         <squarespace:block-field id="GetStarted-Description" columns="1" />
-      </section>
+      </div>
 
       <section>
         <squarespace:block-field id="EasyToDoBusiness-Description" columns="1" />

@@ -7,37 +7,37 @@ nav {width: 100%;}
 .site-navigation-item {padding: 10px; text-align: center; font-family: "Archivo", sans-serif; }
 .site-navigation-item a:hover {color: var(--red); }
 #mobileMenu .site-navigation-item a {color: black!important; padding: 10px;}
-.site-navigation-item a { text-decoration: none; color: white; font-size: 18px;}
+.site-navigation-item a { text-decoration: none; color: white; font-size: 16px;}
 .active-link a {color: var(--logored); font-weight: 800;}
 
 #mobileMenu {display: none; width: 100%; background: var(--lightgray); padding: 15px;}
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   #mobileMenu {display: none;}
   #desktopNav {display: none; }
   #desktopHomeNav {display: none;}
   #hamburger {display: block; cursor: pointer;}
 }
 
-@media screen and (min-width: 751px) {
+@media screen and (min-width: 850px) {
   #hamburger {display: none; }
   #desktopNav {display: block; }
 }
 
 </style>
 
-<header class="site-header">
+<header class="site-header fade-in-delay">
 <nav class="site-navigation flex-center-center flex-column">
   <div class="site-navigation-wrapper flex-center-spacebetween box-shadow">
     <div class="logo-container">
       <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
     </div>
     <div  class="site-navigation-list flex-center-end">
-    <a href="/"><img class="home-nav" id="desktopHomeNav" src="../assets/home-white.svg" style="height: 25px; margin-right: 10px;" alt="Home"/></a>
+    <a href="/"><img class="home-nav" id="desktopHomeNav" src="../assets/home-white.svg" style="height: 15px; margin-right: 10px;" alt="Home"/></a>
     {.repeated section items}
 
       <div id="desktopNav" class="site-navigation-item {.section active} active-link{.end}">
-
+        
         <!-- collection link -->
         {.section collection}
           <a href="{fullUrl}">{navigationTitle}</a>
@@ -88,8 +88,7 @@ nav {width: 100%;}
 </header>
 <script>
   $(document).ready(function() {
-    
-    // Check if the body has a data-nav-attr of 'home'
+
     if ($('body').data('nav-attr') === 'home') {
       $('.home-nav').attr('src', '../assets/home-active.svg');
     }
