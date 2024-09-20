@@ -3,11 +3,11 @@
 
   <!--WRAPPER-->
   <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
-    <div class="blog-item-tag">
+    <span class="blog-item-tag">
     {.repeated section categories}
       <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
     {.end}
-    </div>
+    </span>
     <div class="blog-size-paragraph">
       {body}
     </div>
