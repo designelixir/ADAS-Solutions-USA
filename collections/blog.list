@@ -1,16 +1,9 @@
 
 <div class="flex-start-start flex-wrap">
 {.repeated section items}
-  <article id="post-{id}" class="summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" onclick="window.open('{fullUrl}', '_self')">
-    
-    
-        <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-        <h3 class="summary-title-card">{title}</h3>
-        <p class="summary-excerpt-card">{excerpt|safe|truncate 250}</p>
-        <a style="font-size: 12px;">Read more &rarr;</a>
-    
-    
-  </article>
+  {.repeated section categories}
+    {@}
+  {.end}
 {.or}
 
   <!-- no items means no blog posts -->

@@ -2,7 +2,7 @@
 .services-header { width: 100%; background-image: url('../assets/interior(1).png'); background-size: cover;}
 .services-header-wrapper {background: rgba(173,30,41, 0.75); backdrop-filter: blur(3px); width: 100%; height: 100%; padding: 25px; margin-top: -50px;}
 .services-header-title { margin-top: -65px; background: var(--darkgray); }
-.services-header-title-item { padding: 15px 25px; min-width: 30vw; min-height: 75px;  margin: 1px;}
+.services-header-title-item { padding: 15px 25px; min-width: 20vw; min-height: 75px;  margin: 1px;}
 .services-header-title-item.active {background: var(--ssgray); font-weight: 900!important;}
 .services-header-title-item.active h3 { font-weight: 700!important; }
 .services-header-title-item h3 {color: white!important; line-height: 22px; text-align: center;}
@@ -15,6 +15,7 @@
 .windshield-block:nth-child(1) {border-right: 1px solid white;}
 
 .service-toggler {padding: 35px 15px;}
+.service-toggler * {color: white;}
 .calibration-block { min-width: 200px; padding: 10px; width: 200px; max-width: 200px; height: 200px;}
 .calibration-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}
 .windshield-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}
@@ -42,19 +43,16 @@
 
 
 <script>
-$(document).ready(function() {
+$(document).ready(function () {
     function applyBorders() {
-        // Remove previous borders
         $('.calibration-block').removeClass('border-left border-right border-top border-bottom');
-        
-        // Get all the blocks
+
         let blocks = $('.calibration-block');
         let rows = [];
-        let currentRowTop = $(blocks[0]).position().top;
         let currentRow = [];
+        let currentRowTop = $(blocks[0]).position().top;
 
-        // Group blocks by their row
-        blocks.each(function() {
+        blocks.each(function () {
             let blockTop = $(this).position().top;
 
             if (blockTop !== currentRowTop) {
@@ -64,108 +62,55 @@ $(document).ready(function() {
             }
             currentRow.push($(this));
         });
-        // Push the last row
-        if (currentRow.length) {
-            rows.push(currentRow);
-        }
 
-        // Apply borders based on the position
-        rows.forEach(function(row, index) {
-            let firstBlock = row[0];
-            let lastBlock = row[row.length - 1];
+        if (currentRow.length) rows.push(currentRow);
 
-            // Apply left border to all but the first, and right border to all but the last for non-last rows
-            if (index !== rows.length - 1) {
-                row.forEach(function(block, i) {
-                    if (i > 0) {
-                        block.addClass('border-left'); // Apply left border to all except the first
-                    }
-                    if (i < row.length - 1) {
-                        block.addClass('border-right'); // Apply right border to all except the last
-                    }
-                });
-            }
+        rows.forEach(function (row, index) {
+            let isLastRow = index === rows.length - 1;
+            let isFirstRow = index === 0;
 
-            if (index === 0) {
-                // Top row: apply bottom border to all blocks
-                row.forEach(function(block) {
-                    block.addClass('border-bottom');
-                });
-            } else if (index === rows.length - 1) {
-                // Last row: apply different rules based on the number of rows
-                if (rows.length > 2) {
-                    // More than 2 rows: apply left and right borders to all blocks
-                    row.forEach(function(block) {
-                        block.addClass('border-left border-right');
-                    });
-                } else {
-                    // Exactly 2 rows: apply left and right borders only to the middle elements
-                    row.forEach(function(block, i) {
-                        if (i > 0 && i < row.length - 1) {
-                            block.addClass('border-left border-right'); // Apply to middle elements only
-                        }
-                    });
-                }
-                // Apply top border to all blocks in the last row
-                row.forEach(function(block) {
-                    block.addClass('border-top');
-                });
-            } else {
-                // Middle rows: apply both top and bottom borders to all blocks
-                row.forEach(function(block) {
-                    block.addClass('border-top border-bottom');
-                });
-            }
+            row.forEach(function (block, i) {
+                if (i > 0) block.addClass('border-left');
+                if (i < row.length - 1) block.addClass('border-right');
+            });
+
+            row.forEach(function (block) {
+                if (isFirstRow) block.addClass('border-bottom');
+                if (isLastRow) block.addClass('border-top');
+                if (!isFirstRow && !isLastRow) block.addClass('border-top border-bottom');
+            });
         });
     }
 
-    
     applyBorders();
 
-    
-    $(window).resize(function() {
-        applyBorders();
+    $(window).resize(applyBorders);
+
+    $('.calibration-block').click(function () {
+        $(this).find('.front, .back').toggle();
     });
 
     
-    $('.calibration-block').click(function() {
-        let $front = $(this).find('.front');
-        let $back = $(this).find('.back');
-        
-        // Toggle visibility
-        $front.toggle();
-        $back.toggle();
+
+    $('.services-header-title-item').click(function () {
+        $('.services-header-title-item').removeClass('active');
+        $(this).addClass('active');
+
+        let serviceMap = {
+            'calibration-Toggle': 'calibration',
+            'windshields-Toggle': 'windshieldReplacement',
+            'hailRepair-Toggle': 'hailRepair',
+        };
+
+        toggleServiceType(serviceMap[$(this).attr('id')]);
     });
-
-    function toggleServiceType(serviceId) {
-        // Hide all service types
-        $('.service-type').hide();
-
-        // Show the selected service type
-        $('#' + serviceId).show();
-    }
 
     $('#calibration-Toggle').addClass('active');
     toggleServiceType('calibration');
 
-    $('.services-header-title-item').click(function() {
-        // Remove .active class from all service header items
-        $('.services-header-title-item').removeClass('active');
-        
-        // Add .active class to the clicked item
-        $(this).addClass('active');
-        
-        
-        const clickedId = $(this).attr('id');
-        
-        if (clickedId === 'calibration-Toggle') {
-            toggleServiceType('calibration');
-        } else if (clickedId === 'windshields-Toggle') {
-            toggleServiceType('windshieldReplacement');
-        }
-    });
-    
     $('.back').hide();
 });
+
+    
 
 </script>

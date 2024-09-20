@@ -33,9 +33,9 @@
       <div class="services-header">
     <div class="services-header-wrapper flex-center-center flex-column">
         <div class="services-header-title flex-center-center">
-            <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggle('calibration')"><h3>Calibration</h3></div>
-            <div id="windshields-Toggle" class="services-header-title-item flex-center-center"  onclick="toggle('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
-            <div id="hailRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggle('hailRepair')"><h3>Hail Repair</h3></div>
+            <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggleServiceType('calibration')"><h3>Calibration</h3></div>
+            <div id="windshields-Toggle" class="services-header-title-item border-right flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
+            <div id="hailRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')"><h3>Hail Repair</h3></div>
         </div>
         <div class="services-header-details">
         {#  Calibration  }
@@ -81,13 +81,12 @@
 
         {#  Hail Repair  }
         <div class="service-type flex-center-center flex-column fade-in" id="hailRepair">
-                
-                <div class="service-toggler flex-center-center flex-wrap" >
-                <squarespace:block-field id="HailRepair-Description" columns="1" />
-                </div>
-                
-                
+            <div class="service-toggler flex-center-center flex-wrap white-text" >
+            <squarespace:block-field id="HailRepair-Description" columns="1" />
             </div>
+                
+                
+        
         </div>
     </div>
 </div>
@@ -95,43 +94,39 @@
       
           
       
-      <section class="basic-padding" id="whatToExpectCards">
+      <div class="basic-padding" id="whatToExpectCards" style="z-index: 2;">
         <squarespace:block-field id="WhatToExpect-Description" columns="1" />
         {@|apply completeAdasSolutionCards.block}
-      </section>
+      </div>
       
 
 
-      <div class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px;">
+      <div class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px; z-index: 1;">
         <squarespace:block-field id="GetStarted-Description" columns="1" />
       </div>
 
-      <section>
+      <div>
         <squarespace:block-field id="EasyToDoBusiness-Description" columns="1" />
         {@|apply easyToDoBusiness.block}
-      </section>
+      </div>
       
 
-      <section>
+      <div>
         {squarespace.main-content}
-      </section>
+      </div>
       {@|apply callToAction.block}
       </main>
     </div>
+
+    <script>  
+    function toggleServiceType(serviceId) {
+        $('.service-type').hide();
+        $('#' + serviceId).show();
+    }
+    </script>
     
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     {squarespace-footers}
-
-    <script>
-
-    function toggle(serviceId) {
-  $('.service-type').hide();
-  $('.services-header-title-item').removeClass('active border-right');
-  $('#' + serviceId).fadeIn();
-  $('#' + serviceId + '-Toggle').addClass('active border-right');
-}
-
-</script>
 
   </body>
 </html>
