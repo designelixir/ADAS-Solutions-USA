@@ -2,7 +2,8 @@
 <div class="flex-start-start flex-wrap">
 {.repeated section items}
   {.repeated section categories}
-    {.equal? '{@}' 'FAQ'}
+    
+    {.equal? category '{@}'}
     {@}
     {.end}
   {.end}
