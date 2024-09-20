@@ -28,7 +28,6 @@
             {squarespace.main-content}
        </section>
       </main>
-      {@|apply footer.block}
 
     </div>
     

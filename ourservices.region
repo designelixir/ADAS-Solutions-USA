@@ -105,8 +105,6 @@
       </section>
       {@|apply callToAction.block}
       </main>
-      {@|apply footer.block}
-
     </div>
     
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

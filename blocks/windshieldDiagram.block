@@ -1,13 +1,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
-.windshield-diagram-container {   border: 1px solid red; width: 100%; height: 600px; }
-.windshield-diagram-overlay {border: 2px solid teal; height: 100%; width: 100%; background-image: url('../assets/car-road-stripes.png'); background-size: 100% 100%; background-repeat: no-repeat; background-position: center center;}
+.windshield-diagram-container {   width: 100%; height: 600px; }
+.windshield-diagram-overlay { height: 100%; width: 100%; background-image: url('../assets/car-road-stripes.png'); background-size: 100% 100%; background-repeat: no-repeat; background-position: center center;}
 
-.windshield-grid-wrapper {height: 80%; max-width: 600px; width: 100%; border: 0.1px solid lime; background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/3fcb2d92-a997-4279-b1c5-b826a17a1e59/car-front.png?content-type=image%2Fpng'); background-size: contain; background-position: center center; background-repeat: no-repeat;}
-.windshield-grid-1 {width: 10%; height: 10%; border: 0.1px solid orange;}
-.windshield-grid-2 {width: 20%; height: 10%; border: 0.1px solid orange;}
-.windshield-grid-4 {width: 40%; height: 10%; border: 0.1px solid orange;}
-.windshield-grid-6 {width: 60%; height: 10%; border: 0.1px solid orange;}
+.windshield-grid-wrapper {height: 80%; max-width: 600px; width: 100%; background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/3fcb2d92-a997-4279-b1c5-b826a17a1e59/car-front.png?content-type=image%2Fpng'); background-size: contain; background-position: center center; background-repeat: no-repeat;}
+.windshield-grid-1 {width: 10%; height: 10%; }
+.windshield-grid-2 {width: 20%; height: 10%; }
+.windshield-grid-4 {width: 40%; height: 10%; }
+.windshield-grid-6 {width: 60%; height: 10%; }
 
 .windshield-label { font-weight: 200; margin: 0!important; line-height: 15px; font-size: 14px; font-family: 'Archivo', sans-serif; border-radius: 3px; padding: 5px; text-align: center; opacity: 0;}
 .windshield-label.windshield-active {opacity: 1!important;}
@@ -15,7 +15,7 @@
 .windshield-circle {position: absolute; width: 10px; height: 10px; position: relative; opacity: 0.2; border-radius: 50px;}
 .windshield-circle:after {content: ""; display: block; width: 100%; height: 100%; background-color: unset;  animation: circle 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;}
 
-.repair-items-container {padding: 25px; border: 1px solid red; width: calc(100% - 600px;)}
+.repair-items-container {padding: 25px; width: calc(100% - 600px;)}
 .repair-item {margin: 2px 0;}
 .repair-item:hover { cursor: pointer;}
 .repair-item.windshield-active {background: #e2e2e2;}
@@ -26,6 +26,7 @@
 .cameras {background: orange;}
 .radar {background: gold;}
 .lidar {background: lime;}
+.suspension {background: blue; color: white;}
 
 @media screen and (max-width: 860px) {
   .windshield-diagram-container {flex-direction: column;}
@@ -41,28 +42,28 @@
         <div class="repair-item" onclick="toggleCircles('collisions')">
             <squarespace:block-field id="RepairItem-1" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('windshields')">
             <squarespace:block-field id="RepairItem-2" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('suspension')">
             <squarespace:block-field id="RepairItem-3" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('alignment')">
             <squarespace:block-field id="RepairItem-4" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('sensor')">
             <squarespace:block-field id="RepairItem-5" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('ride-height')">
             <squarespace:block-field id="RepairItem-6" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('srs')">
             <squarespace:block-field id="RepairItem-7" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('tsbs')">
             <squarespace:block-field id="RepairItem-8" columns="1" />
         </div>
-        <div class="repair-item" onclick="toggleCircles('collisions')">
+        <div class="repair-item" onclick="toggleCircles('dtcs')">
             <squarespace:block-field id="RepairItem-9" columns="1" />
         </div>
     </div>
@@ -87,10 +88,8 @@
         <div class="windshield-grid-1"></div>
         <div class="windshield-grid-1"></div>
         
-        <div class="windshield-grid-2 flex-end-center flex-column no-flex-grow">
-            <div class="windshield-label collisions cameras">Cameras</div>
-          <div class="windshield-circle collisions cameras" style="margin-right: -5%"></div>
-          
+        <div class="windshield-grid-2 flex-end-center no-flex-grow">
+          <div class="windshield-circle collisions cameras windshields"></div>
         </div>
         <div class="windshield-grid-1"></div>
         <div class="windshield-grid-1"></div>
@@ -99,15 +98,24 @@
         
         <!--Row 3-->
         <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-2 flex-start-start no-flex-grow">
+            <div class="flex-center-center flex-column">
+                <div class="windshield-label collisions lidar windshields">Lidar Sensors</div>
+                <div class="windshield-circle collisions lidar" style="margin-top: 10px;"></div>
+            </div>
+        </div>
         <div class="windshield-grid-1"></div>
-        
-        <div class="windshield-grid-6 flex-end-spacebetween no-flex-grow">
-          <div class="windshield-circle collisions lidar" style="margin-top: -10%;"></div>
-          <div class="windshield-label collisions lidar">Lidar Sensors</div>
-          <div class="windshield-circle collisions lidar" style="margin-top: -10%;"></div>
+        <div class="windshield-grid-2 flex-center-center flex-column no-flex-grow">
+            <div class="windshield-label collisions cameras windshields">Cameras</div>
+            <div class="windshield-circle collisions cameras windshields" style="margin-top: 4px;"></div>
+        </div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1 flex-end-start no-flex-grow">
+            <div class="windshield-circle collisions lidar windshields" style="margin-left: 10%;"></div>
         </div>
         
-        <div class="windshield-grid-1"></div>
+        
         <div class="windshield-grid-1"></div>
         
         <!--Row 4-->
@@ -162,14 +170,20 @@
         
         <!--Row 8-->
         <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1 flex-end-center no-flex-grow">
+            <div class="windshield-circle suspension radar" style="margin-left: 10%;"></div>
+        </div>
         <div class="windshield-grid-1"></div>
         <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-2 flex-center-center no-flex-grow">
+            <div class="windshield-label suspension radar">Long-Range and Short-Range Radar</div>
+        </div>
+        
         <div class="windshield-grid-1"></div>
         <div class="windshield-grid-1"></div>
-        <div class="windshield-grid-1"></div>
-        <div class="windshield-grid-1"></div>
-        <div class="windshield-grid-1"></div>
-        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1 flex-end-center no-flex-grow">
+            <div class="windshield-circle suspension radar" style="margin-left: 10%;"></div>
+        </div>
         <div class="windshield-grid-1"></div>
         
         <!--Row 9-->
@@ -197,14 +211,19 @@
         <div class="windshield-grid-1"></div>
       </div>
       
-      
+    </div>
 
 </div>
 
 <script>
     function toggleCircles(className) {
-      $('.' + className).toggleClass('windshield-active');
-      $('#' + className).toggleClass('windshield-active');
-      $('.windshield-label .' + className).toggleClass('windshield-active');
-    }
+    // Remove the active class from all elements
+    $('.windshield-active').removeClass('windshield-active');
+    
+    // Add the active class to the selected elements
+    $('.' + className).addClass('windshield-active');
+    $('#' + className).addClass('windshield-active');
+    $('.windshield-label .' + className).addClass('windshield-active');
+}
+
 </script>

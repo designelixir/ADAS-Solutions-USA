@@ -38,7 +38,7 @@
       </div>
       {@|apply ourFocus.block}
 
-      <div class="flex-start-start flex-break" style="padding: 50px 25px;">
+      <div class="flex-start-start flex-break basic-padding" style="margin: 50px 0; padding-top: 50px; background-color: #e2e2e2;">
         <squarespace:block-field id="MeetOurTeam-Description" columns="1" />
         <squarespace:block-field id="MeetOurTeam-Video" columns="1" />
 
@@ -51,7 +51,6 @@
       {@|apply callToAction.block}
 
       </main>
-      {@|apply footer.block}
 
     </div>
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

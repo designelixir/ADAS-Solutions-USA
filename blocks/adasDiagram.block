@@ -1,14 +1,14 @@
 <style>
-.adas-diagram-container { background-image: url('../assets/car-diagram.png');  }
-.adas-diagram-overlay {}
+.adas-diagram-container { background-image: url('../assets/car-diagram-3.png'); transform: translateY(-16%); margin-bottom: -10%; }
+.adas-diagram-overlay {transform: translateY(0);}
 .fill-bg {width: 100%; height: 70vw; max-height: 1290px;  background-size: cover; background-position: center center; background-repeat: no-repeat; background-origin: center center;}
-.diagram-text {width: calc(90vw / 13) * 6.5; border: 2px solid blue; }
+.diagram-text {width: calc(90vw / 13) * 6.5;  }
 .grid { width: 100%; height: 100%;}
 .grid-1 {width: calc(100% / 12); height: calc(100% / 12); }
 .grid-2 {width: calc((100% / 12)*2); height: calc(100% / 12); }
 .grid-3 {width: calc((100% / 12)*3); height: calc(100% / 12); }
 .grid-6 {width: calc((100% / 12) * 6); height: calc((100% / 12) * 3); }
-.grid-12 {width: 100%; height: calc((100% / 12) * 3);}
+.grid-12 {width: 100%; height: calc((100% / 12) * 3); }
 .grid-6-spacer {width: calc((100% / 12) * 6); height: calc((100% / 12) * 3); transform: translateY(calc(-(100% / 12) * 3)) ; }
 .grid-with-item:hover .label { font-weight: 500!important; cursor: pointer;}
 .label {background: rgba(255,255,200,0.75); font-weight: 200; margin: 0!important; line-height: 15px; font-size: 14px; font-family: 'Archivo', sans-serif; border-radius: 3px; padding: 5px; text-align: center;}
@@ -25,10 +25,19 @@
   h3 {font-size: 18px; line-height: 22px;}
 }
 
-#title-content {max-width: 500px;}
+.active-feature {font-weight: 600; border: 2px solid black;}
+.active-legend {border: 2px solid black; opacity: 1 !important; font-weight: 500 !important;}
 
-.circle {position: absolute; width: 20px; height: 20px; position: relative; }
-.circle:after {content: ""; display: block; width: 100%; height: 100%; background-color: var(--logo-red); border-radius: 50px; animation: circle 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;}
+.title-content-wrapper {
+  width: 42%;
+  margin-top: -20%;
+  margin-left: 55%;
+  z-index: 10;
+  position: relative;
+}
+
+.circle {position: absolute; width: 15px; height: 15px; position: relative; }
+.circle:after {content: ""; display: block; width: 100%; height: 100%; background-color: var(--logored); border-radius: 50px; animation: circle 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;}
 
 .legend-item {height: 25px; width: 50px; margin-right: 10px; }
 .legend-item p {opacity: 0.5!important; font-weight: 500;}
@@ -53,7 +62,7 @@
         <div class="grid flex-end-end flex-wrap">
             {#  Row 1  }
             <div class="grid-12 flex-end-start no-flex-grow" style="padding: 0 25px;">            
-                <div id="title-content" class="full-width"></div>
+                
             </div>
 
             {#  Row 2  }
@@ -217,110 +226,61 @@
         
         </div>
     </div>
+    <div class="title-content-wrapper">
+        <div id="title-content" class="full-width"></div>
+    </div>
 </div>
 
 <script>
 
   function handleADASChange(inputString) {
-    $('.legend-item-wrapper').removeClass('active')
-    switch (inputString) {
-      case "ACC":
-        $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/lane-assist.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-        $('#ACC .label').css({"font-weight": "600", "border": "2px solid black"})
-        $("#diagram-instruction").css('display', 'none')
-        $("#title-content").html(descriptionArray[9])
-        $('#longRangeRadar').addClass('active')
-        $("#diagram-instruction").css('display', 'none')
-        break;
+    // Remove all active classes first
+    $(".grid-with-item .label").removeClass('active-feature');
+    $(".adas-diagram-overlay").removeClass('fade-in');
+    $(".legend-item-wrapper").removeClass('active-legend');
+    $("#diagram-instruction").css('display', 'none');
 
-    case "360":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/360degree.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#360 .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[8])
-    $('#cameras').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
+    // Define the background images based on the input
+    const backgroundImages = {
+        "ACC": "../assets/diagram/lane-assist.png",
+        "360": "../assets/diagram/360degree.png",
+        "lka": "../assets/diagram/lane-keep.png",
+        "bsm": "../assets/diagram/blind-spot.png",
+        "aeb": "../assets/diagram/auto-braking.png",
+        "fcw": "../assets/diagram/auto-braking.png",
+        "tsr": "../assets/diagram/traffic-sign.png",
+        "abs": "../assets/diagram/auto-braking.png",
+        "pcam": "../assets/diagram/pcam.png",
+        "ldw": "../assets/diagram/lane-departure-warning2.png"
+    };
 
-    case "lka":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/lane-keep.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#lka .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[7])
-    $('#cameras').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
+    // Set the new background image and apply animation
+    $(".adas-diagram-overlay").css({"background-image": `url(${backgroundImages[inputString]})`}).addClass('fade-in');
 
-    case "bsm":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/blind-spot.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#bsm .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[6])
-    $('#cameras').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
+    $('#' + {inputString} + '.label').addClass('active-feature');
 
-    case "aeb":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/auto-braking.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#aeb .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[5])
-    $('#lidar').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
-
-    
-
-    case "fcw":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/auto-braking.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#fcw .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[4])
-    $('#lidar').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
-
-    case "tsr":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/traffic-sign.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#tsr .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[3])
-    $('#cameras').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
-
-    case "abs":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/auto-braking.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#abs .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[2])
-    $('#lidar').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
-
-    case "pcam":
-    $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/pcam.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-    $('#pcam .label').css({"font-weight": "600", "border": "2px solid black"})
-    $("#title-content").html(descriptionArray[1])
-    $('#lidar').addClass('active')
-    $("#diagram-instruction").css('display', 'none')
-    break;
-
-    case "ldw":
-        $(".adas-diagram-overlay").css({"background-image": "url(../assets/diagram/lane-departure-warning2.png)", "animation": "fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both"});
-        $('#ldw .label').css({"font-weight": "600", "border": "2px solid black"})
-        $("#diagram-instruction").css('display', 'none')
-        $("#title-content").html(descriptionArray[0])
-        $('#longRangeRadar').addClass('active')
-        $("#diagram-instruction").css('display', 'none')
-        break;
-
-      default:
-        $(".adas-diagram-overlay").css("background-image", "unset");
-        $("#diagram-instruction").css('display', 'block')
-        $('.label *').css({"font-weight": "200", "border": "unset"})
-        $("#diagram-instruction").css('display', 'none')
+    if (["ACC", "lka", "ldw"].includes(inputString)) {
+        $('#longRangeRadar').addClass('active-legend');
+    } else if (["bsm", "tsr", "360"].includes(inputString)) {
+        $('#cameras').addClass('active-legend');
+    } else if (["aeb", "fcw", "abs", "pcam"].includes(inputString)) {
+        $('#lidar').addClass('active-legend');
     }
-  }
-  $(".adas-selector").on("click", function() {
-    
-    var adasFeature = $(this).data("feature"); 
-    handleADASChange(adasFeature);
-  });
 
+    const titleContentMap = {
+        "ACC": descriptionArray[9],
+        "360": descriptionArray[8],
+        "lka": descriptionArray[7],
+        "bsm": descriptionArray[6],
+        "aeb": descriptionArray[5],
+        "fcw": descriptionArray[4],
+        "tsr": descriptionArray[3],
+        "abs": descriptionArray[2],
+        "pcam": descriptionArray[1],
+        "ldw": descriptionArray[0]
+    };
+    $("#title-content").html(titleContentMap[inputString]);
+}
 
 </script>
 
