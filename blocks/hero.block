@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 860px) {
 .hero-text-wrapper {padding: 50px 25px!important;}
-    .hero-text-wrapper h1 {font-size: 24px; line-height: 30px; }
+.hero-text-wrapper h1 {font-size: 24px!important; line-height: 30px; }
 .tab-container .full-width {flex-direction: column}
 
 .tab {padding: 20px 10px 40px;}
@@ -27,13 +27,13 @@
 #Business-Button-3, #Business-Button-2, #Business-Button-1 {border: 2px solid white;}
 
 
-.hero-text-wrapper {z-index: 2; width: 100%; height: 70vh; padding: 150px 25px 50px 50px; position: relative; z-index: 2; }
+.hero-text-wrapper {z-index: 2; width: 100%; height: 70vh; min-height: 700px; padding: 150px 25px 50px 50px; position: relative; z-index: 2; }
 .hero-text-wrapper * {color: white!important; text-shadow: 0 0 2px rgba(0,0,0,0.5); }
-
+.hero-text-wrapper h1 {font-size: 36px!important;}
 
 #heroVideo {overflow: hidden;}
-.hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; margin-bottom: -5px; height: 70vh; min-height: 550px; overflow: hidden;} 
-.hero-video-wrapper {max-width: 1300px; border-radius: 5px; width: 100%; overflow: hidden; min-height: 70vh; max-height: 70vh; position: relative; }
+.hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; margin-bottom: -5px; height: 70vh; min-height: 700px; overflow: hidden;} 
+.hero-video-wrapper {max-width: 1300px; border-radius: 5px; width: 100%; overflow: hidden; height: 70vh; min-height: 700px; max-height: 70vh; position: relative; }
 .vimeo-wrapper {width: 120%; height: 130%; min-height: 600px; position: absolute; top: -10%; left: -10%; overflow: hidden; pointer-events: none; background-image: url('../assets/vimeo-clip.png'); background-size: cover; background-position: center center; background-repeat: no-repeat;}
 .vimeo-wrapper iframe {width: 100%; height: 100%; position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%;  object-fit: cover; }
 

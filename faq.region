@@ -10,9 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     {squarespace-headers}
-    <script>
-        var descriptionArray = []
-    </script>
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
@@ -27,13 +24,16 @@
           {.end}
         </div>
       </div>
-      
+
+      <squarespace:block-field id="FAQ-Intro" columns="1" />
+
       <div class="flex-center-center flex-wrap">
         <squarespace:block-field id="FAQ-Button1" columns="1" />
         <squarespace:block-field id="FAQ-Button2" columns="1" />
         <squarespace:block-field id="FAQ-Button3" columns="1" />
         <squarespace:block-field id="FAQ-Button4" columns="1" />        
         </div>
+
       <section>
         
             <div class="banner-bg" style="margin-bottom: -25px;">
