@@ -11,7 +11,9 @@
    
 
     <!--MAIN CONTENT-->
-    {body}
+    <div class="blog-size-paragraph">
+      {body}
+    </div>
 
     <!--BLOG INJECTION-->
     {postItemInjectCode}
