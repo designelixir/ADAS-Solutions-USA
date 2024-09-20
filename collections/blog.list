@@ -3,7 +3,7 @@
 {.repeated section items}
   {.repeated section categories}
     
-    {.equal? category '{@}'}
+    {.equal? categories '{@}'}
     {@}
     {.end}
   {.end}
