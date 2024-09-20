@@ -13,7 +13,15 @@
     <div class="banner-bg" style="z-index: 4; position: relative;">
         <squarespace:block-field id="Consumer-Educate-Title" columns="1" />
     </div>
-    {@|apply whatIsAdas.block}
+    
+    <div>
+        <div style="border: 1px solid lime;" class="flex-center-center">
+            <squarespace:block-field id="Consumer-Diagram-Title" columns="1" />
+        </div>
+        {@|apply windshieldDiagram.block}
+    </div> 
+
+    
 
 
     <div class="flex-center-center" style="margin-top: 75px;">

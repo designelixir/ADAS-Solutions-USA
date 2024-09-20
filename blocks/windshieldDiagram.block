@@ -1,0 +1,170 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+.windshield-diagram-container { background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/b3e27f2c-b585-42df-bf74-d9b1f9126711/car-road-stripes.png?content-type=image%2Fpng'); background-size: 100% 110%; background-repeat: no-repeat;  border: 1px solid red; width: 100%; height: 600px; }
+.windshield-diagram-overlay {border: 2px solid teal; height: 100%; width: 100%;}
+
+.windshield-grid-wrapper {height: 80%; max-width: 600px; width: 100%; border: 0.1px solid lime; background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/3fcb2d92-a997-4279-b1c5-b826a17a1e59/car-front.png?content-type=image%2Fpng'); background-size: contain; background-position: center center; background-repeat: no-repeat;}
+.windshield-grid-1 {width: 10%; height: 10%; border: 0.1px solid orange;}
+.windshield-grid-2 {width: 20%; height: 10%; border: 0.1px solid orange;}
+.windshield-grid-4 {width: 40%; height: 10%; border: 0.1px solid orange;}
+.windshield-grid-6 {width: 60%; height: 10%; border: 0.1px solid orange;}
+
+.windshield-label {background: rgba(255,255,200,0.75); font-weight: 200; margin: 0!important; line-height: 15px; font-size: 14px; font-family: 'Archivo', sans-serif; border-radius: 3px; padding: 5px; text-align: center; opacity: 0;}
+.windshield-label.windshield-active {opacity: 1!important;}
+
+.windshield-circle {position: absolute; width: 10px; height: 10px; position: relative; opacity: 0.2; }
+.windshield-circle:after {content: ""; display: block; width: 100%; height: 100%; background-color: red; border-radius: 50px; animation: circle 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;}
+
+.repair-items-container {padding: 25px; border: 1px solid red; width: calc(100% - 600px;)}
+.repair-item {padding: 0 15px; margin: 0 2px; text-align: center; background: gray; color: white; font-size: 18px;}
+.repair-item:hover {background: black; cursor: pointer;}
+.repair-item-description {display: none;}
+.windshield-active {opacity: 1!important;}
+.windshield-active .repair-item-description  {display: block!important;}
+.repair-item.windshield-active {background: black!important;}
+</style>
+
+<div class="windshield-diagram-container flex-center-center">
+    <div class="windshield-diagram-overlay flex-start-start">
+        <div class="repair-items-container">
+            <div class="repair-item">
+                <squarespace:block-field id="RepairItem-1" columns="1" />
+            </div>
+        </div>
+      <div class="windshield-grid-wrapper flex-start-start flex-wrap">
+        <!--Row 1-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 2-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <div class="windshield-grid-2 flex-end-center no-flex-grow">
+          <div class="windshield-circle collisions" style="margin-right: -5%"></div>
+          
+        </div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 3-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 4-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 5-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 6-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-4 flex-center-spacebetween no-flex-grow">
+          <div class="windshield-circle collisions" style="margin-top: -10%;"></div>
+          <div class="windshield-label" class="collisions">Radar Sensors</div>
+          <div class="windshield-circle collisions" style="margin-top: -10%;"></div>
+        </div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 7-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 8-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 9-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        
+        <!--Row 10-->
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+        <div class="windshield-grid-1"></div>
+      </div>
+      
+      
+
+</div>
+
+<script>
+    function toggleCircles(className) {
+      $('.' + className).toggleClass('windshield-active');
+      $('#' + className).toggleClass('windshield-active');
+      $('.repair-item-description .' + className).toggleClass('windshield-active');
+    }
+</script>

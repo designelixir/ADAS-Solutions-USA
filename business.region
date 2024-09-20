@@ -17,8 +17,8 @@
     </div>
     {@|apply completeAdasSolution.block}
 
-    <section id="what-is-adas">
-        <div class="red-bg">
+    <div id="what-is-adas">
+        <div class="red-bg" style="margin-bottom: -50px">
             <squarespace:block-field id="Business-WhatIsAdas" columns="1" />
         </div>
         <squarespace:query collection="glossary" tag="diagram" limit="20">
@@ -40,7 +40,7 @@
             <squarespace:block-field id="ViewGlossaryButton" columns="1" />
             <squarespace:block-field id="AboutAdasButton" columns="1" />
         </div>
-      </section>
+      </div>
 
     
     
