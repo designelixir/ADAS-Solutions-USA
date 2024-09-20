@@ -20,6 +20,9 @@
   .fill-bg {height: 95vh;}
   .hide-me {display: none}
   .show-me {display: block;}
+  h1 {font-size: 36px; line-height: 40px;}
+  h2 {font-size: 28px; line-height: 32px;}
+  h3 {font-size: 18px; line-height: 22px;}
 }
 
 #title-content {max-width: 500px;}
