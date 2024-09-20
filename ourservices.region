@@ -81,7 +81,10 @@
 
         {#  Hail Repair  }
         <div class="service-type flex-center-center flex-column fade-in" id="hailRepair">
+                
+                <div class="service-toggler flex-center-center flex-wrap" >
                 <squarespace:block-field id="HailRepair-Description" columns="1" />
+                </div>
                 
                 
             </div>
