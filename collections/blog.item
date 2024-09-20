@@ -35,26 +35,21 @@
 
   </article>
 
+  <h3>Read more </h3>
+  <squarespace:query collection="{collection.urlId}" category="@" limit="4">
+
+    <div class="flex-start-start">
+      {.repeated section items}
+        <article id="post-{id}" class="summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" onclick="window.open('{fullUrl}', '_self')">
+              <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+              <h3 class="summary-title-card">{title}</h3>
+              <p class="summary-excerpt-card">{excerpt|safe|truncate 50}</p>
+              <a style="font-size: 12px;">Read more &rarr;</a>
+        </article>
+      {.end}
+    </div>
+
+  </squarespace:query>
+
 {.end}
 
-
-<!--PAGINATION-->
-{.section pagination}
-  <nav class="blog-item-pagination">
-
-    <!--NEWER PAGE-->
-    {.section prevItem}
-      <a href="{fullUrl}">Newer</a>
-    {.or}
-      <a class="disabled">Newer</a>
-    {.end}
-
-    <!--OLDER PAGE-->
-    {.section nextItem}
-      <a href="{fullUrl}">Older</a>
-    {.or}
-      <a class="disabled">Older</a>
-    {.end}
-
-  </nav>
-{.end}
