@@ -30,9 +30,7 @@
       <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="OurPromise-Description" columns="1" />
       </div>
-      <div class="basic-padding">
-        <squarespace:block-field id="About-Intro" columns="1" />
-      </div>
+
       {@|apply ourPromise.block}
 
       <div class="basic-padding banner-bg-reverse">
