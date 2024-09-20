@@ -122,5 +122,16 @@
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     {squarespace-footers}
 
+    <script>
+
+    function toggle(serviceId) {
+  $('.service-type').hide();
+  $('.services-header-title-item').removeClass('active border-right');
+  $('#' + serviceId).fadeIn();
+  $('#' + serviceId + '-Toggle').addClass('active border-right');
+}
+
+</script>
+
   </body>
 </html>

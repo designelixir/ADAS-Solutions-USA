@@ -119,15 +119,15 @@ $(document).ready(function() {
         });
     }
 
-    // Run the function when the page is loaded
+    
     applyBorders();
 
-    // Re-run the function when the window is resized
+    
     $(window).resize(function() {
         applyBorders();
     });
 
-    // 1. Toggle visibility of front and back of calibration blocks
+    
     $('.calibration-block').click(function() {
         let $front = $(this).find('.front');
         let $back = $(this).find('.back');
@@ -137,7 +137,6 @@ $(document).ready(function() {
         $back.toggle();
     });
 
-    // 2. Toggle active service header and show corresponding service type
     function toggleServiceType(serviceId) {
         // Hide all service types
         $('.service-type').hide();
@@ -146,11 +145,9 @@ $(document).ready(function() {
         $('#' + serviceId).show();
     }
 
-    // On page load, set Calibration-Toggle as active and show Calibration service type
     $('#calibration-Toggle').addClass('active');
     toggleServiceType('calibration');
 
-    // Handle clicking on service header items
     $('.services-header-title-item').click(function() {
         // Remove .active class from all service header items
         $('.services-header-title-item').removeClass('active');
