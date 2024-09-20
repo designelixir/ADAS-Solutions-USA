@@ -3,25 +3,18 @@
 
   <!--WRAPPER-->
   <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
-
-    <!--POST TILE-->
-
-
-    <!--AUTHOR AND DATE-->
-   
-
-    <!--MAIN CONTENT-->
+    <div class="blog-item-tag">
+    {.repeated section categories}
+      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+    {.end}
+    </div>
     <div class="blog-size-paragraph">
       {body}
     </div>
 
     <!--BLOG INJECTION-->
     {postItemInjectCode}
-
-    <!--CATEGORIES-->
-    {.repeated section categories}
-      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
-    {.end}
+    
 
     <!--TAGS-->
     {.repeated section tags}
