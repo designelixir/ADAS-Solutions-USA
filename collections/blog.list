@@ -15,7 +15,7 @@
 {.repeated section items}
   {.repeated section categories}
   
-  {.equal? @ 'FAQ'}
+  {.equal?:@:'FAQ'}
 
   <article id="post-{id}" class="blog-list-item {@|item-classes}" data-item-id="{id}">
     
