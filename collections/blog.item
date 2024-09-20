@@ -27,11 +27,12 @@
     {@|comments}
 
   </article>
-
+<br>
   <h3>Read more similar to this topic: </h3>
-  <squarespace:query collection="{collection.urlId}" category="@" limit="4">
+  <squarespace:query collection="{collection.urlId}" category="{@}" limit="4">
 
     <div class="flex-start-start">
+    {.section collection}
       {.repeated section items}
         <article id="post-{id}" class="summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" onclick="window.open('{fullUrl}', '_self')">
               <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
@@ -40,6 +41,7 @@
               <a style="font-size: 12px;">Read more &rarr;</a>
         </article>
       {.end}
+    {.end}
     </div>
 
   </squarespace:query>
