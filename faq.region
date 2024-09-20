@@ -27,7 +27,12 @@
 
       <squarespace:block-field id="FAQ-Intro" columns="1" />
 
-      
+      <div class="flex-center-center flex-wrap">
+        <squarespace:block-field id="FAQ-Button1" columns="1" />
+        <squarespace:block-field id="FAQ-Button2" columns="1" />
+        <squarespace:block-field id="FAQ-Button3" columns="1" />
+        <squarespace:block-field id="FAQ-Button4" columns="1" />        
+        </div>
 
       <section>
         
