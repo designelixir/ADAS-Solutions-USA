@@ -36,6 +36,12 @@
             {.or}
 
                 <squarespace:block-field id="{collection.navigationTitle|slugify}-Summary" columns="1"/>
+                <div class="flex-center-start flex-wrap">
+                <squarespace:block-field id="FAQ-Button1" columns="1" />
+                <squarespace:block-field id="FAQ-Button2" columns="1" />
+                <squarespace:block-field id="FAQ-Button3" columns="1" />
+                <squarespace:block-field id="FAQ-Button4" columns="1" />        
+                </div>
                 {squarespace.main-content}
                 {#  Resources  }
             
