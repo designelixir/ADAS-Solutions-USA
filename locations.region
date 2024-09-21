@@ -17,13 +17,44 @@
       <main class="content-container" role="main" data-content-field="main-content">
       
       <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
-        <div class="page-hero-content">
-          <h1>{collection.title}</h1>
+        <div class="page-hero-content extra-header-padding" style="padding-bottom: 100px!important">
+          <h1>{.if item.title}<a href="/{collection.urlId}" class="non-styled-link">{collection.title}</a>{.or}{collection.title}{.end}</h1>
           {.if collection.description}
             <h4>{collection.description|safe}</h4>
           {.end}
         </div>
       </div>
+        {.if item.title}
+            <div class="flex-center-start" style="margin: -50px 25px 25px 25px; padding: 25px; z-index: 2; position: relative; background-color: var(--darkgray)">
+                <h3 class="white-text" style="padding-right: 15px; font-size: 28px;">{item.title} </h3>
+            </div>
+        {.or}
+        <div class="flex-center-start" style="margin: -75px 25px 25px 25px; padding: 0 15px; z-index: 2; position: relative; background-color: var(--darkgray)">
+            <h4 class="white-text" style="padding-right: 15px;">Filter locations by: </h4>
+             <div class="location-filter-bar border-left">
+                <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>State</strong></h5>
+                <div class="flex-center-start flex-wrap no-flex-grow">
+                {.section collection}
+                    {.repeated section categories}
+                        <div class="location-tag state" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')">{@}</div>
+                    {.end}
+                {.end}
+                </div>
+            </div>
+
+            <div class="location-filter-bar border-left">
+                <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>Service</strong></h5>
+                <div class="flex-center-start flex-wrap no-flex-grow">
+                {.section collection}
+                    {.repeated section tags}
+                        <div class="location-tag service" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')">{@}</div>
+                    {.end}
+                {.end}
+                </div>
+            </div>
+        </div>
+        {.end}
+
 
       <section>
         {squarespace.main-content}

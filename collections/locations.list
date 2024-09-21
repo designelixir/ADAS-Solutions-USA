@@ -1,64 +1,106 @@
-<h4>Filter locations</h4>
-<div class="location-filter-bar-wrapper flex-center-start flex-wrap">
-    <div class="location-filter-bar">
-        <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>By State</strong></h5>
-        <div class="flex-center-start flex-wrap no-flex-grow">
-        {.repeated section items}
-            {.repeated section categories}
-                <div class="location-tag" onclick="filter('{@|slugify}')">{@}</div>
-            {.end}
-        {.end}
-        </div>
-    </div>
-        <div class="location-filter-bar">
-        <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>By Service</strong></h5>
-        <div class="flex-center-start flex-wrap no-flex-grow">
-        {.repeated section items}
-            {.repeated section tags}
-                <div class="location-tag" onclick="filter('{@|slugify}')">{@}</div>
-            {.end}
-        {.end}
-        </div>
-    </div>
-</div>
+
 
 <div class="flex-start-start flex-wrap basic-padding">
 {.repeated section items}
-  <article id="post-{id}" class="location-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
+  <article id="post-{id}" class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
     
-        <div class="flex-center-start">
-            <div class="location-image-card" style="background-image: url({assetUrl})"></div>
-            <div class="location-address">
-                <div class="flex-center-start no-flex-grow location-phone">
-                    <img src="../assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                    <h3><a href="tel:{customContent.phoneNumber}" target="_blank">Call Us</a></h3>
-                </div> 
-                <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
-                <div class="flex-center-start no-flex-grow contact-form-line">
-                    <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                    <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
-                </div> 
+        <div class="location-card-summary flex-start-start flex-column">
+            <div class="location-image-card-wrapper">
+                <h3 class="white-text"><strong>{title}</strong></h3>
+            </div>
+            <div class="location-address full-width flex-start-start">
+                    <div style="padding-right: 25px;">
+                    {.if customContent.phoneNumber}
+                    <div class="flex-center-start no-flex-grow location-phone">
+                        <img src="../assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                        <h3><a href="tel:{customContent.phoneNumber}" target="_blank">Call Us</a></h3>
+                    </div> 
+                    {.end}
+                    {.if location.addressLine1}
+                    <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
+                    {.end}
+                    <div class="flex-center-start no-flex-grow contact-form-line">
+                        <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                        <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
+                    </div> 
+                </div>
+                <div class="flex-end-end flex-column book-button-wrapper">
+                    {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
+                    {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Services</button></a>{.end}
+                    {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Services</button></a>{.end}
+                    {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
+                </div>
+                
+               
             </div>
         </div>
-        
-        
-        
-        {.if excerpt}
-            <p class="summary-excerpt-card">{excerpt|safe|truncate 200}</p>
-        {.end}
-        <div class="flex-start-start flex-wrap book-button-wrapper">
-            {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
-            {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Services</button></a>{.end}
-            {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Services</button></a>{.end}
-            {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
+        <div style="width: calc(100% - 30px); margin: 10px 15px; border-bottom: 1px solid var(--lightgray);"></div>
+        <div style="padding: 0 15px;">
+            {.if excerpt}
+                <p class="summary-excerpt-card">{excerpt}</p>
+            {.end}
         </div>
-        <h6><i>Click the map to get directions.</i></h6>
-        {body}
-        
+        <div class="location-summary-card-body">
+            {body}
+        </div>
   </article>
 {.or}
 
   <!-- no items means no blog posts -->
-  <p><em>No posts for this category yet.</em></p>
+  <p><em>No locations posted.</em></p>
 
 {.end}
+
+<script>
+let activeStateFilter = '';
+let activeServiceFilter = '';
+
+function filter(categoryOrTag) {
+    const tagElement = $('#' + categoryOrTag + '-filter-tag');
+
+    if (tagElement.hasClass('active-filter-tag')) {
+        tagElement.removeClass('active-filter-tag');
+
+        if (tagElement.hasClass('state')) {
+            activeStateFilter = '';
+        } else if (tagElement.hasClass('service')) {
+            activeServiceFilter = '';
+        }
+    } else {
+        if (tagElement.hasClass('state')) {
+            activeStateFilter = categoryOrTag;
+            $('.location-tag.state').removeClass('active-filter-tag');
+        } else if (tagElement.hasClass('service')) {
+            activeServiceFilter = categoryOrTag;
+            $('.location-tag.service').removeClass('active-filter-tag');
+        }
+
+        tagElement.addClass('active-filter-tag');
+    }
+
+    gsap.to('.location-summary-card', {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: function () {
+            $('.location-summary-card').hide();
+            
+            let selector = '.location-summary-card';
+
+            if (activeStateFilter) {
+                selector += '.' + activeStateFilter;
+            }
+            if (activeServiceFilter) {
+                selector += '.' + activeServiceFilter;
+            }
+
+            let matchingCards = $(selector);
+
+            if (matchingCards.length > 0) {
+                matchingCards.show();
+                gsap.fromTo(matchingCards, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+            }
+        }
+    });
+}
+
+</script>
