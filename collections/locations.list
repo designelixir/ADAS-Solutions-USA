@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="lightgray-button" style="margin-top: 25px;">
-            Click for more details &rarr;
+            <a href="{fullUrl}" class="non-styled-link">Click for more details &rarr;</a>
         </div>
   </article>
 {.or}

@@ -1,5 +1,5 @@
 
-<div class="flex-start-start flex-wrap">
+<div class="flex-start-center flex-wrap">
 {.repeated section items}
   <article id="post-{id}" class="summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" onclick="window.open('{fullUrl}', '_self')">
     

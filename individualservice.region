@@ -37,66 +37,77 @@
 
       {.if item.title}
 
-      <section class="basic-padding">
-        <squarespace:block-field id="{item.title}-Service-Intro" columns="1" />
-        <squarespace:query collection="locations" tag="{item.title}" limit="20">
-            <div class="flex-start-start flex-wrap">
-                {.repeated section items}
-                <article id="post-{id}" class="location-summary-card box-shadow {@|item-classes}" data-item-id="{id}">
-                    <div class="location-card-summary flex-start-start flex-column">
-                        <div class="location-image-card-wrapper flex-center-spacebetween">
-                            <h3 class="white-text"><strong>{title}</strong></h3>
-                            <img src="{assetUrl}" class="state-image" alt="{.repeated section categories}{@}{.end}">
-                        </div>
-                        <div class="location-address full-width flex-start-start">
-                                <div style="padding-right: 25px;">
-                                {.if customContent.phoneNumber}
-                                <div class="flex-center-start no-flex-grow location-phone">
-                                    <img src="../assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                                    <h3><a href="tel:{customContent.phoneNumber}" target="_blank">Call Us</a></h3>
-                                </div> 
-                                {.end}
-                                {.if location.addressLine1}
-                                <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
-                                {.end}
-                                <div class="flex-center-start no-flex-grow contact-form-line">
-                                    <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                                    <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
-                                </div> 
+        <section class="basic-padding">
+            <squarespace:block-field id="{item.title}-Service-Intro" columns="1" />
+            <squarespace:query collection="locations" tag="{item.title}" limit="20">
+                <div class="flex-start-start flex-wrap">
+                    {.repeated section items}
+                    <article id="post-{id}" class="location-summary-card box-shadow {@|item-classes}" data-item-id="{id}">
+                        <div class="location-card-summary flex-start-start flex-column">
+                            <div class="location-image-card-wrapper flex-center-spacebetween">
+                                <h3 class="white-text"><strong>{title}</strong></h3>
+                                <img src="{assetUrl}" class="state-image" alt="{.repeated section categories}{@}{.end}">
                             </div>
-                            <div class="flex-end-end flex-column book-button-wrapper">
-                                {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
-                                {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Services</button></a>{.end}
-                                {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Services</button></a>{.end}
-                                {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
-                            </div>
+                            <div class="location-address full-width flex-start-start">
+                                    <div style="padding-right: 25px;">
+                                    {.if customContent.phoneNumber}
+                                    <div class="flex-center-start no-flex-grow location-phone">
+                                        <img src="../assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                                        <h3><a href="tel:{customContent.phoneNumber}" target="_blank">Call Us</a></h3>
+                                    </div> 
+                                    {.end}
+                                    {.if location.addressLine1}
+                                    <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
+                                    {.end}
+                                    <div class="flex-center-start no-flex-grow contact-form-line">
+                                        <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                                        <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
+                                    </div> 
+                                </div>
+                                <div class="flex-end-end flex-column book-button-wrapper">
+                                    {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
+                                    {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Services</button></a>{.end}
+                                    {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Services</button></a>{.end}
+                                    {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
+                                </div>
+                                
                             
-                        
+                            </div>
                         </div>
-                    </div>
-                    <div class="lightgray-button" style="margin-top: 25px;">
-                        Click for more details &rarr;
-                    </div>
-                    </article>
-                {.end}                        
-            </div>
-        </squarespace:query>        
-
+                        <div class="lightgray-button" style="margin-top: 25px;">
+                            <a href="{fullUrl}" class="non-styled-link">Click for more details &rarr;</a>
+                        </div>
+                        </article>
+                    {.end}                        
+                </div>
+            </squarespace:query>        
         {squarespace.main-content}
        </section>
        {.or}
        <section>
-            <div class="basic-padding">
+            
+                
+                
+            <div class="services-header" style="padding: unset;">
+            
+                <div class="services-header-wrapper" style="margin-top: unset; padding: unset;">
                 {squarespace.main-content}
-            </div>
-                <squarespace:block-field id="{collection.title}-Intro" columns="1" />
+                <div class="basic-padding">
+                    <squarespace:block-field id="Booking-Intro" columns="1" />
+                </div>
+
+                </div>
+            </div>  
+                
                 <div class="basic-padding" id="whatToExpectCards" style="z-index: 2;">
                 <squarespace:block-field id="WhatToExpect-Description" columns="1" />
                 {@|apply completeAdasSolutionCards.block}
             </div>
             <div class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px; z-index: 1;">
                 <squarespace:block-field id="GetStarted-Description" columns="1" />
+                <squarespace:block-field id="RequestAQuote" columns="1" />
             </div>
+            <squarespace:block-field id="Testimonials" columns="1" />
         </section>
        {.end}
       </main>
