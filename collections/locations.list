@@ -5,8 +5,9 @@
   <article id="post-{id}" class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
     
         <div class="location-card-summary flex-start-start flex-column">
-            <div class="location-image-card-wrapper">
+            <div class="location-image-card-wrapper flex-center-spacebetween">
                 <h3 class="white-text"><strong>{title}</strong></h3>
+                <img src="{assetUrl}" class="state-image" alt="{.repeated section categories}{@}{.end}">
             </div>
             <div class="location-address full-width flex-start-start">
                     <div style="padding-right: 25px;">
@@ -34,14 +35,8 @@
                
             </div>
         </div>
-        <div style="width: calc(100% - 30px); margin: 10px 15px; border-bottom: 1px solid var(--lightgray);"></div>
-        <div style="padding: 0 15px;">
-            {.if excerpt}
-                <p class="summary-excerpt-card">{excerpt}</p>
-            {.end}
-        </div>
-        <div class="location-summary-card-body">
-            {body}
+        <div class="lightgray-button" style="margin-top: 25px;">
+            Click for more details &rarr;
         </div>
   </article>
 {.or}

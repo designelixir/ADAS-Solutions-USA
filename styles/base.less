@@ -66,6 +66,9 @@ main {background: white; border-top-right-radius: 5px; border-top-left-radius: 5
 .button {background-color: var(--ssgray); color: white; text-transform: uppercase; font-size: 20px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 15px 20px; text-decoration: none!important; border: 2px solid var(--ssgray)}
 .button:hover {font-weight: 500; border: 2px solid white; cursor: pointer;}
 .button a {color: inherit; text-decoration: none;}
+
+.lightgray-button {background-color: var(--lightgray); color: black; font-size: 16px; font-family: "Archivo", sans-serif; font-weight: 300; padding: 15px 20px; text-decoration: none!important; border: unset;}
+.lightgray-button:hover {cursor: pointer; font-weight: 500;}
 .sqs-block-button .sqs-block-button-element--large {background-color: var(--logored); padding: 15px 20px!important; border: 2px solid var(--darkred);}
 
 // Text Styles
@@ -206,10 +209,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   background: #f2f2f2;
   border-radius: 5px;
   margin: 2% 1%;
-  width: 48%; margin-right: 1%;  min-height: 420px;
-  border: 1px solid var(--lightgray)
+  width: 48%; margin-right: 1%;
+  border: 1px solid var(--lightgray);
+  
 }
-
+.state-image {height: 101%; width: auto;}
 .location-image-card-wrapper {background: var(--darkgray); width: 100%;  color: white; margin-bottom: 10px; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px; }
 .location-image-card { width: 100%; height: 100%; }
 .location-phone a{color: var(--red); font-size: 18px; text-decoration: unset; font-weight: 300;}
@@ -218,8 +222,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .location-filter-bar {background: var(--darkgray); padding: 25px;}
 .location-tag {background: white; padding: 5px; border-radius: 5px; font-size: 14px; margin: 0 2px;}
 .location-tag:hover {background: #e2e2e2; cursor: pointer;}
-.location-summary-card-body { border-radius: 5px}
-.location-summary-card-body .accordion-block {margin-left: 15px;}
+.location-card-summary {min-height: 140px;}
 .book-button-wrapper {margin-bottom: 10px;}
 .book-button {background: var(--darkgray); color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkgray); padding: 5px; border-radius: 5px;}
 .book-button:hover {background: var(--lightgray); cursor: pointer; color: var(--darkgray)}
