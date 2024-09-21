@@ -1,0 +1,27 @@
+
+{.section item}
+
+  <!--WRAPPER-->
+  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+  <p class="meta">
+      <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by the ADAS Solutions USA Team</a>
+    </p>
+    <span class="blog-item-tag">
+    {.repeated section categories}
+      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+    {.end}
+    
+    </span>
+    <div class="blog-size-paragraph">
+      {body}
+    </div>
+
+    <!--BLOG INJECTION-->
+    {postItemInjectCode}
+ 
+    <!--COMMENTS-->
+    {@|comments}
+
+  </article>
+{.end}
+
