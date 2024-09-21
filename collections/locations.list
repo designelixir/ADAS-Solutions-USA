@@ -1,13 +1,55 @@
+<style>
+.location-summary-card {
+  background: #e2e2e2;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 2% 1%;
+  width: 31%;
+  min-height: 420px;
+}
 
-<div class="flex-start-start flex-wrap">
+.location-image-card {margin-top: -50px; margin-left: -50px; width: 150px; height: 150px; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
+.location-address {padding: 15px;}
+.locatin-address h3 {font-size: 14px;}
+.location-filter-bar {background: var(--darkgray); padding: 25px;}
+.location-tag {background: white; padding: 5px; border-radius: 5px; font-size: 14px;}
+.location-tag:hover {background: #e2e2e2; cursor: pointer;}
+
+@media screen and (max-width: 660px) {
+  .location-summary-card {width: 100%;}
+  .location-category-section h1 {font-size: 18px;}
+}
+</style>
+
+<h4>Filter locations</h4>
+<div class="location-filter-bar">
+    <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>By State</strong></h5>
+    <div class="flex-center-start flex-wrap no-flex-grow">
+    {.repeated section items}
+        {.repeated section categories}
+            <div class="location-tag">{@}</div>
+        {.end}
+    {.end}
+    </div>
+</div>
+
+<div class="flex-start-start flex-wrap basic-padding">
 {.repeated section items}
   <article id="post-{id}" class="location-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" onclick="window.open('{fullUrl}', '_self')">
     
-    
-        <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-        <h3 class="summary-title-card">{title}</h3>
+        <div class="flex-center-start">
+            <div class="location-image-card" style="background-image: url({assetUrl})"></div>
+            <div class="location-address">
+                <a href="tel:{customerContent.phoneNumber}" class="flex-center-start" target="_blank">
+                    <img src="../assets/icon/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>
+                    {customContent.phoneNumber}
+                </a>
+                <h3>{location.addressLine1}<br>{location.addressLine2}, USA</h3>
+            </div>
+        </div>
+        
         <p class="summary-excerpt-card">{excerpt|safe|truncate 200}</p>
-        <a style="font-size: 12px;">Read more &rarr;</a>
+        {body}
     
     
   </article>
