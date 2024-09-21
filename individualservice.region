@@ -19,14 +19,19 @@
       <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
         <div class="page-hero-content {.if item.title}{.or} extra-header-padding{.end}" >
             {.if item.title}
-                <h3 class="white-text hover" onclick="window.open('/{collection.urlId}', '_self')">&larr; {collection.title}</h3>
-                <h1>{.if item.title} {item.title} {.end}</h1>
+                <h1 >{.if item.title}<a href="/{collection.urlId}" class="non-styled-link"><span class="white-text" style="font-weight: 100">{collection.title}</span></a>&nbsp;|&nbsp;{item.title}{.or}{collection.title}{.end}</h1>
+                <div class="white-text">
+                    <squarespace:block-field id="{item.title}-Service-Subtitle" columns="1" />
+                </div>
+                    
+               
             {.or}
                 <h1>{collection.title} </h1>
+                {.if collection.description}
+                    <h4>{collection.description|safe}</h4>
+                {.end}
             {.end}
-            {.if collection.description}
-                <h4>{collection.description|safe}</h4>
-            {.end}
+            
         </div>
       </div>
 
