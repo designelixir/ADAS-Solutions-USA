@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="bg">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    {squarespace-headers}
+  </head>
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+    <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+    <div class="site-container">
+      <main class="content-container" role="main" data-content-field="main-content">
+      
+      <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
+        <div class="page-hero-content {.if item.title}{.or} extra-header-padding{.end}" >
+            {.if item.title}
+                <h1 >{.if item.title}<a href="/{collection.urlId}" class="non-styled-link"><span class="white-text" style="font-weight: 100">{collection.title}</span></a>&nbsp;|&nbsp;{item.title}{.or}{collection.title}{.end}</h1>
+                <div class="white-text">
+                    <squarespace:block-field id="{item.title}-Service-Subtitle" columns="1" />
+                </div>
+                    
+               
+            {.or}
+                <h1>{collection.title} </h1>
+                {.if collection.description}
+                    <h4>{collection.description|safe}</h4>
+                {.end}
+            {.end}
+            
+        </div>
+      </div>
+        <section>
+            <div class="basic-padding">
+                {squarespace.main-content}
+                <div id="whatToExpectCards" style="z-index: 2;">
+                    <squarespace:block-field id="WhatToExpect-Description" columns="1" />
+                    {@|apply completeAdasSolutionCards.block}
+                </div>
+            </div>
+
+            <div class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px; z-index: 1;">
+                <squarespace:block-field id="GetStarted-Description" columns="1" />
+                <squarespace:block-field id="RequestAQuote" columns="1" />
+            </div>
+            
+            <div class="basic-padding">
+                <squarespace:block-field id="Testimonials" columns="1" />
+            </div>
+        </section>
+      </main>
+
+    </div>
+    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    {squarespace-footers}
+
+  </body>
+</html>
