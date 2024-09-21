@@ -62,7 +62,7 @@
                 <h3 style="margin: 4px 0;">{location.addressLine1}, {location.addressLine2}, USA</h3>
                 <div class="flex-center-start no-flex-grow">
                     <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                    <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Description" columns="1" />
+                    <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
                 </div> 
             </div>
         </div>
