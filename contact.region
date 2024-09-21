@@ -17,7 +17,7 @@
       <main class="content-container" role="main" data-content-field="main-content">
       
       <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
-        <div class="page-hero-content {.if item.title}{.or} extra-header-padding{.end}" >
+        <div class="page-hero-content" >
             {.if item.title}
                 <h1 >{.if item.title}<a href="/{collection.urlId}" class="non-styled-link"><span class="white-text" style="font-weight: 100">{collection.title}</span></a>&nbsp;|&nbsp;{item.title}{.or}{collection.title}{.end}</h1>
                 <div class="white-text">
@@ -35,18 +35,31 @@
         </div>
       </div>
         <section>
-        <div class="flex-center-center">
-            <squarespace:block-field id="Contact-colorado-Form" columns="1" />
+        <div class="basic-padding">
+          {squarespace.main-content}
+          <h3 class="centered-text">Contact us by selecting your state below and filling out the form:</h3>
+          <div class="flex-center-center flex-wrap">
+              <div class="contact-form-icon">
+                <squarespace:block-field id="Contact-colorado-Form" columns="1" />
+                <img class="contact-form-icon-image" src="assets/co-3.png"/>
+              </div>
+              <div class="contact-form-icon">
+                <squarespace:block-field id="Contact-missouri-Form" columns="1" />
+                <img class="contact-form-icon-image" src="assets/missouri.png"/>
+              </div>
+              <div class="contact-form-icon">
+                <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
+                <img class="contact-form-icon-image" src="assets/tennessee.png"/>
+              </div>
+              <div class="contact-form-icon">
+                <squarespace:block-field id="Contact-texas-Form" columns="1" />
+                <img class="contact-form-icon-image" src="assets/texas.png"/>
+              </div>
+          </div>
         </div>
-            <div class="basic-padding">
-                {squarespace.main-content}
-                <div id="whatToExpectCards" style="z-index: 2;">
-                    <squarespace:block-field id="WhatToExpect-Description" columns="1" />
-                    {@|apply completeAdasSolutionCards.block}
-                </div>
-            </div>
+           
 
-            <div class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px; z-index: 1;">
+            <div class="basic-padding banner-bg-reverse" style="margin-top: -150px; padding-top: 200px; z-index: 1;">
                 <squarespace:block-field id="GetStarted-Description" columns="1" />
                 <squarespace:block-field id="RequestAQuote" columns="1" />
             </div>

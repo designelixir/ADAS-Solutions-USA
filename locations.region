@@ -18,6 +18,7 @@
       
       <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content extra-header-padding" style="padding-bottom: 100px!important">
+          
           <h1>{.if item.title}<a href="/{collection.urlId}" class="non-styled-link">{collection.title}</a>{.or}{collection.title}{.end}</h1>
           {.if collection.description}
             <h4>{collection.description|safe}</h4>
@@ -25,8 +26,9 @@
         </div>
       </div>
         {.if item.title}
-            <div class="flex-center-start" style="margin: -50px 25px 25px 25px; padding: 25px; z-index: 2; position: relative; background-color: var(--darkgray)">
+            <div class="flex-center-spacebetween" style="margin: -50px 25px 25px 25px; padding: 25px; z-index: 2; position: relative; background-color: var(--darkgray)">
                 <h3 class="white-text" style="padding-right: 15px; font-size: 28px;">{item.title} </h3>
+                <img src="{item.assetUrl}" class="state-image" alt="{.repeated section categories}{@}{.end}">
             </div>
         {.or}
         <div class="flex-center-start" style="margin: -75px 25px 25px 25px; padding: 0 15px; z-index: 2; position: relative; background-color: var(--darkgray)">
