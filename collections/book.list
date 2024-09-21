@@ -1,3 +1,13 @@
-<div>
-Here is some book content
+<style>
+.book-service-title-wrapper {transform: translateY(-75px); z-index: 2;}
+.book-service-title {background: var(--darkgray); padding: 35px 25px 25px; min-width: 20vw; min-height: 75px;  margin: 1px; color: white!important; text-decoration: unset; line-height: 22px; text-align: center;}
+.book-service-title h3 {color: white;}
+.book-service-title:hover {background: var(--ssgray); cursor: pointer;}
+</style>
+<div class="book-service-title-wrapper flex-center-start flex-wrap">
+{.repeated section items}
+    
+        <a class="book-service-title no-text-spacing" href="{fullUrl}"><h3 class=" no-text-spacing">{title}</h3></a>
+    
+{.end}
 </div>

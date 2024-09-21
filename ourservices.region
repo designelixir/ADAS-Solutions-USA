@@ -90,7 +90,7 @@
         </div>
     </div>
 </div>
-      {@|apply services.block}
+      
       
           
       
@@ -126,6 +126,7 @@
     </script>
     
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="ourservices.js" />
     {squarespace-footers}
 
   </body>
