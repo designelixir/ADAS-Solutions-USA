@@ -200,3 +200,48 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   .blog-summary-card {width: 100%;}
   .blog-category-section h1 {font-size: 18px;}
 }
+
+// Locations
+.location-summary-card {
+  background: #f2f2f2;
+  padding: 15px 15px 0px 15px;
+  border-radius: 5px;
+  margin: 2% 1%;
+  width: 44%; margin-right: 5%;  min-height: 420px;
+}
+
+.location-image-card {margin-top: -40px; margin-left: -50px; width: 150px; height: 150px; min-width: 150px; min-height: 150px; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
+.location-phone a{color: var(--red); font-size: 18px; text-decoration: unset; font-weight: 300;}
+.location-address {padding: 15px;}
+.location-address h3 {font-size: 16px!important; line-height: 20px; }
+.location-filter-bar {background: var(--darkgray); padding: 25px;}
+.location-tag {background: white; padding: 5px; border-radius: 5px; font-size: 14px; margin: 0 2px;}
+.location-tag:hover {background: #e2e2e2; cursor: pointer;}
+.book-button-wrapper {margin-bottom: 10px;}
+.book-button {background: var(--darkgray); color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkgray); padding: 5px; border-radius: 5px;}
+.book-button:hover {background: var(--lightgray); cursor: pointer; color: var(--darkgray)}
+.contact-form-line .lightbox-handle-wrapper * {
+  border: 1px solid red;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: unset !important;
+  border: unset;
+    border-top-width: unset;
+    border-top-color: unset;
+    border-right-width: unset;
+    border-right-color: unset;
+    border-bottom-width: unset;
+    border-bottom-color: unset;
+    border-left-width: unset;
+    border-left-color: unset;
+  color: var(--darkred) !important;
+  font-family: var(--archivo) !important;
+  letter-spacing: unset !important;
+  text-transform: unset !important;
+  font-size: 18px !important; font-weight: 300 !important;
+}
+
+@media screen and (max-width: 660px) {
+  .location-summary-card {width: 100%;}
+  .location-category-section h1 {font-size: 18px; }
+}

@@ -1,29 +1,3 @@
-<style>
-.location-summary-card {
-  background: #f2f2f2;
-  padding: 15px 15px 0px 15px;
-  border-radius: 5px;
-  margin: 2% 1%;
-  width: 35%;
-  min-height: 420px;
-}
-
-.location-image-card {margin-top: -60px; margin-left: -50px; width: 120px; height: 120px; min-width: 120px; min-height: 120px; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
-.location-address {padding: 15px;}
-.location-address h3 {font-size: 16px!important; line-height: 20px; }
-.location-filter-bar {background: var(--darkgray); padding: 25px;}
-.location-tag {background: white; padding: 5px; border-radius: 5px; font-size: 14px; margin: 0 2px;}
-.location-tag:hover {background: #e2e2e2; cursor: pointer;}
-.book-button-wrapper {margin-bottom: 10px;}
-.book-button {background: var(--darkgray); color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkgray); padding: 5px; border-radius: 5px;}
-.book-button:hover {background: var(--lightgray); cursor: pointer; color: var(--darkgray)}
-
-@media screen and (max-width: 660px) {
-  .location-summary-card {width: 100%;}
-  .location-category-section h1 {font-size: 18px; }
-}
-</style>
-
 <h4>Filter locations</h4>
 <div class="location-filter-bar-wrapper flex-center-start flex-wrap">
     <div class="location-filter-bar">
@@ -55,12 +29,12 @@
         <div class="flex-center-start">
             <div class="location-image-card" style="background-image: url({assetUrl})"></div>
             <div class="location-address">
-                <div class="flex-center-start no-flex-grow">
+                <div class="flex-center-start no-flex-grow location-phone">
                     <img src="../assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                    <h3><a href="tel:{customContent.phoneNumber}" target="_blank">{customContent.phoneNumber}</a></h3>
+                    <h3><a href="tel:{customContent.phoneNumber}" target="_blank">Call Us</a></h3>
                 </div> 
-                <h3 style="margin: 4px 0;">{location.addressLine1}, {location.addressLine2}, USA</h3>
-                <div class="flex-center-start no-flex-grow">
+                <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
+                <div class="flex-center-start no-flex-grow contact-form-line">
                     <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
                     <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
                 </div> 
@@ -78,7 +52,9 @@
             {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Services</button></a>{.end}
             {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
         </div>
+        <h6><i>Click the map to get directions.</i></h6>
         {body}
+        
   </article>
 {.or}
 
