@@ -1,57 +1,84 @@
 <style>
 .location-summary-card {
-  background: #e2e2e2;
-  padding: 15px;
+  background: #f2f2f2;
+  padding: 15px 15px 0px 15px;
   border-radius: 5px;
   margin: 2% 1%;
-  width: 31%;
+  width: 35%;
   min-height: 420px;
 }
 
-.location-image-card {margin-top: -50px; margin-left: -50px; width: 150px; height: 150px; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
+.location-image-card {margin-top: -60px; margin-left: -50px; width: 120px; height: 120px; min-width: 120px; min-height: 120px; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
 .location-address {padding: 15px;}
-.locatin-address h3 {font-size: 14px;}
+.location-address h3 {font-size: 16px!important; line-height: 20px; }
 .location-filter-bar {background: var(--darkgray); padding: 25px;}
-.location-tag {background: white; padding: 5px; border-radius: 5px; font-size: 14px;}
+.location-tag {background: white; padding: 5px; border-radius: 5px; font-size: 14px; margin: 0 2px;}
 .location-tag:hover {background: #e2e2e2; cursor: pointer;}
+.book-button-wrapper {margin-bottom: 10px;}
+.book-button {background: var(--darkgray); color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkgray); padding: 5px; border-radius: 5px;}
+.book-button:hover {background: var(--lightgray); cursor: pointer; color: var(--darkgray)}
 
 @media screen and (max-width: 660px) {
   .location-summary-card {width: 100%;}
-  .location-category-section h1 {font-size: 18px;}
+  .location-category-section h1 {font-size: 18px; }
 }
 </style>
 
 <h4>Filter locations</h4>
-<div class="location-filter-bar">
-    <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>By State</strong></h5>
-    <div class="flex-center-start flex-wrap no-flex-grow">
-    {.repeated section items}
-        {.repeated section categories}
-            <div class="location-tag">{@}</div>
+<div class="location-filter-bar-wrapper flex-center-start flex-wrap">
+    <div class="location-filter-bar">
+        <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>By State</strong></h5>
+        <div class="flex-center-start flex-wrap no-flex-grow">
+        {.repeated section items}
+            {.repeated section categories}
+                <div class="location-tag" onclick="filter('{@|slugify}')">{@}</div>
+            {.end}
         {.end}
-    {.end}
+        </div>
+    </div>
+        <div class="location-filter-bar">
+        <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>By Service</strong></h5>
+        <div class="flex-center-start flex-wrap no-flex-grow">
+        {.repeated section items}
+            {.repeated section tags}
+                <div class="location-tag" onclick="filter('{@|slugify}')">{@}</div>
+            {.end}
+        {.end}
+        </div>
     </div>
 </div>
 
 <div class="flex-start-start flex-wrap basic-padding">
 {.repeated section items}
-  <article id="post-{id}" class="location-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" onclick="window.open('{fullUrl}', '_self')">
+  <article id="post-{id}" class="location-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
     
         <div class="flex-center-start">
             <div class="location-image-card" style="background-image: url({assetUrl})"></div>
             <div class="location-address">
-                <a href="tel:{customerContent.phoneNumber}" class="flex-center-start" target="_blank">
-                    <img src="../assets/icon/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>
-                    {customContent.phoneNumber}
-                </a>
-                <h3>{location.addressLine1}<br>{location.addressLine2}, USA</h3>
+                <div class="flex-center-start no-flex-grow">
+                    <img src="../assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                    <h3><a href="tel:{customContent.phoneNumber}" target="_blank">{customContent.phoneNumber}</a></h3>
+                </div> 
+                <h3 style="margin: 4px 0;">{location.addressLine1}, {location.addressLine2}, USA</h3>
+                <div class="flex-center-start no-flex-grow">
+                    <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                    <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Description" columns="1" />
+                </div> 
             </div>
         </div>
         
-        <p class="summary-excerpt-card">{excerpt|safe|truncate 200}</p>
+        
+        
+        {.if excerpt}
+            <p class="summary-excerpt-card">{excerpt|safe|truncate 200}</p>
+        {.end}
+        <div class="flex-start-start flex-wrap book-button-wrapper">
+            {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
+            {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Services</button></a>{.end}
+            {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Services</button></a>{.end}
+            {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
+        </div>
         {body}
-    
-    
   </article>
 {.or}
 
