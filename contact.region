@@ -36,7 +36,7 @@
       </div>
         <section>
         <div class="basic-padding">
-          {squarespace.main-content}
+          
           <h3 class="centered-text">Contact us by selecting your state below and filling out the form:</h3>
           <div class="flex-center-center flex-wrap">
               <div class="contact-form-icon">
@@ -63,9 +63,8 @@
                 <squarespace:block-field id="GetStarted-Description" columns="1" />
                 <squarespace:block-field id="RequestAQuote" columns="1" />
             </div>
-
             <div class="basic-padding">
-                <squarespace:block-field id="Testimonials" columns="1" />
+              {squarespace.main-content}
             </div>
         </section>
       </main>
