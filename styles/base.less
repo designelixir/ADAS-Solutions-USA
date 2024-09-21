@@ -152,6 +152,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .adas-icon-bg { background-image: url('../assets/adas-icon-transparent.svg'); background-size: 40%; background-repeat: no-repeat; background-position: 110% 10%;}
 .adas-icon-bg-container {width: 60%;}
 
+
+
+
 @keyframes fadeInWithDelay {
   0% {
     opacity: 0;
@@ -176,3 +179,24 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .blog-size-paragraph p {font-size: 18px; line-height: 22px;}
 .blog-item-tag {background: #e2e2e2; padding: 5px; border-radius: 5px; }
 .blog-item-tag a {color: black; text-decoration: none; font-size: 12px;}
+.blog-category-section {background: var(--logored); padding: 25px; max-width: 50vw; min-width: 400px;}
+
+.blog-summary-card {
+  background: #e2e2e2;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 2% 1%;
+  width: 31%;
+  min-height: 420px;
+}
+.blog-summary-card:hover .summary-image-card {filter: grayscale(0%);}
+.blog-summary-card:hover {cursor: pointer; transform: scale(1.01)}
+
+@media screen and (max-width: 860px) {
+  .blog-summary-card {width: 48%;}
+}
+
+@media screen and (max-width: 660px) {
+  .blog-summary-card {width: 100%;}
+  .blog-category-section h1 {font-size: 18px;}
+}
