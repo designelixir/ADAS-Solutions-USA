@@ -93,7 +93,7 @@
                 <div class="services-header-wrapper" style="margin-top: unset; padding: unset;">
                 {squarespace.main-content}
                 <div class="basic-padding white-text">
-                    <squarespace:block-field id="{title}-Intro" columns="1" />
+                    <squarespace:block-field id="{collection.title}-Intro" columns="1" />
                 </div>
 
                 </div>
