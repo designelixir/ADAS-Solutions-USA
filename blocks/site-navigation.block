@@ -12,14 +12,14 @@ nav {width: 100%;}
 
 #mobileMenu {display: none; width: 100%; background: var(--lightgray); padding: 15px;}
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1100px) {
   #mobileMenu {display: none;}
   #desktopNav {display: none; }
   #desktopHomeNav {display: none;}
   #hamburger {display: block; cursor: pointer;}
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1100px) {
   #hamburger {display: none; }
   #desktopNav {display: block; }
 }
