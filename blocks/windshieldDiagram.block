@@ -3,7 +3,7 @@
 .windshield-diagram-container {   width: 100%; height: 600px; }
 .windshield-diagram-overlay { height: 100%; width: 100%; background-image: url('../assets/car-road-stripes.png'); background-size: 100% 100%; background-repeat: no-repeat; background-position: center center;}
 
-.windshield-grid-wrapper {height: 80%; max-width: 600px; width: 100%; background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/3fcb2d92-a997-4279-b1c5-b826a17a1e59/car-front.png?content-type=image%2Fpng'); background-size: contain; background-position: center center; background-repeat: no-repeat;}
+.windshield-grid-wrapper {height: 80%; max-width: 600px; width: 100%; background-image: url('../assets/car-front.png'); background-size: contain; background-position: center center; background-repeat: no-repeat;}
 .windshield-grid-1 {width: 10%; height: 10%; }
 .windshield-grid-2 {width: 20%; height: 10%; }
 .windshield-grid-4 {width: 40%; height: 10%; }
