@@ -7,7 +7,7 @@
 .active-link a {color: var(--logored); font-weight: 800;}
 
 </style>
-<div class="footer-navigation-wrapper flex-center-spacebetween flex-wrap">
+<div class="footer-navigation-wrapper flex-center-center flex-wrap">
 {.repeated section items}
 
       <div class="footer-navigation-item black-text {.section active} active-link{.end}">

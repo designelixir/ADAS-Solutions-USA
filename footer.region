@@ -23,7 +23,7 @@ nav {width: 100%;   }
       <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
     </div>
     <div class='flex-center-end padding-left-25'>
-      {@|apply contactUsButtonPopup.block}
+      
       <squarespace:block-field id="Footer-Blocks" columns="1" />
       
     </div>
@@ -33,6 +33,7 @@ nav {width: 100%;   }
 <div class="flex-center-center flex-column basic-padding" style="padding-top: 0;">
     <squarespace:navigation navigationId="footNav" template="footer-navigation" />
     <br>
+    {@|apply contactUsButtonPopup.block}
     <p>Copyright &copy; ADAS Solutions USA</p>
     <a class="no-text-spacing xs-text" style="color: gray; text-decoration: none" target="_blank" href="https://designelixir.studio">Made with &hearts; by Design Elixir Studio </a>
 </div>

@@ -51,6 +51,7 @@ let activeStateFilter = '';
 let activeServiceFilter = '';
 
 function filter(categoryOrTag) {
+    console.log("called", categoryOrTag)
     const tagElement = $('#' + categoryOrTag + '-filter-tag');
 
     if (tagElement.hasClass('active-filter-tag')) {
