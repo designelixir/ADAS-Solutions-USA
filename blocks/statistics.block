@@ -1,5 +1,5 @@
 <style>
-.stat-container {background-color: #DDDDDD; z-index: -1; position: relative; padding: 50px 25px 25px; transform: translateY(-35px);}
+.stat-container {background-color: #DDDDDD; z-index: -1; position: relative; padding: 50px 25px 25px; margin-top: -45px;}
 .stat-wrapper {width: 300px;  padding: 50px;}
 .stat-circle-wrapper {width: 300px; min-height: 300px;}
 .progress-circle {width: 250px; height: 250px; margin: 20px;}

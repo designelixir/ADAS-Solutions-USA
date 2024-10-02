@@ -64,7 +64,6 @@
         {@|apply adasDiagram.block}
         <div class="flex-center-center" style="padding-bottom: 50px;">
             <squarespace:block-field id="ViewGlossaryButton" columns="1" />
-            <squarespace:block-field id="AboutAdasButton" columns="1" />
         </div>
       </div>
       

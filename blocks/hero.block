@@ -5,22 +5,24 @@
 .tab.active {background: var(--red); background-size: 100% 100%;}
 .tab.active h3 {font-weight: 700;}
 
-.tab-left.active {margin-right: -50px; z-index: 300; border-top-right-radius: 25px;}
-.tab-right.active {margin-left: -50px; z-index: 300; border-top-left-radius: 25px; }
+.tab-left.active {margin-right: -50px; z-index: 300;}
+.tab-right.active {margin-left: -50px; z-index: 300;}
 .tab-content {display: none;}
 .tab-content.active {display: block;}
 
+@media screen and (max-width: 1150px) {
+  .tab {min-height: 95px;}
+}
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 600px) {
 .hero-text-wrapper {padding: 50px 25px!important;}
+.tab {min-height: 140px;}
 .tab-container .full-width {flex-direction: column}
-
-.tab {padding: 20px 10px 40px;}
-.tab-left {min-width: unset!important;}
-.tab-right {margin-top: -20px; z-index: 300; padding: 30px 10px 30px!important; border-top-right-radius: 25px;}
+.tab-right {z-index: 300; border-top-right-radius: 25px;}
+.tab-left {border-top-left-radius: 25px;}
 .tab-right h3 {text-align: left!important;}
 .tab-left.active {margin-right: unset; z-index: 300; }
-.tab-right.active {margin-left: unset; z-index: 300; border-top-right-radius: 25px; border-top-left-radius: unset; }    
+.tab-right.active {margin-left: unset; z-index: 300; }    
 }
 
 #Business-Button-3, #Business-Button-2, #Business-Button-1 {border: 2px solid white;}

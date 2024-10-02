@@ -1,0 +1,84 @@
+<style>
+.expanded-text-highlight {background: var(--whitegray)}
+</style>
+
+<div class="repair-items-container">
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-1-Accordion', this)">
+        <squarespace:block-field id="RepairItem-1" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-1-Accordion">
+            <squarespace:block-field id="RepairItem-1-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-2-Accordion', this)">
+        <squarespace:block-field id="RepairItem-2" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-2-Accordion">
+            <squarespace:block-field id="RepairItem-2-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-3-Accordion', this)">
+        <squarespace:block-field id="RepairItem-3" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-3-Accordion">
+            <squarespace:block-field id="RepairItem-3-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-4-Accordion', this)">
+        <squarespace:block-field id="RepairItem-4" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-4-Accordion">
+            <squarespace:block-field id="RepairItem-4-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-5-Accordion', this)">
+        <squarespace:block-field id="RepairItem-5" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-5-Accordion">
+            <squarespace:block-field id="RepairItem-5-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-6-Accordion', this)">
+        <squarespace:block-field id="RepairItem-6" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-6-Accordion">
+            <squarespace:block-field id="RepairItem-6-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-7-Accordion', this)">
+        <squarespace:block-field id="RepairItem-7" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-7-Accordion">
+            <squarespace:block-field id="RepairItem-7-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-8-Accordion', this)">
+        <squarespace:block-field id="RepairItem-8" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-8-Accordion">
+            <squarespace:block-field id="RepairItem-8-Description" columns="1" />
+        </div>
+    </div>
+
+    <div class="repair-item" onclick="toggleADASAccordion('RepairItem-9-Accordion', this)">
+        <squarespace:block-field id="RepairItem-9" columns="1" />
+        <div class="repair-item-expanded" id="RepairItem-9-Accordion">
+            <squarespace:block-field id="RepairItem-9-Description" columns="1" />
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleADASAccordion(id, el) {
+    var content = $('#' + id);
+    var accordionContainer = $(el).find('.repair-item-expanded');
+    
+    // Toggle the visibility of the relevant content
+    if (content.is(":visible")) {
+        content.slideUp();
+        accordionContainer.removeClass('expanded-text-highlight');
+    } else {
+        content.slideDown();
+        accordionContainer.addClass('expanded-text-highlight');
+    }
+}
+</script>
