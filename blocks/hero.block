@@ -73,7 +73,6 @@
 <script>
 
 function resizeIframe() {
-    console.log("called")
       var heroWrapperHeight = $('.hero-video-wrapper').height();
       var aspectRatio = 16 / 9;
       var newWidth = heroWrapperHeight * aspectRatio;

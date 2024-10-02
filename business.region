@@ -17,11 +17,9 @@
         <squarespace:block-field id="Business-WhenIsAdasRequired" columns="1" />
     </div>
     <div class="services-header" >
-    
         <div class="services-header-wrapper flex-center-center flex-column" style="padding: 75px 25px">
             <div class="services-header-details">
                 <div class="service-type flex-center-center flex-column fade-in" id="calibration">
-                    
                     <squarespace:query collection="services-list" limit="20" category="Calibration">
                     <div class="service-toggler flex-center-center flex-wrap" >
                     {.repeated section items}

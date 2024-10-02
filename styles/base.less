@@ -46,6 +46,11 @@ main {background: white; border-top-right-radius: 5px; border-top-left-radius: 5
   .adas-icon-bg {background-position: 110% 80%!important;}
 }
 
+@media screen and (max-width: 450px){
+  .bullet-point-bg {height: 60px; min-width: 62px!important; background-size: contain; margin-right: 15px;}
+  .card-icon {min-width: 40px; max-width: 40px; min-height: 40px; max-height: 40px;}
+}
+
 .no-text-spacing {padding: 0; margin: 0; line-height: 0}
 .basic-padding {padding: 25px;}
 .xs-text {font-size: 12px;}
@@ -77,9 +82,9 @@ h1 {font-size: 42px; font-weight: 400; line-height: 46px; font-family: "Roboto C
 h1 strong {font-weight: 600;}
 h1 strong span {color: var(--logored)!important}
 h1 span {text-decoration: none!important; color: var(--red)!important; }
-h2 {font-size: 36px; font-weight: 400; line-height: clamp(2.3rem, 1.5vw + 1.3rem, 2.8rem); font-family: "Roboto Condensed", sans-serif;}
+h2 {font-size: 36px; font-weight: 400; line-height: 40px; font-family: "Roboto Condensed", sans-serif;}
 h2 strong {font-weight: 600;}
-h2 strong span {color: var(--red)}
+h2 span * {color: var(--red)}
 h2 span {text-decoration: unset!important; color: var(--red);}
 h3 {margin: 0; padding: 0; font-size: 22px; font-weight: 200; line-height: 30px; color: var(--darkgray); font-family: "Archivo", sans-serif;}
 h3 strong {font-weight: 600;}
@@ -266,6 +271,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 .extra-header-padding {padding-bottom: 100px!important;}
 
+// Services / when is ADAS needed
 .services-header { width: 100%; background-image: url('../assets/interior(1).png'); background-size: cover;}
 .services-header-wrapper {background: rgba(173,30,41, 0.75); backdrop-filter: blur(3px); width: 100%; height: 100%; padding: 25px; margin-top: -50px;}
 .services-header-title { margin-top: -65px; background: var(--darkgray); }
@@ -281,7 +287,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .windshield-block p a {color: white!important;}
 .windshield-block:nth-child(1) {border-right: 1px solid white;}
 
-.service-toggler {padding: 35px 15px;}
+.service-toggler {padding: 35px 15px 0;}
 .service-toggler * {color: white;}
 .calibration-block { min-width: 200px; padding: 10px; width: 200px; max-width: 200px; height: 200px;}
 .calibration-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}

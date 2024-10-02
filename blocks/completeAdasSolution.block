@@ -1,41 +1,46 @@
 <style>
-.bullet-point-content h2 {margin-bottom: 10px;}
+.bullet-point-wrapper {margin: 10px 0;}
+.bullet-point-content h2 * {margin-bottom: 10px; color: var(--darkred)}
 .bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 100px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 100px 100px; padding: 10px; margin-right: 25px;}
 .card-icon {min-width: 75px; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
 .bullet-point-body {margin-left: 125px; display: none;}
-.accordion-item__click-target span {
-  color: var(--darkred);
-  font-weight: 600;
-  font-family: var(--roboto);
-  margin: 5px 0;
-}
-
+.expander h4 {color: var(--darkred); font-weight: 600; font-family: var(--roboto); margin: 5px 0;}
+.expanded-content { display: none; cursor: pointer;}
+.expanded-content p:hover {font-weight: 600;}
 </style>
 
 {#  Complete ADAS Solution Bullet Points  }
 <div class="flex-start-start flex-column" style="padding: 50px 25px 50px 0;">
     <div class="bullet-point-wrapper" id="calibrate">
         <div class="bullet-point flex-start-start">
-            
             <div class="bullet-point-bg flex-center-end">
                 <div style="background-image: url('../assets/icons/calibrate_2.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <h2 class="red-text" style="margin-top: 35px;">Calibrate</h2>
                 <squarespace:block-field id="Calibrate-Description" columns="1" />
+                <div class="expander" onclick="toggleAccordion('Calibration-Expanded', this)">
+                    <p class="red-text">+ Read More</p>
+                    <div class="expanded-content" id="Calibration-Expanded">
+                        <squarespace:block-field id="Calibrate-Description-Expanded" columns="1" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="bullet-point-wrapper" id="diagnose">
         <div class="bullet-point flex-start-start">
-            
             <div class="bullet-point-bg flex-center-end">
                 <div style="background-image: url('../assets/icons/diagnose-no-padding.png'); background-size: 90%;" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <h2 class="red-text" style="margin-top: 35px;">Diagnose</h2>
                 <squarespace:block-field id="Diagnose-Description" columns="1" />
+                <div class="expander" onclick="toggleAccordion('Diagnose-Expanded', this)">
+                    <p class="red-text" >+ Read More</p>
+                    <div class="expanded-content" id="Diagnose-Expanded">
+                        <squarespace:block-field id="Diagnose-Description-Expanded" columns="1" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -46,22 +51,46 @@
                 <div style="background-image: url('../assets/icons/program_2.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <h2 class="red-text" style="margin-top: 35px;">Program</h2>
                 <squarespace:block-field id="Program-Description" columns="1" />
+                <div class="expander" onclick="toggleAccordion('Program-Expanded', this)">
+                    <p class="red-text" >+ Read More</p>
+                    <div class="expanded-content" id="Program-Expanded">
+                        <squarespace:block-field id="Program-Description-Expanded" columns="1" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="bullet-point-wrapper" id="Alignment" >
+    <div class="bullet-point-wrapper" id="Alignment">
         <div class="bullet-point flex-start-start">
-            
             <div class="bullet-point-bg flex-center-end">
                 <div style="background-image: url('../assets/icons/alignment.png');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
-                <h2 class="red-text" style="margin-top: 35px;">Alignment</h2>
                 <squarespace:block-field id="Alignment-Description" columns="1" />
+                <div class="expander" onclick="toggleAccordion('Alignment-Expanded', this)">
+                    <p class="red-text" >+ Read More</p>
+                    <div class="expanded-content" id="Alignment-Expanded">
+                        <squarespace:block-field id="Alignment-Description-Expanded" columns="1" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+function toggleAccordion(id, el) {
+    var content = $('#' + id);
+    var pTag = $(el).find('p.red-text');
+    
+    if (content.is(":visible")) {
+        content.slideUp();
+        pTag.text('+ Read More');
+    } else {
+        content.slideDown();
+        pTag.text('- Read Less');
+    }
+}
+</script>
