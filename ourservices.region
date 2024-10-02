@@ -37,7 +37,7 @@
             <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggleServiceType('calibration')"><h3>Calibration</h3></div>
             <div id="alignment-Toggle" class="services-header-title-item border-right flex-center-center"  onclick="toggleServiceType('Alignment')"><h3>Alignment</h3></div>
             <div id="windshields-Toggle" class="services-header-title-item  flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
-            {#  <div id="hailRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')"><h3>Hail Repair</h3></div>  }
+            <div id="hailRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')"><h3>Hail Repair</h3></div>
         </div>
         <div class="services-header-details">
         {#  Calibration  }
@@ -105,11 +105,11 @@
         </div>
 
         {#  Hail Repair  }
-        {#  <div class="service-type flex-center-center flex-column fade-in" id="hailRepair">
+        <div class="service-type flex-center-center flex-column fade-in" id="hailRepair">
             <div class="service-toggler flex-center-center flex-wrap white-text" >
             <squarespace:block-field id="HailRepair-Description" columns="1" />
             </div>
-        </div>  }
+        </div>
     </div>
       </div>
       
