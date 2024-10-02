@@ -111,7 +111,8 @@ h3 span {text-decoration: unset!important; color: var(--red);}
 h4 {font-weight: 300; font-size: 22px; font-family: "Archivo", sans-serif; line-height: 28px;}
 h5 {font-size: 14px; font-family: var(--archivo); font-weight: 300;}
 p {font-size: 16px; color: black; font-family: "Archivo", sans-serif;}
-
+a span {color: var(--red)}
+a {color: inherit;}
 // Mobile font styles
 @media screen and (max-width: 450px) {
   h1 {font-size: 28px; line-height: 32px;}
@@ -154,7 +155,37 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .image-card {z-index: 2; height: 300px; border-bottom: 10px solid black; width: 100%; background-image: url('../assets/reflection.jpg'); background-size: cover; background-position: center center;}
 .image-card-text {width: 100%;}
 
-#About-Intro {min-width: 100px}
+.about-intro-wrapper {padding: 25px;}
+.about-intro-image-wrapper {min-width: 40vw; padding-right: 25px;}
+#AboutIntro {margin-bottom: 25px;}
+
+.sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor img {
+  object-fit: cover !important;
+  height: auto !important;
+  width: 100% !important;
+  border-radius: 5px;
+  left: unset!important;
+}
+
+.sqs-gallery-block-grid .sqs-gallery-design-grid {
+  margin-right: unset;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#MeetOurTeam-Description {margin-right: 25px;}
+#MeetOurTeam-Video {min-width: 40vw;}
+
+@media screen and (max-width: 1000px) {
+    .about-intro-wrapper {flex-direction: column;}
+    .about-intro-image-wrapper {order: 2; width: 100%; padding-right: unset!important;}
+    .about-intro-text {order: 1; width: 100%; margin-bottom: 25px;}
+    .about-intro-content {flex-direction: column!important;}
+    #MeetOurTeam-Video {min-width: unset; width: 100%; margin-top:25px;}
+    #MeetOurTeam-Description {margin-right: unset;}
+}
 
 #Consumer-Button-1, #Consumer-Button-2, #Consumer-Button-3, #Consumer-Button-4 { border: 2px solid white;}
 

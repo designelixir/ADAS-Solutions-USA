@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<button class='button red-button' onclick="togglePopup()">Click me</button>
+<button class='button red-button' onclick="togglePopup()">Contact Us</button>
 
 <div id="popup" class="flex-start-center padding-top-25">
     <div class="popup-sidebar-closer"></div>

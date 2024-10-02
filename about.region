@@ -34,7 +34,26 @@
             </div>
             <div class="about-intro-text ">
                 <squarespace:block-field id="AboutIntro-Text" columns="1" />
-                {@|apply contactUsButtonPopup.block}
+                <div class="flex-center-center flex-wrap">
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-colorado-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/co-3.png"/>
+                </div>
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-missouri-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/missouri.png"/>
+                </div>
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/tennessee.png"/>
+                </div>
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-texas-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/texas.png"/>
+                </div>
+            </div>
+            <squarespace:block-field id="AboutCallToAction" columns="1" />
+
             </div>
         </div>
       </div>
