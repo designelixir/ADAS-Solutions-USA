@@ -1,6 +1,6 @@
 * {box-sizing: border-box; scroll-behavior: smooth;}
-html {max-width: 100vw; display: flex; justify-content: center; width: 100%;  margin: 0; padding: 0; overflow-x: hidden; }
-.bg {background: black; background-image: url('../assets/carbonfiber.png'); background-size: contain;}
+html {max-width: 100vw; display: flex; justify-content: center; width: 100%;  margin: 0; padding: 0; overflow-x: hidden; background: black;}
+.bg {background: black; background-image: url('../assets/carbonfiber.jpg'); background-size: contain;}
 body { display: flex; align-items: center; justify-content: center; flex-direction: column; width: 90vw; margin: 25px; display: flex; align-items: center; justify-content: center; max-width: 1400px;}
 .site-container { width: 90vw; max-width: 1300px; background: white; border-top-right-radius: 5px; border-top-left-radius: 5px; }
 section {width: 100%; background: white; max-width: 1300px;}
@@ -73,25 +73,27 @@ main {background: white; border-top-right-radius: 5px; border-top-left-radius: 5
 .sqs-block-button .sqs-block-button-element--large {background-color: var(--logored); padding: 15px 20px!important; border: 2px solid var(--darkred);}
 
 // Text Styles
-h1 {font-size: clamp(48px, 2vw + 1.2rem, 56px); font-weight: 400; line-height: clamp(52px, 2vw + 1.3rem, 60px); font-family: "Roboto Condensed", sans-serif;}
+h1 {font-size: 42px; font-weight: 400; line-height: 46px; font-family: "Roboto Condensed", sans-serif;}
 h1 strong {font-weight: 600;}
 h1 strong span {color: var(--logored)!important}
 h1 span {text-decoration: none!important; color: var(--red)!important; }
-
 h2 {font-size: 36px; font-weight: 400; line-height: clamp(2.3rem, 1.5vw + 1.3rem, 2.8rem); font-family: "Roboto Condensed", sans-serif;}
 h2 strong {font-weight: 600;}
 h2 strong span {color: var(--red)}
 h2 span {text-decoration: unset!important; color: var(--red);}
-
 h3 {margin: 0; padding: 0; font-size: 22px; font-weight: 200; line-height: 30px; color: var(--darkgray); font-family: "Archivo", sans-serif;}
 h3 strong {font-weight: 600;}
 h3 span {text-decoration: unset!important; color: var(--red);}
-
 h4 {font-weight: 300; font-size: 22px; font-family: "Archivo", sans-serif; line-height: 28px;}
-
 h5 {font-size: 14px; font-family: var(--archivo); font-weight: 300;}
-
 p {font-size: 16px; color: black; font-family: "Archivo", sans-serif;}
+
+// Mobile font styles
+@media screen and (max-width: 450px) {
+  h1 {font-size: 28px; line-height: 32px;}
+  #heroText h1 {font-size: 28px; line-height: 32px;}
+  h4 {font-size: 16px; line-height: 20px;}
+}
 
 // Banner BG
 .banner-bg {width: 100%; background-image: url('../assets/bg_1.png'); background-repeat: no-repeat; background-size: 100% 100%; padding: 70px 25px;}
