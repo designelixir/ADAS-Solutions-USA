@@ -1,12 +1,20 @@
 <style>
 .bullet-point-wrapper {margin: 10px 0;}
-.bullet-point-content h2 * {margin-bottom: 10px; color: var(--darkred)}
 .bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 100px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 100px 100px; padding: 10px; margin-right: 25px;}
 .card-icon {min-width: 75px; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
 .bullet-point-body {margin-left: 125px; display: none;}
-.expander h4 {color: var(--darkred); font-weight: 600; font-family: var(--roboto); margin: 5px 0;}
+.expander { margin: 5px 0 5px 115px; padding: 10px; border-radius: 5px;}
 .expanded-content { display: none; cursor: pointer;}
-.expanded-content p:hover {font-weight: 600;}
+.p-toggler {padding: 5px 0!important; margin: 0;}
+.p-toggler:hover {font-weight: 600;}
+.expanded-text-highlight {background: var(--whitegray)}
+
+@media screen and (max-width: 450px){
+  .bullet-point-bg {height: 60px; min-width: 62px!important; background-size: contain; margin-right: 15px;}
+  .card-icon {min-width: 40px; max-width: 40px; min-height: 40px; max-height: 40px;}
+  .expander {margin: 5px 0 5px 65px;}
+}
+
 </style>
 
 {#  Complete ADAS Solution Bullet Points  }
@@ -18,12 +26,12 @@
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Calibrate-Description" columns="1" />
-                <div class="expander" onclick="toggleAccordion('Calibration-Expanded', this)">
-                    <p class="red-text">+ Read More</p>
-                    <div class="expanded-content" id="Calibration-Expanded">
-                        <squarespace:block-field id="Calibrate-Description-Expanded" columns="1" />
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="expander" onclick="toggleAccordion('Calibration-Expanded', this)">
+            <p class="red-text  p-toggler">+ Read More</p>
+            <div class="expanded-content" id="Calibration-Expanded">
+                <squarespace:block-field id="Calibrate-Description-Expanded" columns="1" />
             </div>
         </div>
     </div>
@@ -35,12 +43,12 @@
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Diagnose-Description" columns="1" />
-                <div class="expander" onclick="toggleAccordion('Diagnose-Expanded', this)">
-                    <p class="red-text" >+ Read More</p>
-                    <div class="expanded-content" id="Diagnose-Expanded">
-                        <squarespace:block-field id="Diagnose-Description-Expanded" columns="1" />
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="expander" onclick="toggleAccordion('Diagnose-Expanded', this)">
+            <p class="red-text  p-toggler" >+ Read More</p>
+            <div class="expanded-content" id="Diagnose-Expanded">
+                <squarespace:block-field id="Diagnose-Description-Expanded" columns="1" />
             </div>
         </div>
     </div>
@@ -52,12 +60,12 @@
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Program-Description" columns="1" />
-                <div class="expander" onclick="toggleAccordion('Program-Expanded', this)">
-                    <p class="red-text" >+ Read More</p>
-                    <div class="expanded-content" id="Program-Expanded">
-                        <squarespace:block-field id="Program-Description-Expanded" columns="1" />
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="expander" onclick="toggleAccordion('Program-Expanded', this)">
+            <p class="red-text  p-toggler" >+ Read More</p>
+            <div class="expanded-content" id="Program-Expanded">
+                <squarespace:block-field id="Program-Description-Expanded" columns="1" />
             </div>
         </div>
     </div>
@@ -69,12 +77,12 @@
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Alignment-Description" columns="1" />
-                <div class="expander" onclick="toggleAccordion('Alignment-Expanded', this)">
-                    <p class="red-text" >+ Read More</p>
-                    <div class="expanded-content" id="Alignment-Expanded">
-                        <squarespace:block-field id="Alignment-Description-Expanded" columns="1" />
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="expander" onclick="toggleAccordion('Alignment-Expanded', this)">
+            <p class="red-text  p-toggler" >+ Read More</p>
+            <div class="expanded-content" id="Alignment-Expanded">
+                <squarespace:block-field id="Alignment-Description-Expanded" columns="1" />
             </div>
         </div>
     </div>
@@ -88,9 +96,11 @@ function toggleAccordion(id, el) {
     if (content.is(":visible")) {
         content.slideUp();
         pTag.text('+ Read More');
+        $(el).removeClass('expanded-text-highlight')
     } else {
         content.slideDown();
         pTag.text('- Read Less');
+        $(el).addClass('expanded-text-highlight')
     }
 }
 </script>
