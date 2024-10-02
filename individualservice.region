@@ -49,9 +49,9 @@
                     <squarespace:block-field id="See All Locations Button" columns="1" />
                 </div>
             </div>
+            
             <div class='flex-start-start flex-wrap padding-top-25'>
-                <squarespace:query collection="locations" tag="{.repeated section tags}{@|slugify}{.end}" limit="20">
-                    
+                <squarespace:query collection="locations" tag="{.section item}{.repeated section tags}{@}{.end}{.end}" limit="20">
                         {.repeated section items}
                         <article id="post-{id}" class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
                             <div class="location-card-summary flex-start-start flex-column">
