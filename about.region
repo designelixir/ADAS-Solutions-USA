@@ -25,7 +25,19 @@
         </div>
       </div>
 
-      {@|apply aboutIntro.block}
+      <div class="flex-start-start flex-column about-intro-wrapper basic-padding fade-in-delay">
+        <squarespace:block-field id="AboutIntro" columns="1" />
+        <div class="flex-start-start about-intro-content ">
+            
+            <div class="about-intro-image-wrapper flex-start-start">
+                    <squarespace:block-field id="AboutGallery" columns="1" />
+            </div>
+            <div class="about-intro-text ">
+                <squarespace:block-field id="AboutIntro-Text" columns="1" />
+                {@|apply contactUsButtonPopup.block}
+            </div>
+        </div>
+      </div>
 
       <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="OurPromise-Description" columns="1" />
