@@ -1,5 +1,5 @@
 {.section tagFilter}
-<p>{@}</p>
+<p class="padding-left-25">{@}</p>
 {.end}
 
 <div class="flex-start-start flex-wrap basic-padding">
