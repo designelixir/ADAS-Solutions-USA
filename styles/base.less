@@ -285,8 +285,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .location-card-summary {min-height: 140px;}
 .book-button-wrapper {margin-bottom: 10px;}
 .book-button {background: var(--darkgray); color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkgray); padding: 5px; border-radius: 5px;}
-.book-button:hover {background: var(--lightgray); cursor: pointer; color: var(--darkgray)}
-.contact-form-line .lightbox-handle-wrapper * {
+.book-button:hover {background: var(--lightgray); cursor: pointer; color: var(--darkgray)!important;}
+.book-button .lightbox-handle-wrapper * {
   border: 1px solid red;
   padding: 0 !important;
   margin: 0 !important;
@@ -300,12 +300,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
     border-bottom-color: unset;
     border-left-width: unset;
     border-left-color: unset;
-  color: var(--darkred) !important;
   font-family: var(--archivo) !important;
   letter-spacing: unset !important;
   text-transform: unset !important;
   font-size: 18px !important; font-weight: 300 !important;
 }
+
+.book-button .lightbox-handle-wrapper:hover {color: var(--darkgray)!important;}
 
 .active-filter-tag {background: #9DBA6E; border: 2px solid black; color: black;}
 

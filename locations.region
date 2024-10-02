@@ -64,7 +64,18 @@
         {squarespace.main-content}
        </section>
       </main>
-       
+       {.if tagFilter} 
+        {.section tagFilter}
+
+        <script>
+        console.log("detected tag filter {@|safe|slugify}")
+            window.onload = function(){
+                filter('{@|slugify}')
+            };
+        </script>
+
+        {.end}
+        {.end}
 
 
     </div>

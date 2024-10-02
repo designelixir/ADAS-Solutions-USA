@@ -1,4 +1,6 @@
-
+{.section tagFilter}
+<p>{@}</p>
+{.end}
 
 <div class="flex-start-start flex-wrap basic-padding">
 {.repeated section items}
@@ -20,15 +22,20 @@
                     {.if location.addressLine1}
                     <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
                     {.end}
-                    <div class="flex-center-start no-flex-grow contact-form-line">
+                    {.if customContent.email}
+                    <div class="flex-center-start no-flex-grow contact-form-line hover">
                         <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                        <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
+                        <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customerContent.email}'>{customContent.email}</a>
                     </div> 
+                    {.end}
                 </div>
                 <div class="flex-end-end flex-column book-button-wrapper">
+                    <div class='contact-form-line book-button'>
+                        <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
+                    </div>
                     {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
-                    {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Services</button></a>{.end}
-                    {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Services</button></a>{.end}
+                    {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Windshield</button></a>{.end}
+                    {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Windshield</button></a>{.end}
                     {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
                 </div>
                 
