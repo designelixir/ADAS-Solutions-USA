@@ -17,7 +17,7 @@
 <div class="grid-bg padding-top-50 padding-bottom-25" style="margin-top: -25px">
     <div class="flex-center-center flex-column basic-padding">
         <squarespace:block-field id="Consumer-Diagram-Title" columns="1" />
-        {@|apply whenToCalibrateAccordion.block}
+        {@|apply whenToCalibrate.block}
         
     </div>
     {#  @|apply windshieldDiagram.block  }
