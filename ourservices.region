@@ -63,21 +63,23 @@
             {#  Alignment  }
             <div class="service-type flex-center-center flex-column fade-in white-text" id="alignment">
                 <squarespace:block-field id="Alignment-Service-Description" columns="1" />
-                {#  Rivian  }
                 <squarespace:query collection="services-list" limit="20" category="Alignment">
-                <div class="service-toggler flex-start-center flex-wrap flex-break" >
+                <div class="service-toggler alignment-toggler flex-start-center flex-wrap" >
                 {.repeated section items}
                     <div class="alignment-block flex-center-center" id="{title}">
                         <div class="front flex-center-center flex-column">
                             <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
                             <h5 class="centered-text">{title}</h5>
-                            <p class="white-text">{body}</p>
-                            <squarespace:block-field id="{title|slugify}-Description" columns="1" />
+                            <p class="white-text centered-text">{body}</p>
+                            
                         </div>
                     </div>
+                    {.alternates with}<div class='alignment-border'></div>
                 {.end}
                 </div>
                 </squarespace:query>
+                <squarespace:block-field id="Alignment-CallToAction" columns="1" />
+                
             </div>
 
           {#  Windshield Replacement  }

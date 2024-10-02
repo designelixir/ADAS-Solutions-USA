@@ -339,6 +339,22 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .windshield-block p a {color: white!important;}
 .windshield-block:nth-child(1) {border-right: 1px solid white;}
 
+.alignment-block { padding: 10px 25px;}
+.alignment-border {border-right: 1px solid white; height: 75%; min-height: 250px;}
+.alignment-block p {color: white!important; text-align: center;}
+
+@media screen and (max-width: 900px) {
+.alignment-border {display: none;}
+.alignment-block {min-width: 50%;}
+
+}
+
+@media screen and (max-width: 500px) {
+  .alignment-border {display: none;}
+  .alignment-block {min-width: 100%;}
+  
+  }
+
 .service-toggler {padding: 35px 15px 0;}
 .service-toggler * {color: white;}
 .calibration-block { min-width: 200px; padding: 10px; width: 200px; max-width: 200px; height: 200px;}
@@ -351,6 +367,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 // }
 .calibration-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}
 .windshield-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}
+.alignment-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}
 .border-right {border-right: 1px solid white;}
 .border-bottom {border-bottom: 1px solid white;}
 .border-left {border-left: 1px solid white;}
@@ -369,6 +386,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   .windshield-block {padding: 10px;}
   .windshield-block:nth-child(1) {border-right: unset;}
   .services-header-wrapper {padding: 5px;}
+  .alignment-border {display: none;}
+
 }
 
 .contact-form-icon {width: 152px; height: 152px;}
