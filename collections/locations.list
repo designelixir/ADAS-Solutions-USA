@@ -30,13 +30,18 @@
                     {.end}
                 </div>
                 <div class="flex-end-end flex-column book-button-wrapper">
-                    <div class='contact-form-line book-button'>
+                    <div class='book-button'>
                         <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
                     </div>
                     {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
                     {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Windshield</button></a>{.end}
                     {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Windshield</button></a>{.end}
                     {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
+                    {.if customContent.canRequestWindshieldQuote}
+                    <div class='book-button'>
+                        <squarespace:block-field id="Request-Windshield-Quote-Form" columns="1" />
+                    </div>
+                    {.end}
                 </div>
                 
                
