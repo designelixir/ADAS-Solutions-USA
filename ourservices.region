@@ -35,8 +35,9 @@
     <div class="services-header-wrapper flex-center-center flex-column">
         <div class="services-header-title flex-center-center">
             <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggleServiceType('calibration')"><h3>Calibration</h3></div>
-            <div id="windshields-Toggle" class="services-header-title-item border-right flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
-            <div id="hailRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')"><h3>Hail Repair</h3></div>
+            <div id="alignment-Toggle" class="services-header-title-item border-right flex-center-center"  onclick="toggleServiceType('Alignment')"><h3>Alignment</h3></div>
+            <div id="windshields-Toggle" class="services-header-title-item  flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
+            {#  <div id="hailRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')"><h3>Hail Repair</h3></div>  }
         </div>
         <div class="services-header-details">
         {#  Calibration  }
@@ -59,6 +60,26 @@
                 </squarespace:query>
                 <squarespace:block-field id="Calibration-CallToAction" columns="1" />
             </div>
+            {#  Alignment  }
+            <div class="service-type flex-center-center flex-column fade-in white-text" id="alignment">
+                <squarespace:block-field id="Alignment-Service-Description" columns="1" />
+                {#  Rivian  }
+                <squarespace:query collection="services-list" limit="20" category="Alignment">
+                <div class="service-toggler flex-start-center flex-wrap flex-break" >
+                {.repeated section items}
+                    <div class="alignment-block flex-center-center" id="{title}">
+                        <div class="front flex-center-center flex-column">
+                            <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
+                            <h5 class="centered-text">{title}</h5>
+                            <p class="white-text">{body}</p>
+                            <squarespace:block-field id="{title|slugify}-Description" columns="1" />
+                        </div>
+                    </div>
+                {.end}
+                </div>
+                </squarespace:query>
+            </div>
+
           {#  Windshield Replacement  }
           <div class="service-type flex-center-center flex-column fade-in" id="windshieldReplacement">
                 <squarespace:block-field id="Windshield-Description" columns="1" />
@@ -81,14 +102,11 @@
         </div>
 
         {#  Hail Repair  }
-        <div class="service-type flex-center-center flex-column fade-in" id="hailRepair">
+        {#  <div class="service-type flex-center-center flex-column fade-in" id="hailRepair">
             <div class="service-toggler flex-center-center flex-wrap white-text" >
             <squarespace:block-field id="HailRepair-Description" columns="1" />
             </div>
-                
-                
-        
-        </div>
+        </div>  }
     </div>
       </div>
       
@@ -125,6 +143,9 @@
         $('.service-type').hide();
         $('#' + serviceId).show();
     }
+
+  
+
     </script>
     
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

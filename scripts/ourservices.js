@@ -53,6 +53,7 @@ $(document).ready(function () {
 
         let serviceMap = {
             'calibration-Toggle': 'calibration',
+            'alignment-Toggle': 'alignment',
             'windshields-Toggle': 'windshieldReplacement',
             'hailRepair-Toggle': 'hailRepair',
         };

@@ -103,7 +103,6 @@ h1 strong span {color: var(--logored)!important}
 h1 span {text-decoration: none!important; color: var(--red)!important; }
 h2 {font-size: 36px; font-weight: 400; line-height: 40px; font-family: "Roboto Condensed", sans-serif; margin: 10px 0; padding: 0;}
 h2 strong {font-weight: 600;}
-h2 span * {color: var(--red)}
 h2 span {text-decoration: unset!important; color: var(--red);}
 h3 {margin: 0; padding: 0; font-size: 22px; font-weight: 200; line-height: 26px; color: var(--darkgray); font-family: "Archivo", sans-serif;}
 h3 strong {font-weight: 600;}
@@ -111,7 +110,7 @@ h3 span {text-decoration: unset!important; color: var(--red);}
 h4 {font-weight: 300; font-size: 22px; font-family: "Archivo", sans-serif; line-height: 28px;}
 h5 {font-size: 14px; font-family: var(--archivo); font-weight: 300;}
 p {font-size: 16px; color: black; font-family: "Archivo", sans-serif;}
-a span {color: var(--red)}
+a span {color: var(--red); text-decoration: unset!important;}
 a {color: inherit;}
 // Mobile font styles
 @media screen and (max-width: 450px) {
@@ -342,6 +341,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .service-toggler {padding: 35px 15px 0;}
 .service-toggler * {color: white;}
 .calibration-block { min-width: 200px; padding: 10px; width: 200px; max-width: 200px; height: 200px;}
+// .calibration-block:hover .front {
+//   display: none; /* Hide front on hover */
+// }
+
+// .calibration-block:hover .back {
+//   display: block!important; /* Show back on hover */
+// }
 .calibration-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}
 .windshield-block h5 {font-size: 18px; line-height: 22px; margin: 0; color: white; font-weight: 600;}
 .border-right {border-right: 1px solid white;}
