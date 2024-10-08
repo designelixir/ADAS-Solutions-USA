@@ -18,40 +18,54 @@
         <div class="about-hero-wrapper">
           <squarespace:block-field id="AboutPageGallery" columns="1" />
         </div>
-        <div class="about-hero-intro-wrapper basic-padding flex-start-start flex-column">
-          <div class="about-hero-text-title white-text basic-padding">
-            <h1>{collection.title}</h1>
+        <div class="basic-padding">
+          <div class="about-hero-intro-wrapper flex-start-start flex-column">
+            <div class="about-hero-text-title white-text  full-width" style="padding: 15px 28px">
+              <h1>{collection.title}</h1>
+              
+            </div>
+
+            <div style="border-top: 30px solid var(--logored); width: calc(100% + 30px)!important; margin-left: -15px" class="flex-start-center">
+              <img src="../assets/triangle.svg" style="width: 15px; z-index: -1;"/>
+              <div class="full-width" style="background: var(--whitegray); height: 10px; "></div>
+              <img src="../assets/triangle-right.svg" style="width: 15px;  z-index: -1;"/>
+            </div>
+            
+            <div class="about-hero-text basic-padding box-shadow">
             <squarespace:block-field id="AboutIntro" columns="1" />
-          </div>
-          <div class="about-hero-text" class="flex-start-start">
-              <squarespace:block-field id="Mission" columns="1" />
-              <squarespace:block-field id="Vision" columns="1" />
+              <div class='flex-start-start flex-wrap'>
+                <squarespace:block-field id="Mission" columns="1" />
+                <squarespace:block-field id="Vision" columns="1" />
+              </div>
+            </div>
           </div>
         </div>
 
         
-
-        <div class="basic-padding fade-in-delay" style="margin-top: -150px">
-          
-          <div class="flex-center-center flex-wrap">
-              <div class="contact-form-icon">
-                  <squarespace:block-field id="Contact-colorado-Form" columns="1" />
-                  <img class="contact-form-icon-image" src="assets/co-3.png"/>
-              </div>
-              <div class="contact-form-icon">
-                  <squarespace:block-field id="Contact-missouri-Form" columns="1" />
-                  <img class="contact-form-icon-image" src="assets/missouri.png"/>
-              </div>
-              <div class="contact-form-icon">
-                  <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
-                  <img class="contact-form-icon-image" src="assets/tennessee.png"/>
-              </div>
-              <div class="contact-form-icon">
-                  <squarespace:block-field id="Contact-texas-Form" columns="1" />
-                  <img class="contact-form-icon-image" src="assets/texas.png"/>
-              </div>
+        <div class="basic-padding" style="margin-top: -150px">
+          <div class="fade-in-delay" >
+            <squarespace:block-field id="AboutIntroText" columns="1" />
+            <div class="flex-center-center flex-wrap">
+                
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-colorado-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/co-3.png"/>
+                </div>
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-missouri-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/missouri.png"/>
+                </div>
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/tennessee.png"/>
+                </div>
+                <div class="contact-form-icon">
+                    <squarespace:block-field id="Contact-texas-Form" columns="1" />
+                    <img class="contact-form-icon-image" src="assets/texas.png"/>
+                </div>
+            </div>
+            <squarespace:block-field id="AboutCallToAction" columns="1" />
           </div>
-          <squarespace:block-field id="AboutCallToAction" columns="1" />
         </div>
 
       {#  <div class="flex-start-start flex-column about-intro-wrapper basic-padding fade-in-delay">
@@ -88,19 +102,21 @@
       </div>  }
 
       <div class="basic-padding red-banner-bg">
-        <squarespace:block-field id="OurValues-Description" columns="1" />
-      </div>
-
-      {@|apply weAimTrue.block}
-
-
-      <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="OurPromise-Description" columns="1" />
       </div>
 
       {@|apply ourPromise.block}
 
-      <div class="basic-padding banner-bg-reverse">
+      <div class="basic-padding banner-bg" style="position: relative; z-index: 3;">
+        <squarespace:block-field id="CoreValues-Description" columns="1" />
+      </div>
+
+      {@|apply weAimTrue.block}
+
+
+      
+
+      <div class="basic-padding banner-bg-reverse" style="margin-top: -35px;">
         <squarespace:block-field id="OurFocus-Description" columns="1" />
       </div>
       {@|apply ourFocus.block}

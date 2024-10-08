@@ -4,29 +4,41 @@
       background-image: url('../assets/carbon-fiber-transparent-bg.png');
       background-size: cover;
       background-position: 100% center;
+      padding: 100px 25px;
+      margin-top: -25px;
     }
 
     .letter-box {
       background-color: rgba(255,255,255,0.2);
       padding: 5px;
       border-radius: 5px;
-      max-width: 200px;
-      margin: 2px;
+      min-width: 115px;
+      max-width: 190px;
+      margin: 4px;
     }
     .letter-box h4 { line-height: 0; }
     .letter-box h2 * {font-size: 100px; line-height: 100px;}
+    .letter-box p {font-size: 14px!important; color: var(--darkgray); font-weight: 300; line-height: 20px;}
     .big-letter { font-size: 100px; font-weight: 700; line-height: 100px; margin: 0; }
     .we-container { margin-right: 40px; }
+    .aim-container {margin-right: 40px;}
     .true-container { max-width: 75%; margin: 40px 0px; }
 
+
     @media screen and (max-width: 850px) {
-      .we-aim-container { display: block; }
+      .we-aim-container { display: block; width: 100%; }
       .true-container { max-width: unset; margin: 20px 0; }
+      #weAimTrue {flex-direction: column;}
     }
+
+    @media screen and (max-width: 1300px) {
+  #weAimTrue {flex-wrap: wrap;}
+  
+}
   </style>
 
 
-  <div class="flex-start-start basic-padding flex-column" id="weAimTrue">
+  <div class="flex-start-start basic-padding flex-wrap" id="weAimTrue">
       {#  <div class="flex-center-start" style="border-bottom: 3px solid var(--darkred); width: 75%; margin-bottom: 25px;">
           <h2 class="red-text" style="font-weight: 600; padding: 15px 0;">Core Values</h2>
       </div>  }
@@ -52,7 +64,7 @@
               </div>
           </div>
       </div>
-      <div class="flex-start-start flex-column true-container word-container">
+      <div class="flex-start-start true-container letter-box">
           <squarespace:block-field id="True-Description" columns="1" />
       </div>
   </div>

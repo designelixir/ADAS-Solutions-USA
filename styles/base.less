@@ -101,24 +101,26 @@ main {background: white; border-top-right-radius: 5px; border-top-left-radius: 5
 h1 {font-size: 42px; font-weight: 700; line-height: 46px; font-family: "Roboto Condensed", sans-serif;}
 h1 strong {font-weight: 600;}
 h1 strong span {color: var(--logored)!important}
-h1 span {text-decoration: none!important; color: var(--red)!important; }
+h1 span {text-decoration: none!important; color: var(--logored)!important; }
 h2 {font-size: 36px; font-weight: 300; line-height: 40px; font-family: "Roboto Condensed", sans-serif; margin: 10px 0; padding: 0;}
 h2 strong {font-weight: 600;}
-h2 span {text-decoration: unset!important; color: var(--red);}
+h2 span {text-decoration: unset!important; color: var(--logored);}
 h3 {margin: 0; padding: 0; font-size: 22px; font-weight: 200; line-height: 26px; color: var(--darkgray); font-family: "Archivo", sans-serif;}
 h3 strong {font-weight: 600;}
-h3 span {text-decoration: unset!important; color: var(--red);}
+h3 span {text-decoration: unset!important; color: var(--logored);}
 h4 {font-weight: 300; font-size: 22px; font-family: "Archivo", sans-serif; line-height: 28px;}
 h5 {font-size: 14px; font-family: var(--archivo); font-weight: 300;}
 p {font-size: 16px; color: black; font-family: "Archivo", sans-serif;}
-p span {color: var(--red); text-decoration: unset!important;}
-a span {color: var(--red); text-decoration: unset!important;}
+p span {color: var(--logored); text-decoration: unset!important;}
+a span {color: var(--logored); text-decoration: unset!important;}
 a {color: inherit;}
+em {font-size: inherit!important;}
 // Mobile font styles
 @media screen and (max-width: 450px) {
-  h1 {font-size: 28px; line-height: 32px;}
+  h1 {font-size: 36px; line-height: 32px;}
   #heroText h1 {font-size: 28px; line-height: 32px;}
   h4 {font-size: 16px; line-height: 20px;}
+  .about-hero-intro-wrapper {transform: translateY(-141px); }
 }
 
 // 
@@ -412,13 +414,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .call-to-action-overlay {padding: 25px; background: rgba(0,0,0,0.25); width: 100%; height: 100%; }
 .call-to-action-overlay * {color: white!important;}
 
-.about-hero-text-title {background: var(--ssgray); padding: 25px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;}
-.about-hero-text {background: var(--lightgray); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
-#Mission {max-width: 45%; margin-right: 5%; min-width: 300px; border: 1px solid red;}
-#Vision {max-width: 45%; min-width: 300px; border: 1px solid orange;}
-.about-hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; height: 70vh; min-height: 700px; overflow: clip; position: relative; z-index: 0; border-bottom: 6px solid var(--logored)} 
-.about-hero-intro-wrapper {transform: translateY(-150px); position: relative; z-index: 3;}
+.about-hero-text-title {background-image: url('../assets/gray-adas-bg.png'); padding: 25px; border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: 100% 100%; background-repeat: no-repeat; }
+.about-hero-text {margin-top: -10px; background: var(--whitegray); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
+#Mission {max-width: 50%; padding-right: 5%; border-right: 2px solid var(--darkred); margin-right: 5%;}
+#Vision {max-width: 45%; }
+.about-hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; height: 70vh; min-height: 700px; overflow: clip; position: relative; z-index: 0; border-bottom: 30px solid var(--darkred)} 
+.about-hero-intro-wrapper {transform: translateY(-197px); position: relative; z-index: 3;}
 #AboutPageGallery .sqs-gallery-design-stacked {height: 90vh!important; border-top-right-radius: 5px; border-top-left-radius: 5px;}
+
+@media screen and (max-width: 850px) {
+  #Mission {max-width: unset; padding-right: unset; margin-right: unset; border-right: unset;}
+  #Vision {max-width: unset; padding-right: unset; margin-right: unset; border-right: unset;}
+}
+
+
 
 .spacer {height: 50px; width: 100%;}
 
