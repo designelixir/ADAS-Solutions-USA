@@ -10,7 +10,7 @@
       background-color: rgba(255,255,255,0.2);
       padding: 5px;
       border-radius: 5px;
-      max-width: 180px;
+      max-width: 200px;
       margin: 2px;
     }
     .letter-box h4 { line-height: 0; }
@@ -27,9 +27,9 @@
 
 
   <div class="flex-start-start basic-padding flex-column" id="weAimTrue">
-      <div class="flex-center-start" style="border-bottom: 3px solid var(--darkred); width: 75%; margin-bottom: 25px;">
+      {#  <div class="flex-center-start" style="border-bottom: 3px solid var(--darkred); width: 75%; margin-bottom: 25px;">
           <h2 class="red-text" style="font-weight: 600; padding: 15px 0;">Core Values</h2>
-      </div>
+      </div>  }
       
       <div class="flex-start-start we-aim-container">
           <div class="flex-start-start word-container we-container no-flex-grow">
@@ -52,7 +52,7 @@
               </div>
           </div>
       </div>
-      <div class="flex-start-start flex-column true-container">
+      <div class="flex-start-start flex-column true-container word-container">
           <squarespace:block-field id="True-Description" columns="1" />
       </div>
   </div>

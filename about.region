@@ -84,7 +84,7 @@
       </div>  }
 
       <div class="basic-padding red-banner-bg">
-        <squarespace:block-field id="OurPromise-Description" columns="1" />
+        <squarespace:block-field id="OurValues-Description" columns="1" />
       </div>
 
       {@|apply weAimTrue.block}
