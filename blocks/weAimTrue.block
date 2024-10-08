@@ -14,6 +14,7 @@
       margin: 2px;
     }
     .letter-box h4 { line-height: 0; }
+    .letter-box h2 * {font-size: 100px; line-height: 100px;}
     .big-letter { font-size: 100px; font-weight: 700; line-height: 100px; margin: 0; }
     .we-container { margin-right: 40px; }
     .true-container { max-width: 75%; margin: 40px 0px; }
@@ -33,37 +34,26 @@
       <div class="flex-start-start we-aim-container">
           <div class="flex-start-start word-container we-container no-flex-grow">
               <div class="letter-box flex-start-start flex-column ">
-                  {#  <h4>Winners</h4>
-                  <h1 class="big-letter">W</h1>  }
                   <squarespace:block-field id="Winners-Description" columns="1" />
               </div>
               <div class="letter-box flex-start-start flex-column">
-                  <h4>Engage</h4>
-                  <h1 class="big-letter">E</h1>
                   <squarespace:block-field id="Engage-Description" columns="1" />
               </div>
           </div>
           <div class="flex-start-start word-container no-flex-grow aim-container">
               <div class="letter-box flex-start-start flex-column ">
-                  <h4>Attitude</h4>
-                  <h1 class="big-letter">A</h1>
-                  <p>We deliver exceptional outcomes that ensure all stakeholders needs and expectations are exceeded.</p>
+                  <squarespace:block-field id="Attitude-Description" columns="1" />
               </div>
               <div class="letter-box flex-start-start flex-column">
-                  <h4>Innovate</h4>
-                  <h1 style="margin-left: 30px;" class="big-letter centered-text">I</h1>
-                  <p>We deliver exceptional outcomes that ensure all stakeholders needs and expectations are exceeded.</p>
+                  <squarespace:block-field id="Innovate-Description" columns="1" />
               </div>
               <div class="letter-box flex-start-start flex-column">
-                  <h4>Master</h4>
-                  <h1 class="big-letter">M</h1>
-                  <p>We deliver exceptional outcomes that ensure all stakeholders needs and expectations are exceeded.</p>
+                  <squarespace:block-field id="Master-Description" columns="1" />
               </div>
           </div>
       </div>
       <div class="flex-start-start flex-column true-container">
-          <h1 class="big-letter">TRUE</h1>
-          <p>Our honesty delivers trust and confidence to our clients. We will never fake a result or place a client or stakeholder at risk because of our performance. Our integrity is our bond, and we will always do what’s required for safe and accurate vehicle repairs.</p>
+          <squarespace:block-field id="True-Description" columns="1" />
       </div>
   </div>
 

@@ -15,25 +15,42 @@
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
-      <div class="hero-wrapper">
-        <squarespace:block-field id="AboutPageGallery" columns="1" />
-      </div>
-      <div class="about-hero-text basic-padding">
-        <squarespace:block-field id="AboutIntro" columns="1" />
-      </div>
-
-
-
-      <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
-        <div class="page-hero-content">
+        <div class="about-hero-wrapper">
+          <squarespace:block-field id="AboutPageGallery" columns="1" />
+        </div>
+        <div class="basic-padding flex-center-center about-hero-intro-wrapper">
+          <div class="about-hero-text white-text basic-padding">
           <h1>{collection.title}</h1>
           {.if collection.description}
             <h4>{collection.description|safe}</h4>
           {.end}
+            <squarespace:block-field id="AboutIntro" columns="1" />
+          </div>
         </div>
-      </div>
+        <div class="basic-padding fade-in-delay" style="margin-top: -150px">
+          <squarespace:block-field id="AboutIntro-Text" columns="1" />
+          <div class="flex-center-center flex-wrap">
+              <div class="contact-form-icon">
+                  <squarespace:block-field id="Contact-colorado-Form" columns="1" />
+                  <img class="contact-form-icon-image" src="assets/co-3.png"/>
+              </div>
+              <div class="contact-form-icon">
+                  <squarespace:block-field id="Contact-missouri-Form" columns="1" />
+                  <img class="contact-form-icon-image" src="assets/missouri.png"/>
+              </div>
+              <div class="contact-form-icon">
+                  <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
+                  <img class="contact-form-icon-image" src="assets/tennessee.png"/>
+              </div>
+              <div class="contact-form-icon">
+                  <squarespace:block-field id="Contact-texas-Form" columns="1" />
+                  <img class="contact-form-icon-image" src="assets/texas.png"/>
+              </div>
+          </div>
+          <squarespace:block-field id="AboutCallToAction" columns="1" />
+        </div>
 
-      <div class="flex-start-start flex-column about-intro-wrapper basic-padding fade-in-delay">
+      {#  <div class="flex-start-start flex-column about-intro-wrapper basic-padding fade-in-delay">
         <squarespace:block-field id="AboutIntro" columns="1" />
         <div class="flex-start-start about-intro-content ">
             
@@ -43,27 +60,31 @@
             <div class="about-intro-text ">
                 <squarespace:block-field id="AboutIntro-Text" columns="1" />
                 <div class="flex-center-center flex-wrap">
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-colorado-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/co-3.png"/>
+                  <div class="contact-form-icon">
+                      <squarespace:block-field id="Contact-colorado-Form" columns="1" />
+                      <img class="contact-form-icon-image" src="assets/co-3.png"/>
+                  </div>
+                  <div class="contact-form-icon">
+                      <squarespace:block-field id="Contact-missouri-Form" columns="1" />
+                      <img class="contact-form-icon-image" src="assets/missouri.png"/>
+                  </div>
+                  <div class="contact-form-icon">
+                      <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
+                      <img class="contact-form-icon-image" src="assets/tennessee.png"/>
+                  </div>
+                  <div class="contact-form-icon">
+                      <squarespace:block-field id="Contact-texas-Form" columns="1" />
+                      <img class="contact-form-icon-image" src="assets/texas.png"/>
+                  </div>
                 </div>
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-missouri-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/missouri.png"/>
-                </div>
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/tennessee.png"/>
-                </div>
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-texas-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/texas.png"/>
-                </div>
-            </div>
             <squarespace:block-field id="AboutCallToAction" columns="1" />
 
             </div>
         </div>
+      </div>  }
+
+      <div class="basic-padding red-banner-bg">
+        <squarespace:block-field id="OurPromise-Description" columns="1" />
       </div>
 
       {@|apply weAimTrue.block}
