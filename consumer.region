@@ -48,6 +48,14 @@
             <squarespace:block-field id="Consumer-HowItWorks-Content" columns="1" />
         </div>
     </div>
-    {@|apply callToAction.block}
+    <div class="call-to-action-wrapper flex-center-center">
+        <div class="call-to-action flex-center-center">
+        
+            <div class="call-to-action-overlay">
+                <squarespace:block-field id="ConsumerTab-Call-To-Action" columns="1" />
+            </div>
+        
+        </div>
+    </div>
 </section>
 

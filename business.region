@@ -81,7 +81,15 @@
     <squarespace:block-field id="Business-Statistics-Description" columns="1" />
     </div>
 
-    {@|apply callToAction.block}
+    <div class="call-to-action-wrapper flex-center-center">
+        <div class="call-to-action flex-center-center">
+        
+            <div class="call-to-action-overlay">
+                <squarespace:block-field id="BusinessTab-Call-To-Action" columns="1" />
+            </div>
+        
+        </div>
+    </div>
 
     
 
