@@ -107,7 +107,14 @@
 
       {@|apply ourPromise.block}
 
-      <div class="basic-padding banner-bg" style="position: relative; z-index: 3;">
+      <div class="basic-padding banner-bg-reverse" style="margin-bottom: 25px;">
+        <squarespace:block-field id="OurFocus-Description" columns="1" />
+      </div>
+      <div style="margin-bottom: -50px; z-index:4; position:relative;">
+      {@|apply ourFocus.block}
+      </div>
+
+      <div class=" banner-bg flex-center center" style="position: relative; z-index: 3; padding: 100px 25px 25px 25px">
         <squarespace:block-field id="CoreValues-Description" columns="1" />
       </div>
 
@@ -116,12 +123,9 @@
 
       
 
-      <div class="basic-padding banner-bg-reverse" style="margin-top: -35px;">
-        <squarespace:block-field id="OurFocus-Description" columns="1" />
-      </div>
-      {@|apply ourFocus.block}
+      
 
-      <div class="flex-start-start flex-break basic-padding" style="margin: 50px 0; padding-top: 50px; background-color: #e2e2e2;">
+      <div class="flex-start-start flex-break basic-padding" style=" margin-top: 50px;">
         <squarespace:block-field id="MeetOurTeam-Description" columns="1" />
         <squarespace:block-field id="MeetOurTeam-Video" columns="1" />
 
