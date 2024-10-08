@@ -18,17 +18,21 @@
         <div class="about-hero-wrapper">
           <squarespace:block-field id="AboutPageGallery" columns="1" />
         </div>
-        <div class="basic-padding flex-center-center about-hero-intro-wrapper">
-          <div class="about-hero-text white-text basic-padding">
-          <h1>{collection.title}</h1>
-          {.if collection.description}
-            <h4>{collection.description|safe}</h4>
-          {.end}
+        <div class="about-hero-intro-wrapper basic-padding flex-start-start flex-column">
+          <div class="about-hero-text-title white-text basic-padding">
+            <h1>{collection.title}</h1>
             <squarespace:block-field id="AboutIntro" columns="1" />
           </div>
+          <div class="about-hero-text" class="flex-start-start">
+              <squarespace:block-field id="Mission" columns="1" />
+              <squarespace:block-field id="Vision" columns="1" />
+          </div>
         </div>
+
+        
+
         <div class="basic-padding fade-in-delay" style="margin-top: -150px">
-          <squarespace:block-field id="AboutIntro-Text" columns="1" />
+          
           <div class="flex-center-center flex-wrap">
               <div class="contact-form-icon">
                   <squarespace:block-field id="Contact-colorado-Form" columns="1" />
