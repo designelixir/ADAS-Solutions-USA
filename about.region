@@ -15,6 +15,14 @@
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
+      <div class="hero-wrapper">
+        <squarespace:block-field id="AboutPageGallery" columns="1" />
+      </div>
+      <div class="about-hero-text basic-padding">
+        <squarespace:block-field id="AboutIntro" columns="1" />
+      </div>
+
+
 
       <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content">
@@ -57,6 +65,9 @@
             </div>
         </div>
       </div>
+
+      {@|apply weAimTrue.block}
+
 
       <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="OurPromise-Description" columns="1" />

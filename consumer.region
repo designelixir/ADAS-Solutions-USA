@@ -4,7 +4,6 @@
     <squarespace:block-field id="Consumer-Intro" columns="1" />
     <div class="flex-center-center flex-break" style="margin: 25px 0;">
         <squarespace:block-field id="Consumer-Button-1" columns="1" />
-        <squarespace:block-field id="Consumer-Button-2" columns="1" />
         <squarespace:block-field id="Consumer-Button-3" columns="1" />
         <squarespace:block-field id="Consumer-Button-4" columns="1" />
     </div>

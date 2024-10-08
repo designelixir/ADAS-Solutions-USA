@@ -1,0 +1,104 @@
+
+  <style>
+    #weAimTrue {
+      background-image: url('../assets/carbon-fiber-transparent-bg.png');
+      background-size: cover;
+      background-position: 100% center;
+    }
+
+    .letter-box {
+      background-color: rgba(255,255,255,0.2);
+      padding: 5px;
+      border-radius: 5px;
+      max-width: 180px;
+      margin: 2px;
+    }
+    .letter-box h4 { line-height: 0; }
+    .big-letter { font-size: 100px; font-weight: 700; line-height: 100px; margin: 0; }
+    .we-container { margin-right: 40px; }
+    .true-container { max-width: 75%; margin: 40px 0px; }
+
+    @media screen and (max-width: 850px) {
+      .we-aim-container { display: block; }
+      .true-container { max-width: unset; margin: 20px 0; }
+    }
+  </style>
+
+
+  <div class="flex-start-start basic-padding flex-column" id="weAimTrue">
+      <div class="flex-center-start" style="border-bottom: 3px solid var(--darkred); width: 75%; margin-bottom: 25px;">
+          <h2 class="red-text" style="font-weight: 600; padding: 15px 0;">Core Values</h2>
+      </div>
+      
+      <div class="flex-start-start we-aim-container">
+          <div class="flex-start-start word-container we-container no-flex-grow">
+              <div class="letter-box flex-start-start flex-column ">
+                  {#  <h4>Winners</h4>
+                  <h1 class="big-letter">W</h1>  }
+                  <squarespace:block-field id="Winners-Description" columns="1" />
+              </div>
+              <div class="letter-box flex-start-start flex-column">
+                  <h4>Engage</h4>
+                  <h1 class="big-letter">E</h1>
+                  <squarespace:block-field id="Engage-Description" columns="1" />
+              </div>
+          </div>
+          <div class="flex-start-start word-container no-flex-grow aim-container">
+              <div class="letter-box flex-start-start flex-column ">
+                  <h4>Attitude</h4>
+                  <h1 class="big-letter">A</h1>
+                  <p>We deliver exceptional outcomes that ensure all stakeholders needs and expectations are exceeded.</p>
+              </div>
+              <div class="letter-box flex-start-start flex-column">
+                  <h4>Innovate</h4>
+                  <h1 style="margin-left: 30px;" class="big-letter centered-text">I</h1>
+                  <p>We deliver exceptional outcomes that ensure all stakeholders needs and expectations are exceeded.</p>
+              </div>
+              <div class="letter-box flex-start-start flex-column">
+                  <h4>Master</h4>
+                  <h1 class="big-letter">M</h1>
+                  <p>We deliver exceptional outcomes that ensure all stakeholders needs and expectations are exceeded.</p>
+              </div>
+          </div>
+      </div>
+      <div class="flex-start-start flex-column true-container">
+          <h1 class="big-letter">TRUE</h1>
+          <p>Our honesty delivers trust and confidence to our clients. We will never fake a result or place a client or stakeholder at risk because of our performance. Our integrity is our bond, and we will always do what’s required for safe and accurate vehicle repairs.</p>
+      </div>
+  </div>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <script>
+    // Register ScrollTrigger plugin with GSAP
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Create GSAP timeline for Core Values animation
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#weAimTrue",
+        start: "top center",
+        toggleActions: "play none none none",
+      }
+    })
+    .from(".we-container", {
+      x: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    })
+    .from(".aim-container", {
+      x: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    }, "-=0.5") // Overlap the animation for a smoother effect
+    .from(".true-container", {
+      x: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    }, "-=0.5");
+  </script>
