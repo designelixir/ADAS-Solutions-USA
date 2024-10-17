@@ -22,14 +22,9 @@
           <div class="about-hero-intro-wrapper flex-start-start flex-column">
             <div class="about-hero-text-title white-text  full-width" style="padding: 15px 28px">
               <h1>{collection.title}</h1>
-              
             </div>
 
-            <div style="border-top: 30px solid var(--logored); width: calc(100% + 30px)!important; margin-left: -15px" class="flex-start-center">
-              <img src="../assets/triangle.svg" style="width: 15px; z-index: -1;"/>
-              <div class="full-width" style="background: var(--whitegray); height: 10px; "></div>
-              <img src="../assets/triangle-right.svg" style="width: 15px;  z-index: -1;"/>
-            </div>
+            
             
             <div class="about-hero-text basic-padding box-shadow">
             <squarespace:block-field id="AboutIntro" columns="1" />
@@ -107,18 +102,20 @@
 
       {@|apply ourPromise.block}
 
-      <div class="basic-padding banner-bg-reverse" style="margin-bottom: 25px;">
-        <squarespace:block-field id="OurFocus-Description" columns="1" />
-      </div>
-      <div style="margin-bottom: -50px; z-index:4; position:relative;">
-      {@|apply ourFocus.block}
-      </div>
+      
 
       <div class=" banner-bg flex-center center" style="position: relative; z-index: 3; padding: 100px 25px 25px 25px">
         <squarespace:block-field id="CoreValues-Description" columns="1" />
       </div>
 
       {@|apply weAimTrue.block}
+
+      <div class="basic-padding banner-bg-reverse" style="margin-top: -50px; ">
+        <squarespace:block-field id="OurFocus-Description" columns="1" />
+      </div>
+      <div style="margin-bottom:50px; z-index:4; position:relative;">
+      {@|apply ourFocus.block}
+      </div>
 
 
       

@@ -9,12 +9,12 @@
 
 <div class="flex-end-center complete-summary-card-wrapper">
     <div class="complete-summary-card box-shadow flex-center-center flex-column">
-        <div class="card-icon" style="background-image: url('../assets/icons/repair.png')"></div>
+        <div class="card-icon" style="background-image: url('../assets/icons/customer-service.svg')"></div>
         <squarespace:block-field id="RepairPlan-Description" columns="1" style="border: 1px solid red"/>
     </div>
 
     <div class="complete-summary-card box-shadow flex-center-center flex-column">
-        <div class="card-icon" style="background-image: url('../assets/icons/technician.png')"></div>
+        <div class="card-icon" style="background-image: url('../assets/icons/knowledge.svg')"></div>
         <squarespace:block-field id="ExpertTechnicians-Description" columns="1" />
     </div>
 

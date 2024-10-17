@@ -32,7 +32,10 @@
             </div>
         {.or}
         <div class="flex-center-start flex-wrap" style="margin: -75px 25px 25px 25px; padding: 0 15px; z-index: 2; position: relative; background-color: var(--darkgray)">
-            <h4 class="white-text" style="padding-right: 15px; min-width: 200px">Filter locations by: </h4>
+            <div>
+              <h4 class="white-text no-text-spacing" style="padding-right: 15px; margin: 20px 0; min-width: 200px">Filter locations by: </h4>
+              <button id="filterReset" class="location-tag" onclick="filter('reset')">Reset</button>
+            </div>
             <div class="flex-start-start">
              <div class="location-filter-bar border-left" st>
                 <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>State</strong></h5>
@@ -49,9 +52,11 @@
                 <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>Service</strong></h5>
                 <div class="flex-center-start flex-wrap no-flex-grow">
                 {.section collection}
+                
                     {.repeated section tags}
                         <div class="location-tag service" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')">{@}</div>
                     {.end}
+                
                 {.end}
                 </div>
             </div>
@@ -62,20 +67,12 @@
 
       <section>
         {squarespace.main-content}
+        <div id="noResults" class="flex-center-start" style="display: none;">
+          <button id="filterReset" class="location-tag" onclick="filter('reset')">No results. Reset filters?</button>
+        </div>
+
        </section>
       </main>
-       {.if tagFilter} 
-        {.section tagFilter}
-
-        <script>
-        console.log("detected tag filter {@|safe|slugify}")
-            window.onload = function(){
-                filter('{@|slugify}')
-            };
-        </script>
-
-        {.end}
-        {.end}
 
 
     </div>

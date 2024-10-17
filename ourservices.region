@@ -69,8 +69,8 @@
                     <div class="alignment-block flex-center-center" id="{title}">
                         <div class="front flex-center-center flex-column">
                             <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
-                            <h5 class="centered-text">{title}</h5>
-                            <p class="white-text centered-text">{body}</p>
+                            <h5 class="centered-text min-height-text">{title}</h5>
+                            <p class="white-text centered-text no-text-spacing">{body}</p>
                             
                         </div>
                     </div>

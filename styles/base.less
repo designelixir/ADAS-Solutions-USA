@@ -414,20 +414,29 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .call-to-action-overlay {padding: 25px; background: rgba(0,0,0,0.25); width: 100%; height: 100%; }
 .call-to-action-overlay * {color: white!important;}
 
-.about-hero-text-title {background-image: url('../assets/gray-adas-bg.png'); padding: 25px; border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: 100% 100%; background-repeat: no-repeat; }
+.about-hero-text-title {background-image: url('../assets/gray-adas-bg.png'); border-bottom: 30px solid var(--red); padding: 25px; border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: 100% 100%; background-repeat: no-repeat; }
 .about-hero-text {margin-top: -10px; background: var(--whitegray); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
 #Mission {max-width: 50%; padding-right: 5%; border-right: 2px solid var(--darkred); margin-right: 5%;}
 #Vision {max-width: 45%; }
 .about-hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; height: 70vh; min-height: 700px; overflow: clip; position: relative; z-index: 0; border-bottom: 30px solid var(--darkred)} 
-.about-hero-intro-wrapper {transform: translateY(-197px); position: relative; z-index: 3;}
+.about-hero-intro-wrapper {transform: translateY(-330px); margin-bottom: -150px; position: relative; z-index: 3;}
 #AboutPageGallery .sqs-gallery-design-stacked {height: 90vh!important; border-top-right-radius: 5px; border-top-left-radius: 5px;}
 
+.min-height-text {max-height: 40px; height: 40px;}
+@media screen and (max-width: 500px) {
+  .min-height-text {max-height: unset; height: unset;}
+
+
+}
 @media screen and (max-width: 850px) {
   #Mission {max-width: unset; padding-right: unset; margin-right: unset; border-right: unset;}
   #Vision {max-width: unset; padding-right: unset; margin-right: unset; border-right: unset;}
 }
 
-
+#adas-calibration-filter-tag {order: 1;}
+#alignment-filter-tag {order: 2;}
+#rivian-windshields-filter-tag {order: 3;}
+#tesla-windshields-filter-tag {order: 4;}
 
 .spacer {height: 50px; width: 100%;}
 

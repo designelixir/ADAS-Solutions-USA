@@ -1,5 +1,10 @@
 {.section tagFilter}
-<p class="padding-left-25">{@}</p>
+<p class="padding-left-25">Locations filtered by service: {@}</p>
+<a class="padding-left-25" href='/locations'>See all locations</a>
+{.end}
+{.section categoryFilter}
+<p class="padding-left-25">Locations filtered by state: {@}</p>
+<a class="padding-left-25" href='/locations'>See all locations</a>
 {.end}
 
 <div class="flex-start-start flex-wrap basic-padding">
@@ -63,7 +68,17 @@ let activeStateFilter = '';
 let activeServiceFilter = '';
 
 function filter(categoryOrTag) {
+    
+    if (categoryOrTag === 'reset'){
+        activeStateFilter = '';
+        activeServiceFilter = '';
+        $('.location-tag').removeClass('active-filter-tag')
+    }
+
+   
+    
     console.log("called", categoryOrTag)
+
     const tagElement = $('#' + categoryOrTag + '-filter-tag');
 
     if (tagElement.hasClass('active-filter-tag')) {
@@ -85,30 +100,55 @@ function filter(categoryOrTag) {
 
         tagElement.addClass('active-filter-tag');
     }
+    
+     if (activeStateFilter === '' && activeServiceFilter === ''){
+        console.log("nothing")
+        $('#filterReset').css('display', 'none')
+    } else {
+        $('#filterReset').css('display', 'block')
+    }
+
 
     gsap.to('.location-summary-card', {
-        opacity: 0,
-        duration: 0.5,
-        onComplete: function () {
-            $('.location-summary-card').hide();
-            
-            let selector = '.location-summary-card';
+    opacity: 0,
+    duration: 0.5,
+    onComplete: function () {
+        // Hide all cards first
+        $('.location-summary-card').hide();
+        
+        let selector = '.location-summary-card';
 
-            if (activeStateFilter) {
-                selector += '.' + activeStateFilter;
-            }
-            if (activeServiceFilter) {
-                selector += '.' + activeServiceFilter;
-            }
-
-            let matchingCards = $(selector);
-
-            if (matchingCards.length > 0) {
-                matchingCards.show();
-                gsap.fromTo(matchingCards, { opacity: 0 }, { opacity: 1, duration: 0.5 });
-            }
+        // Apply state and service filters
+        if (activeStateFilter) {
+            selector += '.' + activeStateFilter;
         }
-    });
+        if (activeServiceFilter) {
+            selector += '.' + activeServiceFilter;
+        }
+
+        let matchingCards = $(selector);
+
+        if (matchingCards.length > 0) {
+            // Show matching cards
+            matchingCards.show();
+            
+            // Animate showing of the matching cards
+            gsap.fromTo(matchingCards, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+        }
+
+        // Check if all cards are hidden after filtering
+        let allCardsHidden = $('.location-summary-card:visible').length === 0;
+        if (allCardsHidden) {
+            $('#noResults').css('display', 'block')
+            console.log("All location cards are hidden.");
+        } else {
+            $('#noResults').css('display', 'none')
+            console.log("Some location cards are visible.");
+        }
+    }
+});
+
 }
 
+filter('')
 </script>
