@@ -49,7 +49,7 @@
                     <squarespace:block-field id="See All Locations Button" columns="1" />
                 </div>
             </div>
-            
+            {@|apply contactPopup.block}
             <div class='flex-start-start flex-wrap padding-top-25'>
                 <squarespace:query collection="locations" tag="{.section item}{.repeated section tags}{@}{.end}{.end}" limit="20">
                         {.repeated section items}
@@ -78,8 +78,11 @@
                                         {.end}
                                     </div>
                                     <div class="flex-end-end flex-column book-button-wrapper">
+                                    
                                         <div class='book-button'>
-                                            <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
+                                            <button class='blank-button lightbox-242908003518049' onclick="selectMarket('{.repeated section categories}{@}{.end}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
+                                                Schedule ADAS or Alignment
+                                            </button>
                                         </div>
                                         {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Windshield</button></a>{.end}
                                         {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Windshield</button></a>{.end}

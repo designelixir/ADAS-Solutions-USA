@@ -1,19 +1,19 @@
 <style>
 .book-service-title-wrapper {transform: translateY(-50px); z-index: 2;}
-.book-service-title {background: var(--darkgray); width: 19.5%; padding: 35px 0; min-height: 75px;  margin: 0.25%; color: white!important; text-decoration: unset; line-height: 22px; text-align: center;}
+.book-service-title {background: var(--darkgray); width: 25%; min-height: 75px; padding: 15px; margin: 2px; color: white!important; text-decoration: unset; line-height: 22px; text-align: center;}
 .book-service-title h3 {color: white; line-height: 20px;}
 .book-service-title:hover {background: var(--ssgray); cursor: pointer;}
 
 @media screen and (max-width: 860px) {
-  .book-service-title-wrapper {flex-wrap: wrap;}
-  .book-service-title {width: unset; padding: 35px 15px;}
+  .book-service-title-wrapper {flex-direction: column;}
+  .book-service-title {width: 100%; padding: 35px 15px; min-height: unset;}
 }
 
 </style>
-<div class="book-service-title-wrapper flex-center-center flex-wrap">
+<div class="book-service-title-wrapper flex-center-center">
 {.repeated section items}
     
-        <a class="book-service-title no-text-spacing" href="{fullUrl}"><h3 class=" no-text-spacing">{title}</h3></a>
+        <a class="book-service-title flex-center-center no-text-spacing" href="{fullUrl}"><h3 class=" no-text-spacing">{title}</h3></a>
     
 {.end}
 </div>

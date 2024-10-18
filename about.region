@@ -87,7 +87,7 @@
         <squarespace:block-field id="MeetOurTeam-Intro" columns="1" />
       </div>
 
-      <div class="flex-start-start flex-break basic-padding" style=" margin-top: 50px;">
+      <div class="flex-start-start flex-break basic-padding-left-25 basic-padding-right-25" style=" margin-top: 50px;">
         <squarespace:block-field id="MeetOurTeam-Description" columns="1" />
         <squarespace:block-field id="MeetOurTeam-Video" columns="1" />
 
