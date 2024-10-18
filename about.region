@@ -15,33 +15,30 @@
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
-        <div class="about-hero-wrapper">
+        
           <squarespace:block-field id="AboutPageGallery" columns="1" />
-        </div>
-        <div class="basic-padding">
-          <div class="about-hero-intro-wrapper flex-start-start flex-column">
-            <div class="about-hero-text-title white-text  full-width" style="padding: 15px 28px">
-              <h1>{collection.title}</h1>
-            </div>
-
-            
-            
+        
+        
+      <div class="about-hero-intro-wrapper basic-padding" style=" ">
+          <div class="flex-start-start flex-column">
+            <div class="about-hero-text-title white-text full-width" style="padding: 15px 28px"><h1>{collection.title}</h1></div>
             <div class="about-hero-text basic-padding box-shadow">
-            <squarespace:block-field id="AboutIntro" columns="1" />
-              <div class='flex-start-start flex-wrap'>
-                <div>
+              <squarespace:block-field id="AboutIntro" columns="1" />
+              <div class='mission-vision-container flex-start-start'>
+                <div class="mission-wrapper flex-start-start">
                   <squarespace:block-field id="Mission" columns="1" />
                 </div>
-                <div>
+                <div class="vision-wrapper flex-start-start">
                   <squarespace:block-field id="Vision" columns="1" />
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
 
         
-        <div class="basic-padding" style="margin-top: -150px">
+        <div class="basic-padding">
           <div class="fade-in-delay" >
             <squarespace:block-field id="AboutIntroText" columns="1" />
             <div class="flex-center-center flex-wrap">
@@ -76,23 +73,27 @@
 
       {@|apply weAimTrue.block}
 
-      <div class="basic-padding banner-bg-reverse" style="margin-top: -50px; ">
+      <div class="banner-bg-reverse" style="margin-top: -60px; padding: 50px 25px; ">
         <squarespace:block-field id="OurFocus-Description" columns="1" />
       </div>
-      <div style="margin-bottom:50px; z-index:4; position:relative;">
+      <div class="basic-padding">
       {@|apply ourFocus.block}
       </div>
 
 
       
 
-      
+      <div class="basic-padding red-banner-bg">
+        <squarespace:block-field id="MeetOurTeam-Intro" columns="1" />
+      </div>
 
       <div class="flex-start-start flex-break basic-padding" style=" margin-top: 50px;">
         <squarespace:block-field id="MeetOurTeam-Description" columns="1" />
         <squarespace:block-field id="MeetOurTeam-Video" columns="1" />
 
       </div>
+
+      
 
       <div class="basic-padding">
         {squarespace.main-content}

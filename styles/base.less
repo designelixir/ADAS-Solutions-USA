@@ -412,16 +412,18 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 .about-hero-text-title {background-image: url('../assets/gray-adas-bg.png'); border-bottom: 30px solid var(--red); padding: 25px; border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: 100% 100%; background-repeat: no-repeat; }
 .about-hero-text { background: var(--whitegray); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
-#Mission {max-width: 50%; padding-right: 5%; border-right: 2px solid var(--darkred); margin-right: 5%;}
-#Vision {max-width: 45%; }
-.about-hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; height: 70vh; min-height: 700px; overflow: clip; position: relative; z-index: 0; border-bottom: 30px solid var(--darkred)} 
-.about-hero-intro-wrapper {transform: translateY(-330px); margin-bottom: -150px; position: relative; z-index: 3;}
-#AboutPageGallery .sqs-gallery-design-stacked {height: 90vh!important; border-top-right-radius: 5px; border-top-left-radius: 5px;}
+.mission-wrapper {padding: 0 25px 0 0; border-right: 2px solid var(--darkred); margin-right: 25px;}
+.about-hero-wrapper {width: 90vw; max-width: 1300px; z-index: 0; border-top-right-radius: 5px; border-top-left-radius: 5px; height: 700px; overflow: clip;  border-bottom: 30px solid var(--darkred); } 
+.about-hero-intro-wrapper { position: relative; z-index: 3; transform: translateY(-120px); margin-bottom: -100px;}
+#AboutPageGallery .sqs-gallery-design-stacked {min-height: 60vh; border-top-right-radius: 5px; border-top-left-radius: 5px;}
+#AboutPageGallery {position: relative; z-index: 1; border-bottom: 30px solid var(--darkred)}
 
 .min-height-text {max-height: 40px; height: 40px;}
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+  .mission-vision-container {flex-direction: column;}
+  .mission-wrapper {padding: 0 0 25px 0; border-right: unset; margin-right: unset;}
   .min-height-text {max-height: unset; height: unset;}
-
+  #Mission {padding-bottom: 25px;}
 
 }
 @media screen and (max-width: 850px) {

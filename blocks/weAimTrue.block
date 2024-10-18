@@ -28,7 +28,7 @@
     @media screen and (max-width: 850px) {
       .we-aim-container { display: block; width: 100%; }
       .true-container { max-width: unset; margin: 20px 0; }
-      #weAimTrue {flex-direction: column;}
+      #weAimTrue {flex-direction: column; padding: 100px 5px}
     }
 
     @media screen and (max-width: 1300px) {
@@ -38,7 +38,7 @@
   </style>
 
 
-  <div class="flex-start-start basic-padding flex-wrap" id="weAimTrue">
+  <div class="flex-start-start flex-wrap" id="weAimTrue">
       {#  <div class="flex-center-start" style="border-bottom: 3px solid var(--darkred); width: 75%; margin-bottom: 25px;">
           <h2 class="red-text" style="font-weight: 600; padding: 15px 0;">Core Values</h2>
       </div>  }
