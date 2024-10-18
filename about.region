@@ -29,8 +29,12 @@
             <div class="about-hero-text basic-padding box-shadow">
             <squarespace:block-field id="AboutIntro" columns="1" />
               <div class='flex-start-start flex-wrap'>
-                <squarespace:block-field id="Mission" columns="1" />
-                <squarespace:block-field id="Vision" columns="1" />
+                <div>
+                  <squarespace:block-field id="Mission" columns="1" />
+                </div>
+                <div>
+                  <squarespace:block-field id="Vision" columns="1" />
+                </div>
               </div>
             </div>
           </div>
@@ -41,61 +45,23 @@
           <div class="fade-in-delay" >
             <squarespace:block-field id="AboutIntroText" columns="1" />
             <div class="flex-center-center flex-wrap">
-                
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-colorado-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/co-3.png"/>
-                </div>
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-missouri-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/missouri.png"/>
-                </div>
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/tennessee.png"/>
-                </div>
-                <div class="contact-form-icon">
-                    <squarespace:block-field id="Contact-texas-Form" columns="1" />
-                    <img class="contact-form-icon-image" src="assets/texas.png"/>
-                </div>
-            </div>
+              {@|apply contactPopup.block}
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Colorado')" aria-label='Contact Colorado Market'>
+                  <img src="assets/co-3.png" alt="Contact Colorado Market Button"/>
+              </button>
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Missouri')" aria-label='Contact Missouri Market'>
+                  <img src="assets/missouri.png" alt="Contact Missouri Market Button"/>
+              </button>
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Tennessee')" aria-label='Contact Tennessee Market'>
+                  <img src="assets/tennessee.png" alt="Contact Tennessee Market Button"/>
+              </button>
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Texas')" aria-label='Contact Texas Market'>
+                  <img src="assets/texas.png" alt="Contact Texas Market Button"/>
+              </button>
+          </div>
             <squarespace:block-field id="AboutCallToAction" columns="1" />
           </div>
         </div>
-
-      {#  <div class="flex-start-start flex-column about-intro-wrapper basic-padding fade-in-delay">
-        <squarespace:block-field id="AboutIntro" columns="1" />
-        <div class="flex-start-start about-intro-content ">
-            
-            <div class="about-intro-image-wrapper flex-start-start">
-                    <squarespace:block-field id="AboutGallery" columns="1" />
-            </div>
-            <div class="about-intro-text ">
-                <squarespace:block-field id="AboutIntro-Text" columns="1" />
-                <div class="flex-center-center flex-wrap">
-                  <div class="contact-form-icon">
-                      <squarespace:block-field id="Contact-colorado-Form" columns="1" />
-                      <img class="contact-form-icon-image" src="assets/co-3.png"/>
-                  </div>
-                  <div class="contact-form-icon">
-                      <squarespace:block-field id="Contact-missouri-Form" columns="1" />
-                      <img class="contact-form-icon-image" src="assets/missouri.png"/>
-                  </div>
-                  <div class="contact-form-icon">
-                      <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
-                      <img class="contact-form-icon-image" src="assets/tennessee.png"/>
-                  </div>
-                  <div class="contact-form-icon">
-                      <squarespace:block-field id="Contact-texas-Form" columns="1" />
-                      <img class="contact-form-icon-image" src="assets/texas.png"/>
-                  </div>
-                </div>
-            <squarespace:block-field id="AboutCallToAction" columns="1" />
-
-            </div>
-        </div>
-      </div>  }
-
       <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="OurPromise-Description" columns="1" />
       </div>

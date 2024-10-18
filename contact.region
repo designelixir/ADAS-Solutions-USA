@@ -7,8 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
@@ -36,37 +34,30 @@
       </div>
         <section>
         <div class="basic-padding">
-      
-          
           <h3 class="centered-text">Contact us by selecting your state below and filling out the form:</h3>
           <div class="flex-center-center flex-wrap">
-              <div class="contact-form-icon">
-                <squarespace:block-field id="Contact-colorado-Form" columns="1" />
-                <img class="contact-form-icon-image" src="assets/co-3.png"/>
-              </div>
-              <div class="contact-form-icon">
-                <squarespace:block-field id="Contact-missouri-Form" columns="1" />
-                <img class="contact-form-icon-image" src="assets/missouri.png"/>
-              </div>
-              <div class="contact-form-icon">
-                <squarespace:block-field id="Contact-tennessee-Form" columns="1" />
-                <img class="contact-form-icon-image" src="assets/tennessee.png"/>
-              </div>
-              <div class="contact-form-icon">
-                <squarespace:block-field id="Contact-texas-Form" columns="1" />
-                <img class="contact-form-icon-image" src="assets/texas.png"/>
-              </div>
+              {@|apply contactPopup.block}
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Colorado')" aria-label='Contact Colorado Market'>
+                  <img src="assets/co-3.png" alt="Contact Colorado Market Button"/>
+              </button>
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Missouri')" aria-label='Contact Missouri Market'>
+                  <img src="assets/missouri.png" alt="Contact Missouri Market Button"/>
+              </button>
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Tennessee')" aria-label='Contact Tennessee Market'>
+                  <img src="assets/tennessee.png" alt="Contact Tennessee Market Button"/>
+              </button>
+              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Texas')" aria-label='Contact Texas Market'>
+                  <img src="assets/texas.png" alt="Contact Texas Market Button"/>
+              </button>
           </div>
         </div>
-           
-
-            <div class="basic-padding banner-bg-reverse" style="margin-top: -150px; padding-top: 200px; z-index: 1;">
-                <squarespace:block-field id="GetStarted-Description" columns="1" />
-                <squarespace:block-field id="RequestAQuote" columns="1" />
-            </div>
-            <div class="basic-padding">
-              {squarespace.main-content}
-            </div>
+        <div class="basic-padding banner-bg-reverse" style="margin-top: -150px; padding-top: 200px; z-index: 1;">
+            <squarespace:block-field id="GetStarted-Description" columns="1" />
+            <squarespace:block-field id="RequestAQuote" columns="1" />
+        </div>
+        <div class="basic-padding">
+          {squarespace.main-content}
+        </div>
         </section>
       </main>
 

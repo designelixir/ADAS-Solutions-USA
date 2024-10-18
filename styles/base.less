@@ -85,17 +85,13 @@ main {background: white; border-top-right-radius: 5px; border-top-left-radius: 5
 .button {background-color: var(--ssgray); color: white; text-transform: uppercase; font-size: 20px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 15px 20px; text-decoration: none!important; border: 2px solid var(--ssgray); font-family: var(--roboto); letter-spacing: 1px;}
 .button:hover {font-weight: 500; border: 2px solid white; cursor: pointer;}
 .button a {color: inherit; text-decoration: none;}
+.blank-button {background: unset; border: unset; }
 
 .lightgray-button {background-color: var(--lightgray); color: black; font-size: 16px; font-family: "Archivo", sans-serif; font-weight: 300; padding: 15px 20px; text-decoration: none!important; border: unset;}
 .lightgray-button:hover {cursor: pointer; font-weight: 500;}
 .sqs-block-button .sqs-block-button-element--large {background-color: var(--logored); padding: 15px 20px!important; border: 2px solid var(--darkred);}
 
-.red-button {
-  background-color: var(--logored);
-  padding: 15px 20px !important;
-  border: 2px solid var(--darkred);
-  
-}
+.red-button {background-color: var(--logored); padding: 15px 20px !important; border: 2px solid var(--darkred);}
 
 // Text Styles
 h1 {font-size: 42px; font-weight: 700; line-height: 46px; font-family: "Roboto Condensed", sans-serif;}
@@ -415,7 +411,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .call-to-action-overlay * {color: white!important;}
 
 .about-hero-text-title {background-image: url('../assets/gray-adas-bg.png'); border-bottom: 30px solid var(--red); padding: 25px; border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: 100% 100%; background-repeat: no-repeat; }
-.about-hero-text {margin-top: -10px; background: var(--whitegray); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
+.about-hero-text { background: var(--whitegray); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
 #Mission {max-width: 50%; padding-right: 5%; border-right: 2px solid var(--darkred); margin-right: 5%;}
 #Vision {max-width: 45%; }
 .about-hero-wrapper {width: 90vw; max-width: 1300px; border-top-right-radius: 5px; border-top-left-radius: 5px; height: 70vh; min-height: 700px; overflow: clip; position: relative; z-index: 0; border-bottom: 30px solid var(--darkred)} 
@@ -439,6 +435,16 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 #tesla-windshields-filter-tag {order: 4;}
 
 .spacer {height: 50px; width: 100%;}
+
+// Contact Page / Popup Form
+.contact-popup-button {width: 160px; height: 160px; background: unset; border: unset;}
+.contact-popup-button:hover img {cursor: pointer; width: 100%; }
+.contact-popup-button img {width: 90%;}
+@media screen and (max-width: 670px) {
+  .contact-popup-button {width: 130px; height: 130px;}
+  .contact-popup-button img {width: 100%;}
+}
+
 
 .fade-in{-webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
 @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}

@@ -8,6 +8,7 @@
 {.end}
 
 <div class="flex-start-start flex-wrap basic-padding">
+{@|apply contactPopup.block}
 {.repeated section items}
   <article id="post-{id}" class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
     
@@ -36,7 +37,10 @@
                 </div>
                 <div class="flex-end-end flex-column book-button-wrapper">
                     <div class='book-button'>
-                        <squarespace:block-field id="Contact-{.repeated section categories}{@|slugify}{.end}-Form" columns="1" />
+                    <button class='blank-button lightbox-242908003518049' onclick="selectMarket('{.repeated section categories}{@}{.end}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
+                            Schedule ADAS or Alignment
+                        </button>
+                        
                     </div>
                     {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
                     {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Windshield</button></a>{.end}

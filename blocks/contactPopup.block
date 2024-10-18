@@ -1,0 +1,27 @@
+
+<script src ="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var JFL_242908003518049 = new JotformFeedback({
+        iframeParameters: {
+            market: ''
+        },
+        formId: '242908003518049',
+        base: 'https://form.jotform.com/',
+        windowTitle: 'ADAS Solutions Contact Form',
+        backgroundColor: 'var(--red)',
+        padding: '25px',
+        fontFamily: 'Roboto',
+        fontColor: '#FFFFFF',
+        type: 'false',
+        height: 700,
+        width: 700,
+        openOnLoad: false
+    });
+
+    function selectMarket(state) {
+        JFL_242908003518049.options.iframeParameters.market = state
+    }
+</script>
+<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+<script>window.jotformEmbedHandler("iframe[id='242908003518049']", "https://form.jotform.com/")</script>
+
