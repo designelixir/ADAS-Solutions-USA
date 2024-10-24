@@ -5,11 +5,11 @@ nav {width: 100%;}
 .logo {height: 100px; transition: height 0.3s ease;}
 .logo-shrink {height: 75px;}
 .site-navigation-list { width: 100%;}
-.site-navigation-item {padding: 10px; text-align: center; font-family: "Archivo", sans-serif; }
-.site-navigation-item a:hover {color: var(--red); }
+.site-navigation-item a {padding: 5px 10px; text-align: center; font-family: "Archivo", sans-serif; }
+.site-navigation-item a:hover {color: var(--logored); }
 #mobileMenu .site-navigation-item a {color: black!important; padding: 10px;}
 .site-navigation-item a { text-decoration: none; color: white; font-size: 16px;}
-.active-link a {color: var(--logored); font-weight: 800;}
+.active-link a { font-weight: 800; background: var(--lightgrayfade); border-radius: 5px;}
 
 #mobileMenu {display: none; width: 100%; background: var(--lightgray); padding: 15px;}
 

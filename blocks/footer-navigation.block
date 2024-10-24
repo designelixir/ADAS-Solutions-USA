@@ -4,7 +4,7 @@
 .footer-navigation-item {padding: 5px 10px; text-align: center; font-family: "Archivo", sans-serif; }
 .footer-navigation-item a:hover {color: var(--red); }
 .footer-navigation-item a { text-decoration: none; color: gray; font-weight: 200; font-size: 16px;}
-.active-link a {color: var(--logored); font-weight: 800;}
+
 
 </style>
 <div class="footer-navigation-wrapper flex-center-center flex-wrap">
