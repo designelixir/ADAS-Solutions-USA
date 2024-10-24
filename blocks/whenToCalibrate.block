@@ -1,6 +1,6 @@
 <style>
 .item {background: #e2e2e2; padding: 15px; border-radius: 5px; margin: 5px; min-width: 20%; max-width: 20%; text-align: center;}
-.item-bg {height: 80px; width: 100px; background-size: cover; background-position: center center; background-repeat: no-repeat;}
+.item-bg {height: 80px; width: 100px; background-size: contain; background-position: center center; background-repeat: no-repeat;}
 
 @media screen and (max-width: 860px) {
   .item {padding: 10px; min-width: 165px; max-width: 20%; padding: 15px 5px 5px}
@@ -11,43 +11,43 @@
 
 <div class="flex-start-center flex-wrap full-width item-container">
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/crash-repair.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/crash-repair.svg')"></div>
         <p>Collision Repair</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/crash.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/crash.svg')"></div>
         <p>Minor Collision</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/alignment.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/alignment.svg')"></div>
         <p>Wheel Alignment</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/shock.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/shock.svg')"></div>
         <p>Suspension Repairs</p>
     </div>
      <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/side-mirror.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/side-mirror.svg')"></div>
         <p>Windshield/Side Mirror Replacement</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/airbag.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/airbag.svg')"></div>
         <p>Front Airbag Windshield Impact</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/sensor.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/sensor.svg')"></div>
         <p>Sensor/Mounting Bracket Replacement</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/tires.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/tires.svg')"></div>
         <p>Ride Height or Tire Size Change</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/diagnose_1.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/diagnose-computer.svg')"></div>
         <p>Diagnostic Trouble Codes (DTCs) Are Present</p>
     </div>
     <div class="item box-shadow flex-center-center flex-column">
-        <div class="item-bg" style="background-image: url('../assets/icons/tsb.png')"></div>
+        <div class="item-bg" style="background-image: url('../assets/icons/tsb.svg')"></div>
         <p>ADAS Related Technical Service Bulletins (TSBs)</p>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <style>
 .bullet-point-content h2 {margin-bottom: 10px;}
-.bullet-point-bg {background-image: url('../assets/bullet-bg-gray.png'); height: 100px; min-width: 120px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 120px 100px; padding: 10px 20px; margin-right: 25px;}
-.card-icon {min-width: 75px; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
+.bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 113px!important; background-repeat: no-repeat; background-position: 0% center; background-size: 105px 100px; padding: 10px 30px 10px 10px; margin-right: 15px;}
+.card-icon {width: 90%; height: 90%; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
 .bullet-point-body {margin-left: 125px; display: none;}
 .accordion-item__click-target span {
   color: var(--darkred);
@@ -19,7 +19,7 @@
     <div class="bullet-point-wrapper flex-start-start flex-column">
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/partner.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/partnership.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-1" columns="1" />
@@ -28,7 +28,7 @@
 
          <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/diagnose-no-padding.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/diagnose-computer.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-2" columns="1" />
@@ -37,7 +37,7 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/certified-red.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/certified-red.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-3" columns="1" />
@@ -46,7 +46,7 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/keys.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/keys.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-4" columns="1" />
@@ -55,7 +55,7 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/calibrate_2.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/calibrate-red.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-5" columns="1" />
@@ -64,7 +64,7 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/staff.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/staff.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-6" columns="1" />
@@ -73,7 +73,7 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/documents-red.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/documents.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-7" columns="1" />
@@ -82,7 +82,7 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/communicate.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/communicate.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-8" columns="1" />
@@ -91,7 +91,7 @@
 
         <div class="bullet-point flex-center-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/ev.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/ev.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Description-9" columns="1" />

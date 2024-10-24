@@ -1,8 +1,8 @@
 <style>
 .bullet-point-content h2 {margin-bottom: 10px;}
 .bullet-point-wrapper {margin: 15px 0;}
-.bullet-point-bg {background-image: url('../assets/bullet-bg-gray.png'); height: 100px; min-width: 120px !important; background-repeat: no-repeat; background-position: 100% center; background-size: 120px 100px; padding: 10px 20px; margin-right: 25px;}
-.card-icon {min-width: 75px;  background-size: 90%; max-width: 75px; min-height: 75px; max-height: 75px; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
+.bullet-point-bg {background-image: url('../assets/bullet.svg'); height: 100px; min-width: 113px!important; background-repeat: no-repeat; background-position: 0% center; background-size: 105px 100px; padding: 10px 30px 10px 10px; margin-right: 15px;}
+.card-icon {width: 90%; height: 90%; margin: 25px 0; background-size: contain; background-repeat: no-repeat; background-position: center center;}
 .bullet-point-body {margin-left: 125px; display: none;}
 .accordion-item__click-target span {
   color: var(--darkred);
@@ -21,7 +21,7 @@
         <div class="bullet-point flex-start-start">
             
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/partner.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/partnership.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Partnership-Description" columns="1" />
@@ -33,7 +33,7 @@
         <div class="bullet-point flex-start-start">
             
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/staff.png');" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/staff.svg');" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Staff-Description" columns="1" />
@@ -44,7 +44,7 @@
     <div class="bullet-point-wrapper">
         <div class="bullet-point flex-start-start">
             <div class="bullet-point-bg flex-center-end">
-                <div style="background-image: url('../assets/icons/repair.png'); background-size: 90%;" class="card-icon"></div>
+                <div style="background-image: url('../assets/icons/customer-service.svg'); background-size: 90%;" class="card-icon"></div>
             </div>
             <div class="bullet-point-content">
                 <squarespace:block-field id="Repair-Description" columns="1" />

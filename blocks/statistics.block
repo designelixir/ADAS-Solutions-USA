@@ -27,8 +27,8 @@
                     <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                 </svg>
                 </div>
-                <div class="stat-circle flex-center-center" style="background-image: url('../assets/shop.svg')">
-                    <img src="../assets/red-x.svg" class="no-good"/>
+                <div class="stat-circle flex-center-center" style="background-image: url('../assets/icons/shop.svg')">
+                    <img src="../assets/icons/red-x.svg" class="no-good"/>
                 </div>
             </div>
         </div>
@@ -45,8 +45,8 @@
                     <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                 </svg>
                 </div>
-                <div class="stat-circle flex-center-center" style="background-image: url('../assets/computer-diagnosis.svg')">
-                    <img src="../assets/red-x.svg" class="no-good"/>
+                <div class="stat-circle flex-center-center" style="background-image: url('../assets/icons/computer-diagnosis.svg')">
+                    <img src="../assets/icons/red-x.svg" class="no-good"/>
                 </div>
             </div>
         </div>
@@ -64,8 +64,8 @@
                     <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                 </svg>
                 </div>
-                <div class="stat-circle flex-center-center" style="background-image: url('../assets/repairs.svg')">
-                    <img src="../assets/red-x.svg" class="no-good"/>
+                <div class="stat-circle flex-center-center" style="background-image: url('../assets/icons/repairs.svg')">
+                    <img src="../assets/icons/red-x.svg" class="no-good"/>
                 </div>
             </div>
         </div>
