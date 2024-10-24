@@ -1,7 +1,8 @@
 <script>
     var descriptionArray = []
 </script>
-
+{#  ADAS Calibration, Diagnostics, Programming & Alignment Tab  }
+<main>
 <section id="tab1-content-wrapper" class="tab-content fade-in">
     {#  Section Intro  }
     <div style="padding: 50px 25px 75px;">
@@ -99,6 +100,7 @@
         {squarespace.main-content}
     </main>
 </section>
+</main>
 <script>  
     function toggleServiceType(serviceId) {
         $('.service-type').hide();

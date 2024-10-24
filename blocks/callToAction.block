@@ -1,3 +1,11 @@
+<style>
+.call-to-action-wrapper {padding: 50px 5%; background-image: url('../assets/adas-icon-transparent.svg'); background-size: contain; background-repeat: no-repeat; background-position: 100% bottom;}
+.call-to-action {background-image: url('../assets/car-fall-road.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; border-radius: 10px; width: 90%;  color: white!important;}
+.call-to-action-overlay {padding: 25px; background: rgba(0,0,0,0.25); width: 100%; height: 100%; border-radius: 10px; }
+.call-to-action-overlay * {color: white!important;}
+
+</style>
+
 <div class="call-to-action-wrapper flex-center-center">
     <div class="call-to-action flex-center-center">
     {.section collection}

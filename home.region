@@ -7,13 +7,13 @@
   </head>
   {@|apply googleAnalytics.block}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-nav-attr="home">
-    
-    <section>
-    <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-        {@|apply homepageHero.block}
-    </section>
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-    {squarespace-footers}
-
+    <main>
+      <section>
+      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+          {@|apply homepageHero.block}
+      </section>
+      <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+      {squarespace-footers}
+    </main>
   </body>
 </html>

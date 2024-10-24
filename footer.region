@@ -1,6 +1,6 @@
 <style>
-.footer-wrapper { background: white; display: flex; align-items: center; justify-content: center; flex-direction: column; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; width: 90vw; margin: 0 25px 25px; display: flex; align-items: center; justify-content: center; max-width: 1300px;}
-footer {width: 95vw; max-width: 1400px;  }
+.footer-wrapper {width: 100%; margin: 0 25px 25px; max-width: 1300px; width: 95vw;  background: white; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
+footer {width: 100%;  }
 nav {width: 100%;   }
 .site-navigation-wrapper { background: var(--darkgray); width: 100%; padding: 10px 30px;}
 .logo {height: 100px;}
@@ -10,15 +10,11 @@ nav {width: 100%;   }
 }
 
 </style>
-<div class="footer-wrapper">
+<div class="footer-wrapper flex-center-center flex-column">
 <footer class="site-footer">
-<nav class="site-navigation flex-center-center flex-column">
-<div class="flex-start-spacebetween" style="width: 100%;">
-      <img src="../assets/triangle-right.svg" style="  width: 2.5vw; transform: rotate(180deg); max-width: 50px;"/>
-      <img src="../assets/triangle.svg" style="  width: 2.5vw; transform: rotate(180deg); max-width: 50px;"/>
-      
-  </div>
-  <div class="site-navigation-wrapper flex-center-spacebetween">
+<nav class="site-navigation flex-center-center flex-column box-shadow">
+
+  <div class="site-navigation-wrapper flex-center-spacebetween" style="border-radius: unset!important">
     <div class="logo-container">
       <a class="hover" href="/"><img src="{website.logoImageUrl}" alt="ADAS Solution Logo" class="logo"/></a>
     </div>

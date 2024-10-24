@@ -43,8 +43,7 @@
                         
                     </div>
                     {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
-                    {.if customContent.bookRivian}<a href="{customContent.bookRivian}" target="_blank"><button class="book-button">Book Rivian Windshield</button></a>{.end}
-                    {.if customContent.bookTesla}<a href="{customContent.bookTesla}" target="_blank"><button class="book-button">Book Tesla Windshield</button></a>{.end}
+                    {.if customContent.bookWindshield}<a href="{customContent.bookWindshield}" target="_blank"><button class="book-button">Book Windshield Replacement</button></a>{.end}
                     {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
                     {.if customContent.canRequestWindshieldQuote}
                     <div class='book-button'>

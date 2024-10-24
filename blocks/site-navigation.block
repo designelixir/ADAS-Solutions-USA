@@ -1,12 +1,5 @@
 <style>
-header {width: 95vw;
-border: 1px solid red;
-  max-width: var(--max-width);
-  position: absolute;
-  top: 10px;
-  z-index: 9999;
-  transition: top 0.3s ease;
-  padding-bottom: 5px;}
+header {width: 100%;}
 nav {width: 100%;}
 .site-navigation-wrapper { background: var(--darkgray); border-top-right-radius: 5px; border-top-left-radius: 5px; width: 100%; padding: 10px 30px;}
 .logo {height: 100px; transition: height 0.3s ease;}
@@ -33,9 +26,12 @@ nav {width: 100%;}
   #desktopNav {display: block; }
 }
 
+#scrollToTop {position: fixed; display: none; z-index: 999; bottom: 25px; right: 25px; background: var(--darkred); color: white; border-radius: 50%; padding: 10px 15px;}
+.show-scroll-to-top {display: block!important;}
 </style>
 
-<header class="site-header fade-in-delay">
+<header class="site-header fade-in-delay box-shadow">
+<button id="scrollToTop">&#8593;</button>
 <nav class="site-navigation flex-center-center flex-column">
   <div class="site-navigation-wrapper flex-center-spacebetween box-shadow">
     <div class="logo-container">
@@ -111,14 +107,23 @@ nav {width: 100%;}
       }
     });
 
+    $('#scrollToTop').click(function() {
+      $('html, body').animate({ scrollTop: 0 }, 600); // Smoothly scrolls to the top in 600ms
+    });
     
-    
+    var header = $('.site-header');
     var logo = $('.logo')
+    var scrollToTop = $('#scrollToTop')
+    var headerHeight = header.outerHeight();
+
     $(window).scroll(function() {
       if ($(window).scrollTop() > 0) {
         logo.addClass('logo-shrink')
+        scrollToTop.addClass('show-scroll-to-top')
+
       } else {
         logo.removeClass('logo-shrink')
+        scrollToTop.removeClass('show-scroll-to-top')
       }
     });
   });

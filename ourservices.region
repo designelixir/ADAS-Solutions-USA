@@ -3,18 +3,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     {squarespace-headers}
   </head>
+  {@|apply googleAnalytics.block}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+  <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-    <div class="site-container">
-      <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
+    
+      
       <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content">
           <h1>{collection.title}</h1>
@@ -52,7 +48,7 @@
                             <h5 class="centered-text">{title}</h5>
                         </div>
                         <div class="back flex-center-center fade-in">
-                          <p class="white-text centered-text">{body|safe}</p>
+                          <p class="white-text centered-text" style="font-size: 14px;">{body|safe}</p>
                         </div>
                     </div>
                 {.end}
@@ -94,7 +90,6 @@
                             <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
                             <h5 class="centered-text">{title}</h5>
                             <p class="white-text">{body}</p>
-                            <squarespace:block-field id="{title|slugify}-Description" columns="1" />
                         </div>
                     </div>
                 {.end}
@@ -140,7 +135,7 @@
       {@|apply callToAction.block}
       
       </main>
-    </div>
+    
 
     <script>  
     function toggleServiceType(serviceId) {

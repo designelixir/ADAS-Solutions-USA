@@ -3,23 +3,16 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     {squarespace-headers}
   </head>
+  {@|apply googleAnalytics.block}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-    <div class="site-container">
-      <main class="content-container" role="main" data-content-field="main-content">
-        
-          <squarespace:block-field id="AboutPageGallery" columns="1" />
+    <main class="content-container" role="main" data-content-field="main-content">
+      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+      <squarespace:block-field id="AboutPageGallery" columns="1" />
         
         
-      <div class="about-hero-intro-wrapper basic-padding" style=" ">
+      <div class="about-hero-intro-wrapper basic-padding">
           <div class="flex-start-start flex-column">
             <div class="about-hero-text-title white-text full-width" style="padding: 15px 28px"><h1>{collection.title}</h1></div>
             <div class="about-hero-text basic-padding box-shadow">
@@ -39,7 +32,7 @@
 
         
         <div class="basic-padding">
-          <div class="fade-in-delay" >
+          <div class="fade-in-delay">
             <squarespace:block-field id="AboutIntroText" columns="1" />
             <div class="flex-center-center flex-wrap">
               {@|apply contactPopup.block}
@@ -67,7 +60,7 @@
 
       
 
-      <div class=" banner-bg flex-center center" style="position: relative; z-index: 3; padding: 100px 25px 25px 25px">
+      <div class="banner-bg flex-center center" style="position: relative; z-index: 3; padding: 100px 25px 25px 25px">
         <squarespace:block-field id="CoreValues-Description" columns="1" />
       </div>
 
@@ -79,31 +72,19 @@
       <div class="basic-padding">
       {@|apply ourFocus.block}
       </div>
-
-
-      
-
       <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="MeetOurTeam-Intro" columns="1" />
       </div>
 
-      <div class="flex-start-start flex-break basic-padding-left-25 basic-padding-right-25" style=" margin-top: 50px;">
+      <div class="flex-start-start flex-break basic-padding">
         <squarespace:block-field id="MeetOurTeam-Description" columns="1" />
         <squarespace:block-field id="MeetOurTeam-Video" columns="1" />
-
       </div>
 
-      
-
-      <div class="basic-padding">
-        {squarespace.main-content}
-      </div>
+      {squarespace.main-content}
 
       {@|apply callToAction.block}
-
-      </main>
-
-    </div>
+    </main>
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     {squarespace-footers}
 
