@@ -10,16 +10,19 @@
   <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     
-      <div class="basic-padding flex-end-start" style="min-height: 280px; background-image: url('assets/ADAS-Overhead-Diagram.png'); background-size: auto 350px; background-position: 90% center; background-repeat: no-repeat; ">
-      <h1 >{collection.title}</h1>
+      <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
+        <div class="page-hero-content">
+          <h1>{collection.title}</h1>
           {.if collection.description}
-            <h4 style="color: var(--darkred)">{collection.description|safe}</h4>
+            <h4>{collection.description|safe}</h4>
           {.end}
         </div>
+      </div>
 
-      <section class="basic-padding adas-icon-bg">
-        <div class="adas-icon-bg-container">
+      <section class="basic-padding">
+        <div class="flex-center-start flex-break">
           <squarespace:block-field id="Our-Services-Description" columns="1" />
+          <img src="assets/ADAS-Overhead-Diagram.png" alt="ADAS Overhead Diagram" id="ADASOverheadImg"/>
         </div>
         <squarespace:block-field id="Service-Labels-Description" columns="1" />
         <br>

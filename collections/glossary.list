@@ -1,7 +1,7 @@
 
 <section class="basic-padding flex-start-start flex-wrap">
 {.repeated section items}
-  <div id='{urlId}' class=" glossary-card box-shadow" onclick="window.open('{assetUrl}', '_self')">
+  <div id='{urlId}' class=" glossary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
       <h3 class="summary-title-card">{title}</h3>
       <p class="summary-excerpt-card">{body}</p>
   </div>

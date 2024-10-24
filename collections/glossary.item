@@ -13,45 +13,11 @@
       {.end}
     </h1>
 
-    <!--AUTHOR AND DATE-->
-    <p class="meta">
-      <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by <a href="{collection.fullUrl}?author={author.id}">{author.displayName}</a>
-    </p>
-
     <!--MAIN CONTENT-->
     {body}
 
     <!--BLOG INJECTION-->
     {postItemInjectCode}
-
-    <!--CATEGORIES-->
-    {.repeated section categories}
-      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
-    {.end}
-
-    <!--TAGS-->
-    {.repeated section tags}
-      <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
-    {.end}
-
-    <!--SHARE AND LIKE-->
-    {@|like-button}
-    {@|social-button}
-
-
-    <!--LOCATION-->
-    {.section location}
-      {.section addressTitle}
-        {addressTitle}
-        {addressLine1}
-        {addressLine2}
-        {addressCountry}
-      {.end}
-    {.end}
-
-    <!--COMMENTS-->
-    {@|comments}
-
   </article>
 
 {.end}
@@ -59,21 +25,25 @@
 
 <!--PAGINATION-->
 {.section pagination}
-  <nav class="blog-item-pagination">
+
+<div class="spacer"></div>
+
+  <nav class="blog-item-pagination flex-center-spacebetween" >
 
     <!--NEWER PAGE-->
     {.section prevItem}
-      <a href="{fullUrl}">Newer</a>
+      <a href="{fullUrl}">&larr;{title}</a>
     {.or}
-      <a class="disabled">Newer</a>
+      <a class="disabled">&larr; {title}</a>
     {.end}
 
     <!--OLDER PAGE-->
     {.section nextItem}
-      <a href="{fullUrl}">Older</a>
+      <a href="{fullUrl}">{title}&rarr;</a>
     {.or}
-      <a class="disabled">Older</a>
+      <a class="disabled">{title}&rarr;</a>
     {.end}
 
   </nav>
+
 {.end}

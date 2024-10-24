@@ -1,10 +1,9 @@
 * {box-sizing: border-box; scroll-behavior: smooth;}
 html {max-width: 100vw; display: flex; justify-content: center; width: 100%;  margin: 0; padding: 0; overflow-x: hidden; background: black;}
 .bg {background: black; background-image: url('../assets/road.jpg'); background-size: 100vw 100vh; background-attachment: fixed; background-position: center bottom;}
-body {border: 1px solid lime; width: 100vw; padding: 2.5vw; display: flex; align-items: center; justify-content: center; flex-direction: column;}
-.site-container { width: 95vw; max-width: 1300px; border: 2px solid aqua; border-top-right-radius: 5px; border-top-left-radius: 5px; }
-section {width: 100%; border: 1px solid blue; }
-main {border: 3px solid pink; background: white; width: 100%; max-width: 1300px; overflow: clip;}
+body { width: 100vw; padding: 2.5vw; display: flex; align-items: center; justify-content: center; flex-direction: column;}
+section {width: 100%; }
+main { background: white; border-top-right-radius: 5px; border-top-left-radius: 5px; width: 100%; max-width: 1300px; overflow: clip; box-shadow: 2px 2px 2px rgba(0,0,0,0.35)}
 :root {
     --red: #A50827;
     --logored: #BF3431;
@@ -131,7 +130,7 @@ em {font-size: inherit!important;}
 .banner-bg-reverse * {color: white;}
 .banner-bg * {color: white;}
 #Business-Educate {min-width: 100px;}
-.red-bg {width: 100%; background-image: url('../assets/red-banner.png'); background-repeat: no-repeat; background-size: 100% 100%; padding: 70px 25px; color: white;}
+.red-bg {width: 100%; background-color: var(--logored); border-bottom: 20px solid var(--darkred); padding: 70px 25px; color: white;}
 .red-bg * {color: white!important;}
 .red-banner-bg {width: 100%; background-image: url('../assets/red-adas-banner.png'); background-repeat: no-repeat; background-size: cover; padding: 70px 25px; color: white;}
 .red-banner-bg * {color: white!important;}
@@ -213,7 +212,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .adas-icon-bg { background-image: url('../assets/adas-icon-transparent.svg'); background-size: 40%; background-repeat: no-repeat; background-position: 110% 10%;}
 .adas-icon-bg-container {width: 60%;}
 
-
+#Our-Services-Description {width: 50%;}
+#ADASOverheadImg {width: 50%;}
+@media screen and (max-width: 900px) {
+  
+  #ADASOverheadImg {width: 100%;}
+  #Our-Services-Description {width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; flex-direction: column;}
+}
 
 
 @keyframes fadeInWithDelay {

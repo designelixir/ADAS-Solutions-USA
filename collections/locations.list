@@ -2,10 +2,12 @@
 {.section tagFilter}
 <p class="padding-left-25">Locations filtered by service: {@}</p>
 <a class="padding-left-25" href='/locations'>See all locations</a>
+<script>filter('{@|slugify}')</script>
 {.end}
 {.section categoryFilter}
 <p class="padding-left-25">Locations filtered by state: {@}</p>
 <a class="padding-left-25" href='/locations'>See all locations</a>
+<script>filter('{@|slugify}')</script>
 {.end}
 
 
@@ -34,7 +36,7 @@
                     {.if customContent.email}
                     <div class="flex-center-start no-flex-grow contact-form-line hover">
                         <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                        <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customerContent.email}'>{customContent.email}</a>
+                        <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customContent.email}'>{customContent.email}</a>
                     </div> 
                     {.end}
                 </div>
