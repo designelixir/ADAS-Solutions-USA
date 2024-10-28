@@ -51,7 +51,7 @@
                 {.section collection}
                 
                     {.repeated section tags}
-                        <div class="location-tag service" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')">{@}</div>
+                        <div class="location-tag service service-tag" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')"><span class="service-title">{@}</span></div>
                     {.end}
                 
                 {.end}
@@ -77,15 +77,6 @@
     {squarespace-footers}
 
   </body>
-  <script>
-function sortServicesByText() {
-    $(".service").sort(function(a, b) {
-      // Compare the text of each .service item
-      return $(a).text().localeCompare($(b).text());
-    }).appendTo("#servicesContainer"); // Replace .services-container with the parent element of .service items
-  }
-  
-  // Call the function
-  sortServicesByText();
-  </script>
+
+
 </html>
