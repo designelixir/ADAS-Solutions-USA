@@ -88,8 +88,10 @@
                 {.repeated section items}
                     <div class="windshield-block flex-center-center" id="{title}">
                         <div class="front flex-center-center flex-column">
+                        {.if sourceUrl}<a href="{sourceUrl}" target="_blank" class="flex-center-center flex-column">{.end}
                             <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
                             <h5 class="centered-text">{title}</h5>
+                            {.if sourceUrl}</a>{.end}
                             <p class="white-text">{body}</p>
                         </div>
                     </div>

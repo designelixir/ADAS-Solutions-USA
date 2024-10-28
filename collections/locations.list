@@ -14,6 +14,7 @@
 
 <div class="flex-start-start flex-wrap basic-padding">
 {@|apply contactPopup.block}
+{@|apply contactUsWindshieldQuote.block}
 {.repeated section items}
   <article id="post-{id}" data-order='{title}' class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
     
@@ -52,7 +53,10 @@
                     {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
                     {.if customContent.canRequestWindshieldQuote}
                     <div class='book-button'>
-                        <squarespace:block-field id="Request-Windshield-Quote-Form" columns="1" />
+                    <button class='blank-button lightbox-243015851357152' onclick="selectMarketForQuote('{.repeated section categories}{@}{.end}', '{title}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
+                            Request a Windshield Quote
+                        </button>
+                        
                     </div>
                     {.end}
                 </div>

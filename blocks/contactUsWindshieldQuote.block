@@ -1,0 +1,27 @@
+
+    <script src ="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var JFL_243015851357152 = new JotformFeedback({
+            iframeParameters: {
+            market: '',
+            location: '',
+        },
+          formId: '243015851357152',
+          base: 'https://form.jotform.com/',
+          windowTitle: 'ADAS Solutions Request Windshield Quote',
+          backgroundColor: '#bf3431',
+          fontColor: '#FFFFFF',
+          type: '1',
+          height: 800,
+          width: 700,
+          openOnLoad: false
+        });
+        function selectMarketForQuote(state, location) {
+            console.log(state)
+        JFL_243015851357152.options.iframeParameters.market = state
+        JFL_243015851357152.options.iframeParameters.location = location
+    }
+    </script>
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script>window.jotformEmbedHandler("iframe[id='243015851357152']", "https://form.jotform.com/")</script>
+      
