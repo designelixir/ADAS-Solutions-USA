@@ -1,6 +1,17 @@
 let activeStateFilter = '';
 let activeServiceFilter = '';
 
+function sortServicesByText() {
+    console.log("got it ")
+    $(".service").sort(function(a, b) {
+      // Compare the text of each .service item
+      return $(a).text().localeCompare($(b).text());
+    }).appendTo("#servicesContainer"); // Replace .services-container with the parent element of .service items
+  }
+  
+  // Call the function
+  
+
 function filter(categoryOrTag) {
     
     if (categoryOrTag === 'reset'){
@@ -78,3 +89,4 @@ function filter(categoryOrTag) {
 }
 
 filter('')
+sortServicesByText();

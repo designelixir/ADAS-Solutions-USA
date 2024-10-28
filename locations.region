@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src="../scripts/locations.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {squarespace-headers}
   </head>
   {@|apply googleAnalytics.block}
@@ -47,7 +47,7 @@
 
             <div class="location-filter-bar">
                 <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>Service</strong></h5>
-                <div class="flex-center-start flex-wrap no-flex-grow">
+                <div class="flex-center-start flex-wrap no-flex-grow" id="servicesContainer">
                 {.section collection}
                 
                     {.repeated section tags}
@@ -77,4 +77,15 @@
     {squarespace-footers}
 
   </body>
+  <script>
+function sortServicesByText() {
+    $(".service").sort(function(a, b) {
+      // Compare the text of each .service item
+      return $(a).text().localeCompare($(b).text());
+    }).appendTo("#servicesContainer"); // Replace .services-container with the parent element of .service items
+  }
+  
+  // Call the function
+  sortServicesByText();
+  </script>
 </html>
