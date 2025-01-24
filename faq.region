@@ -51,7 +51,7 @@
                     <squarespace:query collection="faq-resources" category="Resources" limit="20">
                         {.repeated section items}
                         
-                        <div id='{urlId}' class="blog-summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
+                        <div id='{urlId}' class="blog-summary-card box-shadow" {.if sourceUrl} onclick="window.open('{sourceUrl}', '_blank')" {.or} onclick="window.open('{fullUrl}', '_self')"{.end}>
                             <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
                             <h3 class="summary-title-card">{title}</h3>
                             <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
@@ -68,7 +68,7 @@
                     <squarespace:query collection="faq-resources" category="FAQ" limit="20">
                         {.repeated section items}
                         
-                        <div id='{urlId}' class="blog-summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
+                        <div id='{urlId}' class="blog-summary-card box-shadow" {.if sourceUrl} onclick="window.open('{sourceUrl}', '_blank')" {.or} onclick="window.open('{fullUrl}', '_self')"{.end}>
                             <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
                             <h3 class="summary-title-card">{title}</h3>
                             <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
@@ -85,7 +85,7 @@
                     <squarespace:query collection="faq-resources" category="Meet ADAS Solutions" limit="20">
                         {.repeated section items}
                         
-                        <div id='{urlId}' class="blog-summary-card box-shadow" onclick="window.open('{fullUrl}', '_self')">
+                        <div id='{urlId}' class="blog-summary-card box-shadow" {.if sourceUrl} onclick="window.open('{sourceUrl}', '_blank')" {.or} onclick="window.open('{fullUrl}', '_self')"{.end}>
                             <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
                             <h3 class="summary-title-card">{title}</h3>
                             <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
