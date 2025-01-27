@@ -12,6 +12,7 @@ nav {width: 100%;}
 .active-link a { font-weight: 800; background: var(--lightgrayfade); border-radius: 5px;}
 
 #mobileMenu {display: none; width: 100%; background: var(--lightgray); padding: 15px;}
+#navBookButton {background: var(--logored); text-transform: uppercase; padding: 5px 20px; margin-right: 10px; border: 2px solid var(--red); color: white; font-family: 'Roboto Condensed', sans-serif }
 
 @media screen and (max-width: 1100px) {
   #mobileMenu {display: none;}
@@ -58,7 +59,9 @@ nav {width: 100%;}
       </div>
 
     {.end}
+    <button id="navBookButton">Book</button>
     <img src="../assets/icons/menu.svg" id="hamburger" style="height: 25px" alt="mobile menu icon"/>
+    
   </div>
     </div>
     <div class="flex-start-spacebetween" style="width: 100%;">
@@ -83,8 +86,10 @@ nav {width: 100%;}
               {.end}
 
             </div>
+            
 
           {.end}
+          
         </div>
       </div>
       {#  <img src="../assets/triangle-right.svg" style="width: 2.5vw; max-width: 50px; z-index: -1;"/>  }
