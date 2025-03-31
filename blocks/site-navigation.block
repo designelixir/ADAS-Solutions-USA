@@ -59,7 +59,7 @@ nav {width: 100%;}
       </div>
 
     {.end}
-    <button id="navBookButton">Book</button>
+    <button id="navBookButton" onclick="window.open('/book')">Book</button>
     <img src="../assets/icons/menu.svg" id="hamburger" style="height: 25px" alt="mobile menu icon"/>
     
   </div>
