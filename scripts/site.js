@@ -2,7 +2,7 @@
 import mixpanel from "mixpanel-browser";
  
 // Near entry of your product, init Mixpanel
-mixpanel.init("YOUR_TOKEN", {
+mixpanel.init("36028a94dafa1288a20a7d58a2de8f4a", {
   debug: true,
   track_pageview: true,
   persistence: "localStorage",
