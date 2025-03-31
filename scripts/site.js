@@ -8,6 +8,8 @@ mixpanel.init("ddf4a6eac4c6df2190408bc31c0b6e57", {
   persistence: "localStorage",
 });
 
+console.log("detected mixpanel")
+
 (function() {
   'use strict';
 
