@@ -1,14 +1,4 @@
-//Import Mixpanel SDK
-import mixpanel from "mixpanel-browser";
- 
-// Near entry of your product, init Mixpanel
-mixpanel.init("ddf4a6eac4c6df2190408bc31c0b6e57", {
-  debug: true,
-  track_pageview: true,
-  persistence: "localStorage",
-});
 
-console.log("detected mixpanel")
 
 (function() {
   'use strict';
