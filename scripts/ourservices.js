@@ -14,7 +14,7 @@ $(document).ready(function () {
             'calibration-Toggle': 'calibration',
             'alignment-Toggle': 'alignment',
             'windshields-Toggle': 'windshieldReplacement',
-            'hailRepair-Toggle': 'hailRepair',
+            'rockRepair-Toggle': 'rockRepair',
         };
 
         toggleServiceType(serviceMap[$(this).attr('id')]);

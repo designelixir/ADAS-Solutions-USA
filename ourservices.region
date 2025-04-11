@@ -37,15 +37,15 @@
             </div>
             <div class="flex-center-center service-header-title-inner-wrapper">
               <div id="windshields-Toggle" class="services-header-title-item border-right  flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
-              <div id="rockRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')">
-                <img src="/assets/icons/20off.svg" alt="20% off sale badge" id="20SaleBadge" style="height: 50px; width: 50px; position: absolute; margin-right: -205px; margin-top: -70px">
+              <div id="rockRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('rockRepair')">
+                <img src="/assets/icons/20off.svg" alt="20% off sale badge" id="20SaleBadge" style="height: 50px; width: 50px; pointer-events: none; position: absolute; margin-right: -205px; margin-top: -70px">
                 <h3>Glass &amp; Rock Chip Repair</h3>
               </div>
             </div>
             
         </div>
         <div class="services-header-details">
-        {#  Calibration  }
+          {#  Calibration  }
             <div class="service-type flex-center-center flex-column fade-in" id="calibration">
                 <squarespace:block-field id="Calibration-Description" columns="1" />
                 <squarespace:query collection="services-list" limit="20" category="Calibration">
@@ -150,8 +150,11 @@
 
     <script>  
     function toggleServiceType(serviceId) {
+      console.log(serviceId)
         $('.service-type').hide();
+        console.log(serviceId)
         $('#' + serviceId).show();
+        console.log(serviceId)
     }
 
   
