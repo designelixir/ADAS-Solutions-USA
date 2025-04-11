@@ -113,7 +113,7 @@
         {#  Rock Chip Repair }
         <div class="service-type flex-center-center flex-column fade-in" id="rockRepair">
             <div class="service-toggler flex-center-center flex-wrap white-text" >
-            <squarespace:block-field id="RockChip-Description" columns="4" />
+            <squarespace:block-field id="RockChip-Description" columns="1" />
             </div>
         </div>
     </div>
