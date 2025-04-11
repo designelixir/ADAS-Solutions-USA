@@ -239,7 +239,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 #Windshield-Description * {color: white!important;}
 
-#RockChip-Description {border: 1px solid lime}
+
 
 // Blog Post
 .blog-size-paragraph {margin: 10px 0;}
@@ -357,6 +357,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 .services-header-title-item:hover {background: var(--ssgray); cursor: pointer;}
 
+
 .windshield-block {color: white; padding: 10px 25px;}
 .windshield-block p {color: white!important; text-align: center;}
 .windshield-block p a {color: white!important;}
@@ -369,7 +370,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 @media screen and (max-width: 900px) {
 .alignment-border {display: none;}
 .alignment-block {min-width: 50%;}
-
+.services-header-title {flex-direction: column; width: 100%;}
+.services-header-title-item {width: 100%; border: 1px solid white!important; padding: 0;}
+.service-header-title-inner-wrapper {width: 100%;}
+.calibration-block {min-width: 150px!important}
+#20SaleBadge {margin-top: 100px!important;}
 }
 
 @media screen and (max-width: 500px) {

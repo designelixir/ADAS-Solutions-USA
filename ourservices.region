@@ -31,10 +31,18 @@
       <div class="services-header">
     <div class="services-header-wrapper flex-center-center flex-column">
         <div class="services-header-title flex-center-center">
-            <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggleServiceType('calibration')"><h3>Calibration</h3></div>
-            <div id="alignment-Toggle" class="services-header-title-item border-right flex-center-center"  onclick="toggleServiceType('Alignment')"><h3>Alignment</h3></div>
-            <div id="windshields-Toggle" class="services-header-title-item border-right  flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
-            <div id="rockRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')"><h3>Glass &amp; Rock Chip Repair</h3></div>
+            <div class="flex-center-center service-header-title-inner-wrapper">
+              <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggleServiceType('calibration')"><h3>Calibration</h3></div>
+              <div id="alignment-Toggle" class="services-header-title-item border-right flex-center-center"  onclick="toggleServiceType('Alignment')"><h3>Alignment</h3></div>
+            </div>
+            <div class="flex-center-center service-header-title-inner-wrapper">
+              <div id="windshields-Toggle" class="services-header-title-item border-right  flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
+              <div id="rockRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('hailRepair')">
+                <img src="/assets/icons/20off.svg" alt="20% off sale badge" id="20SaleBadge" style="height: 50px; width: 50px; position: absolute; margin-right: -205px; margin-top: -70px">
+                <h3>Glass &amp; Rock Chip Repair</h3>
+              </div>
+            </div>
+            
         </div>
         <div class="services-header-details">
         {#  Calibration  }
