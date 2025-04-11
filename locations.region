@@ -49,11 +49,28 @@
                 <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>Service</strong></h5>
                 <div class="flex-center-start flex-wrap no-flex-grow" id="servicesContainer">
                 {.section collection}
+                    <script>
+                        function applyAlphabeticalOrderToServiceTags() {
+                          const tags = document.querySelectorAll('.service-tag');
+
+                          const sorted = Array.from(tags).sort((a, b) => {
+                            const idA = a.id.toLowerCase();
+                            const idB = b.id.toLowerCase();
+                            return idA.localeCompare(idB);
+                          });
+
+                          sorted.forEach((tag, index) => {
+                            tag.style.order = index;
+                          });
+                        }
+                    </script>
                 
                     {.repeated section tags}
                         <div class="location-tag service service-tag" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')"><span class="service-title">{@}</span></div>
                     {.end}
-                
+                    <script>
+                      applyAlphabeticalOrderToServiceTags()
+                    </script>
                 {.end}
                 </div>
             </div>
