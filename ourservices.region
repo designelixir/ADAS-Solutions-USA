@@ -38,7 +38,7 @@
             <div class="flex-center-center service-header-title-inner-wrapper">
               <div id="windshields-Toggle" class="services-header-title-item border-right  flex-center-center"  onclick="toggleServiceType('windshieldReplacement')"><h3>Windshield Replacement</h3></div>
               <div id="rockRepair-Toggle" class="services-header-title-item flex-center-center"  onclick="toggleServiceType('rockRepair')">
-                <img src="/assets/icons/20off.svg" alt="20% off sale badge" id="20SaleBadge" style="height: 50px; width: 50px; pointer-events: none; position: absolute; margin-right: -205px; margin-top: -70px">
+                <img src="/assets/icons/50off.svg" alt="20% off sale badge" id="20SaleBadge" style="height: 50px; width: 50px; pointer-events: none; position: absolute; margin-right: -205px; margin-top: -70px">
                 <h3>Glass &amp; Rock Chip Repair</h3>
               </div>
             </div>
