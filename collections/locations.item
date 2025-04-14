@@ -10,7 +10,7 @@
                     <div style="padding-right: 25px;">
                     {.if customContent.phoneNumber}
                     <div class="flex-center-start no-flex-grow location-phone">
-                        <img src="../assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                        <img src="https://www.adassolutionsusa.com/assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
                         <h3><a href="tel:{customContent.phoneNumber}" target="_blank">Call Us</a></h3>
                     </div> 
                     {.end}
@@ -20,7 +20,7 @@
                     
                     {.if customContent.email}
                     <div class="flex-center-start no-flex-grow contact-form-line hover">
-                        <img src="./assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                        <img src="https://www.adassolutionsusa.com/assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
                         <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customContent.email}'>{customContent.email}</a>
                     </div> 
                     {.end}
