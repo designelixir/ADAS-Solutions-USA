@@ -12,10 +12,10 @@
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-    <div class="site-container">
+    
+    <div class="site-container" >
       <main class="content-container" role="main" data-content-field="main-content">
-      
+      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
         <div class="page-hero-content {.if item.title}{.or} extra-header-padding{.end}" >
             {.if item.title}
@@ -40,17 +40,21 @@
         <div class="basic-padding">
             <squarespace:block-field id="{item.title}-Service-Intro" columns="1" />
         </div>
-
+        <div class="basic-padding">     
+            {squarespace.main-content}
+        </div>
         <div class="services-header" >
             <div class="services-header-wrapper" style="margin-top: unset!important;">
             <div class="white-text flex-start-spacebetween">
-                <squarespace:block-field id="{item.title}-Book-Intro" columns="1" />
+
+                <h2>Locations servicing {item.title}</h2>
                 <div style='max-width: 200px'>
                     <squarespace:block-field id="See All Locations Button" columns="1" />
                 </div>
             </div>
             {@|apply contactPopup.block}
             {@|apply contactUsWindshieldQuote.block}
+            
             <div class='flex-start-start flex-wrap padding-top-25'>
                 <squarespace:query collection="locations" tag="{.section item}{.repeated section tags}{@}{.end}{.end}" limit="20">
                         {.repeated section items}
@@ -74,7 +78,7 @@
                     {.end}
                     {.if customContent.email}
                     <div class="flex-center-start no-flex-grow contact-form-line hover">
-                        <img src="../assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                        <img src="./assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
                         <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customContent.email}'>{customContent.email}</a>
                     </div> 
                     {.end}
@@ -118,9 +122,7 @@
             </div>
             </div>  
        </div>
-       <div class="basic-padding">     
-            {squarespace.main-content}
-        </div>
+       
 
       </section>
 

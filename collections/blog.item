@@ -6,13 +6,17 @@
   <p class="meta">
       <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by the ADAS Solutions USA Team</a>
     </p>
-    <span class="blog-item-tag">
-    {.repeated section categories}
-      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
-    {.end}
+
+    <div class="flex-center-start flex-wrap" style="margin-bottom: 100px">
+      {.repeated section categories}
+      <span class="blog-item-tag">
+        <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>
+      </span>
+      {.end}
+    </div>
     
-    </span>
-    <div class="blog-size-paragraph">
+    
+    <div class="blog-size-paragraph" >
       {body}
     </div>
 

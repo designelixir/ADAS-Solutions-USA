@@ -12,10 +12,9 @@
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-    <div class="site-container">
+  <div class="site-container" >
       <main class="content-container" role="main" data-content-field="main-content">
-      
+      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content">
           <h1>{collection.title}</h1>
@@ -29,8 +28,8 @@
         {squarespace.main-content}
        </section>
       </main>
-
-    </div>
+</div>
+    
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     {squarespace-footers}
 

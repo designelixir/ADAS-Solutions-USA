@@ -12,12 +12,13 @@
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+    
     <div class="site-container">
       <main class="content-container" role="main" data-content-field="main-content">
+      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content">
-          <h1>{collection.title}</h1>
+          <a href="/glossary" class="no-link-styling"><h1>{collection.title}</h1></a>
           {.if collection.description}
             <h4>{collection.description|safe}</h4>
           {.end}

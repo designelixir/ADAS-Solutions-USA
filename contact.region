@@ -14,16 +14,14 @@
     
       <main class="content-container" role="main" data-content-field="main-content">
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-      
-      
         <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
-        <div class="page-hero-content">
-          <h1>{collection.title}</h1>
-          {.if collection.description}
-            <h4>{collection.description|safe}</h4>
-          {.end}
+          <div class="page-hero-content">
+            <h1>{collection.title}</h1>
+            {.if collection.description}
+              <h4>{collection.description|safe}</h4>
+            {.end}
+          </div>
         </div>
-      </div>
         <section>
         <div class="basic-padding">
           <h3 class="centered-text">Contact us by selecting your state below and filling out the form:</h3>
