@@ -34,7 +34,7 @@
                     </div>
                     {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
                     {.if customContent.bookWindshield}<a href="{customContent.bookWindshield}" target="_blank"><button class="book-button">Book Windshield Replacement</button></a>{.end}
-                    {.if customContent.canBookRockChipRepair}<a href="{customContent.canBookRockChipRepair}" target="_blank"><button class="book-button">Book Glass &amp; Rock Chip Repair</button></a>{.end}
+                    {.if customContent.canBookRockChipRepair}<button class="book-button rock-chip-campaign" data-adcampaignbtnid="{title|slugify}LocationButton"><a class="no-link-styling" href="{customContent.canBookRockChipRepair}" target="_blank">Book Glass &amp; Rock Chip Repair</a></button>{.end}
                     {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
                     {.if customContent.canRequestWindshieldQuote}
                     <div class='book-button'>
