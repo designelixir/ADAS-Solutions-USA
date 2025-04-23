@@ -29,10 +29,17 @@
             </div>
         {.or}
         <div class="flex-center-start flex-wrap filter-bar-container">
+        {.section categoryFilter}
+        <div class="flex-start-center flex-column" style="border: 1px solid red">
+          <p class="padding-left-25 white-text" style="margin-top: 0;">Only showing locations in: <strong>{@}</strong></p>
+          <a class="padding-left-25 white-text" href='/locations'>See all locations</a>
+        </div>
+        {.or}
             <div>
               <h4 class="white-text no-text-spacing" style="padding-right: 15px; margin: 20px 0; min-width: 200px">Filter locations by: </h4>
               <button id="filterReset" class="location-tag" onclick="filter('reset')">Reset</button>
             </div>
+          
             <div class="flex-start-start filter-options-wrapper">
              <div class="location-filter-bar">
                 <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>State</strong></h5>
@@ -44,9 +51,17 @@
                 {.end}
                 </div>
             </div>
-
+          
+          {.end}
             <div class="location-filter-bar">
                 <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>Service</strong></h5>
+                {.section tagFilter}
+                <div class="flex-center-spacebetween">
+                  <p class="white-text no-text-spacing">Only showing locations that offer <strong>{@}</strong></p>
+                  <a class="white-text padding-left-25" href='/locations'>See all locations and services</a>
+                </div>
+
+                {.or}
                 <div class="flex-center-start flex-wrap no-flex-grow" id="servicesContainer">
                 {.section collection}
                     <script>
@@ -73,6 +88,7 @@
                     </script>
                 {.end}
                 </div>
+                {.end}
             </div>
             </div>
         </div>
@@ -81,7 +97,7 @@
 
       <section>
         {squarespace.main-content}
-        <div id="noResults" class="flex-center-start" style="display: none;">
+        <div id="noResults" class="flex-center-start" style="display: none; padding: 0 25px;">
           <button id="filterReset" class="location-tag" onclick="filter('reset')">No results. Reset filters?</button>
         </div>
 

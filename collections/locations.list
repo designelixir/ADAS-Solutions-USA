@@ -1,14 +1,6 @@
 
-{.section tagFilter}
-<p class="padding-left-25">Locations filtered by service: {@}</p>
-<a class="padding-left-25" href='/locations'>See all locations</a>
-<script>filter('{@|slugify}')</script>
-{.end}
-{.section categoryFilter}
-<p class="padding-left-25">Locations filtered by state: {@}</p>
-<a class="padding-left-25" href='/locations'>See all locations</a>
-<script>filter('{@|slugify}')</script>
-{.end}
+
+
 
 
 
