@@ -95,6 +95,8 @@ button * {color: white;}
 
 .red-button {background-color: var(--logored); padding: 15px 20px !important; border: 2px solid var(--darkred); font-size: 16px;}
 
+
+.sqs-wrapper img {margin-right: 25px;}
 // Text Styles
 h1 {font-size: 42px; font-weight: 700; line-height: 46px; font-family: "Roboto Condensed", sans-serif;}
 h1 strong {font-weight: 600;}
@@ -215,6 +217,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .adas-icon-bg { background-image: url('../assets/adas-icon-transparent.svg'); background-size: 40%; background-repeat: no-repeat; background-position: 110% 10%;}
 .adas-icon-bg-container {width: 60%;}
 
+.service-list-tag {font-family: var(--archivo); font-size: 14px; border-radius: 3px; padding: 5px; background-color: #f2f2f2; margin: 2.5px 5px 2.5px 0;}
+
 // #Our-Services-Description {width: 50%;}
 #ADASOverheadImg {width: 50%;}
 @media screen and (max-width: 900px) {
@@ -279,7 +283,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   border: 1px solid var(--lightgray);
   
 }
-.state-image {height: 100px; margin-top: -15px; width: auto;}
+.state-image {height: 100px; width: auto;}
 .location-image-card-wrapper {background: var(--darkgray); width: 100%;  color: white; margin-bottom: 10px; padding: 0 0 0 15px; border-top-left-radius: 5px; border-top-right-radius: 5px; }
 .location-image-card { width: 100%; height: 100%; }
 .location-phone a{color: var(--red); font-size: 18px; text-decoration: unset; font-weight: 300;}
@@ -310,7 +314,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 #windshield-replacement-filter-tag {order: 5;}
 
 .book-button-wrapper {margin-bottom: 10px;}
-.book-button {background: var(--lightgray); cursor: pointer; color: var(--darkgray)!important; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkgray); padding: 5px; border-radius: 5px;}
+.book-button {background: var(--red); cursor: pointer; color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkred); padding: 5px; border-radius: 5px;}
 .book-button:hover {background: var(--darkgray); color: white!important;}
 .book-button .lightbox-handle-wrapper * {
   border: 1px solid red;
@@ -349,6 +353,24 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 }
 
 .extra-header-padding {padding-bottom: 100px!important;}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 36.25%; /* 16:9 aspect ratio */
+  
+  height: 300px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 // Services / when is ADAS needed
 .services-header { width: 100%; background-image: url('../assets/interior(1).png'); background-size: cover;}

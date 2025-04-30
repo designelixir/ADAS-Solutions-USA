@@ -15,7 +15,7 @@
                     </div> 
                     {.end}
                     {.if location.addressLine1}
-                    <a href=""><h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3></a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=ADAS+Solutions+USA+-+{title},+{location.addressLine1|url-encode}+{location.addressLine2|url-encode}"><h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3></a>
                     {.end}
                     
                     {.if customContent.email}
@@ -24,6 +24,15 @@
                         <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customContent.email}'>{customContent.email}</a>
                     </div> 
                     {.end}
+                    <div class="flex-center-start flex-wrap" style="max-width: 600px; padding: 25px 0;">
+                    <p class="no-text-spacing"><strong>Offering: &nbsp;</strong></p>
+                    <span class='service-list-tag'>Diagnostics</span>
+                    {.if tags}
+                    {.repeated section tags}
+                    <a href="/locations?tag={@}" class="no-link-styling black-text service-list-tag">{@}</a>
+                    {.end}
+                    {.end}
+                    </div>
                 </div>
                 <div class="flex-end-end flex-column book-button-wrapper">
                     <div class='book-button'>
@@ -53,6 +62,16 @@
         <div style="padding: 0 15px;">
             {.if excerpt}
                 <p class="summary-excerpt-card">{excerpt}</p>
+            {.end}
+            {.if customContent.mapEmbed}
+            <div class="map-container">
+                <iframe src="{customContent.mapEmbed|safe}" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                
+            </div>
             {.end}
         </div>
         <div class="location-summary-card-body">
