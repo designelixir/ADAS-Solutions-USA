@@ -16,7 +16,7 @@
                     {.end}
 
                     {.if location.addressLine1}
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=ADAS+Solutions+USA+-+{title},+{location.addressLine1|url-encode}+{location.addressLine2|url-encode}"><h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3></a>
+                    <a class="no-link-styling" href="https://www.google.com/maps/dir/?api=1&destination=ADAS+Solutions+USA+-+{title},+{location.addressLine1|url-encode}+{location.addressLine2|url-encode}"><h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3></a>
                     {.end}
                     
                     {.if customContent.email}
