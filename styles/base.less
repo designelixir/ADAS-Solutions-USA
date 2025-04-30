@@ -55,6 +55,7 @@ main { background: white; border-top-right-radius: 5px; border-top-left-radius: 
 
 .no-text-spacing {padding: 0; margin: 0; line-height: 0}
 .basic-padding {padding: 25px;}
+.basic-padding-left-right {padding: 0 25px;}
 .padding-top-25 {padding-top: 25px;}
 .padding-bottom-25 {padding-bottom: 25px;}
 .padding-left-25 {padding-left: 25px;}
@@ -117,14 +118,15 @@ a {color: inherit;}
 .no-link-styling {text-decoration: none!important;}
 em {font-size: inherit!important;}
 // Mobile font styles
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
   h1 {font-size: 36px; line-height: 32px;}
   h2 {font-size: 32px; line-height: 36px;}
   h3 {font-size: 18px; line-height: 22px;}
   #heroText h1 {font-size: 28px; line-height: 32px;}
   h4 {font-size: 16px; line-height: 20px;}
   .about-hero-intro-wrapper {transform: translateY(-141px); }
-  .basic-padding {padding: 15px;}
+  .basic-padding {padding: 15px!important;}
+  .basic-padding-left-right {padding: 0 15px;}
 }
 
 // 
@@ -287,7 +289,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .location-image-card-wrapper {background: var(--darkgray); width: 100%;  color: white; margin-bottom: 10px; padding: 0 0 0 15px; border-top-left-radius: 5px; border-top-right-radius: 5px; }
 .location-image-card { width: 100%; height: 100%; }
 .location-phone a{color: var(--red); font-size: 18px; text-decoration: unset; font-weight: 300;}
-.location-address {padding: 0 15px;}
+
 .location-address h3 {font-size: 16px!important; line-height: 20px; }
 .location-filter-bar {background: var(--darkgray); padding: 25px; }
 .location-filter-bar:nth-child(odd) {border-bottom: unset; border-right: 1px solid white;}
@@ -356,31 +358,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 @media screen and (max-width: 660px) {
   .location-summary-card {width: 100%;}
   .location-category-section h1 {font-size: 18px; }
+  
 }
 
 .extra-header-padding {padding-bottom: 100px!important;}
-.hours-box-wrapper {min-width: 300px; padding: 0 25px 25px 0;}
-.hours-box {padding: 15px; background: #f2f2f2; border-radius: 5px;}
+.hours-box-wrapper {max-width: 300px; min-width: 300px; padding: 0 25px 25px 0;}
+.hours-box {padding: 15px; width: 100%; background: #f2f2f2; border-radius: 5px;}
 .google-review {max-width: 300px; height: 125px;}
-.map-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 36.25%; /* 16:9 aspect ratio */
-  border-radius: 5px;
-  min-height: 300px;
-  min-width: 400px;
-  
-  overflow: hidden;
-}
-
-.map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+.map-container {position: relative; width: 100%; padding-bottom: 36.25%; border-radius: 5px; min-height: 300px; overflow: hidden;}
+.map-container iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;}
 
 // Services / when is ADAS needed
 .services-header { width: 100%; background-image: url('../assets/interior(1).png'); background-size: cover;}
@@ -411,12 +397,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .service-header-title-inner-wrapper {width: 100%;}
 .calibration-block {min-width: 150px!important}
 #20SaleBadge {margin-top: 100px!important;}
+
+
 }
 
 @media screen and (max-width: 500px) {
   .alignment-border {display: none;}
   .alignment-block {min-width: 100%;}
-  
   }
 
 .service-toggler {padding: 35px 15px 0; max-width: 1030px;}

@@ -1,11 +1,10 @@
 
+<div class="basic-padding-left-right">
 
-<div class="basic-padding" style="padding-top: 0;">
-{.section item}
-{@|apply contactPopup.block}
-{@|apply contactUsWindshieldQuote.block}
-<div class="location-card-summary flex-start-start flex-column">
-          
+    {.section item}
+    {@|apply contactPopup.block}
+    {@|apply contactUsWindshieldQuote.block}
+        <div class="location-card-summary flex-start-start flex-column">
             <div class="location-address full-width flex-start-spacebetween flex-wrap">
                 <div class="contact-details">
                     {.if customContent.phoneNumber}
@@ -61,12 +60,14 @@
                 </div>
             </div>
         </div>
-        <div style="width: calc(100% - 30px); margin: 10px 15px; border-bottom: 1px solid var(--lightgray); padding: 15px;"></div>
-        <div class="location-summary-card-body">
+            
+        <div style=" margin: 10px 15px; border-bottom: 1px solid var(--lightgray); padding: 15px;"></div>
+        
+        
             {.if excerpt}
-                <p class="summary-excerpt-card">{excerpt}</p>
+                <p class="summary-excerpt-card" style="margin-bottom: 15px;">{excerpt}</p>
             {.end}
-            <div class="flex-start-start flex-wrap">
+            <div class="flex-start-start flex-wrap hours-google-wrapper">
                 <div class="hours-box-wrapper">
                     <p style="margin: 0 0 10px"><strong>Hours:</strong></p>
                     <div class="hours-box">
@@ -74,9 +75,8 @@
                     </div>
                     {.if customContent.googleReview}
                     <div class="google-review hover flex-center-center no-flex-grow" style="padding: 15px 0;">
-                    <a href="{customContent.googleReview}" target="_blank">
-                    
-                        <img src="../assets/google-review.svg" style='height: 50px' alt="star">
+                        <a href="{customContent.googleReview}" target="_blank">
+                            <img src="../assets/google-review.svg" style='height: 50px' alt="star">
                         </a>
                     </div>
                     {.end}
@@ -84,14 +84,9 @@
                 
                 {.if customContent.mapEmbed}
                 <div style="min-width: 400px; width: calc(100% - 300px);">
-                <p style="margin: 0 0 10px"><strong>Directions:</strong></p>
+                    <p style="margin: 0 0 10px"><strong>Directions:</strong></p>
                     <div class="map-container">
-                        <iframe src="{customContent.mapEmbed|safe}" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            scrolling="no"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        <iframe src="{customContent.mapEmbed|safe}" allowfullscreen="" loading="lazy"  scrolling="no" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 {.or}
@@ -100,11 +95,13 @@
                 
             </div>
             
-        </div>
+        
+            
         <div style="width: calc(100% - 30px); margin: 10px 15px; border-bottom: 1px solid var(--lightgray); padding: 15px;"></div>
-        <div class="location-summary-card-body">
+        
+        
         {body}
-        </div>
-{.end}
+        
+    {.end}
 
 </div>

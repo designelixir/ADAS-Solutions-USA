@@ -23,7 +23,7 @@
         </div>
       </div>
         {.if item.title}
-            <div class="flex-center-spacebetween" style="margin: -100px 25px 25px 25px; padding: 25px; z-index: 2; position: relative; background-color: var(--darkgray)">
+            <div class="flex-center-spacebetween basic-padding-left-right" style="margin: -75px 15px 25px 0px; z-index: 2; position: relative; background-color: var(--darkgray)">
                 <h3 class="white-text" style="padding-right: 15px; font-size: 28px;">{item.title} </h3>
                 <img src="{item.assetUrl}" class="state-image" alt="{.repeated section categories}{@}{.end}">
             </div>

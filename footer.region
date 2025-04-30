@@ -30,7 +30,7 @@ nav {width: 100%;   }
     <squarespace:navigation navigationId="footNav" template="footer-navigation" />
     <br>
     <p>Copyright &copy; ADAS Solutions USA</p>
-    <a class="no-text-spacing xs-text" style="color: gray; text-decoration: none" target="_blank" href="https://designelixir.studio">Made with &hearts; by Design Elixir Studio </a>
+    <a class="no-text-spacing xs-text" style="color: gray; text-decoration: none; font-family: var(--archivo); margin-bottom: 10px;" target="_blank" href="https://designelixir.studio">Made with &hearts; by Design Elixir Studio </a>
 </div>
 </footer>
 </div>
