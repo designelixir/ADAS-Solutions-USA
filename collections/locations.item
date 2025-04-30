@@ -87,7 +87,11 @@
                 {.end}
                 
             </div>
-            {body}
+            
+        </div>
+        <div style="width: calc(100% - 30px); margin: 10px 15px; border-bottom: 1px solid var(--lightgray); padding: 15px;"></div>
+        <div class="location-summary-card-body">
+        {body}
         </div>
 {.end}
 
