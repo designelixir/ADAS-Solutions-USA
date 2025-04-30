@@ -73,13 +73,7 @@
                     <div class="hours-box">
                         <squarespace:block-field id="{title}-HoursBox" columns="1"/>
                     </div>
-                    {.if customContent.googleReview}
-                    <div class="google-review hover flex-center-center no-flex-grow" style="padding: 15px 0;">
-                        <a href="{customContent.googleReview}" target="_blank">
-                            <img src="../assets/google-review.svg" style='height: 50px' alt="star">
-                        </a>
-                    </div>
-                    {.end}
+                    
                 </div>
                 
                 {.if customContent.mapEmbed}
@@ -101,7 +95,11 @@
         
         
         {body}
-        
+        {.if customContent.googleReview}     
+            <a href="{customContent.googleReview}" class="hover basic-padding full-width flex-center-center" target="_blank">
+                <img src="../assets/google-review.svg" style='height: 50px' alt="star">
+            </a>
+        {.end}
     {.end}
 
 </div>
