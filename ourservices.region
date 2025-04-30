@@ -67,7 +67,7 @@
                 <squarespace:block-field id="Calibration-CallToAction" columns="1" />
             </div>
             {#  Programming  }
-            <div class="service-type flex-center-center flex-column fade-in" id="programming">
+            <div class="service-type flex-center-center flex-column fade-in white-text" id="programming">
                 <squarespace:block-field id="Programming-Description" columns="1" />
                 <squarespace:query collection="services-list" limit="20" category="Programming">
                 <div class="service-toggler flex-center-center flex-wrap" >
