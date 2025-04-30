@@ -19,14 +19,14 @@
         </div>
       </div>
 
-      <section class="basic-padding">
+      {#  <section class="basic-padding">
         <div class="flex-center-start flex-break">
           <squarespace:block-field id="Our-Services-Description" columns="1" />
           <img src="assets/ADAS-Overhead-Diagram.png" alt="ADAS Overhead Diagram" id="ADASOverheadImg"/>
         </div>
         <squarespace:block-field id="Service-Labels-Description" columns="1" />
         <br>
-      </section>
+      </section>  }
 
       <div class="services-header">
     <div class="services-header-wrapper flex-center-center flex-column">
