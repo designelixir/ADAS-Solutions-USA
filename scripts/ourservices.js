@@ -1,3 +1,11 @@
+function toggleServiceType(serviceId) {
+      
+    $('.service-type').hide();
+    console.log(serviceId)
+    $('#' + serviceId).show();
+    console.log(serviceId)
+}
+
 $(document).ready(function () {
 
     $('.calibration-block').click(function () {
@@ -15,6 +23,8 @@ $(document).ready(function () {
             'alignment-Toggle': 'alignment',
             'windshields-Toggle': 'windshieldReplacement',
             'rockRepair-Toggle': 'rockRepair',
+            'rockRepair-Toggle': 'rockRepair',
+            'programming-Toggle': 'programming',
         };
 
         toggleServiceType(serviceMap[$(this).attr('id')]);

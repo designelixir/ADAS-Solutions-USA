@@ -46,7 +46,7 @@
             
         </div>
         <div class="services-header-details">
-          {#  Calibration  }
+            {#  Calibration  }
             <div class="service-type flex-center-center flex-column fade-in" id="calibration">
                 <squarespace:block-field id="Calibration-Description" columns="1" />
                 <squarespace:query collection="services-list" limit="20" category="Calibration">
@@ -66,6 +66,7 @@
                 </squarespace:query>
                 <squarespace:block-field id="Calibration-CallToAction" columns="1" />
             </div>
+            {#  Programming  }
             <div class="service-type flex-center-center flex-column fade-in" id="programming">
                 <squarespace:block-field id="Programming-Description" columns="1" />
                 <squarespace:query collection="services-list" limit="20" category="Programming">
@@ -83,8 +84,9 @@
                 {.end}
                 </div>
                 </squarespace:query>
-                <squarespace:block-field id="Calibration-CallToAction" columns="1" />
+                <squarespace:block-field id="Programming-CallToAction" columns="1" />
             </div>
+            
             {#  Alignment  }
             <div class="service-type flex-center-center flex-column fade-in white-text" id="alignment">
                 <squarespace:block-field id="Alignment-Service-Description" columns="1" />
@@ -107,35 +109,35 @@
                 
             </div>
 
-          {#  Windshield Replacement  }
-          <div class="service-type flex-center-center flex-column fade-in" id="windshieldReplacement">
-                <squarespace:block-field id="Windshield-Description" columns="1" />
-                {#  Rivian  }
-                <squarespace:query collection="services-list" limit="20" category="Windshields">
-                <div class="service-toggler flex-start-center flex-wrap flex-break" >
-                {.repeated section items}
-                    <div class="windshield-block flex-center-center" id="{title}">
-                        <div class="front flex-center-center flex-column">
-                        {.if sourceUrl}<a href="{sourceUrl}" target="_blank" class="flex-center-center flex-column">{.end}
-                            <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
-                            <h5 class="centered-text">{title}</h5>
-                            {.if sourceUrl}</a>{.end}
-                            <p class="white-text">{body}</p>
-                        </div>
-                    </div>
-                {.end}
-                </div>
-                </squarespace:query>
-                <squarespace:block-field id="Windshield-FAQ-Button" columns="1" />
+            {#  Windshield Replacement  }
+            <div class="service-type flex-center-center flex-column fade-in" id="windshieldReplacement">
+                  <squarespace:block-field id="Windshield-Description" columns="1" />
+                  {#  Rivian  }
+                  <squarespace:query collection="services-list" limit="20" category="Windshields">
+                  <div class="service-toggler flex-start-center flex-wrap flex-break" >
+                  {.repeated section items}
+                      <div class="windshield-block flex-center-center" id="{title}">
+                          <div class="front flex-center-center flex-column">
+                          {.if sourceUrl}<a href="{sourceUrl}" target="_blank" class="flex-center-center flex-column">{.end}
+                              <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
+                              <h5 class="centered-text">{title}</h5>
+                              {.if sourceUrl}</a>{.end}
+                              <p class="white-text">{body}</p>
+                          </div>
+                      </div>
+                  {.end}
+                  </div>
+                  </squarespace:query>
+                  <squarespace:block-field id="Windshield-FAQ-Button" columns="1" />
+              </div>
             </div>
-        </div>
 
-        {#  Rock Chip Repair }
-        <div class="service-type flex-center-center flex-column fade-in" id="rockRepair">
-            <div class="service-toggler flex-center-center flex-wrap white-text" >
-            <squarespace:block-field id="RockChip-Description" columns="1" />
+            {#  Rock Chip Repair }
+            <div class="service-type flex-center-center flex-column fade-in" id="rockRepair">
+                <div class="service-toggler flex-center-center flex-wrap white-text" >
+                <squarespace:block-field id="RockChip-Description" columns="1" />
+                </div>
             </div>
-        </div>
     </div>
       </div>
       
@@ -166,20 +168,7 @@
       {@|apply callToAction.block}
       
       </main>
-    
-
-    <script>  
-    function toggleServiceType(serviceId) {
-      console.log(serviceId)
-        $('.service-type').hide();
-        console.log(serviceId)
-        $('#' + serviceId).show();
-        console.log(serviceId)
-    }
-
   
-
-    </script>
     
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="ourservices.js" />
