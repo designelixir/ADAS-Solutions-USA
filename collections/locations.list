@@ -8,15 +8,18 @@
 {@|apply contactPopup.block}
 {@|apply contactUsWindshieldQuote.block}
 {.repeated section items}
+
   <article id="post-{id}" data-order='{title}' class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
     
         <div class="location-card-summary flex-start-start flex-column">
-            <div class="location-image-card-wrapper flex-center-spacebetween">
-                <h3 class="white-text"><strong>{title}</strong></h3>
-                <img src="{assetUrl}" class="state-image" alt="{.repeated section categories}{@}{.end}">
-            </div>
-            <div class="location-address full-width flex-start-start">
-                    <div style="padding-right: 25px;">
+            <a href="{fullUrl}" class="non-styled-link full-width">
+                <div class="location-image-card-wrapper flex-center-spacebetween">
+                    <h3 class="white-text"><strong>{title}</strong></h3>
+                    <img src="{assetUrl}" class="state-image" style="margin-top: -15px" alt="{.repeated section categories}{@}{.end}">
+                </div>
+            </a>
+            <div class="location-address full-width flex-start-start flex-wrap">
+                    <div style="padding-right: 25px; padding-top: 15px;">
                     {.if customContent.phoneNumber}
                     <div class="flex-center-start no-flex-grow location-phone">
                         <img src="https://www.adassolutionsusa.com/assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
@@ -27,13 +30,13 @@
                     <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
                     {.end}
                     {.if customContent.email}
-                    <div class="flex-center-start no-flex-grow contact-form-line hover">
+                    <div class="flex-center-start no-flex-grow contact-form-line hover" style="margin-bottom: 15px;">
                         <img src="https://www.adassolutionsusa.com/assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
                         <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customContent.email}'>{customContent.email}</a>
                     </div> 
                     {.end}
                 </div>
-                <div class="flex-end-end flex-column book-button-wrapper">
+                <div class="flex-start-start flex-column book-button-wrapper list-book-button-wrapper">
                     <div class='book-button'>
                     <button class='blank-button lightbox-242908003518049' onclick="selectMarket('{.repeated section categories}{@}{.end}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
                             Schedule ADAS or Alignment
@@ -57,9 +60,11 @@
                
             </div>
         </div>
-        <div class="lightgray-button" style="margin-top: 25px;">
-            <a href="{fullUrl}" class="non-styled-link">Click for more details &rarr;</a>
-        </div>
+        <a href="{fullUrl}" class="non-styled-link full-width">
+            <div class="lightgray-button" style="margin-top: 25px;">
+                Click for more details &rarr;
+            </div>
+        </a>
   </article>
 {.or}
 

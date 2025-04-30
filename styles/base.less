@@ -313,8 +313,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 #tesla-approved-filter-tag {order: 4;}
 #windshield-replacement-filter-tag {order: 5;}
 
-.book-button-wrapper { width: 300px;}
-.book-button {background: var(--red); min-width: 300px; text-align: center; cursor: pointer; color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkred); padding: 5px; border-radius: 5px;}
+.individual-book-button-wrapper { width: 300px;}
+.individual-book-button-wrapper .book-button {min-width: 250px; width: 300px;}
+.list-book-button-wrapper {min-width: 260px;}
+.list-book-button-wrapper .book-button {font-size: 16px;}
+.book-button {background: var(--red);  text-align: center; cursor: pointer; color: white; font-family: var(--archivo); font-size: 18px; margin: 2px 4px; border: 2px solid var(--darkred); padding: 5px; border-radius: 5px;}
 .book-button:hover {background: var(--darkgray); color: white!important;}
 .book-button .lightbox-handle-wrapper * {
   border: 1px solid red;
@@ -355,13 +358,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .extra-header-padding {padding-bottom: 100px!important;}
 .hours-box-wrapper {min-width: 300px; padding: 0 25px 25px 0;}
 .hours-box {padding: 15px; background: #f2f2f2; border-radius: 5px;}
+.google-review {max-width: 300px; height: 125px;}
 .map-container {
   position: relative;
-  flex-grow: 1;
+  width: 100%;
   padding-bottom: 36.25%; /* 16:9 aspect ratio */
   border-radius: 5px;
   min-height: 300px;
   min-width: 400px;
+  
   overflow: hidden;
 }
 

@@ -40,7 +40,7 @@
                         {.end}
                     </div>
                 </div>
-                <div class="flex-start-start flex-column book-button-wrapper">
+                <div class="flex-start-start flex-column book-button-wrapper individual-book-button-wrapper">
                     <p><strong>Book Services:</strong></p>
                     <div class='book-button'>
                         <button class='blank-button lightbox-242908003518049' onclick="selectMarket('{.repeated section categories}{@}{.end}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
@@ -68,19 +68,29 @@
             {.end}
             <div class="flex-start-start flex-wrap">
                 <div class="hours-box-wrapper">
-                    <p style="margin: 0 0 10px"><strong>Hours</strong></p>
+                    <p style="margin: 0 0 10px"><strong>Hours:</strong></p>
                     <div class="hours-box">
                         <squarespace:block-field id="{title}-HoursBox" columns="1"/>
                     </div>
+                    {.if customContent.googleReview}
+                    <div class="google-review hover flex-center-center no-flex-grow" style="padding: 15px 0;">
+                    <a href="{cutomContent.googleReview}" target="_blank">
+                        <img src="../assets/google-review.svg" style='height: 50px' alt="star">
+                        </a>
+                    </div>
+                    {.end}
                 </div>
                 
                 {.if customContent.mapEmbed}
-                <div class="map-container">
-                    <iframe src="{customContent.mapEmbed|safe}" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div style="min-width: 400px; width: calc(100% - 300px);">
+                <p style="margin: 0 0 10px"><strong>Directions:</strong></p>
+                    <div class="map-container">
+                        <iframe src="{customContent.mapEmbed|safe}" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
                 {.or}
                 <squarespace:block-field id="{title}-MapBox" columns="1"/>
