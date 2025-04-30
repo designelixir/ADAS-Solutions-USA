@@ -6,7 +6,7 @@
 {@|apply contactUsWindshieldQuote.block}
 <div class="location-card-summary flex-start-start flex-column">
           
-            <div class="location-address full-width flex-start-start flex-wrap">
+            <div class="location-address full-width flex-start-spacebetween flex-wrap">
                 <div class="contact-details" style="min-width: 400px;">
                     {.if customContent.phoneNumber}
                     <div class="flex-center-start no-flex-grow location-phone">
@@ -74,7 +74,8 @@
                     </div>
                     {.if customContent.googleReview}
                     <div class="google-review hover flex-center-center no-flex-grow" style="padding: 15px 0;">
-                    <a href="{cutomContent.googleReview}" target="_blank">
+                    <a href="{customContent.googleReview}" target="_blank">
+                    
                         <img src="../assets/google-review.svg" style='height: 50px' alt="star">
                         </a>
                     </div>
@@ -88,6 +89,7 @@
                         <iframe src="{customContent.mapEmbed|safe}" 
                             allowfullscreen="" 
                             loading="lazy" 
+                            scrolling="no"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>

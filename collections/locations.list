@@ -36,7 +36,7 @@
                     </div> 
                     {.end}
                 </div>
-                <div class="flex-start-start flex-column book-button-wrapper list-book-button-wrapper">
+                <div class="flex-end-end flex-column book-button-wrapper list-book-button-wrapper">
                     <div class='book-button'>
                     <button class='blank-button lightbox-242908003518049' onclick="selectMarket('{.repeated section categories}{@}{.end}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
                             Schedule ADAS or Alignment
