@@ -15,7 +15,7 @@
                     </div> 
                     {.end}
                     {.if location.addressLine1}
-                    <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
+                    <a href=""><h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3></a>
                     {.end}
                     
                     {.if customContent.email}
