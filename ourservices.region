@@ -33,6 +33,7 @@
         <div class="services-header-title flex-center-center">
             <div class="flex-center-center service-header-title-inner-wrapper">
               <div id="calibration-Toggle" class="services-header-title-item border-right flex-center-center active" onclick="toggleServiceType('calibration')"><h3>Calibration</h3></div>
+              <div id="programming-Toggle" class="services-header-title-item border-right flex-center-center" onclick="toggleServiceType('programming')"><h3>Programming</h3></div>
               <div id="alignment-Toggle" class="services-header-title-item border-right flex-center-center"  onclick="toggleServiceType('Alignment')"><h3>Alignment</h3></div>
             </div>
             <div class="flex-center-center service-header-title-inner-wrapper">
@@ -49,6 +50,25 @@
             <div class="service-type flex-center-center flex-column fade-in" id="calibration">
                 <squarespace:block-field id="Calibration-Description" columns="1" />
                 <squarespace:query collection="services-list" limit="20" category="Calibration">
+                <div class="service-toggler flex-center-center flex-wrap" >
+                {.repeated section items}
+                    <div class="calibration-block flex-center-center" id="{title}">
+                        <div class="front flex-center-center flex-column fade-in">
+                            <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
+                            <h5 class="centered-text">{title}</h5>
+                        </div>
+                        <div class="back flex-center-center fade-in">
+                          <p class="white-text centered-text" style="font-size: 14px;">{body|safe}</p>
+                        </div>
+                    </div>
+                {.end}
+                </div>
+                </squarespace:query>
+                <squarespace:block-field id="Calibration-CallToAction" columns="1" />
+            </div>
+            <div class="service-type flex-center-center flex-column fade-in" id="programming">
+                <squarespace:block-field id="Programming-Description" columns="1" />
+                <squarespace:query collection="services-list" limit="20" category="Programming">
                 <div class="service-toggler flex-center-center flex-wrap" >
                 {.repeated section items}
                     <div class="calibration-block flex-center-center" id="{title}">
