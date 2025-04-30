@@ -1,13 +1,13 @@
 
 
-<div class="basic-padding">
+<div class="basic-padding" style="padding-top: 0;">
 {.section item}
 {@|apply contactPopup.block}
 {@|apply contactUsWindshieldQuote.block}
 <div class="location-card-summary flex-start-start flex-column">
           
             <div class="location-address full-width flex-start-spacebetween flex-wrap">
-                <div class="contact-details" style="min-width: 400px;">
+                <div class="contact-details">
                     {.if customContent.phoneNumber}
                     <div class="flex-center-start no-flex-grow location-phone">
                         <img src="https://www.adassolutionsusa.com/assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
@@ -16,7 +16,7 @@
                     {.end}
 
                     {.if location.addressLine1}
-                    <a class="no-link-styling" href="https://www.google.com/maps/dir/?api=1&destination=ADAS+Solutions+USA+-+{title},+{location.addressLine1|url-encode}+{location.addressLine2|url-encode}"><h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3></a>
+                    <a class="no-link-styling hover" href="https://www.google.com/maps/dir/?api=1&destination=ADAS+Solutions+USA+-+{title},+{location.addressLine1|url-encode}+{location.addressLine2|url-encode}"><h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3></a>
                     {.end}
                     
                     {.if customContent.email}
@@ -26,7 +26,7 @@
                     </div> 
                     {.end}
 
-                    <div class="flex-center-start flex-wrap" style="max-width: 600px; padding: 25px 0 15px 0;">
+                    <div class="flex-center-start flex-wrap offerings-container">
                         <p class="no-text-spacing"><strong>Offering: &nbsp;</strong></p>
                         <span class='service-list-tag'>Diagnostics</span>
                         {.if tags}

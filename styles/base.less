@@ -293,7 +293,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .location-filter-bar:nth-child(odd) {border-bottom: unset; border-right: 1px solid white;}
 .location-tag {background: white; padding: 5px; border-radius: 5px; font-size: 14px; margin: 2px;}
 .location-tag:hover {background: #EEF6BA; cursor: pointer;}
-.location-card-summary {min-height: 140px;}
+
 .filter-bar-container {margin: -75px 25px 25px 25px; padding: 0 15px; z-index: 2; position: relative; background-color: var(--darkgray)}
 
 .location-summary-card-body {padding: 15px 25px;}
@@ -342,9 +342,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .book-button .lightbox-handle-wrapper:hover {color: var(--darkgray)!important;}
 
 .active-filter-tag {background: #9DBA6E; border: 2px solid black; color: black;}
-
+.contact-details {min-width: 400px;}
+.offerings-container {max-width: 600px; padding: 25px 0 15px 0;}
 @media screen and (max-width: 1000px) {
   .list-book-button-wrapper {min-width: 100%;}
+  .offerings-container {max-width: unset;}
+  .contact-details {min-width: 100%;}
   .book-button-wrapper {margin: 5px 0; align-items: flex-start!important; justify-content: flex-start;}
 }
 

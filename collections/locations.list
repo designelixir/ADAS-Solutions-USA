@@ -4,7 +4,7 @@
 
 
 
-<div class="flex-start-start flex-wrap basic-padding">
+<div class="flex-start-start flex-wrap basic-padding" style="padding-top: 0;">
 {@|apply contactPopup.block}
 {@|apply contactUsWindshieldQuote.block}
 {.repeated section items}
