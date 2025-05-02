@@ -18,7 +18,7 @@
                     <img src="{assetUrl}" class="state-image" style="margin-top: -15px" alt="{.repeated section categories}{@}{.end}">
                 </div>
             </a>
-            <div class="location-address full-width flex-start-start flex-wrap">
+            <div class="location-address full-width flex-start-start flex-wrap"  style="padding-left: 15px">
                     <div style="padding-right: 25px; padding-top: 15px;">
                     {.if customContent.phoneNumber}
                     <div class="flex-center-start no-flex-grow location-phone">
@@ -36,7 +36,7 @@
                     </div> 
                     {.end}
                 </div>
-                <div class="flex-end-end flex-column book-button-wrapper list-book-button-wrapper">
+                <div class="flex-end-end flex-column book-button-wrapper list-book-button-wrapper" style="padding-right: 10px;">
                     <div class='book-button'>
                     <button class='blank-button lightbox-242908003518049' onclick="selectMarket('{.repeated section categories}{@}{.end}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
                             Schedule ADAS or Alignment

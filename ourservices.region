@@ -46,18 +46,17 @@
         </div>
         <div class="services-header-details">
             {#  Calibration  }
-            <div class="service-type flex-center-center flex-column fade-in" id="calibration">
-                <squarespace:block-field id="Calibration-Description" columns="1" />
+            <div class="service-type flex-center-center flex-column fade-in white-text" id="calibration">
                 <squarespace:query collection="services-list" limit="20" category="Calibration">
                 <div class="service-toggler flex-center-center flex-wrap" >
                 {.repeated section items}
                     <div class="calibration-block flex-center-center" id="{title}">
                         <div class="front flex-center-center flex-column fade-in">
                             <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
-                            <h5 class="centered-text">{title}</h5>
+                            <h4 class="centered-text service-icon-block-title">{title}</h4>
                         </div>
                         <div class="back flex-center-center fade-in">
-                          <p class="white-text centered-text" style="font-size: 14px;">{body|safe}</p>
+                          <p class="white-text service-icon-block-text">{body|safe}</p>
                         </div>
                     </div>
                 {.end}
@@ -67,19 +66,15 @@
             </div>
             {#  Programming  }
             <div class="service-type flex-center-center flex-column fade-in white-text" id="programming">
-                <squarespace:block-field id="Programming-Description" columns="1" />
                 <squarespace:query collection="services-list" limit="20" category="Programming">
                 <div class="service-toggler flex-center-center flex-wrap" >
                 {.repeated section items}
-                    <div class="calibration-block flex-center-center" id="{title}">
-                        <div class="front flex-center-center flex-column fade-in">
-                            <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
-                            <h5 class="centered-text">{title}</h5>
-                        </div>
-                        <div class="back flex-center-center fade-in">
-                          <p class="white-text centered-text" style="font-size: 14px;">{body|safe}</p>
-                        </div>
+                    <div class="service-icon-block flex-center-center flex-column" id="{title}">
+                        <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
+                        <h4 class="centered-text min-height-text service-icon-block-title">{title}</h4>
+                        <p class="white-text centered-text service-icon-block-text">{body|safe}</p>
                     </div>
+                    
                 {.end}
                 </div>
                 </squarespace:query>
@@ -91,16 +86,13 @@
                 <squarespace:block-field id="Alignment-Service-Description" columns="1" />
                 <squarespace:query collection="services-list" limit="20" category="Alignment">
                 <div class="service-toggler alignment-toggler flex-start-center flex-wrap" >
-                {.repeated section items}
-                    <div class="alignment-block flex-center-center" id="{title}">
-                        <div class="front flex-center-center flex-column">
-                            <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
-                            <h5 class="centered-text min-height-text">{title}</h5>
-                            <p class="white-text centered-text no-text-spacing">{body}</p>
-                            
-                        </div>
+                 {.repeated section items}
+                    <div class="service-icon-block flex-center-center flex-column" id="{title}">
+                        <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
+                        <h4 class="centered-text min-height-text service-icon-block-title">{title}</h4>
+                        <p class="white-text centered-text service-icon-block-text">{body|safe}</p>
                     </div>
-                    {.alternates with}<div class='alignment-border'></div>
+                    
                 {.end}
                 </div>
                 </squarespace:query>
@@ -109,20 +101,19 @@
             </div>
 
             {#  Windshield Replacement  }
-            <div class="service-type flex-center-center flex-column fade-in" id="windshieldReplacement">
-                  <squarespace:block-field id="Windshield-Description" columns="1" />
+            <div class="service-type flex-center-center flex-column fade-in white-text" id="windshieldReplacement">
                   {#  Rivian  }
                   <squarespace:query collection="services-list" limit="20" category="Windshields">
                   <div class="service-toggler flex-start-center flex-wrap flex-break" >
                   {.repeated section items}
-                      <div class="windshield-block flex-center-center" id="{title}">
-                          <div class="front flex-center-center flex-column">
-                          {.if sourceUrl}<a href="{sourceUrl}" target="_blank" class="flex-center-center flex-column">{.end}
+                      <div class="service-icon-block flex-center-center flex-column" id="{title}">
+                          
                               <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
-                              <h5 class="centered-text">{title}</h5>
+                              {.if sourceUrl}<a href="{sourceUrl}" target="_blank">{.end}
+                                <h4 class="centered-text min-height-text service-icon-block-title">{title}</h4>
                               {.if sourceUrl}</a>{.end}
-                              <p class="white-text">{body}</p>
-                          </div>
+                              <p class="white-text centered-text service-icon-block-text">{body|safe}</p>
+                              
                       </div>
                   {.end}
                   </div>
