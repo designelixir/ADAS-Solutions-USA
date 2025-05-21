@@ -23,7 +23,7 @@
                     {.if customContent.phoneNumber}
                     <div class="flex-center-start no-flex-grow location-phone">
                         <img src="https://www.adassolutionsusa.com/assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                        <h3><a href="tel:{customContent.phoneNumber}" target="_blank">Call Us</a></h3>
+                        <h3><a href="tel:{customContent.phoneNumber}" target="_blank">{customContent.phoneNumber}</a></h3>
                     </div> 
                     {.end}
                     {.if location.addressLine1}

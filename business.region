@@ -14,7 +14,7 @@
         </div>  }
     </div>
     {#  When Is ADAS Required?  }
-    <div class="banner-bg-reverse" style="z-index: 2; position: relative; margin-top: -25px;">
+    <div class="banner-bg-reverse white-text" style="z-index: 2; position: relative; margin-top: -25px;">
         <squarespace:block-field id="Business-WhenIsAdasRequired" columns="1" />
     </div>
     <div class="services-header" >
@@ -33,7 +33,9 @@
                     {.end}
                     </div>
                     </squarespace:query>
-                    <squarespace:block-field id="Calibration-CallToAction" columns="1" />
+                    <div class="white-text">
+                        <squarespace:block-field id="Calibration-CallToAction" columns="1" />
+                    </div>
                 </div>
             </div>
         </div>
