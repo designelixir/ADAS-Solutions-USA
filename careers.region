@@ -15,24 +15,28 @@
   <div class="site-container" style="width: 100%;">
       <main class="content-container" role="main" data-content-field="main-content">
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-      <div class="page-hero flex-center-center" style="background-image: url('https://images.squarespace-cdn.com/content/v1/66d1669617c9dc3324db4e62/1729709913358-E6WGRL0279MK0QZZB9N0/Media+%282%29.jpg?format=2500w')">
-        <div class="page-hero-content">
-          <h1 class="centered-text">{collection.title}</h1>
-          {.if collection.description}
-            <h4>{collection.description|safe}</h4>
-          {.end}
+      <div class="page-hero flex-center-center" style="background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/1729709898828-D507PS2SRS63R71BFRRH/IMG_3091.jpg?content-type=image%2Fjpeg')">
+        <div class="page-hero-content white-text">
+          <h1>{collection.title}</h1>
+          
         </div>
       </div>
-
       <section class="basic-padding">
         <squarespace:block-field id="Careers-Intro" columns="1" />
-        {squarespace.main-content}
-       </section>
-       <section>
+        <squarespace:block-field id="HowToApply" columns="1" />
+         <div class="team-photo">
+
+      </div>
+      </section>
+     
+       <section style="margin-top: -25px; z-index: 2;">
         <div class="basic-padding white-text" style="background: var(--red); border-top-left-radius: 15px; border-top-right-radius: 15px;">
             <squarespace:block-field id="Application-Intro" columns="1" />
         </div>
-        <squarespace:block-field id="Application-SubIntro" columns="1" />
+        <div class="basic-padding">
+            <squarespace:block-field id="Application-SubIntro" columns="1" />
+            {squarespace.main-content}
+        </div>
 
        </section>
       </main>
