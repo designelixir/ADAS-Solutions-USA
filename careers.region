@@ -56,38 +56,30 @@
             <squarespace:query collection="careers" limit="100">
                 <div class="flex-start-start flex-wrap">
                 {.repeated section items}
-                <a class="no-link-styling" href='{fullUrl}'>
-                <article id="post-{id}" class="hover job-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" >
-                    
-                    
-                        
-                        <div class="flex-center-spacebetween">
-                            <h2 class="summary-title-card" style="font-size: 24px;">{title}</h2>
-                            <a class="small-black-button" style="font-size: 12px; margin-bottom: 10px;">Apply &rarr;</a>
-
-                        </div>
-                        <p><strong>{sourceUrl}</strong></p>
-                        {.if excerpt}
-                        <p class="summary-excerpt-card job-card-description" style="font-size: 16px; line-height: 22px;">{excerpt|safe}</p>
-                        {.end}
-                        <div class="flex-center-start flex-wrap">
-                        <p style="margin: 0; font-size: 12px;">Hiring in: &nbsp;</p>
-                            {.repeated section categories}
-                            <span style="background: white; color: black; padding: 5px; border-radius: 5px; font-size: 12px; margin: 0 5px 5px 0">
-                                {@}
-                            </span>
+                <a class="no-link-styling job-summary-card-wrapper" href="{fullUrl}">
+                    <article id="post-{id}" class="hover job-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" >
+                            <div class="flex-center-spacebetween">
+                                <h2 class="summary-title-card" style="font-size: 24px;">{title}</h2>
+                                <span class="small-black-button" style="font-size: 12px; margin-bottom: 10px;">Apply &rarr;</span>
+                            </div>
+                            <p><strong>{sourceUrl}</strong></p>
+                            {.if excerpt}
+                                <p class="summary-excerpt-card job-card-description" style="font-size: 16px; line-height: 22px;">{excerpt|safe}</p>
                             {.end}
-                        </div>
-                        
-                        
-                    
-                    
-                </article>
+                            <div class="flex-center-start flex-wrap">
+                                <p style="margin: 0; font-size: 12px;">Hiring in: &nbsp;</p>
+                                {.repeated section categories}
+                                <span style="background: white; color: black; padding: 5px; border-radius: 5px; font-size: 12px; margin: 0 5px 5px 0">
+                                    {@}
+                                </span>
+                                {.end}
+                            </div>
+                    </article>
                 </a>
                 {.or}
 
                 <!-- no items means no blog posts -->
-                <p><em>There are currently no job listings. Check back later!</em></p>
+                <h3><em>There are currently no job listings. Check back later!</em></h3>
 
                 {.end}
                 </div>
