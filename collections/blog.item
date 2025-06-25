@@ -4,13 +4,13 @@
   <!--WRAPPER-->
   <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
   <p class="meta">
-      <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by the ADAS Solutions USA Team</a>
+      Posted on <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by the ADAS Solutions USA Team</a>
     </p>
 
-    <div class="flex-center-start flex-wrap" style="margin-bottom: 100px">
+    <div class="flex-center-start flex-wrap blog-categories">
       {.repeated section categories}
-      <span class="blog-item-tag">
-        <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>
+      <span class="blog-item-tag" style="margin: 0 10px 0 0;">
+        <a class="category"  href="{collection.fullUrl}?category={@|url-encode}">{@}</a>
       </span>
       {.end}
     </div>

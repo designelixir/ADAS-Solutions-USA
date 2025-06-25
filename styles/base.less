@@ -85,6 +85,7 @@ main { background: white; border-top-right-radius: 5px; border-top-left-radius: 
 // Buttons
 .sqs-block-button * {font-family: var(--roboto)!important; font-weight: 800;}
 .button {background-color: var(--ssgray); color: white; text-transform: uppercase; font-size: 20px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 15px 20px; text-decoration: none!important; border: 2px solid var(--ssgray); font-family: var(--roboto); letter-spacing: 1px;}
+.small-button {background-color: var(--red); color: white; text-transform: uppercase; font-size: 14px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 10px 15px; text-decoration: none!important; border: 2px solid var(--red); font-family: var(--roboto); letter-spacing: 1px;}
 .button:hover {font-weight: 500; border: 2px solid white; cursor: pointer;}
 .button a {color: inherit; text-decoration: none;}
 .blank-button {background: unset; border: unset; }
@@ -450,13 +451,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
  #RequestAQuote button {background-color: var(--logored); padding: 15px 20px!important; border: 2px solid var(--darkred);}
  .contact-location {padding: 5px; border-top: 1px solid var(--darkred); border-bottom: 1px solid var(--darkred)}
-
+.blog-categories {margin-bottom: 50px;}
 
 .min-height-text {max-height: 40px; height: 40px;}
 
 // Careers Template
-.team-photo {height: 500px; width: 100%; border: 1px solid black; background-size: cover; background-position: center center; background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/1729797415878-R1DBNXVVX9EZSVLY3HS4/1.png?content-type=image%2Fpng')}
-
+.team-photo {height: 500px; width: 100%; background-size: cover; background-position: center center; background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/1729797415878-R1DBNXVVX9EZSVLY3HS4/1.png?content-type=image%2Fpng')}
+.process-square { border: 1px solid black; border-radius: 5px; margin: 0 20px 15px 0; width: 100%;}
+.job-listing .blog-categories {margin-bottom: 15px;}
+.job-listing .blog-categories::before {content: 'Hiring in the following locations:'}
 
 @media screen and (max-width: 700px) {
   .mission-vision-container {flex-direction: column;}
