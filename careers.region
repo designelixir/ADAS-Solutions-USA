@@ -25,6 +25,7 @@
       </div>
 
       <section class="basic-padding">
+      <squarespace:block-field id="Careers-Intro" columns="1" />
         {squarespace.main-content}
        </section>
       </main>
