@@ -56,7 +56,7 @@
             <squarespace:query collection="careers" limit="100">
                 <div class="flex-start-start flex-wrap">
                 {.repeated section items}
-                <a class="no-link-styling" href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}'>
+                <a class="no-link-styling" href='{fullUrl}'>
                 <article id="post-{id}" class="hover job-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" >
                     
                     
