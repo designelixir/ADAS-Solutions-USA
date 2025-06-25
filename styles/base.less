@@ -17,6 +17,8 @@ main { background: white; border-top-right-radius: 5px; border-top-left-radius: 
     --roboto: "Roboto Condensed", sans-serif;
 } 
 
+.site-container {display: flex; align-items: center; justify-content: center; flex:1}
+
 .flex-center-center {display: flex; align-items: center; justify-content: center; flex:1}
 .flex-center-end {display: flex; align-items: center; justify-content: flex-end; flex:1}
 .flex-center-start {display: flex; align-items: center; justify-content: flex-start; flex:1}
@@ -86,6 +88,7 @@ main { background: white; border-top-right-radius: 5px; border-top-left-radius: 
 .sqs-block-button * {font-family: var(--roboto)!important; font-weight: 800;}
 .button {background-color: var(--ssgray); color: white; text-transform: uppercase; font-size: 20px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 15px 20px; text-decoration: none!important; border: 2px solid var(--ssgray); font-family: var(--roboto); letter-spacing: 1px;}
 .small-button {background-color: var(--red); color: white; text-transform: uppercase; font-size: 14px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 10px 15px; text-decoration: none!important; border: 2px solid var(--red); font-family: var(--roboto); letter-spacing: 1px;}
+.small-black-button {background-color: var(--ssgray); color: white; text-transform: uppercase; font-size: 14px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 10px 15px; text-decoration: none!important; border: 2px solid var(--ssgray); font-family: var(--roboto); letter-spacing: 1px;}
 .button:hover {font-weight: 500; border: 2px solid white; cursor: pointer;}
 .button a {color: inherit; text-decoration: none;}
 .blank-button {background: unset; border: unset; }
@@ -115,6 +118,7 @@ p {font-size: 16px; line-height: 22px; color: black; font-family: "Archivo", san
 p span {color: var(--logored); text-decoration: unset!important;}
 a span {color: var(--logored); text-decoration: unset!important;}
 a {color: inherit;}
+s {text-decoration: none; color: var(--red)}
 .no-link-styling {text-decoration: none!important;}
 em {font-size: inherit!important;}
 // Mobile font styles
@@ -458,8 +462,18 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 // Careers Template
 .team-photo {height: 500px; width: 100%; background-size: cover; background-position: center center; background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/1729797415878-R1DBNXVVX9EZSVLY3HS4/1.png?content-type=image%2Fpng')}
 .process-square { border: 1px solid black; border-radius: 5px; margin: 0 20px 15px 0; width: 100%;}
-.job-listing .blog-categories {margin-bottom: 15px;}
-.job-listing .blog-categories::before {content: 'Hiring in the following locations:'}
+.job-listing .meta {display: none;}
+.job-listing .blog-categories::before {content: 'Hiring in the following locations: '}
+.job-card-description * {font-size: 14px!important;}
+.job-summary-card {background: #e2e2e2; padding: 15px; border-radius: 5px; max-width: 391px; min-width: 350px; margin: 1%; width: 100%;}
+
+@media screen and (max-width: 1300px) {
+  .job-summary-card {max-width: 43vw; border: 1px solid white;}
+}
+
+@media screen and (max-width: 950px) {
+  .job-summary-card {max-width: unset; border: 1px solid white;}
+}
 
 @media screen and (max-width: 700px) {
   .mission-vision-container {flex-direction: column;}
