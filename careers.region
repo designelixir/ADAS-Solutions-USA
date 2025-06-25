@@ -32,6 +32,7 @@
         <div class="basic-padding white-text" style="background: var(--red); border-top-left-radius: 15px; border-top-right-radius: 15px;">
             <squarespace:block-field id="Application-Intro" columns="1" />
         </div>
+        <squarespace:block-field id="Application-SubIntro" columns="1" />
 
        </section>
       </main>
