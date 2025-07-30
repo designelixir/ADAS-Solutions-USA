@@ -42,6 +42,7 @@
                 <div class="flex-start-start flex-wrap" style="margin-top: -50px; padding-bottom: 25px;">
                     <squarespace:block-field id="FAQ-Button2" columns="1" />
                     <squarespace:block-field id="FAQ-Button1" columns="1" />
+                    <squarespace:block-field id="FAQ-Button5" columns="1" />
                     <squarespace:block-field id="FAQ-Button3" columns="1" />
                     <squarespace:block-field id="FAQ-Button4" columns="1" />        
                 </div>
@@ -69,6 +70,23 @@
                 <div class="blog-category-section"><h2 class="white-text">Frequently Asked Questions</h2></div>
                 <div class="basic-padding flex-start-start flex-wrap">
                     <squarespace:query collection="faq-resources" category="FAQ" limit="20">
+                        {.repeated section items}
+                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
+                            <div id='{urlId}' class="blog-summary-card box-shadow">
+                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+                                <h3 class="summary-title-card">{title}</h3>
+                                <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
+                                <a style="font-size: 12px;">Read more &rarr;</a>
+                            </div>
+                        </a>
+                        {.end}                        
+                    </squarespace:query>
+                </div>
+            </div>
+            <div id="IndustryNews-Anchor">
+                <div class="blog-category-section"><h2 class="white-text">Industry News</h2></div>
+                <div class="basic-padding flex-start-start flex-wrap">
+                    <squarespace:query collection="faq-resources" category="Industry News" limit="20">
                         {.repeated section items}
                         <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
                             <div id='{urlId}' class="blog-summary-card box-shadow">
