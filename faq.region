@@ -56,30 +56,7 @@
                     {.end}
                 </div>
                 
-                <div class="">
-                {.section collection}
-                    <squarespace:category collection="{urlId}">
-                        {.if categories}
-                        <div class="category-wrapper flex-start-start flex-column" >
-                            
-                            {.repeated section categories}
-                            <div class="blog-category-section">
-                                <h2 class="white-text">{name}</h2>
-                                <a href="/faq-resources?category=Resources" class="white-text no-link-styling hover">Browse all {name} articles &rarr;</a>
-                            </div>
-
-                            {.alternates with}
-                                <div class="basic-padding flex-start-start flex-wrap" id="{name|slugify}">
-                                
-                                </div>
-                            {.end}
-                        
-                        </div>
-                        {.end}
-                    </squarespace:category>
-                {.end}
-                    
-                </div>
+                
                 {squarespace.main-content}
 
                 <squarespace:query collection="faq-resources">
