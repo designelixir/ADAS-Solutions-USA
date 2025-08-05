@@ -13,7 +13,7 @@
 
 {.section collection}
 {.repeated section categories}
-{name}
+{@}
 {.end}
 {.end}
 
