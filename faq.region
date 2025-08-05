@@ -88,7 +88,7 @@
                         {.end}
                     </squarespace:category>
                 {.end}
-                    {squarespace.main-content}
+                    
                 </div>
 
                 <div id="WhatIsADAS-Anchor" class="grid-bg">
