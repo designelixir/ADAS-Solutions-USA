@@ -1,32 +1,3 @@
-{.section collection}
-                   
-                        {.if categories}
-                        <div class="category-wrapper flex-start-start flex-column">
-                            
-                            {.repeated section categories}
-                            <div class="blog-category-section">
-                                <h2 class="white-text">{name}</h2>
-                                <a href="/faq-resources?category=Resources" class="white-text no-link-styling hover">Browse all {name} articles &rarr;</a>
-                            </div>
-
-                            {.alternates with}
-                                <div class="basic-padding flex-start-start flex-wrap">
-                               
-                                    {.repeated section items}
-                                    <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                                        <div id='{urlId}' class="blog-summary-card box-shadow">
-                                            <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                            <h3 class="summary-title-card" style="min-height: 80px">{title}</h3>
-                                            <p class="summary-excerpt-card no-link-styling">{excerpt|safe|truncate 75}</p>
-                                            <a style="font-size: 12px;">Read more &rarr;</a>
-                                        </div>
-                                    </a>
-                                    {.end}                        
-                               
-                                </div>
-                            {.end}
-                        
-                        </div>
-                        {.end}
-                 
-                {.end}
+{.repeated section categories}
+{@}
+{.end}

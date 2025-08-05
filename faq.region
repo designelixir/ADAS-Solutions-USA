@@ -55,11 +55,12 @@
                         </squarespace:category>
                     {.end}
                 </div>
+                
                 <div class="">
                 {.section collection}
                     <squarespace:category collection="{urlId}">
                         {.if categories}
-                        <div class="category-wrapper flex-start-start flex-column">
+                        <div class="category-wrapper flex-start-start flex-column" >
                             
                             {.repeated section categories}
                             <div class="blog-category-section">
@@ -68,19 +69,8 @@
                             </div>
 
                             {.alternates with}
-                                <div class="basic-padding flex-start-start flex-wrap">
-                                <squarespace:query collection="faq-resources" category="{name}" limit="4">
-                                    {.repeated section items}
-                                    <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                                        <div id='{urlId}' class="blog-summary-card box-shadow">
-                                            <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                            <h3 class="summary-title-card" style="min-height: 80px">{title}</h3>
-                                            <p class="summary-excerpt-card no-link-styling">{excerpt|safe|truncate 75}</p>
-                                            <a style="font-size: 12px;">Read more &rarr;</a>
-                                        </div>
-                                    </a>
-                                    {.end}                        
-                                </squarespace:query>
+                                <div class="basic-padding flex-start-start flex-wrap" id="{name|slugify}">
+                                
                                 </div>
                             {.end}
                         
@@ -90,6 +80,28 @@
                 {.end}
                     
                 </div>
+                {squarespace.main-content}
+
+                <squarespace:query collection="faq-resources">
+                    {.repeated section items}
+                   <script>
+                   var htmlBlock = `
+                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
+                        <div id='{urlId}' class="blog-summary-card box-shadow">
+                            <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+                            <h3 class="summary-title-card" style="min-height: 80px">{title}</h3>
+                            <p class="summary-excerpt-card no-link-styling">{excerpt}</p>
+                            <a style="font-size: 12px;">Read more &rarr;</a>
+                        </div>
+                        </a>`
+                        {.repeated section categories}
+
+                        {name}
+                        {.end}
+                    console.log(htmlBlock)
+                   </script>
+                    {.end}                        
+                </squarespace:query>
 
                 <div id="WhatIsADAS-Anchor" class="grid-bg">
                     <div class="banner-bg" style="margin-bottom: -25px;">
