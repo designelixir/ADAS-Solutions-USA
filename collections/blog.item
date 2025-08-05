@@ -10,7 +10,7 @@
     <div class="flex-center-start flex-wrap blog-categories">
       {.repeated section categories}
       <span class="blog-item-tag" style="margin: 0 10px 0 0;">
-        <a class="category"  href="{collection.fullUrl}?category={@|url-encode}">{@}</a>
+        <a class="category">{@}</a>
       </span>
       {.end}
     </div>
