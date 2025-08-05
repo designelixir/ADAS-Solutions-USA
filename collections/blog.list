@@ -1,32 +1,32 @@
 {.section collection}
-                        
+                    
                         {.if categories}
-                            <div class="flex-center-start flex-wrap">
+                        <div class="category-wrapper flex-start-start flex-column">
+                            
                             {.repeated section categories}
-                                <button class="button red-button"><a class="no-link-styling" href="#{name|slugify}">{name}</a></button>
-                            {.end}
+                            <div class="blog-category-section">
+                                <h2 class="white-text">{name}</h2>
+                                <a href="/faq-resources?category=Resources" class="white-text no-link-styling hover">Browse all {name} articles &rarr;</a>
                             </div>
-                        {.end}
+
+                            {.alternates with}
+                                <div class="basic-padding flex-start-start flex-wrap">
+                    
+                                    {.repeated section items}
+                                    <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
+                                        <div id='{urlId}' class="blog-summary-card box-shadow">
+                                            <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+                                            <h3 class="summary-title-card" style="min-height: 80px">{title}</h3>
+                                            <p class="summary-excerpt-card no-link-styling">{excerpt|safe|truncate 75}</p>
+                                            <a style="font-size: 12px;">Read more &rarr;</a>
+                                        </div>
+                                    </a>
+                                    {.end}                        
+                    
+                                </div>
+                            {.end}
                         
-                    {.end}
-<div class="flex-start-center flex-wrap">
-{.repeated section items}
-<a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}'>
-  <article id="post-{id}" class="summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" >
-    
-    
-        <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-        <h3 class="summary-title-card">{title}</h3>
-        <p class="summary-excerpt-card">{excerpt|safe|truncate 200}</p>
-        <a style="font-size: 12px;">Read more &rarr;</a>
-    
-    
-  </article>
-</a>
-{.or}
-
-  <!-- no items means no blog posts -->
-  <p><em>No posts for this category yet.</em></p>
-
-{.end}
-</div>
+                        </div>
+                        {.end}
+                    
+                {.end}

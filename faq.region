@@ -48,15 +48,46 @@
                         {.if categories}
                             <div class="flex-center-start flex-wrap">
                             {.repeated section categories}
-                                <button class="button red-button"><a class="no-link-styling" href="#{name|slugify}">{name}</a></button>
+                                <button class="button red-button"><a class="no-link-styling" href="?category={name}">{name}</a></button>
                             {.end}
                             </div>
                         {.end}
                         </squarespace:category>
                     {.end}
-                    
                 </div>
-                <div class="basic-padding">
+                <div class="">
+                {.section collection}
+                    <squarespace:category collection="{urlId}">
+                        {.if categories}
+                        <div class="category-wrapper flex-start-start flex-column">
+                            
+                            {.repeated section categories}
+                            <div class="blog-category-section">
+                                <h2 class="white-text">{name}</h2>
+                                <a href="/faq-resources?category=Resources" class="white-text no-link-styling hover">Browse all {name} articles &rarr;</a>
+                            </div>
+
+                            {.alternates with}
+                                <div class="basic-padding flex-start-start flex-wrap">
+                                <squarespace:query collection="faq-resources" category="{name}" limit="4">
+                                    {.repeated section items}
+                                    <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
+                                        <div id='{urlId}' class="blog-summary-card box-shadow">
+                                            <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+                                            <h3 class="summary-title-card" style="min-height: 80px">{title}</h3>
+                                            <p class="summary-excerpt-card no-link-styling">{excerpt|safe|truncate 75}</p>
+                                            <a style="font-size: 12px;">Read more &rarr;</a>
+                                        </div>
+                                    </a>
+                                    {.end}                        
+                                </squarespace:query>
+                                </div>
+                            {.end}
+                        
+                        </div>
+                        {.end}
+                    </squarespace:category>
+                {.end}
                     {squarespace.main-content}
                 </div>
 
