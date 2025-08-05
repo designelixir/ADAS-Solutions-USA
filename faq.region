@@ -56,7 +56,10 @@
                     {.end}
                     
                 </div>
-{squarespace.main-content}
+                <div class="basic-padding">
+                    {squarespace.main-content}
+                </div>
+
                 <div id="WhatIsADAS-Anchor" class="grid-bg">
                     <div class="banner-bg" style="margin-bottom: -25px;">
                         <squarespace:block-field id="WhatIsADAS-Description" columns="1" />        

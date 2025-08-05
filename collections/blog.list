@@ -1,4 +1,14 @@
-<h1>meow</h1>
+{.section collection}
+                        
+                        {.if categories}
+                            <div class="flex-center-start flex-wrap">
+                            {.repeated section categories}
+                                <button class="button red-button"><a class="no-link-styling" href="#{name|slugify}">{name}</a></button>
+                            {.end}
+                            </div>
+                        {.end}
+                        
+                    {.end}
 <div class="flex-start-center flex-wrap">
 {.repeated section items}
 <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}'>
