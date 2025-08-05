@@ -80,11 +80,13 @@
     </div>
     {@|apply statistics.block}
 
-    <div class="basic-padding">
+    <div class="basic-padding padding-top-50 padding-bottom-50">
     <squarespace:block-field id="Business-Statistics-Description" columns="1" />
         <div class="flex-center-center">
             <squarespace:block-field id="Business-Statistics-Description-Button1" columns="1" />
-            <squarespace:block-field id="Business-Statistics-Description-Button2" columns="1" />
+            <div style="padding: 0 10px">
+                <squarespace:block-field id="Business-Statistics-Description-Button2" columns="1" />
+            </div>
         </div>
     </div>
 

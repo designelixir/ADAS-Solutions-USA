@@ -51,7 +51,7 @@ main { background: white; border-top-right-radius: 5px; border-top-left-radius: 
 .empty {min-width: 100px;}
 
 @media screen and (max-width: 450px){
-  .bullet-point-bg {height: 60px; min-width: 62px!important; background-size: contain; margin-right: 15px;}
+  .bullet-point-bg {height: 60px; min-width: 62px!important; background-size: contain; margin-right: 15px; margin-left: -35px;}
   .card-icon {min-width: 40px; max-width: 40px; min-height: 40px; max-height: 40px;}
 }
 
@@ -86,7 +86,8 @@ main { background: white; border-top-right-radius: 5px; border-top-left-radius: 
 
 // Buttons
 .sqs-block-button * {font-family: var(--roboto)!important; font-weight: 800;}
-.button {background-color: var(--ssgray); color: white; text-transform: uppercase; font-size: 20px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 15px 20px; text-decoration: none!important; border: 2px solid var(--ssgray); font-family: var(--roboto); letter-spacing: 1px;}
+.sqs-block-button-container {margin: 2px;}
+.button {background-color: var(--ssgray); margin: 2px; color: white; text-transform: uppercase; font-size: 16px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 21px 34px; text-decoration: none!important; border: 2px solid var(--ssgray); font-family: var(--roboto); letter-spacing: 1px;}
 .small-button {background-color: var(--red); color: white; text-transform: uppercase; font-size: 14px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 10px 15px; text-decoration: none!important; border: 2px solid var(--red); font-family: var(--roboto); letter-spacing: 1px;}
 .small-black-button {background-color: var(--ssgray); color: white; text-transform: uppercase; font-size: 14px; font-family: "Archivo", sans-serif; font-weight: 500; padding: 10px 15px; text-decoration: none!important; border: 2px solid var(--ssgray); font-family: var(--roboto); letter-spacing: 1px;}
 .button:hover {font-weight: 500; border: 2px solid white; cursor: pointer;}
@@ -146,8 +147,12 @@ em {font-size: inherit!important;}
 .red-banner-bg {width: 100%; background-image: url('../assets/red-adas-banner.png'); background-repeat: no-repeat; background-size: cover; padding: 70px 25px; color: white;}
 .red-banner-bg * {color: white!important;}
 .grid-bg {background-image: url('../assets/grid.png'); background-size: 600px 600px;}
-.call-to-action-wrapper {  background-image: url('../assets/black-swosh.jpg'); background-size: cover;}
-.call-to-action {background: rgba(191, 52, 49,0.8); color: white!important; backdrop-filter: blur(2px); padding: 50px; }
+
+@media screen and (max-width: 700px) {
+  .red-banner-bg {padding: 50px 25px!important;}
+  .red-banner-bg * {text-align: center;}
+}
+
 // Page Hero 
 .page-hero {min-height: 200px; width: 100%;  border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('../assets/car.jpg'); }
 .page-hero-content {width: 100%; min-height: 200px; height: 100%; padding: 25px 25px; background: rgba(0,0,0,0.35); color: white; text-shadow: 0 0 2px rgba(0,0,0,0.5); backdrop-filter: blur(3px)}
@@ -205,7 +210,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .small-service-card {border-radius: 5px; background: var(--lightgray); padding: 25px; max-width: 22%; margin: 1.5%;}
 
 .summary-card {background: #e2e2e2; padding: 15px; border-radius: 5px; min-width: 23%; max-width: 23%; margin: 1%;}
-.summary-image-card {height: 250px; filter: grayscale(100%); width: 100%; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
+.summary-image-card {height: 200px; filter: grayscale(100%); width: 100%; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
 .summary-card:hover .summary-image-card {filter: grayscale(0%);}
 .summary-card:hover {cursor: pointer; transform: scale(1.01)}
 
@@ -259,18 +264,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .blog-size-paragraph p {font-size: 18px; line-height: 22px;}
 .blog-item-tag {background: #e2e2e2; padding: 5px; border-radius: 5px; }
 .blog-item-tag a {color: black; text-decoration: none; font-size: 12px;}
-.blog-category-section {background: var(--logored); padding: 25px; max-width: 50vw; min-width: 400px;}
+.blog-category-section {background: var(--darkgray); padding: 25px; max-width: 50vw; min-width: 400px;}
 
-.blog-summary-card {
-  background: #e2e2e2;
-  padding: 15px;
-  border-radius: 5px;
-  margin: 2% 1%;
-  width: 31%;
-  min-height: 420px;
-}
+.blog-summary-card { background: #e2e2e2; padding: 15px; border-radius: 5px; margin: 2% 1%; width: 23%; min-height: 420px;}
 .blog-summary-card:hover .summary-image-card {filter: grayscale(0%);}
 .blog-summary-card:hover {cursor: pointer; transform: scale(1.01)}
+
 
 @media screen and (max-width: 860px) {
   .blog-summary-card {width: 48%;}
@@ -351,8 +350,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .active-filter-tag {background: #9DBA6E; border: 2px solid black; color: black;}
 .contact-details {min-width: 400px;}
 .offerings-container {max-width: 600px; padding: 25px 0 15px 0;}
-@media screen and (max-width: 1000px) {
-  .list-book-button-wrapper {min-width: 100%;}
+@media screen and (max-width: 1095px) {
+  .list-book-button-wrapper {min-width: 100%; align-items: flex-start!important;}
   .offerings-container {max-width: unset;}
   .contact-details {min-width: 100%;}
   .book-button-wrapper {margin: 5px 0; align-items: flex-start!important; justify-content: flex-start;}

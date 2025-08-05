@@ -21,12 +21,17 @@
                     <h3 class="white-text">&larr; {collection.title}</h3>
                 </a>
                 <h1>{.if item.title} {item.title} {.end}</h1>
+                {.if item.excerpt}
+                    <h4>{item.excerpt|safe}</h4>
+                {.end}
+                
             {.or}
                 <h1>{collection.title} </h1>
+                {.if collection.description}
+                    <h4>{collection.description|safe}</h4>
+                {.end}
             {.end}
-            {.if collection.description}
-                <h4>{collection.description|safe}</h4>
-            {.end}
+            
         </div>
       </div>
         
@@ -37,114 +42,43 @@
             </section>
             {.or}
             <section>
-            <div class="basic-padding">
-                
-                <div class="flex-start-start flex-wrap" style="margin-top: -50px; padding-bottom: 25px;">
-                    <squarespace:block-field id="FAQ-Button2" columns="1" />
-                    <squarespace:block-field id="FAQ-Button1" columns="1" />
-                    <squarespace:block-field id="FAQ-Button5" columns="1" />
-                    <squarespace:block-field id="FAQ-Button3" columns="1" />
-                    <squarespace:block-field id="FAQ-Button4" columns="1" />        
-                </div>
-                <squarespace:block-field id="{collection.navigationTitle|slugify}-Summary" columns="1"/>
-            </div>
-            <div id="Resources-Anchor">
-                <div class="blog-category-section"><h2 class="white-text">Resources</h2></div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="Resources" limit="20">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                            <div id='{urlId}' class="blog-summary-card box-shadow">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card no-link-styling">{excerpt|safe|truncate 150}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
+                <div class="basic-padding" style="transform:translateY(-50px);">
+                    {.section collection}
+                        <squarespace:category collection="faq-resources">
+                        {.if categories}
+                            <div class="flex-center-start flex-wrap">
+                            {.repeated section categories}
+                                <button class="button red-button"><a class="no-link-styling" href="#{name|slugify}">{name}</a></button>
+                            {.end}
                             </div>
-                        </a>
+                        {.end}
+                        </squarespace:category>
+                    {.end}
+                    
+                </div>
+{squarespace.main-content}
+                <div id="WhatIsADAS-Anchor" class="grid-bg">
+                    <div class="banner-bg" style="margin-bottom: -25px;">
+                        <squarespace:block-field id="WhatIsADAS-Description" columns="1" />        
+                    </div>
+                    <squarespace:query collection="glossary" tag="diagram" limit="20">
+                        {.repeated section items}
+                        <script>
+                        var description = `
+                        <div id='{urlId}-text' className="diagram-feature-description fade-in">
+                            <h3>{title}</h3>
+                            <p>{excerpt|safe}</p>
+                        </div>`
+                        descriptionArray.push(description)
+                        </script>
                         {.end}                        
                     </squarespace:query>
+                    
+                    {@|apply adasDiagram.block}
+                    <squarespace:block-field id="ViewGlossaryButton" columns="1" />
                 </div>
-            </div>
 
-            <div id="FAQ-Anchor">
-                <div class="blog-category-section"><h2 class="white-text">Frequently Asked Questions</h2></div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="FAQ" limit="20">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                            <div id='{urlId}' class="blog-summary-card box-shadow">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
-                            </div>
-                        </a>
-                        {.end}                        
-                    </squarespace:query>
-                </div>
-            </div>
-            <div id="IndustryNews-Anchor">
-                <div class="blog-category-section"><h2 class="white-text">Industry News</h2></div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="Industry News" limit="20">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                            <div id='{urlId}' class="blog-summary-card box-shadow">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
-                            </div>
-                        </a>
-                        {.end}                        
-                    </squarespace:query>
-                </div>
-            </div>
-
-            <div id="MeetADASSolutions-Anchor">
-                <div class="blog-category-section"><h2 class="white-text">Meet ADAS Solutions USA</h2></div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="Meet ADAS Solutions" limit="20">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                            <div id='{urlId}' class="blog-summary-card box-shadow">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
-                            </div>
-                        </a>
-                        {.end}                        
-                    </squarespace:query>
-                </div>
-            </div>
-
-            <div id="WhatIsADAS-Anchor" class="grid-bg">
-                <div class="banner-bg" style="margin-bottom: -25px;">
-                    <squarespace:block-field id="WhatIsADAS-Description" columns="1" />        
-                </div>
-                <squarespace:query collection="glossary" tag="diagram" limit="20">
-            
-                    {.repeated section items}
-                    <script>
-                    var description = `
-                    <div id='{urlId}-text' className="diagram-feature-description fade-in">
-                        <h3>{title}</h3>
-                        <p>{excerpt|safe}</p>
-                    </div>`
-                    descriptionArray.push(description)
-                    </script>
-                    {.end}                        
-                </squarespace:query>
-                
-                {@|apply adasDiagram.block}
-                <squarespace:block-field id="ViewGlossaryButton" columns="1" />
-            </div>
-
-                <div style="display: none;">
-                {squarespace.main-content}
-                </div>
-                {#  Resources  }
+              
             </section>
             {.end}
         

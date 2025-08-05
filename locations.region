@@ -97,7 +97,7 @@
 
       <section>
         {squarespace.main-content}
-        <div id="noResults" class="flex-center-start" style="display: none; padding: 0 25px;">
+        <div id="noResults" class="flex-center-start" style="display: none; padding: 0 25px 50px;">
           <button id="filterReset" class="location-tag" onclick="filter('reset')">No results. Reset filters?</button>
         </div>
 
