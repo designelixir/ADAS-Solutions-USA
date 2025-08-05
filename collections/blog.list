@@ -11,8 +11,7 @@
   <p class="filtered-by">Filtered by Author: {author.displayName}</p>
 {.end}
 
-
-{.repeated section categories}
+{.section categories}
 {name}{@}
 
 {.end}
