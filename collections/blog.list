@@ -9,14 +9,14 @@
 
 
 <!-- item loop -->
-<div class="flex-start-center flex-wrap">
+            <div class="flex-start-center flex-wrap">
 {.repeated section items}
-<a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}'>
+<a class="no-link-styling" href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}'>
   <article id="post-{id}" class="summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" >
     
     
         <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-        <h3 class="summary-title-card">{title}</h3>
+        <h3 class="summary-title-card no-link-styling">{title}</h3>
         <p class="summary-excerpt-card">{excerpt|safe|truncate 200}</p>
         <a style="font-size: 12px;">Read more &rarr;</a>
     
