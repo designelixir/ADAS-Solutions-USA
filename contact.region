@@ -22,8 +22,8 @@
             {.end}
           </div>
         </div>
-        <section>
-        <div class="basic-padding">
+        <section >
+        <div class="basic-padding contact-buttons-wrapper">
           <h3 class="centered-text">Contact us by selecting your state below and filling out the form:</h3>
           <div class="flex-center-center flex-wrap">
               {@|apply contactPopup.block}
