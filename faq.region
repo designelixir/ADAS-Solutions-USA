@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="../scripts/faq.js"></script>
     {squarespace-headers}
   </head>
   {@|apply googleAnalytics.block}
@@ -12,7 +13,8 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     
     
-      <main class="content-container" role="main" data-content-field="main-content">
+      <main class="content-container" role="main"  id="top" data-content-field="main-content">
+      
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
             <div class="page-hero-content">
@@ -45,7 +47,7 @@
         {.or}
 
         {#  multiple blog posts}
-        <section >    
+        <section>    
         {.if categoryFilter}
             {.section collection}
                 <div class="flex-center-start tag-navigation basic-padding-left-right flex-wrap">
@@ -87,32 +89,82 @@
                 {.end}
             </div>
         {.or}{#  FULL BLOG PAGE  }
-
+        <script>
+var articles = [];
+        </script>
+            {.repeated section items}
+                <script>
+                    var article = {
+                    "title": `{title}`,
+                    "excerpt": `{.if excerpt}{excerpt}{.end}`,
+                    "url": "{.if sourceUrl}{sourceUrl}{.or}{fullUrl}{.end}",
+                    "categories": ["{.repeated section categories}{@|slugify}{.alternates with}, {.end}"],
+                    "assetUrl": "{assetUrl}",
+                    "featured": {starred},
+                    "datePublished": {publishOn}
+                    };
+                   addArticle(article);
+                </script>
+            {.end}
+            <script>
+                console.log(categoriesMap);  // grouped by category
+                console.log(categoriesMap["meet-adas-solutions"]); // just that category
+            </script>
             {.section collection}
-                <div class="flex-center-start tag-navigation flex-wrap">
-                    <p class="bold-text white-text">Jump to section: &nbsp;</p>
-                    {.repeated section categories}
-                    <a href="#{@|slugify}-section " class="no-link-styling {@|slugify}-order">
-                        <div class="tag-nav-link white-text">{@}</div>
-                    </a>
-                    {.end}
-                </div>
-                <div class="flex-start-start flex-column">
+                
+                    <div class="flex-center-start tag-navigation flex-wrap" >
+                        <p class="bold-text white-text">Jump to section: &nbsp;</p>
+                        {.repeated section categories}
+                        <a href="#{@|slugify}-section" class="no-link-styling {@|slugify}-order">
+                            <div class="tag-nav-link white-text">{@}</div>
+                        </a>
+                        {.end}
+                        
+                    </div>
+                    
+                <div class="flex-start-start flex-column" style="margin-top: 50px;">
                 {.repeated section categories}
-                
-                    <div id="#{@|slugify}-section" class="{@|slugify}-order">
+                    <div id="{@|slugify}-section" class="{@|slugify}-order">
                            <div class="blog-category-section">
-                            <h2 class="white-text">{@}</h2>
-                            <a href="/faq-resources?category=Resources" class="white-text no-link-styling hover">Browse all Resources articles &rarr;</a>
-                        </div>
+                                <h2 class="white-text">{@}</h2>
+                                
+                            </div>
+                            <div class="faq-homepage-category-section basic-padding flex-start-start full-width">
+
+                                <div class="faq-homepage-category-featured-section full-width" id="{@|slugify}-featured-section"></div>
+                                <div class="faq-homepage-category-all-section-wrapper">
+                                    <div class="faq-homepage-category-all-section full-width flex-start-start flex-column" id="{@|slugify}-all-section"></div>
+                                    <a href="/faq-resources?category=Resources" class="hover"><button class="small-button hover" style="font-size: 12px;">All {@} articles &rarr;</button></a>
+                                </div>
+                            </div>
                     </div>
-                    <div class="faq-homepage-category-section" id="{@|slugify}-section">
-                    </div>
-                
                 {.end}
                 </div>
-            {.end}
+                <script>buildFaq(categoriesMap)</script>
+                
 
+            {.end}
+            <div id="WhatIsADAS-Anchor" class="grid-bg">
+                <div class="banner-bg" style="margin-bottom: -25px;">
+                    <squarespace:block-field id="WhatIsADAS-Description" columns="1" />        
+                </div>
+                <squarespace:query collection="glossary" tag="diagram" limit="20">
+            
+                    {.repeated section items}
+                    <script>
+                    var description = `
+                    <div id='{urlId}-text' className="diagram-feature-description fade-in">
+                        <h3>{title}</h3>
+                        <p>{excerpt|safe}</p>
+                    </div>`
+                    descriptionArray.push(description)
+                    </script>
+                    {.end}                        
+                </squarespace:query>
+                
+                {@|apply adasDiagram.block}
+                <squarespace:block-field id="ViewGlossaryButton" columns="1" />
+            </div>
         {.end}
 
 

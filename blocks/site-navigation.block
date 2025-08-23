@@ -27,7 +27,7 @@ nav {width: 100%;}
   #desktopNav {display: block; }
 }
 
-#scrollToTop {position: fixed; display: none; z-index: 999; bottom: 25px; right: 25px; background: var(--darkred); color: white; border-radius: 50%; padding: 10px 15px;}
+#scrollToTop {position: fixed; display: none; z-index: 999999; bottom: 25px; right: 25px; background: var(--darkred); color: white; border-radius: 50%; padding: 10px 15px;}
 .show-scroll-to-top {display: block!important;}
 </style>
 
