@@ -272,6 +272,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .blog-summary-card:hover .summary-image-card {filter: grayscale(0%);}
 .blog-summary-card:hover {cursor: pointer; transform: scale(1.01)}
 
+.tag-navigation { transform: translateY(-50px); z-index: 2;}
+.tag-navigation p {background: var(--darkgray); padding: 10px 5px 10px 10px; margin: 0;}
+.tag-nav-link {text-transform: uppercase; background: var(--darkred); font-family: var(--roboto); border: 2px solid white; margin: 2px; padding: 10px 20px;}
+
+.industry-news-order {order: 0;}
+.faq-order {order: 1;}
+.scrs-order {order: 2; display: none;}
+.resources-order {order: 3;}
+.meet-adas-solutions-order {order: 4;}
 
 @media screen and (max-width: 860px) {
   .blog-summary-card {width: 48%;}

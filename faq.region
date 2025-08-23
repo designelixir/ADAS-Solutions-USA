@@ -13,180 +13,58 @@
     
     
       <main class="content-container" role="main" data-content-field="main-content">
-      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-      <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
-        <div class="page-hero-content">
-            {.if item.title}
-                <a href='/{collection.urlId}' class="no-link-styling">
-                    <h3 class="white-text">&larr; {collection.title}</h3>
-                </a>
-                <h1>{.if item.title} {item.title} {.end}</h1>
-                {.if item.excerpt}
-                    <h4 class="white-text">{item.excerpt}</h4>
-                {.end}
-            {.or}
-                <h1>{collection.title} </h1>
-                {.if collection.description}
-                    <h4>{collection.description|safe}</h4>
-                {.end}
-            {.end}
-            
-        </div>
-      </div>
-        
-        
-            {.if item.title}
-            <section class="basic-padding">
-                {squarespace.main-content}
-            </section>
-            {.or}
-            <section>
-            <div class="basic-padding" style="transform:translateY(-50px);">
-                    {.section collection}
-                        <squarespace:category collection="faq-resources">
-                        {.if categories}
-                            <div class="flex-center-start flex-wrap">
-                            {.repeated section categories}
-                                <button class="button red-button"><a class="no-link-styling" href="#{name|slugify}">{name}</a></button>
-                            {.end}
-                            </div>
-                        {.end}
-                        </squarespace:category>
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+        <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
+            <div class="page-hero-content">
+                {.if item.title}
+                    <a href='/{collection.urlId}' class="no-link-styling">
+                        <h3 class="white-text">&larr; {collection.title}</h3>
+                    </a>
+                    <h1>{.if item.title} {item.title} {.end}</h1>
+                    {.if item.excerpt}
+                        <h4 class="white-text">{item.excerpt}</h4>
                     {.end}
-            </div>
-
-            <div id="resources">
-                <div class="blog-category-section">
-                    <h2 class="white-text">Resources</h2>
-                    {#  <p class="white-text" id="resources-clicker" onclick="expandCategory('resources')">+ Show all Resources articles</p>  }
-                </div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="Resources" limit="100">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling blog-summary-card-wrapper ">
-                            <div id='{urlId}' class="blog-summary-card box-shadow {.if categories}{.repeated section categories}{@|slugify}{.alternates with} {.end}{.end}">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card no-link-styling">{excerpt|safe|truncate 75}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
-                            </div>
-                        </a>
-                        {.end}                        
-                    </squarespace:query>
-                    <script>
-                        hideResourcesAfterFourth('resources')
-                    </script>
-                </div>
-            </div>
-
-            <div id="FAQ-Anchor">
-                <div class="blog-category-section"><h2 class="white-text">Frequently Asked Questions</h2></div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="FAQ" limit="20">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                            <div id='{urlId}' class="blog-summary-card box-shadow">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
-                            </div>
-                        </a>
-                        {.end}                        
-                    </squarespace:query>
-                </div>
-            </div>
-            <div id="IndustryNews-Anchor">
-                <div class="blog-category-section"><h2 class="white-text">Industry News</h2></div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="Industry News" limit="20">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                            <div id='{urlId}' class="blog-summary-card box-shadow">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
-                            </div>
-                        </a>
-                        {.end}                        
-                    </squarespace:query>
-                </div>
-            </div>
-
-            <div id="MeetADASSolutions-Anchor">
-                <div class="blog-category-section"><h2 class="white-text">Meet ADAS Solutions USA</h2></div>
-                <div class="basic-padding flex-start-start flex-wrap">
-                    <squarespace:query collection="faq-resources" category="Meet ADAS Solutions" limit="20">
-                        {.repeated section items}
-                        <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}' class="no-link-styling">
-                            <div id='{urlId}' class="blog-summary-card box-shadow">
-                                <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
-                                <h3 class="summary-title-card">{title}</h3>
-                                <p class="summary-excerpt-card">{excerpt|safe|truncate 150}</p>
-                                <a style="font-size: 12px;">Read more &rarr;</a>
-                            </div>
-                        </a>
-                        {.end}                        
-                    </squarespace:query>
-                </div>
-            </div>
-
-            <div id="WhatIsADAS-Anchor" class="grid-bg">
-                <div class="banner-bg" style="margin-bottom: -25px;">
-                    <squarespace:block-field id="WhatIsADAS-Description" columns="1" />        
-                </div>
-                <squarespace:query collection="glossary" tag="diagram" limit="20">
-            
-                    {.repeated section items}
-                    <script>
-                    var description = `
-                    <div id='{urlId}-text' className="diagram-feature-description fade-in">
-                        <h3>{title}</h3>
-                        <p>{excerpt|safe}</p>
-                    </div>`
-                    descriptionArray.push(description)
-                    </script>
-                    {.end}                        
-                </squarespace:query>
+                {.or}
+                    <h1>{collection.title} </h1>
+                    {.if collection.description}
+                        <h4>{collection.description|safe}</h4>
+                    {.end}
+                    
+                {.end}
                 
-                {@|apply adasDiagram.block}
-                <squarespace:block-field id="ViewGlossaryButton" columns="1" />
             </div>
-
-            <script>
-function expandCategory(className) {
-  const items = document.getElementsByClassName(className);
-    console.log("meow")
-  if (items.length <= 4) {
-    for (let i = 0; i < items.length; i++) {
-      items[i].style.display = "";
-    }
-  } else {
-    for (let i = 0; i < items.length; i++) {
-      items[i].style.display = i < 4 ? "" : "none";
-    }
-  }
-}
-
-function hideResourcesAfterFourth(className) {
-  const items = document.getElementsByClassName(className);
-  for (let i = 4; i < items.length; i++) {
-    items[i].classList.add('hide');
-  }
-}
-
-
-            </script>
-
-                <div style="display: none;">
-                {squarespace.main-content}
-                </div>
-                {#  Resources  }
-            </section>
-            {.end}
+        </div>
         
-       
+        
+        {.if item.title}
+        <section class="basic-padding">
+            {squarespace.main-content}
+        </section>
+        {.or}
+        <section class="basic-padding">
+            {.section collection}
+                <div class="flex-center-start tag-navigation flex-wrap">
+                    <p class="bold-text white-text">View other article categories: &nbsp;</p>
+                    {.repeated section categories}
+                    <a href="/faq-resources?category={@}" class="no-link-styling">
+                        <div class="tag-nav-link white-text {@|slugify}-order">{@}</div>
+                    </a>
+                    {.end}
+                </div>
+            {.end}
+            {.section categoryFilter}
+                <h1>All {@|safe} articles</h1>
+                <script>
+                    var activeCategoryName = "{@|slugify}-order"
+                    var activeCategory = document.getElementsByClassName(activeCategoryName);
+                    if (activeCategory.length > 0) {activeCategory[0].style.display = "none";}
+                </script>
+            {.end}
+
+
+            {squarespace.main-content}
+        </section>
+{.end}
       </main>
 
     

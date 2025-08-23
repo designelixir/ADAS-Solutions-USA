@@ -1,4 +1,58 @@
 
+
+
+
+{.section tagFilter}
+  <p class="filtered-by">Filtered by Tag: {@|safe}</p>
+{.end}
+
+
+
+<!-- item loop -->
+<div class="flex-start-center flex-wrap">
+{.repeated section items}
+<a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}'>
+  <article id="post-{id}" class="summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" >
+    
+    
+        <div class="summary-image-card" style="background-image: url({assetUrl})"></div>
+        <h3 class="summary-title-card">{title}</h3>
+        <p class="summary-excerpt-card">{excerpt|safe|truncate 200}</p>
+        <a style="font-size: 12px;">Read more &rarr;</a>
+    
+    
+  </article>
+</a>
+{.or}
+
+  <!-- no items means no blog posts -->
+  <p><em>No posts for this category yet.</em></p>
+
+{.end}
+</div>
+
+<!-- pagination -->
+{.if pagination}
+  <nav class="blog-list-pagination">
+
+    <!-- newer page -->
+    {.if pagination.prevPage}
+      <a href="{pagination.prevPageUrl}">Newer</a>
+    {.or}
+      <a class="disabled">Newer</a>
+    {.end}
+
+    <!-- older page -->
+    {.if pagination.nextPage}
+      <a href="{pagination.nextPageUrl}">Older</a>
+    {.or}
+      <a class="disabled">Older</a>
+    {.end}
+
+  </nav>
+{.end}
+
+
 <div class="flex-start-center flex-wrap">
 {.repeated section items}
 <a href='{.if sourceUrl} {sourceUrl} {.or} {fullUrl} {.end}'>
