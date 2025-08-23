@@ -89,9 +89,6 @@
                 {.end}
             </div>
         {.or}{#  FULL BLOG PAGE  }
-        <script>
-var articles = [];
-        </script>
             {.repeated section items}
                 <script>
                     var article = {
@@ -106,10 +103,6 @@ var articles = [];
                    addArticle(article);
                 </script>
             {.end}
-            <script>
-                console.log(categoriesMap);  // grouped by category
-                console.log(categoriesMap["meet-adas-solutions"]); // just that category
-            </script>
             {.section collection}
                 
                     <div class="flex-center-start tag-navigation flex-wrap" >
