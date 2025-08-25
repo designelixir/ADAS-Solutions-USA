@@ -17,26 +17,44 @@
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       <div class="page-hero flex-center-center" style="background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/1729709898828-D507PS2SRS63R71BFRRH/IMG_3091.jpg?content-type=image%2Fjpeg')">
         <div class="page-hero-content white-text">
-        {.if item}
-        <div class="flex-center-start">
-          <a class="no-link-styling" href="{collection.fullUrl}"><h1>{collection.title}</a>&nbsp;|&nbsp;</h1><h2 class="red-text">{item.title}</h2>
-        </div>
-        <a class="small-button" href="{collection.fullUrl}">&larr; Back to Careers</a>
+        {.if item.title}
+          <div class="flex-center-start">
+            <a class="no-link-styling" href="{collection.fullUrl}"><h1>{collection.title}</a>&nbsp;|&nbsp;</h1><h2 class="red-text">{item.title}</h2>
+          </div>
+          <a class="small-button" href="{collection.fullUrl}">&larr; Back to Careers</a>
         {.or}
-        <div class="flex-center-start">
-          <h1>{collection.title}</h1>
-        </div>
-          {.end}
+          <div class="flex-center-start">
+            <h1>{collection.title}</h1>
+          </div>
+        {.end}
         </div>
       </div>
       {.if item}
       <section class='basic-padding job-listing'>
-            <h2><strong>Job Details</strong></h2>
-            {item.excerpt}
-            {squarespace.main-content}
-
-            <h2 style="margin: 25px 0;"><strong>Application</strong></h2>
-            {@|apply jobApplicationForm.block}
+            <h2 class="red-text bold-text">Job Details</h2>
+            {.section item}
+              {excerpt}
+              {body}
+              <div class="flex-center-spacebetween">
+                <h2 style="margin: 25px 0;"><strong>Application</strong></h2>
+                <p class="small-text">Trouble viewing this application? <a href="{sourceUrl}" target="_blank">Click here.</a></p>
+              </div>
+              {.if sourceUrl}
+                  <iframe
+                    id="JotFormIFrame-252366272074154"
+                    title="ADAS Solutions USA Specific Application"
+                    allowtransparency="true"
+                    allow="geolocation; microphone; camera; fullscreen; payment"
+                    src="{sourceUrl}"
+                    frameborder="0"
+                    style="min-width:100%;max-width:100%;height:80vh; max-width: 780px; border:none;"
+                  >
+                  </iframe>
+                  <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                  <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252366272074154']", "https://form.jotform.com/")</script>
+              {.end}
+            {.end}
+              
             <div style="margin-top: 50px">
                 <squarespace:block-field id="HowToApply" columns="1" />
             </div>
@@ -58,34 +76,46 @@
                 {.repeated section items}
                 <a class="no-link-styling job-summary-card-wrapper" href="{fullUrl}">
                     <article id="post-{id}" class="hover job-summary-card {@|item-classes} {.repeated section categories}{@|slugify} {.end}" data-item-id="{id}" >
-                            <div class="flex-center-spacebetween">
-                                <h2 class="summary-title-card" style="font-size: 24px;">{title}</h2>
-                                <span class="small-black-button" style="font-size: 12px; margin-bottom: 10px;">Apply &rarr;</span>
-                            </div>
-                            <p><strong>{sourceUrl}</strong></p>
-                            {.if excerpt}
-                                <p class="summary-excerpt-card job-card-description" style="font-size: 16px; line-height: 22px;">{excerpt|safe}</p>
-                            {.end}
-                            <div class="flex-center-start flex-wrap">
-                                <p style="margin: 0; font-size: 12px;">Hiring in: &nbsp;</p>
-                                {.repeated section categories}
-                                <span style="background: white; color: black; padding: 5px; border-radius: 5px; font-size: 12px; margin: 0 5px 5px 0">
-                                    {@}
-                                </span>
-                                {.end}
-                            </div>
+                      <h2 class="summary-title-card" style="font-size: 24px; min-height: unset;">{title}</h2>
+                      <div class="flex-center-start flex-wrap">
+                          {.repeated section categories}
+                          <span style="background: white; color: black; padding: 5px; border-radius: 5px; font-size: 12px; margin: 0 5px 5px 0">
+                              {@}
+                          </span>
+                          {.end}
+                          {.repeated section tags}
+                          <span style="background: white; color: black; padding: 5px; border-radius: 5px; font-size: 12px; margin: 0 5px 5px 0">
+                              {@}
+                          </span>
+                          {.end}
+                      </div>
+                        
+                        
+                      {.if excerpt}
+                          <p class="summary-excerpt-card job-card-description" style="font-size: 16px; line-height: 22px;">{excerpt}</p>
+                      {.end}
+                      <div style="height: 15px"></div>
+                        <span class="small-black-button" style="font-size: 12px; ">Job Details &amp; Application &rarr;</span>
+                        <div style="height: 15px"></div>
+                      
+                            
+                            
                     </article>
                 </a>
                 {.or}
 
-                <!-- no items means no blog posts -->
-                <squarespace:block-field id="Evergreen-Explanation" columns="1" />
-                <h3><em>There are currently no active job listings. If you're interested in working with us, we encourage to you submit your resume  Check back later!</em></h3>
+                <div class="flex-center-center basic-padding">
+                  <h3><i>There are currently no active job listings.</i></h3>
+                </div>
 
                 {.end}
+                
                 </div>
                 </squarespace:query>
             </div>
+            <div class="evergreen-block basic-padding">
+                  <squarespace:block-field id="Evergreen-Explanation" columns="1" />
+                </div>
         </section>
        
        {.end}
