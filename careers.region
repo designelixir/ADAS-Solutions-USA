@@ -79,7 +79,8 @@
                 {.or}
 
                 <!-- no items means no blog posts -->
-                <h3><em>There are currently no job listings. Check back later!</em></h3>
+                <squarespace:block-field id="Evergreen-Explanation" columns="1" />
+                <h3><em>There are currently no active job listings. If you're interested in working with us, we encourage to you submit your resume  Check back later!</em></h3>
 
                 {.end}
                 </div>
