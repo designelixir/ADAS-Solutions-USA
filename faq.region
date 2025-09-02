@@ -80,7 +80,9 @@
                             {@}
                             {.end}{.end}
                         {.end}
-                        <p class="summary-excerpt-card">{excerpt|truncate 50}</p>
+                        {.if excerpt}
+                        <p class="summary-excerpt-card">{excerpt|safe}</p>
+                        {.end}
                         <a style="font-size: 12px;">Read more &rarr;</a>
                     </article>
                 </a>
