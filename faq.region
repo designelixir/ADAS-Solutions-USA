@@ -80,7 +80,7 @@
                             {@}
                             {.end}{.end}
                         {.end}
-                        <p class="summary-excerpt-card">{excerpt|safe|truncate 100}</p>
+                        <p class="summary-excerpt-card">{excerpt|truncate 50}</p>
                         <a style="font-size: 12px;">Read more &rarr;</a>
                     </article>
                 </a>
@@ -89,51 +89,52 @@
                 {.end}
             </div>
         {.or}{#  FULL BLOG PAGE  }
-            {.repeated section items}
-                <script>
-                    var article = {
-                    "title": `{title}`,
-                    "excerpt": `{.if excerpt}{excerpt}{.end}`,
-                    "url": "{.if sourceUrl}{sourceUrl}{.or}{fullUrl}{.end}",
-                    "categories": ["{.repeated section categories}{@|slugify}{.alternates with}, {.end}"],
-                    "assetUrl": "{assetUrl}",
-                    "featured": {starred},
-                    "datePublished": {publishOn}
-                    };
-                   addArticle(article);
-                </script>
-            {.end}
-            {.section collection}
-                
-                    <div class="flex-center-start tag-navigation flex-wrap" >
-                        <p class="bold-text white-text">Jump to section: &nbsp;</p>
-                        {.repeated section categories}
-                        <a href="#{@|slugify}-section" class="no-link-styling {@|slugify}-order">
-                            <div class="tag-nav-link white-text">{@}</div>
-                        </a>
-                        {.end}
-                        
-                    </div>
-                    
-                <div class="flex-start-start flex-column" style="margin-top: 50px;">
-                {.repeated section categories}
-                    <div id="{@|slugify}-section" class="{@|slugify}-order">
-                           <div class="blog-category-section">
-                                <h2 class="white-text">{@}</h2>
-                                
-                            </div>
-                            <div class="faq-homepage-category-section basic-padding flex-start-start full-width">
 
-                                <div class="faq-homepage-category-featured-section full-width" id="{@|slugify}-featured-section"></div>
-                                <div class="faq-homepage-category-all-section-wrapper">
-                                    <div class="faq-homepage-category-all-section full-width flex-start-start flex-column" id="{@|slugify}-all-section"></div>
-                                    <a href="/faq-resources?category=Resources" class="hover"><button class="small-button hover" style="font-size: 12px;">All {@} articles &rarr;</button></a>
-                                </div>
-                            </div>
-                    </div>
+        {#  Add all items to arrays  }
+        {.repeated section items}
+            <script>
+                var article = {
+                "title": `{title}`,
+                "excerpt": `{.if excerpt}{excerpt}{.end}`,
+                "excerptTruncated": `{.if excerpt}{excerpt|truncate 50}{.end}`,
+                "url": "{.if sourceUrl}{sourceUrl}{.or}{fullUrl}{.end}",
+                "categories": ["{.repeated section categories}{@|slugify}{.alternates with}, {.end}"],
+                "assetUrl": "{assetUrl}",
+                "featured": {starred},
+                "datePublished": {publishOn}
+                };
+                addArticle(article);
+            </script>
+        {.end}
+            {#  Create each category section button  }
+            {.section collection}
+            <div class="flex-center-start tag-navigation flex-wrap" >
+                <p class="bold-text white-text">Jump to section: &nbsp;</p>
+                {.repeated section categories}
+                <a href="#{@|slugify}-section" class="no-link-styling {@|slugify}-order">
+                    <div class="tag-nav-link white-text">{@}</div>
+                </a>
                 {.end}
+            </div>
+            
+            {#  Create each category section  }
+            <div class="flex-start-start flex-column" style="margin-top: 50px;">
+            {.repeated section categories}
+                <div id="{@|slugify}-section" class="{@|slugify}-order">
+                    <div class="blog-category-section">
+                        <h2 class="white-text">{@}</h2>
+                    </div>
+                    <div class="faq-homepage-category-section basic-padding-top-bottom flex-start-start full-width">
+                        <div class="faq-homepage-category-featured-section full-width" id="{@|slugify}-featured-section"></div>
+                        <div class="faq-homepage-category-all-section-wrapper">
+                            <div class="faq-homepage-category-all-section full-width flex-start-start flex-column" id="{@|slugify}-all-section"></div>
+                            <a href="/faq-resources?category=Resources" class="hover"><button class="small-button hover" style="font-size: 12px;">All {@} articles &rarr;</button></a>
+                        </div>
+                    </div>
                 </div>
-                <script>buildFaq(categoriesMap)</script>
+            {.end}
+            </div>
+            <script>buildFaq(categoriesMap)</script>
                 
 
             {.end}

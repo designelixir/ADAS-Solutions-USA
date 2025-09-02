@@ -52,18 +52,18 @@ function buildFaq(categoriesMap) {
       const promoted = articles[0];
       if (featuredSection && promoted) {
         const promotedHtml = `
-<a href='${promoted.url}' class="no-link-styling featured">
-  <div class="flex-center-center full-width summary-card-featured">
-    <div class="summary-image-card-featured flex-start-end flex-column" style="background-image: url('${promoted.assetUrl}')">
-      <div class="dark-tag">Recently Published</div>
-      <div style="background: white; width: 80%; height: 50%; padding: 25px; border-top-right-radius: 8px;">
-        <h2 class="summary-title-card-featured" style="min-height: 80px">${promoted.title}</h2>
-        <p class="summary-excerpt-card-featured no-link-styling">${promoted.excerpt}</p>
-        <button class="button" style="font-size: 12px; padding: 15px;">Read more &rarr;</button>
-      </div>
-    </div>
-  </div>
-</a>`;
+        <a href='${promoted.url}' class="no-link-styling featured" target="_blank">
+          <div class="flex-center-center full-width summary-card-featured box-shadow">
+            <div class="summary-image-card-featured flex-start-end flex-column" style="background-image: url('${promoted.assetUrl}')">
+              <div class="dark-tag">Recently Published</div>
+              <div style="background: white; width: 80%; height: 50%; padding: 25px; border-top-right-radius: 8px;">
+                <h2 class="summary-title-card-featured" style="min-height: 80px">${promoted.title}</h2>
+                <p class="summary-excerpt-card-featured no-link-styling">${promoted.excerpt}</p>
+                <button class="button" style="font-size: 12px; padding: 15px;">Read more &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </a>`;
         featuredSection.innerHTML = promotedHtml;
       }
     } else if (featuredArticles.length === 1) {
@@ -71,7 +71,7 @@ function buildFaq(categoriesMap) {
       const article = featuredArticles[0];
       if (featuredSection) {
         const featuredObjectHtml = `
-<a href='${article.url}' class="no-link-styling featured">
+<a href='${article.url}' class="no-link-styling featured" target="_blank">
   <div class="flex-center-center full-width summary-card-featured">
     <div class="summary-image-card-featured flex-start-end flex-column" style="background-image: url('${article.assetUrl}')">
       <div class="dark-tag">Featured article</div>
@@ -93,7 +93,7 @@ function buildFaq(categoriesMap) {
 
         featuredArticles.forEach(article => {
           const featuredObjectHtml = `
-<a href='${article.url}' class="no-link-styling featured">
+<a href='${article.url}' class="no-link-styling featured" target="_blank">
   <div class="flex-center-center full-width summary-card-featured">
     <div class="summary-image-card-featured flex-start-end flex-column" style="background-image: url('${article.assetUrl}')">
       <div class="dark-tag">Featured article</div>
@@ -115,10 +115,10 @@ function buildFaq(categoriesMap) {
       allSection.innerHTML = "";
       nonFeaturedArticles.forEach(article => {
         const objectHtml = `
-<a href='${article.url}' class="no-link-styling full-width blog-summary-card-wide">
-  <div class=" box-shadow flex-center-start" style="border-radius: 5px">
+<a href='${article.url}' class="no-link-styling full-width blog-summary-card-wide box-shadow" target="_blank">
+  <div class="  flex-center-start" style="border-radius: 5px">
     <div class="summary-image-card-wide" style="background-image: url('${article.assetUrl}')"></div>
-    <div style="padding: 0 10px;">
+    <div style="padding: 10px 10px 0;">
       <h3 style="font-size: 16px; line-height: 18px;  margin-bottom: 10px;" class="blog-summary-card-wide-title">${article.title}</h3>
       <p style="font-size: 12px;">Read more &rarr;</p>
     </div>

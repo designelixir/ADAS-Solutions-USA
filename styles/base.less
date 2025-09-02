@@ -58,6 +58,7 @@ main { background: white; border-top-right-radius: 5px; border-top-left-radius: 
 .no-text-spacing {padding: 0; margin: 0; line-height: 0}
 .basic-padding {padding: 25px;}
 .basic-padding-left-right {padding: 0 25px;}
+.basic-padding-top-bottom {padding: 25px 0;}
 .padding-top-25 {padding-top: 25px;}
 .padding-bottom-25 {padding-bottom: 25px;}
 .padding-left-25 {padding-left: 25px;}
@@ -207,16 +208,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .small-service-card {border-radius: 5px; background: var(--lightgray); padding: 25px; max-width: 22%; margin: 1.5%;}
 
 .summary-card {background: #e2e2e2; padding: 15px; border-radius: 5px; min-width: 31%; max-width: 31%; margin: 1%;}
-.summary-card-featured {border: 2px solid black; border-radius: 8px; padding: 10px; background: var(--lightgray);}
+.summary-card-featured {border: 2px solid var(--lightgray); border-top-right-radius: 8px; border-bottom-right-radius: 8px;}
 
 
 .summary-image-card {height: 200px; filter: grayscale(100%); width: 100%; margin-bottom: 10px; background-size: cover; background-repeat: no-repeat; background-position: center center;}
-.summary-image-card-wide {height: 100px; aspect-ratio: 1; filter: grayscale(100%); margin-right: 10px; background-size: cover; background-repeat: no-repeat; background-position: center;}
-.summary-image-card-featured {min-height: 500px;  border-radius: 8px;  background-size: cover; background-repeat: no-repeat; background-position: center center;}
-.blog-summary-card-wide:hover .summary-image-card-wide {cursor: pointer;  filter: grayscale(0%); transform: scale(1.01)}
-.blog-summary-card-wide:hover {border: 1px solid black;}
+.summary-image-card-wide {width: 100%; max-width: 120px; min-width: 120px; border-right: 2px solid var(--lightgray); aspect-ratio: 1/1; filter: grayscale(100%); margin-right: 10px; background-size: cover; background-repeat: no-repeat; background-position: center;}
+.summary-image-card-featured {min-height: 500px; border-top-right-radius: 6px; border-bottom-right-radius: 6px;  background-size: cover; background-repeat: no-repeat; background-position: center center;}
+.blog-summary-card-wide:hover h3 {font-weight: 700!important;}
 
-.summary-image-card-wide:hover {filter: grayscale(0%)}
+.blog-summary-card-wide {border: 1px solid var(--lightgray); width: 100%; border-radius: 5px; margin: 0 0 25px;}
+.blog-summary-card-wide:hover {transform: scale(1.01); cursor: pointer;}
+.blog-summary-card-wide:hover .summary-image-card-wide {filter: grayscale(0%)}
 
 .summary-title-card  {text-decoration: unset; color: var(--darkred); min-height: 80px; line-height: 26px; font-size: 22px; font-family: "Roboto Condensed", sans-serif; font-weight: 500; text-decoration: none;}
 .summary-title-card-featured {text-decoration: unset; line-height: 34px; font-size: 32px; font-family: var(--roboto); font-weight: 500; text-decoration: none;}
@@ -279,10 +281,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .blog-summary-card { background: #e2e2e2; padding: 15px; border-radius: 5px; margin: 2% 1%; width: 23%; }
 .blog-summary-card:hover .summary-image-card {filter: grayscale(0%);}
 .blog-summary-card:hover {cursor: pointer; transform: scale(1.01)}
-.blog-summary-card-wide:hover h3 {font-weight: 700!important;}
-
-.blog-summary-card-wide { width: 98%; padding: 5px; border-radius: 5px; margin: 0 0 1%;}
-.blog-summary-card-wide:hover {transform: scale(1.01); cursor: pointer;}
 
 .tag-navigation { transform: translateY(-25px)}
 .tag-navigation p {background: var(--darkgray); padding: 10px 5px 10px 10px; margin: 0;}
@@ -293,7 +291,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .dark-tag {background: var(--darkred); text-transform: uppercase; font-size: 16px; color: white; font-family: var(--roboto); padding: 10px; z-index: 2; }
 .faq-homepage-category-section {margin-bottom: 50px;}
 .faq-homepage-category-featured-section {min-width: 50vw; }
-.faq-homepage-category-all-section {width: 100%; max-height: 450px; overflow-y: scroll; margin-bottom: 25px; padding: 10px;}
+.faq-homepage-category-all-section {width: 100%; max-height: 440px; overflow-y: scroll; margin-bottom: 20px; padding: 0 10px 10px 0; border-left: 10px solid var(--red)}
 .faq-homepage-category-all-section-wrapper {padding-left: 25px; width: 100%;}
 
  
