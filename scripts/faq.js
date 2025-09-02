@@ -1,5 +1,6 @@
 var articles = [];
 var categoriesMap = {};
+console.log(articles)
 
 function normalizeKey(str) {
   return str.replace(/[^a-zA-Z0-9_]/g, "-");
@@ -116,7 +117,7 @@ function buildFaq(categoriesMap) {
       nonFeaturedArticles.forEach(article => {
         const objectHtml = `
 <a href='${article.url}' class="no-link-styling full-width blog-summary-card-wide box-shadow" target="_blank">
-  <div class="  flex-center-start" style="border-radius: 5px">
+  <div class="flex-center-start" style="border-radius: 5px">
     <div class="summary-image-card-wide" style="background-image: url('${article.assetUrl}')"></div>
     <div style="padding: 10px 10px 0;">
       <h3 style="font-size: 16px; line-height: 18px;  margin-bottom: 10px;" class="blog-summary-card-wide-title">${article.title}</h3>

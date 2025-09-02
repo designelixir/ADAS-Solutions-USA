@@ -103,6 +103,7 @@
                 "featured": {starred},
                 "datePublished": {publishOn}
                 };
+                console.log(article)
                 addArticle(article);
             </script>
         {.end}
