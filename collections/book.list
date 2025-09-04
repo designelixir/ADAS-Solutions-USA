@@ -1,19 +1,33 @@
 <style>
-.book-service-title-wrapper {transform: translateY(-50px); z-index: 2;}
-.book-service-title {background: var(--darkgray); width: 25%; min-height: 75px; padding: 15px; margin: 2px; color: white!important; text-decoration: unset; line-height: 22px; text-align: center;}
-.book-service-title h3 {color: white; line-height: 20px;}
-.book-service-title:hover {background: var(--ssgray); cursor: pointer;}
+.book-header-title-item { min-width: 250px; max-width: 25%; padding: 5px 10px; border: 1px solid white; min-height: 75px;  margin: 1px; background: var(--red);}
+.book-header-title { margin-top: -65px;  }
+
+.book-header-title-item:hover {background: var(--darkred); cursor: pointer;}
+.book-header-title-item h3 {color: white!important; line-height: 22px; font-size: 18px; text-align: center;}
+
+.book-header-title-item:hover h3 {font-weight: 600;}
 
 @media screen and (max-width: 860px) {
   .book-service-title-wrapper {flex-direction: column;}
-  .book-service-title {width: 100%; padding: 35px 15px; min-height: unset;}
+  .book-header-title-item {width: 100%;}
 }
 
 </style>
-<div class="book-service-title-wrapper flex-center-center">
+<div class="book-header-title flex-center-center flex-wrap book-service-title-wrapper" style="margin-bottom: 25px;">
 {.repeated section items}
     
-        <a class="book-service-title flex-center-center no-text-spacing" href="{fullUrl}"><h3 class=" no-text-spacing">{title}</h3></a>
+        
+        <div class="book-header-title-item flex-center-center">
+          <a href="{fullUrl}" class="no-link-styling"><h3>{title}</h3></a>
+        </div>
+        
     
 {.end}
 </div>
+
+<section>
+  <div class="basic-padding" id="whatToExpectCards" style="z-index: 2;">
+      <squarespace:block-field id="WhatToExpect-Description" columns="1" />
+      {@|apply completeAdasSolutionCards.block}
+  </div>
+</section>
