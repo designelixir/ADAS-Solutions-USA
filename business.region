@@ -22,18 +22,20 @@
             <div class="services-header-details">
                 <div class="service-type flex-center-center flex-column fade-in" id="calibration">
                     <squarespace:query collection="services-list" limit="20" category="Calibration">
-                    <div class="service-toggler flex-center-center flex-wrap" >
+                    <div class="flex-start-center flex-wrap full-width item-container" >
                     {.repeated section items}
-                        <div class="calibration-block flex-start-center" id="{title}">
-                            <div class="front flex-center-center flex-column fade-in">
-                                <div class="calibration-block-img" style="background-image: url('{assetUrl}')"></div>
-                                <h5 class="centered-text">{title}</h5>
-                            </div>
+                    <div class="item box-shadow flex-center-center" style="background-color: rgba(255,255,255,0.25)">
+                        <div class="flex-center-center flex-column">
+                            <div class="item-bg" style="background-image: url('{assetUrl}')"></div>
+                                <div class="flex-center-center" style="min-height: 100px;">
+                                    <p class="white-text">{title}</p>
+                                </div>
                         </div>
+                    </div>
                     {.end}
                     </div>
                     </squarespace:query>
-                    <div class="white-text">
+                    <div class="white-text" style="margin-top: 25px">
                         <squarespace:block-field id="Calibration-CallToAction" columns="1" />
                     </div>
                 </div>
