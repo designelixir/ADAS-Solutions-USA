@@ -1,6 +1,6 @@
 <style>
 .book-header-title-item { min-width: 250px; max-width: 25%; padding: 5px 10px; border: 1px solid white; min-height: 75px;  margin: 1px; background: var(--red);}
-.book-header-title { margin-top: -65px;  }
+.book-header-title { transform: translateY(-50px)  }
 
 .book-header-title-item:hover {background: var(--darkred); cursor: pointer;}
 .book-header-title-item h3 {color: white!important; line-height: 22px; font-size: 18px; text-align: center;}
@@ -30,4 +30,13 @@
       <squarespace:block-field id="WhatToExpect-Description" columns="1" />
       {@|apply completeAdasSolutionCards.block}
   </div>
+  <div class="banner-bg-reverse flex-center-center" style="margin-top: -100px; padding-top: 100px">
+        <squarespace:block-field id="Consumer-HowItWorks-Title" columns="1" />
+        
+    </div>
+    <div class="flex-center-center flex-column">
+        <div style="max-width: 800px">   
+            <squarespace:block-field id="Consumer-HowItWorks-Content" columns="1" />
+        </div>
+    </div>
 </section>

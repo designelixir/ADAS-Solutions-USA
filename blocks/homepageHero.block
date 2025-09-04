@@ -9,21 +9,22 @@
 .hero-text-wrapper * {color: white!important; text-shadow: 0 0 2px rgba(0,0,0,0.5); }
 
 .tab-container {z-index: 999; position: relative; width: 100%; max-width: 1300px; margin-top: -25px;}
-.tab {z-index: 3; cursor: pointer; width: 100%; position: relative; border: 3px solid white; min-width: 200px; flex: 1!important; background: var(--darkgray); color: white; padding: 10px; height: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px;}
+.tab {z-index: 3; cursor: pointer; width: 100%; position: relative; border: 3px solid white; flex: 1!important; background: var(--darkgray); color: white; padding: 10px; height: 100%; border-top-right-radius: 5px; border-top-left-radius: 5px;}
 .tab h3 {color: white; padding: 10px 5px; font-size: 18px;}
 .tab.active {background: var(--red); background-size: 100% 100%;}
 .tab.active h3 {font-weight: 700;}
-
-.tab-left.active {margin-right: -50px; z-index: 300;}
-.tab-right.active {margin-left: -50px; z-index: 300;}
+.tab-left h3 {margin-right: 20%;}
+.tab-right h3 {margin-left: 20%;}
+.tab-left.active { z-index: 300;}
+.tab-right.active {z-index: 300;}
 .tab-content {display: none;}
 .tab-content.active {display: block;}
 
-
-
-@media screen and (max-width: 1150px) {
-  .tab {min-height: 95px;}
+@media screen and (max-width: 800px) {
+  .tab { min-height: 110px; }
+  .tab h3 { margin-right: unset!important; margin-left: unset!important;}
 }
+
 
 @media screen and (max-width: 600px) {
 .hero-text-wrapper {padding: 50px 25px!important;}
@@ -53,10 +54,10 @@
 </div>
 <div class="tab-container flex-center-center">
         <div class="flex-end-spacebetween">
-            <div class="tab tab-left" id="tab1">
+            <div class="tab tab-left flex-center-start" id="tab1">
                 <squarespace:block-field id="tab1-Title" columns="1"/>    
             </div>
-            <div class="tab tab-right" id="tab2">
+            <div class="tab tab-right flex-center-end" id="tab2">
                 <squarespace:block-field id="tab2-Title" columns="1"/>
             </div>
         </div>

@@ -7,7 +7,7 @@
   </head>
   {@|apply googleAnalytics.block}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-nav-attr="home">
-    <main>
+    <main style="border-top-left-radius: 0; border-top-right-radius: 0;">
       <section>
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
           {@|apply homepageHero.block}
