@@ -3,7 +3,7 @@
 {.end}
 <h2 class="red-text bold-text" style="margin-top: 50px">Locations offering {item.title}</h2>
 <div class="flex-start-start flex-wrap">
-
+{.repeated section tags}{@}{.end}
 <squarespace:query collection="locations" limit="100" tag="{.repeated section tags}{@}{.end}">
 {.repeated section items}
 
