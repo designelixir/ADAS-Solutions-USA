@@ -3,8 +3,8 @@
 {.end}
 <h2 class="red-text bold-text" style="margin-top: 50px">Locations offering {item.title}</h2>
 <div class="flex-start-start flex-wrap">
-{.repeated section tags}{@}{.end}
-<squarespace:query collection="locations" limit="100" tag="{.repeated section tags}{@}{.end}">
+
+<squarespace:query collection="locations" limit="100" tag="{.section item}{.repeated section tags}{@}{.end}{.end}">
 {.repeated section items}
 
   <article id="post-{id}" data-order='{title}' class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
@@ -67,7 +67,7 @@
 {.or}
 
   <!-- no items means no blog posts -->
-  <p><em>No locations posted.</em></p>
+  <p><em>No locations offer this service at this time.</em></p>
 
 {.end}
 </squarespace:query>
