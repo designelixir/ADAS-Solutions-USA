@@ -17,7 +17,13 @@
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
         <div class="page-hero-content">
-          <h1>{collection.title}</h1>
+          <div class="flex-center-start flex-wrap">
+            <h1>
+              <a href="{collection.fullUrl}" class="no-link-styling">{collection.title}</a>
+              {.if item} | <span style="font-weight: 200; color: white!important">{item.title}</span>{.end}
+            </h1>
+            
+          </div>
           {.if collection.description}
             <h4>{collection.description|safe}</h4>
           {.end}
