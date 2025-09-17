@@ -25,6 +25,13 @@
             <squarespace:block-field id="GetStarted-Description" columns="1" />
             <squarespace:block-field id="RequestAQuote" columns="1" />
         </section>
+
+        <section>
+            <squarespace:block-field id="EasyToDoBusiness-Description" columns="1" />
+            {@|apply easyToDoBusiness.block}
+        </section>
+        
+
         {@|apply callToAction.block}
         {.end}
     </main>
