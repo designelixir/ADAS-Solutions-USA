@@ -9,15 +9,10 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
   <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-    
       {@|apply pageHeader.block}
-{.equal? mainImage.contentType "text/html"}style="background-image: unset!important"{.or}style="background-image: url('{collection.mainImage.assetUrl}');"{.end}
       <section class="basic-padding">
-        
-          <squarespace:block-field id="Our-Services-Description" columns="1" />
-        
+        <squarespace:block-field id="Our-Services-Description" columns="1" />
         <squarespace:block-field id="Service-Labels-Description" columns="1" />
-        <br>
       </section>
 
     
