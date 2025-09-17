@@ -1,0 +1,48 @@
+    
+    {.if customContent.icons}
+    <div class="flex-start-center flex-wrap full-width">
+        {.if customContent.showIconDescriptions}
+            {.repeated section customContent.icons}
+                {.if title}
+                    <div class="service-icon-wrapper box-shadow fade-in info-card flex-center-center flex-column">
+                        <div class="flex-center-center">
+                            <div class="service-icon" style="background-image: url('{assetUrl}')"></div>
+                        </div>
+                        <h4 class="centered-text">{title}</h4>
+                        {.if body}{body.html}{.end}
+                    </div>
+                {.end}
+            {.end}
+        {.or}
+            {.repeated section customContent.icons}
+                <div id="{id}" class="service-icon-wrapper box-shadow fade-in icon-card {.if body} has-back-side {.end} flex-center-center no-flex-grow" onclick="toggleIconBackside('{id}')">
+                    <div class="icon-front flex-center-center fade-in">
+                        <div class="flex-center-start flex-column">
+                            <div class="flex-center-center">
+                                <div class="service-icon" style="background-image: url('{assetUrl}')"></div>
+                            </div>
+                            <h4 class="centered-text">{title}</h4>
+                        </div>
+                    </div>
+                    {.if body.html}
+                    <div class="icon-back flex-center-center fade-in">
+                        <p>{body.html|safe}</p>
+                    </div>
+                    {.end}
+                </div>
+            {.end}
+        {.end}
+    </div>
+    {.end}
+
+<script>
+function toggleIconBackside(id){
+    var target = document.getElementById(id)
+    if (target.classList.contains("active-backside")){
+        target.classList.remove("active-backside")
+    } else {
+        target.classList.add("active-backside")
+    }
+}
+</script>
+    

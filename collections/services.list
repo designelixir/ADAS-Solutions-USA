@@ -3,33 +3,42 @@
     <h3 class="centered-text"><i>Select a service for more details:</i></h3>
 </section>
 
-<div class="services-container">
- <div class="services-wrapper flex-center-center flex-column">
-    <div class="services-nav-wrapper flex-center-center flex-wrap">
-        {.repeated section items}
-            <div id="{title|slugify}-Toggle" data-toggle="{title|slugify}" class="services-nav-button" onclick="toggleService('{title|slugify}')"><h3>{title}</h3></div>
-        {.end}
-    </div>
-    <div class="services-content-wrapper full-width flex-center-center flex-column">
-        {.repeated section items}
-        <div class="service full-width flex-center-center flex-column" id="{title|slugify}-Section">
-            <squarespace:block-field id="{title|slugify}-Intro" columns="1" />
-            {.if customContent.icons}
-                {.if customContent.showIconDescriptions}{.or}
-                <p style="margin-bottom: -25px; font-size: 14px;"><i>Click an icon for more details</i></p>
+<section class="flex-center-center flex-column">
+    <div class="services-container grid-bg">
+        <div class="services-wrapper flex-center-center flex-column">
+            <div class="services-nav-wrapper flex-center-center flex-wrap">
+                {.repeated section items}
+                    <div id="{title|slugify}-Toggle" data-toggle="{title|slugify}" class="services-nav-button" onclick="toggleService('{title|slugify}')"><h3>{title}</h3></div>
                 {.end}
-            {.end}
-            {@|apply serviceIcon.block}
-            <squarespace:block-field id="{title|slugify}-Outro" columns="1" />
-            <a href="{.if sourceUrl}{sourceUrl}{.or}{fullUrl}{.end}">
-                <button class="lightgray-button" style="color: black!important">Book {title}</button>
-            </a>
-        </div>
-        {.end}
+            </div>
+            <div class="services-content-wrapper full-width flex-center-center flex-column">
+                {.repeated section items}
+                <div class="service full-width flex-center-center flex-column" id="{title|slugify}-Section">
+                    <div class="basic-padding">
+                        <squarespace:block-field id="{title|slugify}-Intro" columns="12" />
+                    </div>
+                    {.if customContent.icons}
+                        {.if customContent.showIconDescriptions}{.or}
+                        <p style="font-size: 14px;"><i>Click an icon for more details</i></p>
+                        {.end}
+                    {.end}
+                    {@|apply Services/serviceIcon.block}
+                    <div class="basic-padding">
+                        <squarespace:block-field id="{title|slugify}-Outro" columns="12" />
+                    </div>
+                    <div class="service-link full-width basic-padding white-text" style="background-color: var(--darkred)">
+                        <a class="hover no-link-styling" href="{.if sourceUrl}{sourceUrl}{.or}{fullUrl}{.end}">
+                            <h3 class="centered-text">Click for more {title} information, appointments & locations &rarr;</h3>
+                        </a>
+                    </div>
+                </div>
+                
+                {.end}
 
+            </div>
+        </div>
     </div>
- </div>
-</div>
+</section>
 
 <script>
 

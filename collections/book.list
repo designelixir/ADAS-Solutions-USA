@@ -28,7 +28,7 @@
 <section>
   <div class="basic-padding" id="whatToExpectCards" style="z-index: 2;">
       <squarespace:block-field id="WhatToExpect-Description" columns="1" />
-      {@|apply completeAdasSolutionCards.block}
+      {@|apply SiteBlocks/completeAdasSolutionCards.block}
   </div>
   <div class="banner-bg-reverse flex-center-center" style="margin-top: -100px; padding-top: 100px">
         <squarespace:block-field id="Consumer-HowItWorks-Title" columns="1" />

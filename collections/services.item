@@ -1,74 +1,15 @@
 {.section item}
+<section class="basic-padding">
     {body}
-{.end}
-<h2 class="red-text bold-text" style="margin-top: 50px">Locations offering {item.title}</h2>
-<div class="flex-start-start flex-wrap">
-
-<squarespace:query collection="locations" limit="100" tag="{.section item}{.repeated section tags}{@}{.end}{.end}">
-{.repeated section items}
-
-  <article id="post-{id}" data-order='{title}' class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
-    
-        <div class="location-card-summary flex-start-start flex-column">
-            <a href="{fullUrl}" class="non-styled-link full-width">
-                <div class="location-image-card-wrapper flex-center-spacebetween">
-                    <h3 class="white-text"><strong>{title}</strong></h3>
-                    <img src="{assetUrl}" class="state-image" style="margin-top: -15px" alt="{.repeated section categories}{@}{.end}">
-                </div>
-            </a>
-            <div class="location-address full-width flex-start-start flex-wrap"  style="padding-left: 15px">
-                    <div style="padding-right: 25px; padding-top: 15px;">
-                    {.if customContent.phoneNumber}
-                    <div class="flex-center-start no-flex-grow location-phone">
-                        <img src="https://www.adassolutionsusa.com/assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                        <h3><a href="tel:{customContent.phoneNumber}" target="_blank">{customContent.phoneNumber}</a></h3>
-                    </div> 
-                    {.end}
-                    {.if location.addressLine1}
-                    <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
-                    {.end}
-                    {.if customContent.email}
-                    <div class="flex-center-start no-flex-grow contact-form-line hover" style="margin-bottom: 15px;">
-                        <img src="https://www.adassolutionsusa.com/assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
-                        <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customContent.email}'>{customContent.email}</a>
-                    </div> 
-                    {.end}
-                </div>
-                <div class="flex-end-end flex-column book-button-wrapper list-book-button-wrapper" style="padding-right: 10px;">
-                    <div class='book-button'>
-                    <button class='blank-button lightbox-242908003518049' onclick="selectMarket('{.repeated section categories}{@}{.end}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
-                            Schedule ADAS or Alignment
-                        </button>
-                        
-                    </div>
-                    {.if sourceUrl}<a href="{sourceUrl}" target="_blank"><button class="book-button">All Services</button></a>{.end}
-                    {.if customContent.bookWindshield}<a href="{customContent.bookWindshield}" target="_blank"><button class="book-button">Book Windshield Replacement</button></a>{.end}
-                    {.if customContent.canBookRockChipRepair}<button class="book-button rock-chip-campaign" data-adcampaignbtnid="{title|slugify}LocationButton"><a class="no-link-styling" href="{customContent.canBookRockChipRepair}" target="_blank">Book Glass &amp; Rock Chip Repair</a></button>{.end}
-                    {.if customContent.bookHail}<a href="{customContent.bookHail}" target="_blank"><button class="book-button">Book Hail Repair</button></a>{.end}
-                    {.if customContent.canRequestWindshieldQuote}
-                    <div class='book-button'>
-                    <button class='blank-button lightbox-243015851357152' onclick="selectMarketForQuote('{.repeated section categories}{@}{.end}', '{title}')" aria-label='Contact {.repeated section categories}{@}{.end} Market'>
-                            Request a Windshield Quote
-                        </button>
-                        
-                    </div>
-                    {.end}
-                </div>
-                
-               
-            </div>
-        </div>
-        <a href="{fullUrl}" class="non-styled-link full-width">
-            <div class="lightgray-button" style="margin-top: 25px;">
-                Click for more details &rarr;
-            </div>
-        </a>
-  </article>
-{.or}
-
-  <!-- no items means no blog posts -->
-  <p><em>No locations offer this service at this time.</em></p>
+</section>
+<section class="basic-padding">
+    <h2 class="red-text bold-text" style="margin-top: 50px">Locations offering {.repeated section tags}{@}{.end}</h2>
+    <div class="flex-start-start flex-wrap">
+        <squarespace:query collection="locations" limit="100" tag="{.repeated section tags}{@}{.end}">
+        {@|apply Locations/mapGrid.block}
+        </squarespace:query>
+    </div>
+</section>
 
 {.end}
-</squarespace:query>
-</div>
+

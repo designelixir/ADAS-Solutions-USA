@@ -2,7 +2,7 @@
 <section id="tab2-content-wrapper" class="tab-content" >
 
 <div style="padding: 50px 25px;">
-    <squarespace:block-field id="Consumer-Intro" columns="1" />
+    <squarespace:block-field id="Consumer-Intro" columns="12" />
     <div class="flex-center-center flex-wrap" style="margin: 25px 0;">
         <squarespace:block-field id="Consumer-Button-1" columns="1" />
         <squarespace:block-field id="Consumer-Button-3" columns="1" />
@@ -18,11 +18,9 @@
 <div class="grid-bg padding-top-50 padding-bottom-25" style="margin-top: -25px">
     <div class="flex-center-center flex-column basic-padding">
         <squarespace:block-field id="Consumer-Diagram-Title" columns="1" />
-        {@|apply whenToCalibrate.block}
+        {@|apply SiteBlocks/whenToCalibrate.block}
         
     </div>
-    {#  @|apply windshieldDiagram.block  }
-    
 </div> 
 
     
@@ -37,7 +35,7 @@
 <div style="padding: 25px; margin: 25px 0 0" class="flex-center-center">
     <squarespace:block-field id="Consumer-Offerings-Title" columns="1" />
 </div>
-{@|apply completeAdasSolutionCards.block}
+{@|apply SiteBlocks/completeAdasSolutionCards.block}
 
 
     <div class="banner-bg-reverse flex-center-center" style="margin-top: -100px; padding-top: 100px">

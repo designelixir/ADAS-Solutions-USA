@@ -41,7 +41,7 @@
 
 <div class="hero-wrapper">
     <div class="hero-video-wrapper">
-        {#  <squarespace:block-field id="HeroVideo" columns="1"/>  }
+        <squarespace:block-field id="HeroVideo" columns="1"/>
     </div>
     <div class="hero-text-wrapper fade-in linear-gradient flex-end-start">
       <div style="max-width: 800px">

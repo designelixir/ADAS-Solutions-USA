@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     {squarespace-headers}
   </head>
-  {@|apply googleAnalytics.block}
+  {@|apply SiteBlocks/googleAnalytics.block}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
   <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-      {@|apply pageHeader.block}
+      {@|apply SiteBlocks/pageHeader.block}
 
         {squarespace.main-content}
 
         {.if item}
         
         {.or}
-        <section class="basic-padding" id="whatToExpectCards" style="z-index: 2;">
+        <section class="basic-padding" id="whatToExpectCards" style="z-index: 2; margin-top: 50px;">
             <squarespace:block-field id="WhatToExpect-Description" columns="1" />
-            {@|apply completeAdasSolutionCards.block}
+            {@|apply SiteBlocks/completeAdasSolutionCards.block}
         </section>
 
         <section class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px; z-index: 1;">
@@ -28,11 +28,11 @@
 
         <section>
             <squarespace:block-field id="EasyToDoBusiness-Description" columns="1" />
-            {@|apply easyToDoBusiness.block}
+            {@|apply SiteBlocks/easyToDoBusiness.block}
         </section>
         
 
-        {@|apply callToAction.block}
+        {@|apply siteBlocks/callToAction.block}
         {.end}
     </main>
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

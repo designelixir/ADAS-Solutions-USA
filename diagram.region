@@ -24,7 +24,7 @@
             {.end}                        
         </squarespace:query>
         
-        {@|apply adasDiagram.block}
+        {@|apply SiteBlocks/adasDiagram.block}
         <div class="flex-center-center" style="padding-bottom: 50px;">
             <squarespace:block-field id="ViewGlossaryButton" columns="1" />
         </div>

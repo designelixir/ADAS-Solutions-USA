@@ -6,12 +6,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {squarespace-headers}
   </head>
-  {@|apply googleAnalytics.block}
+  {@|apply SiteBlocks/googleAnalytics.block}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <main class="content-container" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       
-      {@|apply pageHeader.block}
+      {@|apply SiteBlocks/pageHeader.block}
       
         {.if item.title}
             <div class="flex-center-spacebetween basic-padding-left-right" style="margin: -75px 15px 25px 0px; z-index: 2; position: relative; background-color: var(--darkgray)">
