@@ -56,7 +56,7 @@
         <squarespace:block-field id="OurPromise-Description" columns="1" />
       </div>
 
-      {@|apply ourPromise.block}
+      {@|apply About/ourPromise.block}
 
       
 
@@ -64,13 +64,13 @@
         <squarespace:block-field id="CoreValues-Description" columns="1" />
       </div>
 
-      {@|apply weAimTrue.block}
+      {@|apply About/weAimTrue.block}
 
       <div class="banner-bg-reverse" style="margin-top: -60px; padding: 50px 25px; ">
         <squarespace:block-field id="OurFocus-Description" columns="1" />
       </div>
       <div class="basic-padding">
-        {@|apply ourFocus.block}
+        {@|apply About/ourFocus.block}
       </div>
       <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="MeetOurTeam-Intro" columns="1" />

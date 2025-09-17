@@ -38,7 +38,7 @@
     <div class="banner-bg-reverse" style="z-index: 2; position: relative; padding: 80px 25px; margin-top: -15px;">
         <squarespace:block-field id="Business-Statistics-Title" columns="1" />
     </div>
-    {@|apply statistics.block}
+    {@|apply Homepage/statistics.block}
 
     
 

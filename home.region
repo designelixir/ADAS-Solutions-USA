@@ -10,7 +10,7 @@
     <main style="border-top-left-radius: 0; border-top-right-radius: 0;">
       <section>
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-          {@|apply homepageHero.block}
+          {@|apply Homepage/homepageHero.block}
       </section>
       <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
       {squarespace-footers}
