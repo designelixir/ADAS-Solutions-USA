@@ -70,7 +70,7 @@
         <squarespace:block-field id="OurFocus-Description" columns="1" />
       </div>
       <div class="basic-padding">
-      {@|apply ourFocus.block}
+        {@|apply ourFocus.block}
       </div>
       <div class="basic-padding red-banner-bg">
         <squarespace:block-field id="MeetOurTeam-Intro" columns="1" />

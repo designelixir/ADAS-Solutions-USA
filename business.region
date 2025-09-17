@@ -17,31 +17,20 @@
     <div class="banner-bg-reverse white-text" style="z-index: 2; position: relative; margin-top: -25px;">
         <squarespace:block-field id="Business-WhenIsAdasRequired" columns="1" />
     </div>
-    <div class="services-header" >
-        <div class="services-header-wrapper flex-center-center flex-column" style="padding: 75px 25px">
-            <div class="services-header-details">
-                <div class="service-type flex-center-center flex-column fade-in" id="calibration">
-                    <squarespace:query collection="services-list" limit="20" category="Calibration">
-                    <div class="flex-start-center flex-wrap full-width item-container" >
+    
+        <div class="services-container flex-center-center "  style="margin-top: -80px;">
+            <div class="services-wrapper flex-center-center flex-column" style="padding: 100px 0; ">
+                <squarespace:query collection="services-2" tag="Calibration" limit="20">
                     {.repeated section items}
-                    <div class="item box-shadow flex-center-center" style="background-color: rgba(255,255,255,0.25)">
-                        <div class="flex-center-center flex-column">
-                            <div class="item-bg" style="background-image: url('{assetUrl}')"></div>
-                                <div class="flex-center-center" style="min-height: 100px;">
-                                    <p class="white-text">{title}</p>
-                                </div>
-                        </div>
-                    </div>
+                        {@|apply serviceIcon.block}
                     {.end}
-                    </div>
-                    </squarespace:query>
-                    <div class="white-text" style="margin-top: 25px">
-                        <squarespace:block-field id="Calibration-CallToAction" columns="1" />
-                    </div>
+                </squarespace:query>
+                <div class="white-text basic-padding" style="margin-top: 25px">
+                    <squarespace:block-field id="Calibration-CallToAction" columns="1" />
                 </div>
             </div>
         </div>
-    </div>
+    
 
     <div class="banner-bg" style="z-index: 2; position: relative; margin-top: -25px">
         <squarespace:block-field id="Business-Educate" columns="1" />

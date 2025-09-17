@@ -15,20 +15,7 @@
   <div class="site-container" style="width: 100%;">
       <main class="content-container" role="main" data-content-field="main-content">
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-      <div class="page-hero flex-center-center" style="background-image: url('https://images.squarespace-cdn.com/content/66d1669617c9dc3324db4e62/1729709898828-D507PS2SRS63R71BFRRH/IMG_3091.jpg?content-type=image%2Fjpeg')">
-        <div class="page-hero-content white-text">
-        {.if item.title}
-          <div class="flex-center-start">
-            <a class="no-link-styling" href="{collection.fullUrl}"><h1>{collection.title}</a>&nbsp;|&nbsp;</h1><h2 class="red-text">{item.title}</h2>
-          </div>
-          <a class="small-button" href="{collection.fullUrl}">&larr; Back to Careers</a>
-        {.or}
-          <div class="flex-center-start">
-            <h1>{collection.title}</h1>
-          </div>
-        {.end}
-        </div>
-      </div>
+      {@|apply pageHeader.block}
       {.if item}
       <section class='basic-padding job-listing'>
             <h2 class="red-text bold-text">Job Details</h2>

@@ -3,7 +3,6 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {squarespace-headers}
   </head>
@@ -12,16 +11,8 @@
     <main class="content-container" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       
+      {@|apply pageHeader.block}
       
-      <div class="page-hero flex-center-center" {.if collection.mainImage.assetUrl} style="background-image: url('{collection.mainImage.assetUrl}');"{.end}>
-        <div class="page-hero-content extra-header-padding" style="padding-bottom: 100px!important">
-          
-          <h1>{.if item.title}<a href="/{collection.urlId}" class="non-styled-link">{collection.title}</a>{.or}{collection.title}{.end}</h1>
-          {.if collection.description}
-            <h4>{collection.description|safe}</h4>
-          {.end}
-        </div>
-      </div>
         {.if item.title}
             <div class="flex-center-spacebetween basic-padding-left-right" style="margin: -75px 15px 25px 0px; z-index: 2; position: relative; background-color: var(--darkgray)">
                 <h3 class="white-text" style="padding-right: 15px; font-size: 28px;">{item.title} </h3>

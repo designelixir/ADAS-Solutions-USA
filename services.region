@@ -10,23 +10,25 @@
   <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       {@|apply pageHeader.block}
-      <section class="basic-padding">
-        <squarespace:block-field id="Our-Services-Description" columns="1" />
-        <squarespace:block-field id="Service-Labels-Description" columns="1" />
-      </section>
 
-    
-      <div>
         {squarespace.main-content}
-      </div>
-      {@|apply callToAction.block}
-      
-      </main>
-  
-    
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-    <squarespace:script src="ourservices.js" />
-    {squarespace-footers}
 
+        {.if item}
+        
+        {.or}
+        <section class="basic-padding" id="whatToExpectCards" style="z-index: 2;">
+            <squarespace:block-field id="WhatToExpect-Description" columns="1" />
+            {@|apply completeAdasSolutionCards.block}
+        </section>
+
+        <section class="basic-padding banner-bg-reverse" style="margin-top: -175px; padding-top: 200px; z-index: 1;">
+            <squarespace:block-field id="GetStarted-Description" columns="1" />
+            <squarespace:block-field id="RequestAQuote" columns="1" />
+        </section>
+        {@|apply callToAction.block}
+        {.end}
+    </main>
+    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    {squarespace-footers}
   </body>
 </html>

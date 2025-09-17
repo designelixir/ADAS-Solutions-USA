@@ -16,28 +16,7 @@
       <main class="content-container" role="main"  id="top" data-content-field="main-content">
       
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-        <div class="page-hero flex-center-center" {.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}>
-            <div class="page-hero-content">
-                {.if item.title}
-                    <a href='/{collection.urlId}' class="no-link-styling">
-                        <h3 class="white-text">&larr; {collection.title}</h3>
-                    </a>
-                    <h1>{.if item.title} {item.title} {.end}</h1>
-                    {.if item.excerpt}
-                        <h4 class="white-text">{item.excerpt}</h4>
-                    {.end}
-                {.or}
-                    <a class="no-link-styling" href="/{collection.urlId}"><h1>{collection.title}{.section categoryFilter} / {@|safe}{.end} </h1></a>
-                    {.if categoryFilter}
-                        <a href="/{collection.urlId}">&larr; Back to {collection.title} Homepage</a>
-                    {.end}
-                    {.if collection.description}
-                        <h4>{collection.description|safe}</h4>
-                    {.end}
-                {.end}
-                
-            </div>
-        </div>
+        {@|apply pageHeader.block}
         
         {#  single blog post  }
         {.if item.title}

@@ -1,3 +1,52 @@
-{.repeated section items}
-{title}
-{.end}
+ <section class="basic-padding">
+    <squarespace:block-field id="Our-Services-Description" columns="1" />
+    <h3 class="centered-text"><i>Select a service for more details:</i></h3>
+</section>
+
+<div class="services-container">
+ <div class="services-wrapper flex-center-center flex-column">
+    <div class="services-nav-wrapper flex-center-center flex-wrap">
+        {.repeated section items}
+            <div id="{title|slugify}-Toggle" data-toggle="{title|slugify}" class="services-nav-button" onclick="toggleService('{title|slugify}')"><h3>{title}</h3></div>
+        {.end}
+    </div>
+    <div class="services-content-wrapper full-width flex-center-center flex-column">
+        {.repeated section items}
+        <div class="service full-width flex-center-center flex-column" id="{title|slugify}-Section">
+            <squarespace:block-field id="{title|slugify}-Intro" columns="1" />
+            {.if customContent.icons}
+                {.if customContent.showIconDescriptions}{.or}
+                <p style="margin-bottom: -25px; font-size: 14px;"><i>Click an icon for more details</i></p>
+                {.end}
+            {.end}
+            {@|apply serviceIcon.block}
+            <squarespace:block-field id="{title|slugify}-Outro" columns="1" />
+            <a href="{.if sourceUrl}{sourceUrl}{.or}{fullUrl}{.end}">
+                <button class="lightgray-button" style="color: black!important">Book {title}</button>
+            </a>
+        </div>
+        {.end}
+
+    </div>
+ </div>
+</div>
+
+<script>
+
+function toggleService(id){
+    var targetButton = document.getElementById(id + "-Toggle");
+    var targetSection = document.getElementById(id + "-Section");
+    document.querySelectorAll(".active-service").forEach(el => el.classList.remove("active-service"));
+    targetButton.classList.add('active-service')
+    targetSection.classList.add('active-service')
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const firstNavButton = document.querySelector(".services-nav-button");
+    if (firstNavButton) {
+      const toggleValue = firstNavButton.getAttribute("data-toggle");
+      toggleService(toggleValue)
+    }
+  });
+
+</script>

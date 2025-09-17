@@ -6,18 +6,18 @@
 .expander { margin: 5px 0 5px 115px; padding: 10px; border-radius: 5px;}
 .expanded-content { display: none; cursor: pointer;}
 .p-toggler {padding: 5px 0!important; margin: 0;}
-.p-toggler:hover {font-weight: 600;}
+.p-toggler:hover {font-weight: 600; cursor: pointer;}
 .expanded-text-highlight {background: var(--whitegray)}
 
 @media screen and (max-width: 450px){
-  .bullet-point-bg {height: 60px; min-width: 62px!important; background-size: contain; margin-right: 15px;}
+  .bullet-point-bg {height: 60px; min-width: 92px!important; background-size: contain; margin-right: 15px;}
   .card-icon {min-width: 40px; max-width: 40px; min-height: 40px; max-height: 40px;}
   .expander {margin: 5px 0 5px 65px;}
 }
 
 </style>
 
-{#  Complete ADAS Solution Bullet Points  }
+
 <div class="flex-start-start flex-column" style="padding: 50px 25px 50px 0;">
     <div class="bullet-point-wrapper" id="calibrate">
         <div class="bullet-point flex-start-start">
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="expander" onclick="toggleAccordion('Calibration-Expanded', this)">
-            <p class="red-text  p-toggler">+ Read More</p>
+            <p class="red-text p-toggler">+ Read More</p>
             <div class="expanded-content" id="Calibration-Expanded">
                 <squarespace:block-field id="Calibrate-Description-Expanded" columns="1" />
             </div>

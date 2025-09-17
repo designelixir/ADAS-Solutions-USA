@@ -1,15 +1,29 @@
 <style>
-.page-hero {min-height: 200px; width: 100%;  border-top-right-radius: 5px; border-top-left-radius: 5px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('../assets/car.jpg'); }
-.page-hero-content {width: 100%; min-height: 200px; height: 100%; padding: 25px 25px; background: rgba(0,0,0,0.35); color: white; text-shadow: 0 0 2px rgba(0,0,0,0.5); backdrop-filter: blur(3px)}
-.page-hero-content h4 {color: white!important; font-size: 18px; line-height: 24px; max-width: 500px;}
+.page-hero { width: 100%; color: white!important; border-bottom: 2px solid var(--logored); background-color: var(--red); }
+.page-hero-content {width: 100%;  height: 100%; padding: 25px;}
+.bg-set {background-size: cover; min-height: 200px; background-position: center center; background-repeat: no-repeat; }
+.bg-set .page-hero-content {min-height: 200px; padding: 25px 25px; background: rgba(0,0,0,0.35); color: white; text-shadow: 0 0 2px rgba(0,0,0,0.5); backdrop-filter: blur(3px)}
+.page-hero h4 {color: white!important; font-size: 18px; line-height: 24px; max-width: 75%;}
 
 </style>
 
-<div class="page-hero flex-center-center" {.equal?:collection.mainImage.contentType:"text/html"}{.or}style="background-image: url('{collection.mainImage.assetUrl}')"{.end}>
-    <div class="page-hero-content">
-        <h1>{collection.title}</h1>
+<div class="page-hero {collection.title|slugify}-hero {.equal?:collection.mainImage.contentType:"text/html"}{.or}{.if item.assetUrl} bg-set {.or} {.if collection.mainImage.assetUrl} bg-set {.or}{.end} {.end}{.end} flex-center-center" {.equal?:collection.mainImage.contentType:"text/html"}{.or}{.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}{.end}>
+    <div class="page-hero-content flex-start-center flex-column white-text">
+        {.if item.title}
+        <a class="small-button" style="margin-bottom: 25px" href="{collection.fullUrl}">&larr; Back to {collection.title}</a>
+        <a class="no-link-styling" href="{collection.fullUrl}"><h1>{collection.title}</a>&nbsp;|&nbsp; <span style="font-weight: 200;">{item.title}</span></h1>
         {.if collection.description}
-            <h4>{collection.description|safe}</h4>
+            <h4 class="white-text no-text-spacing">{collection.description|safe}</h4>
+        {.end}
+        
+
+        {.or}
+        
+            <h1 {.if collection.description}style="margin-top: 0"{.end}>{collection.title}</h1>
+            {.if collection.description}
+                <h4 class="white-text no-text-spacing">{collection.description|safe}</h4>
+            {.end}
+        
         {.end}
     </div>
 </div>
