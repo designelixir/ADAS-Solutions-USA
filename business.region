@@ -20,7 +20,7 @@
     
         <div class="red-car-bg flex-center-center full-width"  style="margin-top: -80px;">
             <div class="red-car-bg-wrapper flex-center-center flex-column" style="padding: 100px 0 50px; ">
-                <squarespace:query collection="services-2" category="Calibration" limit="20">
+                <squarespace:query collection="services" featured="true" limit="20">
                     {.repeated section items}
                         {@|apply Services/serviceIcon.block}
                     {.end}
