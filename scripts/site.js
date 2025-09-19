@@ -26,6 +26,7 @@ let activeServiceFilter = '';
 
 
 function filter(categoryOrTag) {
+    console.log(categoryOrTag)
     
     if (categoryOrTag === 'reset'){
         activeStateFilter = '';
@@ -40,14 +41,14 @@ function filter(categoryOrTag) {
 
         if (tagElement.hasClass('state')) {
             activeStateFilter = '';
-        } else if (tagElement.hasClass('service')) {
+        } else if (tagElement.hasClass('service-tag')) {
             activeServiceFilter = '';
         }
     } else {
         if (tagElement.hasClass('state')) {
             activeStateFilter = categoryOrTag;
             $('.location-tag.state').removeClass('active-filter-tag');
-        } else if (tagElement.hasClass('service')) {
+        } else if (tagElement.hasClass('service-tag')) {
             activeServiceFilter = categoryOrTag;
             $('.location-tag.service').removeClass('active-filter-tag');
         }
