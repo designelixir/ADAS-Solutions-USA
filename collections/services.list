@@ -28,7 +28,7 @@
                     </div>
                     <div class="service-link full-width basic-padding white-text" style="background-color: var(--darkred)">
                         <a class="hover no-link-styling" href="{.if sourceUrl}{sourceUrl}{.or}{fullUrl}{.end}">
-                            <h3 class="centered-text">Click for more {title} information, appointments & locations &rarr;</h3>
+                            <h3 class="centered-text">Click for more <strong>{title}</strong> information, appointments & locations &rarr;</h3>
                         </a>
                     </div>
                 </div>

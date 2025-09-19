@@ -35,7 +35,9 @@
     <div class="banner-bg" style="z-index: 2; position: relative; margin-top: -25px">
         <squarespace:block-field id="Business-Educate" columns="1" />
     </div>
-    {@|apply SiteBlocks/completeAdasSolution.block}
+    <squarespace:query collection="full-adas-solution" tag="Business" limit="20">
+        {@|apply SiteBlocks/completeAdasSolution.block}
+    </squarespace:query>
 
     <div id="what-is-adas" class="grid-bg">
         <div class="red-bg" style="position: relative; z-index: 3;">

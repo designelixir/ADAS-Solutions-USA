@@ -3,7 +3,6 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {squarespace-headers}
   </head>
   {@|apply SiteBlocks/googleAnalytics.block}
@@ -37,7 +36,7 @@
                 <div class="flex-center-start flex-wrap no-flex-grow">
                 {.section collection}
                     {.repeated section categories}
-                        <div class="location-tag state" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')">{@}</div>
+                        <div class="location-tag state" id="{@|slugify}-filter-tag" data-link={@|url-encode} onclick="filter('{@|slugify}')">{@}</div>
                     {.end}
                 {.end}
                 </div>
@@ -72,7 +71,7 @@
                     </script>
                 
                     {.repeated section tags}
-                        <div class="location-tag service service-tag" id="{@|slugify}-filter-tag" onclick="filter('{@|slugify}')"><span class="service-title">{@}</span></div>
+                        <div class="location-tag service service-tag" id="{@|slugify}-filter-tag" data-link={@|url-encode} onclick="filter('{@|slugify}')"><span class="service-title">{@}</span></div>
                     {.end}
                     <script>
                       applyAlphabeticalOrderToServiceTags()
@@ -89,9 +88,9 @@
       <section>
         {squarespace.main-content}
         <div id="noResults" class="flex-center-start" style="display: none; padding: 0 25px 50px;">
-          <button id="filterReset" class="location-tag" onclick="filter('reset')">No results. Reset filters?</button>
+          <p>No results for selected filters.</p>
+          <button id="filterReset" class="location-tag"><a class="no-link-styling" href="/locations">Reset filters?</a></button>
         </div>
-
        </section>
       </main>
 

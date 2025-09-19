@@ -2,8 +2,6 @@
 let activeStateFilter = '';
 let activeServiceFilter = '';
 
-
-
 function filter(categoryOrTag) {
     
     if (categoryOrTag === 'reset'){

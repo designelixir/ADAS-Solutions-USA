@@ -69,7 +69,7 @@
 {.or}
 
   <!-- no items means no blog posts -->
-  <p><em>No locations posted.</em></p>
+  <p><em>No locations available for selected filters.</em></p>
 
 {.end}
 </div>

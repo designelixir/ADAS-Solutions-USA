@@ -21,7 +21,7 @@
 .service-icon {width: 75px; height: 75px; margin-bottom: 10px; background-size: contain; background-position: center; background-repeat: no-repeat;}
 
 .icon-card {min-width: 165px; width: 165px; aspect-ratio: 1;}
-.info-card {min-width: 300px; max-width: 40vw; }
+.info-card {min-width: 300px; max-width: 40vw; padding: 25px;}
 .info-card h4 {margin: 0px;}
 .info-card p {text-align: center;}
 .has-back-side:hover {cursor: pointer; transform: scale(1.01); background: rgba(242, 242, 242, 0.75)}
@@ -40,15 +40,15 @@
 }
 </style>
     {.if customContent.icons}
-    <div class="flex-start-center flex-wrap full-width">
+    <div class="flex-stretch-center flex-wrap full-width" style="gap: 10px">
         {.if customContent.showIconDescriptions}
             {.repeated section customContent.icons}
                 {.if title}
-                    <div class="service-icon-wrapper box-shadow fade-in info-card flex-center-center flex-column">
-                        <div class="flex-center-center">
+                    <div class="service-icon-wrapper box-shadow fade-in info-card flex-center-start flex-column">
+                        <div class="flex-center-center no-flex-grow">
                             <div class="service-icon" style="background-image: url('{assetUrl}')"></div>
                         </div>
-                        <h4 class="centered-text">{title}</h4>
+                        <h4 class="centered-text"><strong>{title}</strong></h4>
                         {.if body}{body.html}{.end}
                     </div>
                 {.end}
