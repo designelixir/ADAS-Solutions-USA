@@ -1,4 +1,44 @@
-    
+<style>
+
+.red-car-bg {background-image: url('../assets/interior(1).png'); background-size: cover;}
+.red-car-bg-wrapper {background: rgba(191,52,49, 0.75); backdrop-filter: blur(7px); width: 100%; height: 100%; padding: 25px;}
+
+.services-container {border-radius: 3px; margin-top: 50px;}
+.services-wrapper {background: rgba(0,0,0,0.15)}
+.services-nav-wrapper {margin-top: -50px; }
+
+.services-nav-button {background: var(--darkgray); padding: 25px; margin-right: 2px; margin-bottom: 2px;}
+.services-nav-button.active {background: var(--ssgray); font-weight: 900!important;}
+.services-nav-button.active h3 {font-weight: 700!important;}
+.services-nav-button h3 {color: white!important; line-height: 22px; text-align: center;}
+.services-nav-button:hover {background: var(--ssgray); cursor: pointer;}
+
+.service {display: none;}
+.services-nav-button.active-service {background: var(--ssgray); font-weight: 900!important;}
+.active-service {display: flex!important;}
+
+.service-icon-wrapper {margin: 5px; padding: 10px; background: rgba(242, 242, 242, 0.75); border-radius: 3px; transition: background 0.2s ease;}
+.service-icon {width: 75px; height: 75px; margin-bottom: 10px; background-size: contain; background-position: center; background-repeat: no-repeat;}
+
+.icon-card {min-width: 165px; width: 165px; aspect-ratio: 1;}
+.info-card {min-width: 300px; max-width: 40vw; }
+.info-card h4 {margin: 0px;}
+.info-card p {text-align: center;}
+.has-back-side:hover {cursor: pointer; transform: scale(1.01); background: rgba(242, 242, 242, 0.75)}
+.active-backside {width: unset; max-width: 340px; height: 165px; aspect-ratio: unset!important;}
+.icon-back {display: none;}
+.icon-back p {font-size: 14px; line-height: 18px; text-align: left;}
+.icon-front h4 {font-weight: 500; font-size: 15px; line-height: 19px; text-align: center; margin: 0;}
+.active-backside .icon-front {display: none!important;}
+.active-backside .icon-back {display: flex!important;}
+
+.service-link:hover h3 {font-weight: 500;}
+
+@media screen and (max-width: 900px) {
+  .services-nav-button {padding: 15px;}
+  .services-nav-button h3 {font-size: 16px!important;}
+}
+</style>
     {.if customContent.icons}
     <div class="flex-start-center flex-wrap full-width">
         {.if customContent.showIconDescriptions}
