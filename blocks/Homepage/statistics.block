@@ -28,7 +28,7 @@
                 </svg>
                 </div>
                 <div class="stat-circle flex-center-center" style="background-image: url('../assets/icons/shop.svg')">
-                    <img src="../assets/icons/red-x.svg" class="no-good"/>
+                    <img src="../assets/icons/red-x.svg" class="no-good" alt="red x indicating bad service"/>
                 </div>
             </div>
         </div>
