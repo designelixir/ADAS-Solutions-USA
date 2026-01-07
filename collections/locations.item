@@ -100,7 +100,19 @@
                     <img src="/assets/icons/required.svg" class="location-service-card-icon" alt="required icon">
                     <p class="no-text-spacing"><strong>Required by OEMs:</strong> The FIRST step required by most OEMs when performing an ADAS Calibration is an alignment check.</p>
                 </div>
-                <squarespace:block-field id="{title}-AlignmentSpecifics" columns="1"/>
+                <div class="location-service-card-bullet flex-start-start">
+                    <img src="/assets/icons/why.svg" class="location-service-card-icon" alt="why icon">
+                    <p class="no-text-spacing"><strong>Why is Alignment Critical:</strong> ADAS Technology relies on wheel alignment to perform as engineered. Misalignment risks accurate ADAS performance, creating a liability risk for the repairer.</p>
+                </div>
+                <div class="location-service-card-bullet flex-start-start">
+                    <img src="/assets/icons/why-adas.svg" class="location-service-card-icon" alt="why adas icon">
+                    <p class="no-text-spacing"><strong>Why ADAS Solutions USA:</strong> We fully understand alignment and calibration, performed in a single location by a trusted partner, improves cycle time, drives profitability and provides a positive customer experience.</p>
+                </div>  
+                <div class="location-service-card-bullet flex-start-start">
+                    <img src="/assets/icons/same-day.svg" class="location-service-card-icon" alt="same day icon">
+                    <p class="no-text-spacing"><strong>Same Day Service Commitment:</strong> Committed to exceptional customer experience for our partners; we prioritize alignment and calibration services to minimize wait times and multiple interruptions in the repair process.</p>
+                </div>
+                <squarespace:block-field id="{item.title}-AlignmentSpecifics" columns="1"/>
             </div>
         {.end}
         {.if customContent.showCalibrationService}
