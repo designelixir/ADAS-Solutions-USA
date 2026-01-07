@@ -83,14 +83,11 @@
             </div>
         </div>
         
-        <div id="noResults" class="flex-center-start" style="display: none; padding: 0 25px 50px;">
-          <p>No results for selected filters.</p>
-          <button id="filterReset" class="location-tag"><a class="no-link-styling" href="/locations">Reset filters?</a></button>
-        </div>
+        
        
         {.end}
 
-<section>
+      <section>
         {squarespace.main-content}
       </section>
       </main>
