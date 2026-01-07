@@ -89,7 +89,7 @@
                 
             </div>
         <div style="margin-top: 50px">
-            <h2 style="margin: 0 0 10px; font-size: 24px;"><strong>Services</strong></h2>
+            <squarespace:block-field id="{item.title}-ServicesTitle" columns="1"/>
             <div class="flex-start-spacebetween flex-wrap" style="margin-top: 25px;">
             
             {.if customContent.showAlignmentCalibrationService}
