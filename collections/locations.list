@@ -15,7 +15,7 @@
             <a href="{fullUrl}" class="non-styled-link full-width">
                 <div class="location-image-card-wrapper flex-center-spacebetween">
                     <h3 class="white-text"><strong>{title}</strong></h3>
-                    <img src="{assetUrl}" class="state-image" style="margin-top: -15px" alt="{.repeated section categories}{@}{.end}">
+                    <img src="{.repeated section categories}/assets/states/{@}.png{.end}" class="state-image" alt="{.repeated section categories}{@}{.end}">
                 </div>
             </a>
             <div class="location-address full-width flex-start-start flex-wrap"  style="padding-left: 15px">

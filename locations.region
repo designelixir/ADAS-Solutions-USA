@@ -13,9 +13,9 @@
       {@|apply SiteBlocks/pageHeader.block}
       
         {.if item.title}
-            <div class="flex-center-spacebetween basic-padding-left-right" style="margin: -75px 15px 25px 0px; z-index: 2; position: relative; background-color: var(--darkgray)">
+            <div class="flex-center-spacebetween basic-padding-left-right" style="margin: -25px 15px 25px 0px; z-index: 2; position: relative; background-color: var(--darkgray)">
                 <h3 class="white-text" style="padding-right: 15px; font-size: 28px;">{item.title} </h3>
-                <img src="{item.assetUrl}" class="state-image" alt="{.repeated section categories}{@}{.end}">
+                <img src="{.section item}{.repeated section categories}/assets/states/{@}.png{.end}{.end}" class="state-image" alt="{.repeated section categories}{@}{.end}">
             </div>
         {.or}
         <div class="flex-center-start flex-wrap filter-bar-container">
@@ -42,7 +42,7 @@
                 </div>
             </div>
           
-          {.end}
+        {.end}
             <div class="location-filter-bar">
                 <h5 class="white-text no-text-spacing" style="margin-bottom: 15px;"><strong>Service</strong></h5>
                 {.section tagFilter}
@@ -82,16 +82,17 @@
             </div>
             </div>
         </div>
-        {.end}
-
-
-      <section>
-        {squarespace.main-content}
+        
         <div id="noResults" class="flex-center-start" style="display: none; padding: 0 25px 50px;">
           <p>No results for selected filters.</p>
           <button id="filterReset" class="location-tag"><a class="no-link-styling" href="/locations">Reset filters?</a></button>
         </div>
-       </section>
+       
+        {.end}
+
+<section>
+        {squarespace.main-content}
+      </section>
       </main>
 
 
