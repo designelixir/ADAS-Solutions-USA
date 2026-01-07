@@ -93,11 +93,12 @@
         <div style="margin-top: 50px;">
         <h2 style="margin: 0 0 10px; font-size: 24px;"><strong>Services</strong></h2>
         {.if customContent.showAlignmentCalibrationService}
-            <div class="card">
-                <h3>Calibration & Alignment</h3>
-                <div class="flex-center-start">
-                    <img src="/assets/icons/required.svg" alt="required icon">
-                    <p><strong>Required by OEMs:</strong>The FIRST step required by most OEMs when performing an ADAS Calibration is an alignment check.</p>
+            <div class="location-service-card">
+                <h3 class="red-text bold">Calibration & Alignment</h3>
+                <squarespace:block-field id="{title}-Alignment" columns="1"/>
+                <div class="location-service-card-bullet flex-start-start">
+                    <img src="/assets/icons/required.svg" class="location-service-card-icon" alt="required icon">
+                    <p class="no-text-spacing"><strong>Required by OEMs:</strong> The FIRST step required by most OEMs when performing an ADAS Calibration is an alignment check.</p>
                 </div>
                 <squarespace:block-field id="{title}-AlignmentSpecifics" columns="1"/>
             </div>
