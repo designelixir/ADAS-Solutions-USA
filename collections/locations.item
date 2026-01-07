@@ -93,7 +93,7 @@
             <div class="flex-start-spacebetween flex-wrap" style="margin-top: 25px;">
             
             {.if customContent.showAlignmentCalibrationService}
-                <div class="location-service-card">
+                <div class="location-service-card" style="margin-bottom: 15px;">
                     <h3 class="red-text bold">Calibration & Alignment</h3>
                     <squarespace:block-field id="{title}-Alignment" columns="1"/>
                     <div class="location-service-card-bullet flex-start-start">
@@ -118,9 +118,9 @@
 
             {.if customContent.showProgrammingService}
                 <div class="location-service-card">
-                    <h3 class="red-text bold">Programming</h3>
+                    <h3 class="red-text bold">Programming & Diagnostics</h3>
                     <squarespace:block-field id="{title}-Programming" columns="1"/>
-                    <div class="location-service-card-bullet flex-start-start">
+                    <div class="location-service-card-bullet flex-start-start" style="margin-bottom: 15px;">
                         <img src="/assets/icons/savings.svg" class="location-service-card-icon" alt="savings icon">
                         <p class="no-text-spacing"><strong>Saving Time and Cost:</strong> Programming can be time consuming and expensive. Don't wait for the dealer. We are your one stop source for Alignment, Programming and Calibrations.</p>
                     </div>
@@ -139,7 +139,7 @@
                 <div class="location-service-card">
                     <h3 class="red-text bold">Rock Chip & Windshield Replacement</h3>
                     <squarespace:block-field id="{title}-Glass" columns="1"/>
-                    <div class="location-service-card-bullet flex-start-start">
+                    <div class="location-service-card-bullet flex-start-start" style="margin-bottom: 15px;">
                         <img src="/assets/icons/why-adas.svg" class="location-service-card-icon" alt="required icon">
                         <p class="no-text-spacing"><strong>ADAS Solutions:</strong> Experts on ADAS Calibrations following your Windshield / Glass Replacement.</p>
                     </div>
@@ -161,11 +161,13 @@
     
             </div>    
         </div>
-
+        
         <div style="width: calc(100% - 30px); margin: 10px 15px; border-bottom: 1px solid var(--lightgray); padding: 15px;"></div>
-        
-        
-        {body}
+        {.if body}
+            <h2 style="margin: 25px 0 10px; font-size: 24px;"><strong>About this location</strong></h2>
+            
+            {body}
+        {.end}
         {.if customContent.googleReview}     
             <a href="{customContent.googleReview}" class="hover basic-padding full-width flex-center-center" target="_blank">
                 <img src="../assets/google-review.svg" style='height: 50px' alt="star">
