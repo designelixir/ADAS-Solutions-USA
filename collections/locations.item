@@ -95,7 +95,7 @@
         {.if customContent.showAlignmentCalibrationService}
             <div class="location-service-card">
                 <h3 class="red-text bold">Calibration & Alignment</h3>
-                <squarespace:block-field id="{title}-Alignment" columns="1"/>
+                
                 <div class="location-service-card-bullet flex-start-start">
                     <img src="/assets/icons/required.svg" class="location-service-card-icon" alt="required icon">
                     <p class="no-text-spacing"><strong>Required by OEMs:</strong> The FIRST step required by most OEMs when performing an ADAS Calibration is an alignment check.</p>
