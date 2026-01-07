@@ -88,53 +88,80 @@
                 {.end}
                 
             </div>
+        <div style="margin-top: 50px">
+            <h2 style="margin: 0 0 10px; font-size: 24px;"><strong>Services</strong></h2>
+            <div class="flex-start-spacebetween flex-wrap" style="margin-top: 25px;">
             
-        
-        <div style="margin-top: 50px;">
-        <h2 style="margin: 0 0 10px; font-size: 24px;"><strong>Services</strong></h2>
-        {.if customContent.showAlignmentCalibrationService}
-            <div class="location-service-card">
-                <h3 class="red-text bold">Calibration & Alignment</h3>
-                <squarespace:block-field id="{title}-Alignment" columns="1"/>
-                <div class="location-service-card-bullet flex-start-start">
-                    <img src="/assets/icons/required.svg" class="location-service-card-icon" alt="required icon">
-                    <p class="no-text-spacing"><strong>Required by OEMs:</strong> The FIRST step required by most OEMs when performing an ADAS Calibration is an alignment check.</p>
+            {.if customContent.showAlignmentCalibrationService}
+                <div class="location-service-card">
+                    <h3 class="red-text bold">Calibration & Alignment</h3>
+                    <squarespace:block-field id="{title}-Alignment" columns="1"/>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/required.svg" class="location-service-card-icon" alt="required icon">
+                        <p class="no-text-spacing"><strong>Required by OEMs:</strong> The FIRST step required by most OEMs when performing an ADAS Calibration is an alignment check.</p>
+                    </div>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/why.svg" class="location-service-card-icon" alt="why icon">
+                        <p class="no-text-spacing"><strong>Why is Alignment Critical:</strong> ADAS Technology relies on wheel alignment to perform as engineered. Misalignment risks accurate ADAS performance, creating a liability risk for the repairer.</p>
+                    </div>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/why-adas.svg" class="location-service-card-icon" alt="why adas icon">
+                        <p class="no-text-spacing"><strong>Why ADAS Solutions USA:</strong> We fully understand alignment and calibration, performed in a single location by a trusted partner, improves cycle time, drives profitability and provides a positive customer experience.</p>
+                    </div>  
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/same-day.svg" class="location-service-card-icon" alt="same day icon">
+                        <p class="no-text-spacing"><strong>Same Day Service Commitment:</strong> Committed to exceptional customer experience for our partners; we prioritize alignment and calibration services to minimize wait times and multiple interruptions in the repair process.</p>
+                    </div>
+                    <squarespace:block-field id="{item.title}-AlignmentSpecifics" columns="1"/>
                 </div>
-                <div class="location-service-card-bullet flex-start-start">
-                    <img src="/assets/icons/why.svg" class="location-service-card-icon" alt="why icon">
-                    <p class="no-text-spacing"><strong>Why is Alignment Critical:</strong> ADAS Technology relies on wheel alignment to perform as engineered. Misalignment risks accurate ADAS performance, creating a liability risk for the repairer.</p>
+            {.end}
+
+            {.if customContent.showProgrammingService}
+                <div class="location-service-card">
+                    <h3 class="red-text bold">Programming</h3>
+                    <squarespace:block-field id="{title}-Programming" columns="1"/>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/savings.svg" class="location-service-card-icon" alt="savings icon">
+                        <p class="no-text-spacing"><strong>Saving Time and Cost:</strong> Programming can be time consuming and expensive. Don't wait for the dealer. We are your one stop source for Alignment, Programming and Calibrations.</p>
+                    </div>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/required.svg" class="location-service-card-icon" alt="required icon">
+                        <p class="no-text-spacing"><strong>Programming is Critical:</strong> Our expertise allows for programming based on OEM requirements. We cover Domestic, Asian and European vehicles including the common and challenging BMW, Audi, VW and Nissan!</p>
+                    </div>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/why-adas.svg" class="location-service-card-icon" alt="why adas icon">
+                        <p class="no-text-spacing"><strong>Why ADAS Solutions USA:</strong> We are experts in Programming with advanced tooling, training and technicians to be your Programming Partner as a single solution.</p>
+                    </div>  
+                    <squarespace:block-field id="{item.title}-ProgrammingSpecifics" columns="1"/>
                 </div>
-                <div class="location-service-card-bullet flex-start-start">
-                    <img src="/assets/icons/why-adas.svg" class="location-service-card-icon" alt="why adas icon">
-                    <p class="no-text-spacing"><strong>Why ADAS Solutions USA:</strong> We fully understand alignment and calibration, performed in a single location by a trusted partner, improves cycle time, drives profitability and provides a positive customer experience.</p>
-                </div>  
-                <div class="location-service-card-bullet flex-start-start">
-                    <img src="/assets/icons/same-day.svg" class="location-service-card-icon" alt="same day icon">
-                    <p class="no-text-spacing"><strong>Same Day Service Commitment:</strong> Committed to exceptional customer experience for our partners; we prioritize alignment and calibration services to minimize wait times and multiple interruptions in the repair process.</p>
+            {.end}
+            {.if customContent.showGlassService}
+                <div class="location-service-card">
+                    <h3 class="red-text bold">Rock Chip & Windshield Replacement</h3>
+                    <squarespace:block-field id="{title}-Glass" columns="1"/>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/why-adas.svg" class="location-service-card-icon" alt="required icon">
+                        <p class="no-text-spacing"><strong>ADAS Solutions:</strong> Experts on ADAS Calibrations following your Windshield / Glass Replacement.</p>
+                    </div>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/why.svg" class="location-service-card-icon" alt="why icon">
+                        <p class="no-text-spacing"><strong>Insurance Claims:</strong> We are here to support you through the claims process with documentation and support for your claim.</p>
+                    </div>
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/same-day.svg" class="location-service-card-icon" alt="why adas icon">
+                        <p class="no-text-spacing"><strong>Easy Scheduling & Fast Repairs:</strong> Offering same day service.</p>
+                    </div>  
+                    <div class="location-service-card-bullet flex-start-start">
+                        <img src="/assets/icons/rivian.svg" class="location-service-card-icon" alt="same day icon">
+                        <p class="no-text-spacing"><strong>Rivian Certified:</strong> As a Rivian Certified Diagnostic Center, you can trust your vehicle will be properly calibrated once your OEM glass is installed.</p>
+                    </div>
+                    <squarespace:block-field id="{item.title}-GlassSpecifics" columns="1"/>
                 </div>
-                <squarespace:block-field id="{item.title}-AlignmentSpecifics" columns="1"/>
-            </div>
-        {.end}
-        {.if customContent.showCalibrationService}
-            <div class="card">
-            <squarespace:block-field id="Location-Calibration-Text" columns="1"/>
-            <squarespace:block-field id="{title}-CalibrationsSpecifics" columns="1"/>
-            </div>
-        {.end}
-        {.if customContent.showProgrammingService}
-            <div class="card">
-            <squarespace:block-field id="Location-Programming-Text" columns="1"/>
-            <squarespace:block-field id="{title}-ProgrammingSpecifics" columns="1"/>
-            </div>
-        {.end}
-        {.if customContent.showGlassService}
-            <div class="card">
-            <squarespace:block-field id="Location-Glass-Text" columns="1"/>
-            <squarespace:block-field id="{title}-GlassSpecifics" columns="1"/>
-            </div>
-        {.end}
-  
-        </div>    
+            {.end}
+    
+            </div>    
+        </div>
+
         <div style="width: calc(100% - 30px); margin: 10px 15px; border-bottom: 1px solid var(--lightgray); padding: 15px;"></div>
         
         
