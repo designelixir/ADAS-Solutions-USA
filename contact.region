@@ -32,9 +32,9 @@
               <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Tennessee')" aria-label='Contact Tennessee Market'>
                   <img src="assets/tennessee.png" alt="Contact Tennessee Market Button"/>
               </button>
-              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Texas')" aria-label='Contact Texas Market'>
+              {#  <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Texas')" aria-label='Contact Texas Market'>
                   <img src="assets/texas.png" alt="Contact Texas Market Button"/>
-              </button>
+              </button>  }
           </div>
         </div>
         <div class="basic-padding banner-bg-reverse" style="margin-top: -150px; padding-top: 200px; z-index: 1;">

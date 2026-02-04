@@ -45,9 +45,9 @@
               <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Tennessee')" aria-label='Contact Tennessee Market'>
                   <img src="assets/tennessee.png" alt="Contact Tennessee Market Button"/>
               </button>
-              <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Texas')" aria-label='Contact Texas Market'>
+              {#  <button class='contact-popup-button lightbox-242908003518049' onclick="selectMarket('Texas')" aria-label='Contact Texas Market'>
                   <img src="assets/texas.png" alt="Contact Texas Market Button"/>
-              </button>
+              </button>  }
           </div>
             <squarespace:block-field id="AboutCallToAction" columns="1" />
           </div>
