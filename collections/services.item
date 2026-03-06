@@ -6,7 +6,9 @@
     <h2 class="red-text bold-text" style="margin-top: 50px">Locations offering {.repeated section tags}{@}{.end}</h2>
     <div class="flex-start-start flex-wrap">
         <squarespace:query collection="locations" limit="100" tag="{.repeated section tags}{@}{.end}">
-        {@|apply Locations/mapGrid.block}
+            {.repeated section items}
+                {@|apply Locations/mapGrid.block}
+            {.end}
         </squarespace:query>
     </div>
 </section>
