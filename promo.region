@@ -9,13 +9,8 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
   <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-      {@|apply SiteBlocks/pageHeader.block}
+      {@|apply SiteBlocks/PageHeaderEditable.block}
 
-        {squarespace.main-content}
-
-        {.if item}
-        
-        {.or}
         <section class="basic-padding" id="whatToExpectCards" style="z-index: 2; margin-top: 50px;">
             <squarespace:block-field id="WhatToExpect-Description" columns="1" />
             {@|apply SiteBlocks/completeAdasSolutionCards.block}
@@ -30,10 +25,9 @@
             <squarespace:block-field id="EasyToDoBusiness-Description" columns="1" />
             {@|apply SiteBlocks/easyToDoBusiness.block}
         </section>
-        
 
         {@|apply siteBlocks/callToAction.block}
-        {.end}
+
     </main>
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     {squarespace-footers}
