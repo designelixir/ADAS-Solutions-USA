@@ -10,6 +10,12 @@
   <main class="content-container fade-in-delay" role="main" data-content-field="main-content">
     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       {@|apply SiteBlocks/PageHeaderEditable.block}
+      <section class="promo-banner">
+        <h3><strong style="background: white; padding: 5px;">Get 10% off ADAS calibration with your windshield replacement with code <span class="red-text">WINDSHIELDS10</span> at booking.</strong></h3>
+        <h3 style="margin-top: 10px;"> OEM glass, OEM-spec static calibration, done in-house at our certified centers. </h3>
+        <p style="opacity: 0.5;" class="no-text-spacing">Use code [WINDSHIELDS10] when booking to get 10% off your service at vehicle pikcup · Offer ends December 16th, 2026.</p>
+        <squarespace:block-field id="PromoBanner" columns="1" />
+      </section>
 
         <section class="basic-padding" id="whatToExpectCards" style="z-index: 2; margin-top: 50px;">
             <squarespace:block-field id="WhatToExpect-Description" columns="1" />

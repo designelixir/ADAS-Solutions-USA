@@ -1,12 +1,3 @@
-<style>
-.page-hero { width: 100%; color: white!important; border-bottom: 2px solid var(--logored); background-color: var(--red); }
-.page-hero-content {width: 100%;  height: 100%; padding: 25px;}
-.bg-set {background-size: cover; min-height: 200px; background-position: center center; background-repeat: no-repeat; }
-.bg-set .page-hero-content {min-height: 200px; padding: 25px 25px; background: rgba(0,0,0,0.35); color: white; text-shadow: 0 0 2px rgba(0,0,0,0.5); backdrop-filter: blur(3px)}
-.page-hero h4 {color: white!important; font-size: 18px; line-height: 24px; max-width: 75%;}
-
-</style>
-
 <div class="page-hero {collection.title|slugify}-hero {.equal?:collection.mainImage.contentType:"text/html"}{.or}{.if item.assetUrl} bg-set {.or} {.if collection.mainImage.assetUrl} bg-set {.or}{.end} {.end}{.end} flex-center-center" {.equal?:collection.mainImage.contentType:"text/html"}{.or}{.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}{.end}>
     <div class="page-hero-content flex-start-center flex-column white-text">
         {.if item.title}
