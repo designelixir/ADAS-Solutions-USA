@@ -1,5 +1,0 @@
-<div class="page-hero page-hero-editable {collection.title|slugify}-hero {.equal?:collection.mainImage.contentType:"text/html"}{.or}{.if item.assetUrl} bg-set {.or} {.if collection.mainImage.assetUrl} bg-set {.or}{.end} {.end}{.end} flex-center-center" {.equal?:collection.mainImage.contentType:"text/html"}{.or}{.if item.assetUrl} style="background-image: url('{item.assetUrl}');" {.or} style="background-image: url('{collection.mainImage.assetUrl}');" {.end}{.end}>
-    <div class="page-hero-content flex-start-center flex-column white-text">
-            <squarespace:block-field id="{collection.title}-Title" columns="1" class="page-hero-editable-block"/>
-    </div>
-</div>
