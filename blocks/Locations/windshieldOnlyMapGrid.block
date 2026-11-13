@@ -1,0 +1,41 @@
+
+<article id="post-{id}" data-order='{title}' class="location-summary-card box-shadow {@|item-classes} {.repeated section categories}{@|slugify} {.end} {.repeated section tags} {@|slugify}{.end}" data-item-id="{id}">
+    
+        <div class="location-card-summary flex-start-start flex-column">
+            <a href="{fullUrl}" class="non-styled-link full-width">
+                <div class="location-image-card-wrapper flex-center-spacebetween">
+                    <h3 class="white-text"><strong>{title}</strong></h3>
+                    <img src="{.repeated section categories}/assets/states/{@}.png{.end}" class="state-image" alt="{.repeated section categories}{@}{.end}">
+                </div>
+            </a>
+            <div class="location-address full-width flex-start-start flex-wrap"  style="padding-left: 15px">
+                    <div style="padding-right: 25px; padding-top: 15px;">
+                    {.if customContent.phoneNumber}
+                    <div class="flex-center-start no-flex-grow location-phone">
+                        <img src="https://www.adassolutionsusa.com/assets/icons/phone.svg" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                        <h3><a href="tel:{customContent.phoneNumber}" target="_blank">{customContent.phoneNumber}</a></h3>
+                    </div> 
+                    {.end}
+                    {.if location.addressLine1}
+                    <h3 style="margin: 10px 0;">{location.addressLine1}, <br>{location.addressLine2}, USA</h3>
+                    {.end}
+                    {.if customContent.email}
+                    <div class="flex-center-start no-flex-grow contact-form-line hover" style="margin-bottom: 15px;">
+                        <img src="https://www.adassolutionsusa.com/assets/icons/communicate.png" style="width: 15px; height: 15px;" alt="phone icon"/>&nbsp;
+                        <a class="no-text-spacing red-text" style="text-decoration: none" href='mailto:{customContent.email}'>{customContent.email}</a>
+                    </div> 
+                    {.end}
+                </div>
+                <div class="flex-end-end flex-column book-button-wrapper list-book-button-wrapper" style="padding-right: 10px;">
+                    {.if customContent.bookWindshield}<a href="{customContent.bookWindshield}" target="_blank"><button class="red-book-button book-button">Schedule Windshield Replacement & Calibration</button></a>{.end}
+                </div>
+                
+               
+            </div>
+        </div>
+        <a href="{fullUrl}" class="non-styled-link full-width">
+            <div class="lightgray-button" style="margin-top: 25px;">
+                Click for more details &rarr;
+            </div>
+        </a>
+  </article>

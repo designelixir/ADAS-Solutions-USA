@@ -147,8 +147,6 @@ code {font-family: "Roboto Condensed", sans-serif!important; opacity: 0.75;}
   .basic-padding-left-right {padding: 0 15px;}
 }
 
-// 
-
 // Banner BG
 .banner-bg {width: 100%; background-image: url('../assets/bg_1.png'); background-repeat: no-repeat; background-size: 100% 100%; padding: 70px 25px;}
 .banner-bg-reverse {width: 100%; background-image: url('../assets/bg-reverse_1.png');  background-repeat: no-repeat; background-size: 100% 100%; padding: 70px 25px; z-index: 1;}
@@ -173,13 +171,24 @@ code {font-family: "Roboto Condensed", sans-serif!important; opacity: 0.75;}
 .bg-set .page-hero-content {min-height: 200px; padding: 25px 25px; background: rgba(0,0,0,0.35); color: white; text-shadow: 0 0 2px rgba(0,0,0,0.5); backdrop-filter: blur(3px)}
 .page-hero h4 {color: white!important; font-size: 18px; line-height: 24px; max-width: 75%;}
 
-.page-hero-editable .page-hero-content {padding: 50px 25px;}
+.page-hero-editable .page-hero-content {padding: 75px 25px 125px;}
 
 .eyebrow {font-size: 18px; font-family: var(--header-font);  color: white!important; font-weight: 400; opacity: 0.75; text-shadow: unset!important; padding: 0 5px; border-radius: var(--br); white-space-collapse: collapse; display: inline-block; width: fit-content;}
 .page-hero-editable-block h1 {margin: 5px 0; font-size: 64px; line-height: 70px;}
 .promo-banner {width: 100%; background: gold; padding: 25px;}
-#PromoBanner h2 {margin: 0 0 10px; padding: 0; background: white; padding: 5px; font-size: 22px; font-weight: 200; line-height: 28px; color: var(--darkgray); font-family: var(--reader-font); white-space-collapse: collapse; display: inline-block; width: fit-content;}
 
+// Promo Cards (based on .complete-summary-card / .summary-card)
+.promo-card-wrapper {gap: 2%; z-index: 2; position: relative;}
+.promo-card {background: rgba(226, 226, 226, 0.95); backdrop-filter: blur(2px); padding: 25px; border-radius: var(--br); flex: 1 1 0; min-width: 0; text-align: center;}
+.promo-card .sqs-block-field, .promo-card [data-block-field] {width: 100%;}
+.promo-card-icon {width: 80px; height: 80px; margin: 10px 0 15px; background-size: contain; background-repeat: no-repeat; background-position: center center;}
+@media screen and (max-width: 700px) {
+  .promo-card-wrapper {flex-direction: column; gap: 15px;}
+  .promo-card {width: 100%; padding: 15px;}
+  .promo-card-icon {width: 60px; height: 60px;}
+}
+#PromoBanner h2 {margin: 0 0 5px; padding: 0; padding: 5px; font-size: 22px; font-weight: 200; line-height: 28px; color: var(--darkgray); font-family: var(--reader-font); white-space-collapse: collapse; display: inline-block; width: fit-content;}
+#PromoBanner p {padding: 0; margin: 0; opacity: 0.75}
 // Animations
 .linear-gradient {
   background: rgb(0,0,0);
