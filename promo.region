@@ -45,11 +45,9 @@
         <section class="basic-padding" id="Book">
             <squarespace:block-field id="PromoDescription" columns="1" class="basic-padding"/>
             <div class="flex-start-start flex-wrap basic-padding" style="padding-top: 0;">
-            <squarespace:query collection="locations" limit="10">
+            <squarespace:query collection="locations" featured="true" limit="10">
                 {.repeated section items}
-                    {.if starred}
                         {@|apply Locations/windshieldOnlyMapGrid.block}
-                    {.end}
                 {.end}
             </squarespace:query>
             </div>
