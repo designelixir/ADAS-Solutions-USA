@@ -25,17 +25,17 @@
 
       <section id="PromoCards" class="basic-padding" style="margin-top: -100px;">
         <div class="promo-card-wrapper flex-stretch-center">
-            <div class="promo-card box-shadow flex-start-center flex-column">
+            <div class="promo-card box-shadow flex-start-center">
                 <div class="promo-card-icon" style="background-image: url('../assets/icons/savings.svg')"></div>
                 <squarespace:block-field id="PromoCard-1-Description" columns="1" />
             </div>
 
-            <div class="promo-card box-shadow flex-start-center flex-column">
+            <div class="promo-card box-shadow flex-start-center">
                 <div class="promo-card-icon" style="background-image: url('../assets/icons/same-day.svg')"></div>
                 <squarespace:block-field id="PromoCard-2-Description" columns="1" />
             </div>
 
-            <div class="promo-card box-shadow flex-start-center flex-column">
+            <div class="promo-card box-shadow flex-start-center">
                 <div class="promo-card-icon" style="background-image: url('../assets/icons/certified-red.svg')"></div>
                 <squarespace:block-field id="PromoCard-3-Description" columns="1" />
             </div>
